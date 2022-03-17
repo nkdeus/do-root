@@ -1,0 +1,1 @@
+var moduleManager=window.WFmodules;(moduleManager=null==moduleManager?{}:moduleManager).do=function(){console.log("DO "+str)},window.WFmodules=moduleManager;

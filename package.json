@@ -1,7 +1,9 @@
 {
   "devDependencies": {
     "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
     "gulp-mustache": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
     "mustache": "^4.2.0",
     "sass": "^1.49.9"
   },
@@ -9,16 +11,13 @@
     "css:watch": "sass --watch scss:css",
     "css:compil": "sass scss/style.scss css/style.css",
     "css:purge": "purgecss --config purgecss.config.js",
-
     "content:merge": "node json-merge.js",
-
     "tpl:build": "node tpls-build.js",
-
     "git": "git add . && git commit -m",
     "postgit": "git push --all",
-
     "refresh": "npm run css:compil && npm run css:purge",
     "build": "npm run content:merge && npm run tpl:build",
-    "publish": "npm run css:compil && npm run content:merge && npm run tpl:build && npm run css:purge && npm run git -- autoPush"
+    "render": "npm run css:compil && npm run content:merge && npm run tpl:build && npm run css:purge",
+    "lunch": "npm run git -- lunch"
   }
 }

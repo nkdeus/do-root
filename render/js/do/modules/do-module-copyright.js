@@ -1,0 +1,1 @@
+var moduleManager=window.WFmodules;(moduleManager=null==moduleManager?{}:moduleManager).copyright=function(){const e=new Date;$("[data-year]",this).text(e.getFullYear())},window.WFmodules=moduleManager;

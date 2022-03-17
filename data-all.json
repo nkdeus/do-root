@@ -4,31 +4,23 @@
     "text": "lorem ipsum dolor update 2 !"
   },
   "titre": "Ulysse 2029",
-  "logo": "imgs/logo.svg",
+  "logo": "/imgs/logo.svg",
   "rootPath": "/",
   "nav": [
     {
       "bt": "about",
-      "url": "/about.html"
-    },
-    {
-      "bt": "bt2",
-      "url": "/bt2"
-    },
-    {
-      "bt": "bt3",
-      "url": "/bt3"
+      "url": "./about.html"
     }
   ],
   "copyright": "© Ulysse-2029",
   "nav-footer": [
     {
-      "bt": "bt1",
-      "url": "/bt1"
+      "bt": "<3",
+      "url": ""
     },
     {
-      "bt": "bt2",
-      "url": "/bt2"
+      "bt": "^*^",
+      "url": ""
     }
   ],
   "pageAbout": {

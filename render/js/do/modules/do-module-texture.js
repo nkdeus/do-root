@@ -1,0 +1,1 @@
+var moduleManager=window.WFmodules;(moduleManager=null==moduleManager?{}:moduleManager).dotexture=function(){$(this).append('<div class="texture"></div>')},window.WFmodules=moduleManager;
