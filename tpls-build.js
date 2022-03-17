@@ -20,7 +20,7 @@ gulp.src('./views/*')
       .pipe(mustache('data-all.json'))
       .pipe(gulp.dest('render/'));
 
-gulp.src('css/style-purge.css')
+gulp.src(['css/style-purge.css','css/custom-css.css'])
       .pipe(cleanCSS())
       .pipe(gulp.dest('render/css/'));
 

@@ -1,3 +1,7 @@
+body, [data-do-bg]{
+    transition:background-color 1s ease-in-out;
+}
+
 .custom-data::after{
 
     content:"data-do";
