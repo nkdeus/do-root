@@ -28,6 +28,10 @@ gulp.src(['js/**/*.js'])
       .pipe(uglify())
       .pipe(gulp.dest('render/js/'));
 
+gulp.src(['imgs/**/*.svg']) 
+      .pipe(gulp.dest('render/imgs/'));
+
+
 
 setTimeout(() => {
       test();
