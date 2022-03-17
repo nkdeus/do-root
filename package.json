@@ -11,13 +11,12 @@
     "css:watch": "sass --watch scss:css",
     "css:compil": "sass scss/style.scss css/style.css",
     "css:purge": "purgecss --config purgecss.config.js",
-    "content:merge": "node json-merge.js",
-    "tpl:build": "node tpls-build.js",
+    "css:refresh": "npm run css:compil && npm run css:purge",
+    "json:merge": "node json-merge.js",
+    "build": "node tpls-build.js",
     "git": "git add . && git commit -m",
     "postgit": "git push --all",
-    "refresh": "npm run css:compil && npm run css:purge",
-    "build": "npm run content:merge && npm run tpl:build",
-    "render": "npm run css:compil && npm run content:merge && npm run tpl:build && npm run css:purge",
+    "render": "npm run css:compil && npm run json:merge && npm run build && npm run css:purge",
     "lunch": "npm run git -- lunch"
   }
 }
