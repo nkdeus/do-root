@@ -1,0 +1,865 @@
+@use 'do_config' as *;
+@use 'do_color' as *;
+@use "sass:string";
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+@use '../custom/do' as *;
+
+/*
+-
+FRAMEWORK DO v1.1
+-
+Core de la créature
+-
+*/
+// Quelques outils
+
+@function rem($px) {
+    @return strip-unit($px) / $base-font-size * 1rem;
+}
+
+@function decimal-round($number, $digits: 0, $mode: round) {
+    $n: 1;
+    // $number must be a number
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    // $digits must be a unitless number
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @if $digits > 0 {
+        @for $i from 1 through $digits {
+            $n: $n * 10;
+        }
+    }
+    @if $mode == round {
+        @return  math.div(round($number * $n), $n);
+    } @else if $mode == ceil {
+        @return  math.div(ceil($number * $n), $n);
+    } @else if $mode == floor {
+        @return  math.div(floor($number * $n), $n);
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+// DO DO DO !!!
+
+@each $key, $value in $do-sizes {
+    $map: ();
+    $count: decimal-round(strip-unit($count) * $do, 3, 'round');
+    $value: $count;
+    //@debug(--#{$key},$value);
+    $map: map.merge(
+        $map,
+        (
+            $key: $value,
+        )
+    );
+    $do-matrix: map.merge($do-matrix, $map) !global;
+    /* purgecss start ignore */
+    :root {
+        --#{$key}: #{$value};
+    }
+    /* purgecss end ignore */
+}
+
+@mixin do-init(
+    $prefix,
+    $class,
+    $size,
+    $props,
+    $value,
+    $unit,
+    $important: false
+) {
+    $full-class-name: #{$prefix}-#{$class}-#{$size};
+    $extend-class-name: #{$class}-#{$size};
+    $is-responsive: true;
+
+    $test: string.slice($prefix, 1, 3);
+    @if $test == '.do' {
+        $is-responsive: false;
+    } @else {
+        $slice: string.length($prefix) - 3;
+        $resp: string.slice($prefix, 2, $slice);
+        $extend-class-name: #{$resp}-#{$class}-#{$size};
+    }
+
+    @if $class == 'bw' or $class == 'bw-rem' {
+        $important: true;
+    }
+
+    #{$full-class-name},
+    %#{$extend-class-name} {
+        @if $class == 'scale' {
+            @each $prop in $props {
+                #{$prop}: scale(#{$value});
+            }
+        } @else if $class == 'auto' or $class == 'auto-rows' {
+            @each $prop in $props {
+                #{$prop}: repeat(auto-fit, minmax(#{$value * $unit}, 1fr));
+            }
+        } @else if $class == 'w-100' or $class == 'h-100' {
+            @each $prop in $props {
+                #{$prop}: calc(100% + #{$value * $unit * 1});
+            }
+        } @else if $class == 'w-n-100' or $class == 'h-n-100' {
+            @each $prop in $props {
+                #{$prop}: calc(100% - #{$value * $unit * 1});
+            }
+        } @else if $class == 'w-gold' or $class == 'h-gold' {
+            @each $prop in $props {
+                //@debug map.get($do-matrix, "xxxl");
+
+                $max-size: list.nth(list.nth($do-matrix, -1), -1);
+                $percent: decimal-round(
+                    (math.div(100, $max-size)) * $value * $unit * 1,
+                    3,
+                    'round'
+                );
+                //@debug($class, $percent);
+                #{$prop}: $percent;
+                &-100 {
+                    #{$prop}: 100% + $percent;
+                }
+            }
+        } @else {
+            @each $prop in $props {
+                @if $important {
+                    #{$prop}: #{$value * $unit} !important;
+                } @else {
+                    #{$prop}: #{$value * $unit};
+                }
+            }
+        }
+
+        @if $class == 'fs' {
+            line-height: 1.5;
+            &.big {
+                font-size: $value * $unit * $do !important;
+            }
+            &.small {
+                font-size: math.div($value * $unit, $do) !important;
+            }
+            &.medium {
+                font-size: math.div($value * $unit, 1.2) !important;
+            }
+            &.reset-x {
+                transform: translateX(-0.075em);
+            }
+        }
+    }
+}
+
+@mixin do-center($class) {
+    #{$class} {
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        &-y {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &-x {
+            top: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@mixin do-positions($class, $important) {
+    #{$class}os {
+        position: sticky #{$important};
+    }
+
+    #{$class}of {
+        position: fixed !important;
+    }
+
+    #{$class}or {
+        position: relative #{$important};
+    }
+
+    #{$class}oa {
+        position: absolute !important;
+    }
+}
+
+@mixin do-dir($class) {
+    @each $direction in $do-directions {
+        #{$class}#{$direction} {
+            #{$direction}: 0%;
+
+            &-start {
+                #{$direction}: 0%;
+            }
+            &-middle {
+                #{$direction}: 50%;
+            }
+            &-end {
+                #{$direction}: 100%;
+            }
+        }
+    }
+}
+
+@mixin do-align($class) {
+    @each $align-type, $align in $do-aligns-type {
+        @each $align-poz in $do-aligns {
+            #{$class}-#{$align}-#{$align-poz} {
+                #{$align}:#{$align-poz};       
+            }
+        }
+    }  
+}
+
+@mixin do-border-type() {
+    @each $direction in $do-directions {
+        .do-border-#{$direction} {
+            border-#{$direction}: 1px solid var(--main-color);
+        }
+    }
+}
+
+@mixin do-full-dir($key, $class, $value) {
+    @each $direction in $do-directions {
+        #{$class}#{$direction},
+        %#{$direction} {
+            &-#{$key} {
+                #{$direction}: $value * 1%;
+            }
+
+            &-n-#{$key} {
+                #{$direction}: $value * -1%;
+            }
+
+            &-#{$key}-rem {
+                #{$direction}: $value * 1rem;
+            }
+
+            &-n-#{$key}-rem {
+                #{$direction}: $value * -1rem;
+            }
+
+            &-#{$key}-half-rem {
+                #{$direction}: math.div($value,2) * 1rem;
+            }
+        }
+    }
+}
+
+@mixin do-get-data($var-name,$size-do,$size) {
+
+    @each $data-class, $var-name in $do-custom-data {
+
+        $class-full-name : get-#{$var-name}\:#{$data-class}-#{$size-do};
+  
+        .#{$class-full-name}{
+            //@debug($class-full-name);
+            @if $data-class == "trans-y" {
+                $tempDelta : $size*10%;
+                //@debug($tempDelta);
+                transform: translateY(calc(var(--#{$var-name})* #{$tempDelta}));
+                &-n{
+                    $tempDelta : $size*-10%;
+                    transform: translateY(calc(var(--#{$var-name})* #{$tempDelta})); 
+                }
+            }
+            @if $data-class == "opacity" {
+                opacity: calc(var(--#{$var-name})* 1);
+            }
+        }
+
+    }
+}
+
+@mixin do-events-extend($class, $extendHover: true) {
+    @each $event-type, $type in $do-events-type {
+        @each $event, $event-class in $type {
+            [do-event-#{$event-type}='#{$event}'] {
+                .#{$event-type}-#{$event}\:#{$class} {
+                    @content;
+                }
+            }
+        }
+    }
+    .#{$class} {
+        @content;
+    }
+    .active {
+        > .active\:#{$class} {
+            @content;
+        }
+        .deep-active\:#{$class} {
+            @content;
+        }
+        &.active\:#{$class} {
+            @content;
+        }
+    }
+    @if $extendHover == true {
+        @include do-extend-hover('hover', #{$class}) {
+            @content;
+        }
+    }
+}
+
+@mixin do-extend-hover($event, $class) {
+    .#{$event}:#{$event} {
+        .#{$event}\:#{$class} {
+            @content;
+        }
+    }
+
+    .#{$class}\:#{$event} {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin do-display($class) {
+    @each $display-class, $display in $do-displays {
+        //@debug("display :",#{$class}-#{$display-class});
+        @include do-events-extend(#{$class}-#{$display-class}) {
+            display: #{$display};
+        }
+    }
+}
+
+@mixin do-tweens-type($class) {
+    @each $tween-class, $tween in $do-tweens-type {
+        .#{$class}-#{$tween-class} {
+            transition-property: #{$tween} !important;
+        }
+    }
+
+    @each $tween-ease, $ease in $do-tweens-ease {
+        .#{$class}-ease-#{$tween-ease} {
+            transition-timing-function: #{$ease} !important;
+        }
+    }
+}
+
+@mixin do-util($class) {
+    .#{$class}-full {
+        height: 100%;
+        width: 100%;
+    }
+    .#{$class}-grid-col-full {
+        grid-column: 1/-1;
+    }
+    .#{$class}-pt-0 {
+        padding-top: 0px;
+    }
+    .#{$class}-p-0 {
+        padding: 0px;
+    }
+    .#{$class}-mt-0 {
+        margin-top: 0px;
+    }
+    .#{$class}-m-0 {
+        margin-top: 0px;
+    }
+
+    .#{$class}-h-auto {
+        height: auto;
+    }
+    .#{$class}-w-auto {
+        width: auto;
+    }
+    .#{$class}-reset-trans {
+        transform: none;
+    }
+
+    .#{$class}-overflow-hidden {
+        overflow: hidden;
+    }
+
+    .#{$class}-flex-center {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .#{$class}-row {
+        flex-direction: row;
+    }
+
+    .#{$class}-col {
+        flex-direction: column;
+    }
+
+    .#{$class}-wrap {
+        flex-wrap: wrap;
+    }
+    .#{$class}-nowrap {
+        flex-wrap: nowrap;
+    }
+
+    @include do-events-extend(#{$class}-reset-trans) {
+        transform: none;
+    }
+
+    .#{$class}-bg-transparent {
+        background-color: transparent !important;
+    }
+    .#{$class}-object-fit {
+        &\:cover {
+            object-fit: cover;
+        }
+        &\:contain {
+            object-fit: contain;
+        }
+        &\:none {
+            object-fit: none;
+        }
+        &\:fill {
+            object-fit: fill;
+        }
+    }
+}
+
+@mixin do-maxo($class, $responsive: true) {
+    @for $i from 0 through $do-max {
+        //grid-row: span 3;
+        //grid-column: span 3;
+        //grid-template-columns: repeat(4, 1fr);
+
+        //@debug(#{$class}-grid-#{$i});
+        .#{$class}-grid {
+            &-#{$i} {
+                grid-template-columns: repeat($i, 1fr) !important;
+            }
+            &-rows-#{$i} {
+                grid-template-rows: repeat($i, 1fr) !important;
+            }
+            &-col-#{$i} {
+                grid-column: span $i;
+            }
+            &-col-start-#{$i} {
+                grid-column-start: $i;
+            }
+            &-col-end-#{$i} {
+                grid-column-end: span $i;
+            }
+            &-row-#{$i} {
+                grid-row: span $i;
+            }
+            &-row-start-#{$i} {
+                grid-row-start: $i;
+            }
+
+            //grid-row-start
+        }
+
+        @if $responsive == true {
+            .tween-duration-#{$i} {
+                transition-duration: #{math.div($i, $do-base) * 1s} !important;
+            }
+            .tween-delay-#{$i} {
+                transition-delay: #{math.div($i, $do-base) * 1s} !important;
+            }
+        }
+
+        @include do-events-extend(#{$class}-o-#{$i}) {
+            opacity: #{math.div($i, $do-base)};
+        }
+        @include do-events-extend(#{$class}-scale-#{$i}) {
+            transform: scale(math.div($i, $do-base));
+        }
+        @include do-events-extend(#{$class}-scale-x-#{$i}) {
+            transform: scaleX(math.div($i, $do-base));
+        }
+        @include do-events-extend(#{$class}-scale-y-#{$i}) {
+            transform: scaleY(math.div($i, $do-base));
+        }
+
+    
+
+        $temp-n-class: $i - math.div($do-max,2);
+        @if($temp-n-class < 0){
+
+            $temp-n-class : #{n-#{math.abs($temp-n-class)}};
+          
+        }
+        
+        //@debug(#{$class}-trans-y-#{$temp-n-class});
+
+        @include do-events-extend(#{$class}-trans-y-#{$temp-n-class}) {
+            transform: translateY(math.div($i - math.div($do-max, 2), $do-base)*100%);
+        }
+        @include do-events-extend(#{$class}-trans-x-#{$temp-n-class}) {
+            transform: translateX(math.div($i - math.div($do-max, 2), $do-base)*100%);
+        }
+
+        .#{$class}-h,
+        %h {
+            &-#{$i} {
+                height: $i * $do-base * 1%;
+            }
+            &-#{$i}-vh {
+                min-height: $i * $do-base * 1vh;
+            }
+            &-#{$i}-max-rem {
+                max-height: $i * $do-base * 1rem;
+            }
+        }
+
+        .#{$class}-w,
+        %w {
+            &-#{$i} {
+                width: $i * $do-base * 1%;
+            }
+            &-#{$i}-vw {
+                min-width: $i * $do-base * 1vw;
+            }
+            &-#{$i}-max {
+                max-width: $i * $do-base * 1%;
+            }
+            &-#{$i}-max-rem {
+                max-width: $i * $do-base * 1rem;
+            }
+        }
+
+        .#{$class}-z {
+            &-#{$i} {
+                z-index: $i;
+            }
+        }
+
+        .#{$class}-blur {
+            &-#{$i} {
+                filter: blur($i * 1rem);
+            }
+        }
+
+        .#{$class}-rotation {
+            &-#{$i} {
+                transform: rotate($i * -9deg);
+            }
+            &-n-#{$i} {
+                transform: rotate($i * -1 * -9deg);
+            }
+        }
+
+        .#{$class}-shadow {
+            &-#{$i} {
+                box-shadow: 0px $i * 0.5rem 1rem rgba(black, 0.1);
+
+                &-big {
+                    box-shadow: 0px $i * 1rem $i * 1rem rgba(black, 0.1);
+                }
+            }
+        }
+
+        .#{$class}-text-shadow {
+            &-#{$i} {
+                text-shadow: 0px $i * 0.5rem 1rem rgba(black, 0.1);
+
+                &-big {
+                    text-shadow: 0px $i * 1rem $i * 1rem rgba(black, 0.1);
+                }
+            }
+        }
+    }
+}
+
+@mixin do-trans($class) {
+    @include do-events-extend(#{$class}, false) {
+        &-x-before {
+            transform: translateX(-100%);
+            &-y-before {
+                transform: translateX(-100%) translateY(-100%);
+            }
+            &-y-middle {
+                transform: translateX(-100%) translateY(-50%);
+            }
+            &-y-after {
+                transform: translateX(-100%) translateY(100%);
+            }
+            &-y-push {
+                transform: translateX(-100%) translateY(50%);
+            }
+        }
+        &-x-middle {
+            transform: translateX(-50%);
+            &-y-before {
+                transform: translateX(-50%) translateY(-100%);
+            }
+            &-y-middle {
+                transform: translateX(-50%) translateY(-50%);
+            }
+            &-y-after {
+                transform: translateX(-50%) translateY(100%);
+            }
+            &-y-push {
+                transform: translateX(-50%) translateY(50%);
+            }
+        }
+        &-x-after {
+            transform: translateX(100%);
+            &-y-before {
+                transform: translateX(100%) translateY(-100%);
+            }
+            &-y-middle {
+                transform: translateX(100%) translateY(-50%);
+            }
+            &-y-after {
+                transform: translateX(100%) translateY(100%);
+            }
+            &-y-push {
+                transform: translateX(100%) translateY(50%);
+            }
+        }
+
+        &-y-before {
+            transform: translateY(-100%);
+            &-x-before {
+                transform: translateY(-100%) translateX(-100%);
+            }
+            &-x-middle {
+                transform: translateY(-100%) translateX(-50%);
+            }
+            &-x-after {
+                transform: translateY(-100%) translateX(100%);
+            }
+            &-x-push {
+                transform: translateY(-100%) translateX(50%);
+            }
+        }
+
+        &-y-middle {
+            transform: translateY(-50%);
+            &-x-before {
+                transform: translateY(-50%) translateX(-100%);
+            }
+            &-x-middle {
+                transform: translateY(-50%) translateX(-50%);
+            }
+            &-x-after {
+                transform: translateY(-50%) translateX(100%);
+            }
+            &-x-push {
+                transform: translateY(-50%) translateX(50%);
+            }
+        }
+
+        &-y-push {
+            transform: translateY(50%);
+        }
+
+        &-y-after {
+            transform: translateY(100%);
+            &-x-before {
+                transform: translateY(100%) translateX(-100%);
+                transform: translateX(-100%);
+            }
+            &-x-middle {
+                transform: translateY(100%) translateX(-50%);
+            }
+            &-x-after {
+                transform: translateY(100%) translateX(100%);
+            }
+            &-x-push {
+                transform: translateY(100%) translateX(50%);
+            }
+        }
+    }
+}
+
+@mixin do-fluide-class($prefix, $class, $size, $props, $value, $unit) {
+    $full-class-name: #{$prefix}-#{$class}-#{$size};
+    $extend-class-name: #{$class}-#{$size};
+
+    #{$full-class-name},
+    %#{$extend-class-name} {
+        @each $prop in $props {
+            #{$prop}: clamp(
+                #{math.div($value, $do) * $unit},
+                #{$value * 0.8vw},
+                #{$value * $unit}
+            );
+        }
+    }
+}
+
+@mixin do-smart-class($class, $size, $props, $value, $unit) {
+    $full-class-name: '.do-#{$class}-#{$size}';
+    $extend-class-name: #{$class}-#{$size};
+    //@debug($extend-class-name);
+
+    $max: length($do-screen) + 1;
+
+    $smart-value: math.div($value, $max);
+
+    #{$full-class-name},
+    %#{$extend-class-name} {
+        @each $prop in $props {
+            #{$prop}: #{$smart-value * $unit};
+        }
+    }
+
+    $smart-value: $value;
+
+    @each $break-class, $break-point in $do-screen {
+        $max: $max + -1;
+        $smart-value: decimal-round(math.div($value, $max), 2);
+
+        //@debug $break-class" :",$full-class-name,$smart-value;
+
+        @media screen and (min-width: $break-point) {
+            #{$full-class-name},
+            %#{$extend-class-name} {
+                @each $prop in $props {
+                    #{$prop}: #{$smart-value * $unit};
+                }
+            }
+        }
+    }
+}
+
+@each $key, $value in $do-matrix {
+    @each $list in $do-gogogo {
+        @each $class-name, $props in $list {
+            @include do-init(
+                $temp-class,
+                $class-name,
+                $key,
+                map-get($props, 'props'),
+                $value,
+                map-get($props, 'unit')
+            );
+        }
+    }
+
+    @include do-full-dir($key, '.', $value);
+    //@debug($key,$value);
+    @include do-get-data('progress',$key,$value);
+
+    @each $class-name, $props in $do-clamp {
+        @include do-fluide-class(
+            $temp-class,
+            $class-name,
+            $key,
+            map-get($props, 'props'),
+            $value,
+            map-get($props, 'unit')
+        );
+    }
+
+    @each $class-name, $props in $do-smart {
+        @include do-smart-class(
+            $class-name,
+            $key,
+            map-get($props, 'props'),
+            $value,
+            map-get($props, 'unit')
+        );
+    }
+}
+
+// Création des choses de base
+
+@include do-positions('.p', '');
+@include do-center('.center');
+@include do-trans('trans');
+@include do-dir('.');
+@include do-align('.do');
+@include do-border-type();
+@include do-maxo('do');
+@include do-colors('', false);
+@include do-display('do');
+@include do-tweens-type('tween');
+@include do-util('do');
+//@include do-get-data('progress');
+// Création des choses responsive
+
+@each $break-class, $break-point in $do-screen {
+    @media screen and (min-width: $break-point) {
+        $temp-class: '.#{$break-class}-do';
+
+        @include do-positions('.#{$break-class}-p', '!important');
+        @include do-center('.#{$break-class}-center');
+        @include do-trans('#{$break-class}-trans');
+        @include do-dir('.#{$break-class}-');
+        @include do-align('.#{$break-class}-do');
+        @include do-maxo('#{$break-class}-do', false);
+        @include do-colors('#{$break-class}-', true);
+        @include do-display('#{$break-class}-do');
+        @include do-util('#{$break-class}-do');
+
+
+        @each $key, $value in $do-matrix {
+            @each $list in $do-gogogo {
+                @each $class-name, $props in $list {
+                    @include do-init(
+                        $temp-class,
+                        $class-name,
+                        $key,
+                        map-get($props, 'props'),
+                        $value,
+                        map-get($props, 'unit'),
+                        true
+                    );
+                }
+            }
+
+            @include do-full-dir($key, '.#{$break-class}-', $value);
+        }
+    }
+}
+
+// Taille de la police
+
+@each $fs, $value in $do-fs {
+    #{$fs} {
+        $tempSize: map.get($do-matrix, $value);
+        
+        font-size: $tempSize * 1rem;
+        $tempSize2: $tempSize * 1rem;
+        $tempSize3: math.div($tempSize * 1rem, $do);
+        font-size: max(#{$tempSize2}, 16px);
+
+        &.big {
+            font-size: $tempSize * 1rem * $do !important;
+        }
+        &.small {
+            font-size: max(#{$tempSize3}, 14px);
+        }
+        &.medium {
+            font-size: math.div($tempSize * 1rem, 1.2) !important;
+        }
+        &.reset-x {
+            transform: translateX(-0.075em);
+        }
+
+        @if ($tempSize < 1) {
+            @media screen and (max-width: $md) {
+                font-size: 16px;
+            }
+        }
+
+        &.uppercase {
+            text-transform: uppercase;
+        }
+        &.press {
+            line-height: 1.1;
+        }
+    }
+}

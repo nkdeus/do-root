@@ -1,0 +1,261 @@
+@use "sass:color";
+@use 'do_config' as *;
+@use '../custom/do' as *;
+/*
+-
+Les couleurs !!!
+-
+*/
+
+@mixin do-events-color-extend($class, $extendHover: true) {
+    .#{$class} {
+        @content;
+    }
+
+    @each $event-type, $type in $do-events-type {
+        @each $event, $event-class in $type {
+            [do-event-#{$event-type}='#{$event}'] {
+                .#{$event-type}-#{$event}\:#{$class} {
+                    @content;
+                }
+            }
+        }
+    }
+
+    .active {
+        .active\:#{$class} {
+            @content;
+        }
+        .deep-active\:#{$class} {
+            @content;
+        }
+        &.active\:#{$class} {
+            @content;
+        }
+    }
+    @if $extendHover == true {
+        @include do-extend-color-hover('hover', #{$class}) {
+            @content;
+        }
+    }
+}
+
+@mixin do-extend-color-hover($event, $class) {
+    .#{$event}:#{$event} {
+        .#{$event}\:#{$class} {
+            @content;
+        }
+    }
+
+    .#{$class}\:#{$event} {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin do-color-full-class($class, $color, $colorValue: null, $setRoot: false) {
+    @if ($colorValue != null) {        
+        @if($setRoot == false){ 
+            :root {
+                --#{$color}: #{$colorValue};
+                --#{$color}-color: var(--#{$color});
+            }
+        }
+    }
+
+    @each $color-type, $color-type-class in $do-colors-type {
+        //@debug(#{$class}-#{$color-type}-#{$color}-color);
+        @include do-events-color-extend(#{$class}-#{$color-type}-#{$color}-color) {
+            #{$color-type-class}: var(--#{$color}-color) !important;
+        }
+
+        @each $child-type, $child-type-class in $do-childs-selector {
+            //@debug(#{$child-type}\:#{$class}-#{$color-type}-#{$color}-color);
+            .#{$child-type}\:#{$class}-#{$color-type}-#{$color}-color {
+                > #{$child-type-class} {
+                    #{$color-type-class}: var(--#{$color}-color) !important;
+                }
+            }
+        }
+    }
+
+    %bg-#{$color}-color {
+        background-color: var(--#{$color}-color) !important;
+    }
+}
+
+@mixin do-color-extend($className, $colorName, $color, $totalExtend: false) {
+    //--#{$color}: #{$color};
+    //--#{$color}-color: var(--main);
+    //@debug("--> "--#{$colorName} ':' #{$color});
+
+    @if ($totalExtend == true) {
+        // @debug("totalExtend !!");
+    }
+
+    @each $colorNameBase, $colorVar in $colorsVar {
+        // @debug("--> "#{$className}-all-#{$colorNameBase} ':' #{$colorName});
+        @if ($totalExtend == true) {
+          
+          @include do-events-color-extend(#{$className}-all-#{$colorNameBase}\:#{$colorName}) {
+            --#{$colorNameBase}-color: var(--#{$colorName}) !important;
+                @for $o from 1 through $colorsVarMax {
+                    --#{$colorNameBase}#{$o}-color: var(
+                        --#{$colorName}#{$o}
+                    ) !important;
+                    --#{$colorNameBase}#{$o}-n-color: var(
+                        --#{$colorName}#{$o}-n
+                    ) !important;
+            }
+          }
+
+
+        }
+
+        @include do-events-color-extend(#{$className}-#{$colorNameBase}\:#{$colorName}) {
+          --#{$colorNameBase}-color: var(--#{$colorName}) !important;
+        }
+
+
+        @if ($totalExtend == true) {
+ 
+            @for $o from 1 through $colorsVarMax {
+                
+                .#{$className}-#{$colorNameBase}#{$o}\:#{$colorName} {
+                    --#{$colorNameBase}#{$o}-color: var(
+                        --#{$colorName}
+                    ) !important;
+                }
+                .#{$className}-#{$colorNameBase}#{$o}-n\:#{$colorName} {
+                    --#{$colorNameBase}#{$o}-n-color: var(
+                        --#{$colorName}
+                    ) !important;
+                }
+            }
+        }
+    }
+
+    [data-do-bg='#{$colorName}'] {
+        background-color: var(--#{$colorName}-color) !important;
+    }
+
+    [data-do-txt='#{$colorName}'] {
+        color: var(--#{$colorName}-color) !important;
+    }
+}
+
+@mixin do-colors($class, $responsive) {
+    @each $colorName, $colorVar in $colorsVar {
+        //.lg-set-main:extra
+        //.set-main:extra
+
+        @if ($responsive == false) {
+            @include do-color-extend(#{$class}set, $colorName, $colorVar, true);
+        }
+        @include do-color-full-class(#{$class}do, $colorName, $colorVar,$responsive);
+
+        @if ($responsive == false) {
+            @for $o from 1 through $colorsVarMax {
+                $tempColorLight: color.scale(
+                    $colorVar,
+                    $lightness: $o * $colorsAdjustLight
+                );
+                $tempColorDark: color.scale(
+                    $colorVar,
+                    $lightness: $o * $colorsAdjustDark * -1
+                );
+
+                @include do-color-full-class(
+                    #{$class}do,
+                    #{$colorName}+#{$o},
+                    $tempColorDark
+                );
+                @include do-color-full-class(
+                    #{$class}do,
+                    #{$colorName}+#{$o}+#{-n},
+                    $tempColorLight
+                );
+
+                @include do-color-extend(
+                    #{$class}set,
+                    #{$colorName}+#{$o},
+                    $tempColorDark
+                );
+                @include do-color-extend(
+                    #{$class}set,
+                    #{$colorName}+#{$o}+#{-n},
+                    $tempColorLight
+                );
+            }
+
+            @each $colorName2, $colorVar2 in $colorsVar {
+                @if ($colorName2 != $colorName) {
+                    [data-set-#{$colorName}='#{$colorName2}'],
+                    .set-#{$colorName}-#{$colorName2} {
+                        --#{$colorName}-color: var(--#{$colorName2}) !important;
+                    }
+
+                    [data-do='#{$colorName}-#{$colorName2}'] {
+                        background-color: var(--#{$colorName}-color) !important;
+                        color: var(--#{$colorName2}-color) !important;
+                    }
+                    [data-do-hover='#{$colorName}-#{$colorName2}']:hover {
+                        background-color: var(--#{$colorName}-color) !important;
+                        color: var(--#{$colorName2}-color) !important;
+                        path {
+                            fill: var(--#{$colorName2}-color) !important;
+                        }
+                        rect {
+                            fill: var(--#{$colorName2}-color) !important;
+                        }
+                        polygon {
+                            fill: var(--#{$colorName2}-color) !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// DARK MODE
+
+.filter-invert{
+    filter:invert(1) grayscale(1);
+}
+
+.darkmode{
+	--second-color: var(--contraste) !important;
+	--contraste-color: var(--second) !important;
+	--main-color: var(--fade) !important;
+    --fade-color: var(--main) !important;
+
+	--second1-color: var(--contraste1) !important;
+	--contraste1-color: var(--second1) !important;
+	--main1-color: var(--fade1) !important;
+
+	--second2-color: var(--contraste2-n) !important;
+	--contraste2-color: var(--second2) !important;
+	--main2-color: var(--fade2) !important;
+
+	--second3-color: var(--contraste3) !important;
+	--contraste3-color: var(--second3) !important;
+	--main3-color: var(--fade3) !important;
+
+	--second4-color: var(--contraste4) !important;
+	--contraste4-color: var(--second4) !important;
+	--main4-color: var(--fade4) !important;
+
+	--second5-color: var(--contraste5) !important;
+	--contraste5-color: var(--second5) !important;
+	--main5-color: var(--fade5) !important;
+
+	--second1-n-color: var(--contraste1-n) !important;
+	--contraste1-n-color: var(--second1-n) !important;
+	--main1-n-color: var(--second) !important;
+
+    
+}

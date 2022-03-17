@@ -1,0 +1,217 @@
+@use 'do_config' as *;
+@use '../custom/do' as *;
+@use "sass:math";
+// Typo
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  
+  line-height: 1.15; 
+  -webkit-text-size-adjust: 100%; 
+  font-size: 16px;
+  font-size: clamp(10px, 1vw, 20px);  
+  
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color:var(--contraste-color);
+  -webkit-text-size-adjust: 100%; 
+  -webkit-tap-highlight-color: rgba(0,0,0, 0);
+  margin: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 0px;
+  font-weight: 700;
+}
+
+p.big {
+  font-family: "Futura", sans-serif;
+}
+
+
+p {
+  margin-bottom: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.do-fw-strong {
+  font-weight: 900;
+}
+
+.do-fw-bold {
+  font-weight: 400;
+}
+.do-fw-medium {
+  font-weight: 200;
+}
+.do-fw-light {
+  font-weight: 100;
+}
+
+.reset-y {
+  line-height: 0.75em;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.press {
+  line-height: 1.25;
+}
+.expend {
+  line-height: 1.5;
+}
+.text-right {
+  text-align: right;
+}
+
+.font-size-inherit{
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: var(--contraste-color);
+  transition-property: background-color, color, box-shadow;
+  transition-duration: math.div($duration, 2);
+  transition-timing-function: $easing;
+  &:hover {
+    text-decoration: none;
+    color: var(--main-color);
+  }
+}
+
+a.reset{
+  color: var(--main2-color);
+  &:hover {
+    color: var(--main-color);
+  }
+}
+
+.do-txt {
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--contraste-color) !important;
+
+    &:hover {
+      color: var(--main-color) !important;
+      background-color: var(--second-color) !important;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+
+  li {
+    list-style: none;
+  }
+}
+li {
+  list-style: none;
+}
+.do-txt ul li {
+  @extend .do-pl-sm !optional;
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    @extend .trans-y-middle !optional;
+    @extend .do-w-xxs !optional;
+    @extend .do-h-xxs !optional;
+    @extend .do-br-md !optional;
+    @extend .do-bg-main-color !optional;
+  }
+}
+
+.flex-list {
+  .do-txt ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .do-txt ul li {
+    flex: 0 0 50%;
+    @extend .do-p-sm !optional;
+    text-align: center;
+    position: relative;
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 50%;
+      @extend .top-xs-rem !optional;
+      @extend .trans-x-middle !optional;
+      @extend .do-w-xxs !optional;
+      @extend .do-h-xxs !optional;
+      @extend .do-br-md !optional;
+      @extend .do-bg-main-color !optional;
+    }
+  }
+}
+
+.tti {
+  text-transform: initial !important;
+}
+
+.do-txt ul {
+  @extend .do-my-sm !optional;
+  text-align: left;
+}
+
+@media screen and (min-width: $lg) {
+  .do-txt,
+  ul {
+    &.columns-1 {
+      columns: 1;
+      column-gap: $do-u * 30;
+    }
+    &.columns-2 {
+      columns: 2;
+      column-gap: $do-u * 30;
+    }
+    &.columns-3 {
+      columns: 3;
+      column-gap: $do-u * 30;
+    }
+    &.columns-4 {
+      columns: 4;
+      column-gap: $do-u * 30;
+    }
+  }
+}
+
+.title-style {
+  font-family: "Quicksand", sans-serif;
+}
+
+.font-body {
+  font-family: "Nunito", sans-serif;
+}
+
+
+
+.nowrap {
+  white-space: nowrap;
+}

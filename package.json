@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-mustache": "^5.0.0",
+    "mustache": "^4.2.0",
+    "sass": "^1.49.9"
+  },
+  "scripts": {
+    "css:watch": "sass --watch scss:css",
+    "css:compil": "sass scss/style.scss css/style.css",
+    "css:purge": "purgecss --config purgecss.config.js",
+
+    "content:merge": "node json-merge.js",
+
+    "tpl:build": "node tpls-build.js",
+
+    "refresh": "npm run css:compil && npm run css:purge",
+    "build": "npm run content:merge && npm run tpl:build",
+    "publish": "npm run css:compil && npm run css:purge && npm run content:merge && npm run tpl:build"
+  }
+}

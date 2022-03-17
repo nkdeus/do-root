@@ -1,0 +1,33 @@
+//@use "../../node_modules/bootstrap/scss/bootstrap-utilities" as bs5;
+@use '../custom/do' as *;
+
+[class*="do-grid"] {
+   display: grid;
+	 grid-template-rows: auto;
+}
+
+.do-items-start{
+  justify-items:start;
+}
+.do-items-end{
+  justify-items:end;
+}
+.do-items-center{
+  justify-items:center;
+}
+.do-items-stretch{
+  justify-items:stretch;
+}
+.do-items-full,.do-grid-full{
+  justify-items:stretch;
+}
+
+
+.do-grid-center{
+  justify-items:center;
+  align-items:center;
+}
+
+.do-grid-dense{
+  grid-auto-flow: dense;
+}

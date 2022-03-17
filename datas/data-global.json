@@ -1,0 +1,30 @@
+{
+    "titre" : "Ulysse 2029",
+    "logo" : "imgs/logo.svg",
+    "rootPath" : "/",
+    "nav" : [
+      {
+        "bt":"about",
+        "url":"/about.html"
+      },
+      {
+        "bt":"bt2",
+        "url":"/bt2"
+      },
+      {
+        "bt":"bt3",
+        "url":"/bt3"
+      }
+    ],
+    "copyright" : "© Ulysse-2029",
+    "nav-footer" : [
+      {
+        "bt":"bt1",
+        "url":"/bt1"
+      },
+      {
+        "bt":"bt2",
+        "url":"/bt2"
+      }
+    ]
+}

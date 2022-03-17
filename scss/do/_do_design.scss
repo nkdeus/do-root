@@ -1,0 +1,211 @@
+
+@use 'do_config' as *;
+@use '../custom/do' as *;
+@use "sass:math";
+/*
+-
+FRAMEWORK DO
+-
+Easy design !
+-
+*/
+
+
+// @include aspect-ratio(16, 9);
+// @include aspect-ratio(1, 1);
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top:math.div($height, $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &.gutter{
+      top: 15px;
+      left: 15px;
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);     
+    }
+  }
+}
+
+.square{
+    @include aspect-ratio(1,1);
+    &.circle{
+      border-radius: 100%;
+    }
+}
+.cover{
+  @include aspect-ratio(3.5,2);
+  .content{
+    background-size: cover;
+  }
+}
+.video{
+  @include aspect-ratio(16,9);
+}
+
+.photo{
+  @include aspect-ratio(16,10);
+}
+
+.photo-vertical{
+  @include aspect-ratio(12,16);
+}
+
+.ratio-16-9{
+  @include aspect-ratio(16,9);
+}
+
+
+.circle{
+  border-radius:100%;
+}
+
+
+// form
+
+input{
+
+  transition-property: background-color, color;
+  transition-duration: math.div($duration, 2);
+  transition-timing-function: $easing;
+
+  &.reset{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    background-color: transparent !important;
+    border: none;
+  }
+  &.app{
+    appearance: none;
+  }
+  opacity: 0.8;
+  &:focus{
+    opacity: 1;
+  }
+
+  &.full{
+    width: 100%;
+    height: 100%;
+  }
+
+  &.no-focus{
+    &:focus{
+      border:none;
+      appearance: none;
+      outline: none;
+      filter:none;
+    }
+  }
+
+}
+
+
+
+
+// BG IMAGE & BLEND
+
+
+.blend-color{
+  mix-blend-mode: color;
+}
+
+.bg-center{
+ background-position: 50% 50%;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.bg-top-center{
+ background-position: 50% -10rem;
+ background-repeat: no-repeat;
+ background-size: 100%;
+}
+
+
+// BORDER
+
+.do-border-solid{
+  border-style: solid;
+}
+.do-border-dotted{
+  border-style: dotted;
+}
+
+
+// NAV
+
+.top-navHeight{
+  top:calc(var(--navHeight) * 1px) !important;
+}
+.top-subNavHeight{
+  top:calc(var(--subNavHeight) * 1px) !important;
+}
+.top-fullNavHeight{
+  top:calc(var(--fullNavHeight) * 1px) !important;
+}
+
+.trans-y-navHeight{
+  transform:translateY(calc(var(--navHeight) * 1px)) !important;
+}
+.trans-y-subNavHeight{
+  transform:translateY(calc(var(--subNavHeight) * 1px)) !important;
+}
+.trans-y-fullNavHeight{
+  transform:translateY(calc(var(--fullNavHeight) * 1px)) !important;
+}
+
+[do-event-scroll=up] .scroll-up\:trans-y-navHeight {
+  transform:translateY(calc(var(--navHeight) * 1px)) !important;
+}
+[do-event-scroll=up] .scroll-up\:trans-y-subNavHeight {
+  transform:translateY(calc(var(--subNavHeight) * 1px)) !important;
+}
+[do-event-scroll=up] .scroll-up\:trans-y-fullNavHeight {
+  transform:translateY(calc(var(--fullNavHeight) * 1px)) !important;
+}
+
+[do-event-scroll=down] .scroll-down\:trans-y-navHeight {
+  transform:translateY(calc(var(--navHeight) * 1px)) !important;
+}
+[do-event-scroll=down] .scroll-down\:trans-y-subNavHeight {
+  transform:translateY(calc(var(--subNavHeight) * 1px)) !important;
+}
+[do-event-scroll=down] .scroll-down\:trans-y-fullNavHeight {
+  transform:translateY(calc(var(--fullNavHeight) * 1px)) !important;
+}
+
+[do-event-scroll=up] .scroll-up\:top-navHeight {
+  top:calc(var(--navHeight) * 1px) !important;
+}
+[do-event-scroll=up] .scroll-up\:top-subNavHeight {
+  top:calc(var(--subNavHeight) * 1px) !important;
+}
+[do-event-scroll=up] .scroll-up\:top-fullNavHeight {
+  top:calc(var(--fullNavHeight) * 1px) !important;
+}
+
+[do-event-scroll=down] .scroll-down\:top-navHeight {
+  top:calc(var(--navHeight) * 1px) !important;
+}
+[do-event-scroll=down] .scroll-down\:top-subNavHeight {
+  top:calc(var(--subNavHeight) * 1px) !important;
+}
+[do-event-scroll=down] .scroll-down\:top-fullNavHeight {
+  top:calc(var(--fullNavHeight) * 1px) !important;
+}
+
+.navHeight{
+  height:calc(var(--navHeight) * 1px) !important;
+}
