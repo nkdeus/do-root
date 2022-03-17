@@ -1,6 +1,11 @@
-body, [data-do-bg], [class^="do-bg-"]{
-    transition:background-color 1s ease-in-out;
+body, [data-do-bg], [class*="do-bg-"],[data-do-txt], [class*="do-txt-"]{
+    transition:background-color 1s ease-in-out, color 1s ease-in-out;
 }
+
+.trigger-filter-invert{
+    transition:filter 1s ease-in-out;
+}
+
 
 .custom-data::after{
 
