@@ -1,0 +1,28 @@
+
+  <div id="nav" class="do-w-10 pof do-px-smart-xl do-z-10 do-flex do-justify-content-space-between do-align-items-center tween-trans scroll-down:trans-y-before" data-do-bg="second">
+    <a href="{{{rootPath}}}" class="do-py-xxs por do-z-2">
+      <img class="por do-h-md xl-do-h-md trigger-filter-invert" src="{{{logo}}}" alt="{{titre}}" />
+    </a>
+    <div id="color-switcher" class="poa cursor-pointer center do-z-2 do-p-sm" data-module="dotoggle" data-global="true" data-bt-toggle-remove="active,body,darkmode">
+      <div class="do-w-md do-bg-fade-color do-br-md do-h-sm por">
+        <div class="do-wh-sm tween-trans poa left deep-active:do-trans-x-6">
+          <div class="por do-full do-br-md do-scale-xs do-bg-contraste-color"></div>
+        </div>
+      </div>
+    </div>
+    <nav id="main-nav" class="nav-container do-hide lg-do-block do-flex-center top-lg-rem do-z-9">
+      <div class="do-flex-center do-flex do-col lg-do-row">    
+            {{#nav}}
+            <a class="main-link reset do-block" href="{{{url}}}">{{bt}}</a>
+            {{/nav}}
+      </div>
+    </nav>
+    <div data-module="dotoggle" data-global="true" data-bt-toggle-add="active,.nav-container,open" id="burger" class="do-h-md do-w-md do-flex do-justify-content-center do-align-items-center poa do-z-2 right-sm-rem do-flex lg-do-hide">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#3e3d40">
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path class="do-fill-contraste-color" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+      </svg>
+    </div>
+    <div class="poa do-full do-bg-second-color top left pointer-events-none do-z-1"></div>
+    <div class="poa do-w-10 do-h-px-lg do-blur-1 do-bg-contraste-color bottom left pointer-events-none do-z-0 scroll-down:do-o-0"></div>
+  </div>
