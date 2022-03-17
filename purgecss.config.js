@@ -3,9 +3,9 @@
 
 module.exports = {
     content: ['index.html','js/index.js'],
-    css: ['css/style.css'],
+    css: ['css/styles.css'],
     keyframe: true,
-    output: 'css/style-purge.css',
+    output: 'render/css/styles.css',
     rejected: true,
     variables:true,
     safelist: {

@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const fs = require('fs');
 const mustache = require('gulp-mustache');
 const cleanCSS = require('gulp-clean-css');
-const uglify = require('gulp-uglify')
+const uglify = require('gulp-uglify');
 
 var test = function(){
       fs.rmdir('./render/partials', (err) => {
