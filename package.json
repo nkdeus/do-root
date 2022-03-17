@@ -19,6 +19,6 @@
 
     "refresh": "npm run css:compil && npm run css:purge",
     "build": "npm run content:merge && npm run tpl:build",
-    "publish": "npm run css:compil && npm run content:merge && npm run tpl:build && npm run css:purge && npm run git"
+    "publish": "npm run css:compil && npm run content:merge && npm run tpl:build && npm run css:purge && npm run git -- autoPush"
   }
 }
