@@ -2,8 +2,8 @@
 
 
 module.exports = {
-    content: ['index.html','js/index.js'],
-    css: ['css/styles.css'],
+    content: ['render/*.html'],
+    css: ['sources/css/styles.css'],
     keyframe: true,
     output: 'render/css/styles.css',
     rejected: true,

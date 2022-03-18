@@ -4,7 +4,7 @@
 		"text": "lorem ipsum dolor about"
 	},
 	"titre": "Ulysse 2029",
-	"logo": "/imgs/logo.svg",
+	"logo": "imgs/logo.svg",
 	"rootPath": "/",
 	"nav": [
 		{

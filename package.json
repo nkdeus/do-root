@@ -11,11 +11,15 @@
     "sass": "^1.49.9"
   },
   "scripts": {
-    "css:watch": "sass --watch scss:css",
-    "css:compil": "sass scss/style.scss css/style.css",
+    "css:watch": "sass --watch sources/scss:sources/css",
+    "css:compil": "sass sources/scss/style.scss sources/css/do.css",
+    "cssMerge": "gulp cssMerge",
     "css:purge": "purgecss --config purgecss.config.js",
-    "css:refresh": "npm run css:compil && npm run css:purge",
+    "css:refresh": "npm run cssMerge && npm run css:purge",
     "build": "gulp build",
+    "go": "gulp go",
+    "gogo": "gulp gogo",
+
     "git": "git add . && git commit -m",
     "postgit": "git push --all",
     "render": "npm run css:compil && npm run build && npm run css:purge",

@@ -10,24 +10,24 @@ const purgecss = require('gulp-purgecss');
 const rename = require('gulp-rename')
 
 function js() {
-    return src(['js/**/*.js'])
+    return src(['sources/js/**/*.js'])
     .pipe(uglify())
     .pipe(dest('render/js/'));
 
 }
 
 function json(){
-    return src('datas/**/*.json')
+    return src('sources/datas/**/*.json')
     .pipe(merge({
-        fileName: 'datas.json'
+        fileName: 'sources/datas.json'
     }))
     .pipe(gulp.dest('./'));
 }
 
 
 function tpls(){
-    return src('./views/*')
-      .pipe(mustache('datas.json'))
+    return src('sources/views/*')
+      .pipe(mustache('sources/datas.json'))
       .pipe(gulp.dest('render/'));
 }
 
@@ -35,22 +35,33 @@ function tpls(){
 
 function css() {
   return src([
-    'css/style.css',
-    'css/custom-css.css'
+    'sources/css/do.css',
+    'sources/css/custom-css.css'
   ])
     .pipe(concat('styles.css'))
-    .pipe(cleanCSS())
-    .pipe(dest('css/'));
+    .pipe(dest('sources/css/'));
 
 }
 
 
 
 
-function test(cb) {
-  // body omitted
-    return(cb());
+function go() {
+  return  json();
 }
+
+function gogo() {
+  return  tpls();
+}
+
+function cssMerge() {
+  return  css();
+}
+
+
+gulp.task(gogo);
+gulp.task(go);
+gulp.task(cssMerge);
 
 exports.build = series(js, json, tpls, css);
 
