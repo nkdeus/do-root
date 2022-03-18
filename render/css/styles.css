@@ -9,6 +9,9 @@ FRAMEWORK DO v1.1
 Les couleurs !!!
 -
 */
+.filter-invert {
+  filter: invert(1) grayscale(1);
+}
 
 .darkmode {
   --second-color: var(--contraste) !important;
