@@ -8,7 +8,6 @@ const fs = require('fs');
 const mustache = require('gulp-mustache');
 const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
-const purgecss = require('gulp-purgecss');
 const rename = require('gulp-rename');
 const watch = require('gulp-watch');
 
