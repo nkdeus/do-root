@@ -43,6 +43,25 @@ function css() {
 
 }
 
+function imgs(){
+  return src(['sources/imgs/**/*.svg']) 
+      .pipe(gulp.dest('render/imgs/'));
+    
+}
+
+function removeFolder(cb){
+   fs.rmdir('./render/partials', (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("directory deleted successfully");
+    }
+  })
+
+  return cb();
+    
+}
+
 
 
 
@@ -63,6 +82,6 @@ gulp.task(gogo);
 gulp.task(go);
 gulp.task(cssMerge);
 
-exports.build = series(js, json, tpls, css);
+exports.build = series(js, json, tpls, css, imgs, removeFolder);
 
 
