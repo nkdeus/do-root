@@ -118,6 +118,10 @@ $do-clamp : (
 );
 
 $do-smart : (
+  "px-smart": ("props" :("padding-left","padding-right"), "unit": 1rem)
+);
+/*
+$do-smart : (
   "px-smart": ("props" :("padding-left","padding-right"), "unit": 1rem),
   "py-smart": ("props" :("padding-top","padding-bottom"), "unit": 1rem),
   "pl-smart": ("props" :("padding-left"), "unit": 1rem),
@@ -125,7 +129,7 @@ $do-smart : (
   "my-smart": ("props" :("margin-top","margin-bottom"), "unit": 1rem),
   "left-smart": ("props" :("left"), "unit": 1rem),
   "right-smart": ("props" :("right"), "unit": 1rem)
-);
+);*/
 
 $temp-class: ".do"; 
 $count: $do-u;

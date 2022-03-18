@@ -2,21 +2,34 @@
     "titre" : "Ulysse 2029",
     "logo" : "imgs/logo.svg",
     "rootPath" : "/",
-    "nav" : [
-      {
-        "bt":"about",
-        "url":"./about.html"
-      }
-    ],
+    "nav" :{
+      "background":"hide",
+      "header":[
+        {
+          "bt":"about",
+          "url":"./about.html"
+        }
+      ],
+      "footer" : [
+        {
+          "bt":"<3",
+          "url":""
+        },
+        {
+          "bt":"^*^",
+          "url":""
+        }
+      ]
+    },
     "copyright" : "© Ulysse-2029",
-    "navFooter" : [
-      {
-        "bt":"<3",
-        "url":""
-      },
-      {
-        "bt":"^*^",
-        "url":""
-      }
-    ]
+    "theme": "do",
+    "themes" :{
+      "do":{
+          "main": "#FF0000",
+          "second": "#ffffff",
+          "contraste": "#00ff00",
+          "extra": "#222222",
+          "fade":"#111111" 
+      }   
+    }
 }

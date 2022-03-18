@@ -20,7 +20,10 @@
       height: 100vh;
       left:0px !important;
       top:calc(var(--navHeight) * 1px);
+      top:0px;
       background-color: #ffffffdc;
+      z-index: 1;
+      backdrop-filter: blur(4.2px);
       transform: none !important;
       
       a{

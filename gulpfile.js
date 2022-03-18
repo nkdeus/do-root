@@ -10,6 +10,38 @@ const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const watch = require('gulp-watch');
+const Webflow = require('webflow-api');
+
+// Initialize the API
+//const api = new Webflow({ token: '99a2ac23ffb619e57a3bc45ee09ab989be5a23a686f820f00b8f39a6fdcaaa9e' });
+
+// Fetch a site
+//api.
+const webflow = new Webflow({ token: '99a2ac23ffb619e57a3bc45ee09ab989be5a23a686f820f00b8f39a6fdcaaa9e' });
+// Promise <[ Site ]>
+
+
+gulp.task('wf', function(cb) {
+  const sites = webflow.sites({ siteId: '5dc16504ff88ca19a432d1a7' });
+  //sites.then(s => console.log(s));
+
+  const collection = webflow.collection({ collectionId: '602eae28bcab61107a7dc07d' });
+  collection.then(c => c.items().then(
+    val => console.log(
+      val.items[0].name,
+      val.items[0].exemple
+      )
+  ));
+
+  //const items = webflow.items({ collectionId: '602eae28bcab61107a7dc07d' }, { limit: 2 });
+
+  //items.then(i => console.log(i.items[0]._id));
+
+  
+
+
+  return cb();
+});
 
 function js() {
     return src(['sources/js/**/*.js'])
@@ -79,6 +111,7 @@ function removeFolder(cb){
 
 gulp.task('watch', function() {
   watch(['sources/views/**/*','sources/css/**/*'], gulp.series(tpls,cssprod));
+  watch(['sources/datas/**/*'], gulp.series(json));
 });
 
 gulp.task('go', function(cb) {

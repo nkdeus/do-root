@@ -704,9 +704,17 @@ Core de la créature
     $extend-class-name: #{$class}-#{$size};
     //@debug($extend-class-name);
 
-    $max: length($do-screen) + 1;
+    $max: length($do-screen) ;
+    @debug($value,$size,$full-class-name);
 
-    $smart-value: math.div($value, $max);
+    @debug("base : "$max);
+
+    $smart-value : $value;
+
+    @for $i from 1 through $max {
+        $smart-value: math.div($smart-value, $do);
+    }
+
 
     #{$full-class-name},
     %#{$extend-class-name} {
@@ -715,19 +723,25 @@ Core de la créature
         }
     }
 
-    $smart-value: $value;
+    @debug("base : "$smart-value);
 
     @each $break-class, $break-point in $do-screen {
-        $max: $max + -1;
+        
+        /*
         $smart-value: decimal-round(math.div($value, $max), 2);
-
+        $max: $max + -1;
+        */
+        $smart-value:  decimal-round($smart-value * $do,2);
+    
         //@debug $break-class" :",$full-class-name,$smart-value;
-
-        @media screen and (min-width: $break-point) {
-            #{$full-class-name},
-            %#{$extend-class-name} {
-                @each $prop in $props {
-                    #{$prop}: #{$smart-value * $unit};
+        @if ($smart-value >= 0.5){
+            @debug($smart-value);
+            @media screen and (min-width: $break-point) {
+                #{$full-class-name},
+                %#{$extend-class-name} {
+                    @each $prop in $props {
+                        #{$prop}: #{$smart-value * $unit};
+                    }
                 }
             }
         }
@@ -749,7 +763,7 @@ Core de la créature
     }
 
     @include do-full-dir($key, '.', $value);
-    //@debug($key,$value);
+    @debug($key,$value);
     @include do-get-data('progress',$key,$value);
 
     @each $class-name, $props in $do-clamp {
