@@ -139,6 +139,18 @@ Core de la créature
                     #{$prop}: 100% + $percent;
                 }
             }
+        } @else if $class == 'w-gold-vw'{
+            @each $prop in $props {
+                //@debug $class,map.get($do-matrix, "xxxl");
+
+                $max-size: list.nth(list.nth($do-matrix, -1), -1);
+                $percent: decimal-round(
+                    (math.div(100, $max-size)) * $value * $unit * 1,
+                    3,
+                    'round'
+                );
+                #{$prop}: $percent;
+            }
         } @else {
             @each $prop in $props {
                 @if $important {
@@ -707,23 +719,25 @@ Core de la créature
     $max: length($do-screen) ;
     @debug($value,$size,$full-class-name);
 
-    @debug("base : "$max);
-
     $smart-value : $value;
+
 
     @for $i from 1 through $max {
         $smart-value: math.div($smart-value, $do);
     }
 
+    $base-value : map.get($do-matrix, 'md');
+
+
 
     #{$full-class-name},
     %#{$extend-class-name} {
         @each $prop in $props {
-            #{$prop}: #{$smart-value * $unit};
+            #{$prop}: #{$base-value * $unit};
         }
     }
 
-    @debug("base : "$smart-value);
+    @debug("base : "$base-value);
 
     @each $break-class, $break-point in $do-screen {
         
@@ -734,7 +748,7 @@ Core de la créature
         $smart-value:  decimal-round($smart-value * $do,2);
     
         //@debug $break-class" :",$full-class-name,$smart-value;
-        @if ($smart-value >= 0.5){
+        @if ($smart-value >= 1){
             @debug($smart-value);
             @media screen and (min-width: $break-point) {
                 #{$full-class-name},

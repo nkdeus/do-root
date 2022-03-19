@@ -14,7 +14,7 @@
   },
   "scripts": {
     "css:watch": "sass --watch sources/scss:sources/css",
-    "css:compil": "sass sources/scss/style.scss sources/css/do.css",
+    "css:compil": "sass sources/scss/do.scss sources/css/do.css",
     "cssMerge": "gulp cssMerge",
     "css:purge": "purgecss --config purgecss.config.js",
     "css:refresh": "npm run cssMerge && npm run css:purge",

@@ -88,6 +88,7 @@ $do-width-height : (
   "h-vh"    : ("props" : "height" , "unit": 6vh),
   "w"       : ("props" :"width" , "unit": 1rem),
   "w-gold"  : ("props" :"width" , "unit": 1%),
+  "w-gold-vw": ("props" :"width" , "unit": 1vw),
   "max-w"   : ("props" :"max-width" , "unit": 10rem),
   "min-w"   : ("props" :"min-width" , "unit": 10rem),
   "w-100"   : ("props" :"width" , "unit": 1rem),

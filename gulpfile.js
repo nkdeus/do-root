@@ -110,8 +110,9 @@ function removeFolder(cb){
 
 
 gulp.task('watch', function() {
-  watch(['sources/views/**/*','sources/css/**/*'], gulp.series(tpls,cssprod));
-  watch(['sources/datas/**/*'], gulp.series(json));
+  watch(['sources/views/**/*'], gulp.series(tpls));
+  watch(['sources/css/**/*'], gulp.series(cssprod));
+  watch(['sources/datas/**/*'], gulp.series(json,tpls));
 });
 
 gulp.task('go', function(cb) {
