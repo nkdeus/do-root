@@ -22,7 +22,7 @@
     "go": "gulp go && gulp gogo",
     "git": "git add . && git commit -m",
     "postgit": "git push --all",
-    "render": "npm run css:compil && npm run build && npm run css:purge",
+    "render": "npm run css:compil && npm run build && gulp cssDev && npm run css:purge",
     "lunch": "npm run git -- lunch"
   },
   "dependencies": {

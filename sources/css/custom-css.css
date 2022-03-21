@@ -1,11 +1,11 @@
 body, [data-do-bg], [class*="do-bg-"],[data-do-txt], [class*="do-txt-"]{
-    transition:background-color 1s ease-in-out, color 1s ease-in-out;
+    transition:background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 [class*="do-fill-"]{
-    transition:fill 1s ease-in-out;
+    transition:fill 0.5s ease-in-out;
 }
 [class*="do-stroke-"]{
-    transition:stroke 1s ease-in-out;
+    transition:stroke 0.5s ease-in-out;
 }
 
 [data-do-mu="hide"]{
@@ -14,7 +14,7 @@ body, [data-do-bg], [class*="do-bg-"],[data-do-txt], [class*="do-txt-"]{
 
 
 .trigger-filter-invert{
-    transition:filter 1s ease-in-out;
+    transition:filter 0.5s ease-in-out;
 }
 
 

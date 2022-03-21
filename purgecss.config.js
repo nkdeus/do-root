@@ -9,7 +9,7 @@ module.exports = {
     rejected: true,
     variables:true,
     safelist: {
-      standard: [/^do-event-/],
+      standard: [/^do-event-/,/^get-progress-/],
       deep: [],
       greedy: [],
       keyframes: [],

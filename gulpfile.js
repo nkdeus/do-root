@@ -73,7 +73,7 @@ function css() {
     'sources/css/custom-css.css'
   ])
     .pipe(concat('styles.css'))
-    .pipe(dest('sources/css/'));
+    .pipe(dest('render/css/'));
 
 }
 
@@ -83,7 +83,7 @@ function cssprod() {
     'sources/css/custom-css.css'
   ])
     .pipe(concat('styles.css'))
-    .pipe(dest('render/css/'));
+    .pipe(dest('sources/css/'));
 
 }
 
@@ -111,7 +111,8 @@ function removeFolder(cb){
 
 gulp.task('watch', function() {
   watch(['sources/views/**/*'], gulp.series(tpls));
-  watch(['sources/css/**/*'], gulp.series(cssprod));
+  watch(['sources/css/**/*'], gulp.series(css));
+  watch(['sources/js/**/*'], gulp.series(js));
   watch(['sources/datas/**/*'], gulp.series(json,tpls));
 });
 
@@ -127,6 +128,11 @@ gulp.task('gogo', function(cb) {
 
 gulp.task('cssMerge', function(cb) {
   css();
+  return cb();
+});
+
+gulp.task('cssDev', function(cb) {
+  cssprod();
   return cb();
 });
 

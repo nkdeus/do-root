@@ -17,6 +17,12 @@ moduleManager["doscrolldatas"] = function () {
     $scope.classik = $($scope).attr("data-do-classik") == "true" || false;
     $scope.start = $($scope).attr("data-do-start") || "top center+=10%";
     $scope.end = $($scope).attr("data-do-end") || "bottom center+=10%";
+    
+    if($scope.calcul=="full-reverse"){
+        $($scope.target).css("--progress",1);
+    }else{
+        $($scope.target).css("--progress",0);
+    }
 
     var calculType = {};   
     calculType["yoyo"] = function(pValue){
@@ -35,6 +41,12 @@ moduleManager["doscrolldatas"] = function () {
 
     }
 
+    calculType["full-reverse"] = function(pValue){
+
+        return (1-pValue)*$scope.force;
+
+    }
+
     ScrollTrigger.create({
         trigger: $scope.target,
         start: $scope.start,
@@ -43,35 +55,29 @@ moduleManager["doscrolldatas"] = function () {
         onEnter: self => {
             if($scope.classik){
                 $($scope.target).css("--progress",1);
-                $($scope.target).attr('data-do-progress',1);
             }
         },
         onLeave: self => {
             if($scope.classik){
                 $($scope.target).css("--progress",1);
-                $($scope.target).attr('data-do-progress',1);
             }
         },
         onEnterBack: self => {
             if($scope.classik){
                 $($scope.target).css("--progress",1);
-                $($scope.target).attr('data-do-progress',1);
             }
         },
         onLeaveBack: self => {
             if($scope.classik){
                 $($scope.target).css("--progress",0);
-                $($scope.target).attr('data-do-progress',0);
             }
         },
         onToggle: self => {
             if($scope.toggle){
                 if(self.isActive){
                     $($scope.target).css("--progress",1);
-                    $($scope.target).attr('data-do-progress',1);
                 }else{
                     $($scope.target).css("--progress",0);
-                    $($scope.target).attr('data-do-progress',0);
                 }
                 
             }
@@ -81,7 +87,6 @@ moduleManager["doscrolldatas"] = function () {
             if($scope.update){
                 //console.log("[scroll-event] progress:", self.progress.toFixed(1), "direction:", self.direction, "velocity", self.getVelocity());
                 $($scope.target).css("--progress",calculType[$scope.calcul](self.progress.toFixed(4)));
-                $($scope.target).attr('data-do-progress',calculType[$scope.calcul](self.progress.toFixed(4)));
             }
   
         }

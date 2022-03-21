@@ -3,6 +3,7 @@
 @use "sass:string";
 @use "sass:map";
 @use "sass:math";
+@use "sass:meta";
 @use "sass:list";
 @use '../custom/do' as *;
 
@@ -276,12 +277,121 @@ Core de la créature
     }
 }
 
+@mixin do-get-data-2($var-name,$size-do,$size) {
+
+    @each $data-class, $props in $do-custom-data-2 {
+
+        /*
+        @debug(" INIT $var-name :"$var-name);
+        @debug(" 0 :"$data-class);
+        @debug(" 1 $props:"$props);
+        */
+
+        $prop : map.get($props,"prop");
+        $params : map.get($props,"params");
+        $unit : map.get($props,"unit");
+        $isResponsive : map.get($props,"responsive");
+        $class-full-name : get-#{$var-name}\:#{$data-class}-#{$size-do};
+        @if($isResponsive == null){
+            $isResponsive : true;
+        }@else{
+            $class-full-name : get-#{$var-name}\:#{$data-class};
+        }
+
+        /*
+        @debug(" ? isResponsive:"$isResponsive);
+        @debug(" 2 $prop:"$prop);
+        @debug(" 3 $params :"$params);
+        @debug(" 3 $unit :"$unit);
+        @debug(" 4 $class-full-name :"$class-full-name);
+        */
+            
+        .#{$class-full-name}{
+
+            $u:1;
+            $multiProps:"";
+            @each $param in $params {
+
+                $tempDelta : math.round(list.nth($unit,$u) * $size);     
+                @if($isResponsive == false){
+                    $tempDelta : list.nth($unit,$u);  
+                }
+                $tempCss : #{$param}(calc(var(--#{$var-name})* #{$tempDelta}));
+                @debug(" tempCss :" $tempCss);
+                @if($prop == "transform"){
+                    $multiProps : $multiProps + ' ' + $tempCss;
+                }@else{
+                    $tempCss : #{$param}+calc(var(--#{$var-name})* #{$tempDelta});
+                    #{$prop}:#{$tempCss};
+                }  
+                $u : $u+1;
+
+            }
+            @if($multiProps != ""){
+                #{$prop}:#{$multiProps};
+                $multiProps:""
+            }   
+        
+            &-n{
+                $u:1;
+                @each $param in $params {
+    
+                    $tempDelta : math.round(list.nth($unit,$u) * $size) * -1;
+                    @if($isResponsive == false){
+                        $tempDelta : list.nth($unit,$u) * -1;  
+                    }
+                    $tempCss : #{$param}(calc(var(--#{$var-name})* #{$tempDelta}));
+                    @if($prop == "transform"){
+                        $multiProps : $multiProps + ' ' + $tempCss;
+                    }@else{
+                        $tempCss : #{$param}+calc(var(--#{$var-name})* #{$tempDelta});
+                        #{$prop}:#{$tempCss};
+                    } 
+                    $u : $u+1;
+
+                }
+                @if($multiProps != ""){
+                    #{$prop}:#{$multiProps};
+                    $multiProps:""
+                }   
+            }
+
+            &-reverse{
+                $u:1;
+                @each $param in $params {
+    
+                    $tempDelta : math.round(list.nth($unit,$u) * $size);
+                    @if($isResponsive == false){
+                        $tempDelta : list.nth($unit,$u);  
+                    }
+                    $tempCss : #{$param}(calc(calc(1 - var(--#{$var-name}))* #{$tempDelta}));
+                    @if($prop == "transform"){
+                        $multiProps : $multiProps + ' ' + $tempCss;
+                    }@else{
+                        $tempCss : #{$param}+calc(calc(1 - var(--#{$var-name}))* #{$tempDelta});
+                        #{$prop}:#{$tempCss};
+                    } 
+                    $u : $u+1;
+
+                }
+                @if($multiProps != ""){
+                    #{$prop}:#{$multiProps};
+                    $multiProps:""
+                }   
+            }
+
+        }
+    }
+    
+}
+
 @mixin do-get-data($var-name,$size-do,$size) {
 
     @each $data-class, $var-name in $do-custom-data {
 
         $class-full-name : get-#{$var-name}\:#{$data-class}-#{$size-do};
   
+        //@debug("TODO SUPPRIMER LES SIZES POUR LES CLASS SIMPLES");
         .#{$class-full-name}{
             //@debug($class-full-name);
             @if $data-class == "trans-y" {
@@ -295,6 +405,14 @@ Core de la créature
             }
             @if $data-class == "opacity" {
                 opacity: calc(var(--#{$var-name})* 1);
+            }
+            @if $data-class == "top" {
+                $tempDelta : math.round($size*10.17%);
+                top: calc(var(--#{$var-name})* #{$tempDelta});
+                &-n{
+                    $tempDelta : math.round($size*-10.17%);
+                    top: calc(var(--#{$var-name})* #{$tempDelta}); 
+                }
             }
         }
 
@@ -717,7 +835,7 @@ Core de la créature
     //@debug($extend-class-name);
 
     $max: length($do-screen) ;
-    @debug($value,$size,$full-class-name);
+    //@debug($value,$size,$full-class-name);
 
     $smart-value : $value;
 
@@ -737,7 +855,7 @@ Core de la créature
         }
     }
 
-    @debug("base : "$base-value);
+    //@debug("base : "$base-value);
 
     @each $break-class, $break-point in $do-screen {
         
@@ -749,7 +867,7 @@ Core de la créature
     
         //@debug $break-class" :",$full-class-name,$smart-value;
         @if ($smart-value >= 1){
-            @debug($smart-value);
+            //@debug($smart-value);
             @media screen and (min-width: $break-point) {
                 #{$full-class-name},
                 %#{$extend-class-name} {
@@ -777,8 +895,8 @@ Core de la créature
     }
 
     @include do-full-dir($key, '.', $value);
-    @debug($key,$value);
-    @include do-get-data('progress',$key,$value);
+    @debug("##################### - "$key,$value);
+    @include do-get-data-2('progress',$key,$value);
 
     @each $class-name, $props in $do-clamp {
         @include do-fluide-class(

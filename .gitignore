@@ -3,3 +3,6 @@
 
 # ignore all partials
 /partials
+
+# ignore gulpfile
+gulpfile.js

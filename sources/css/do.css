@@ -401,16 +401,124 @@ Core de la créature
   bottom: 0.17rem;
 }
 
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:do-xxxs {
+  transform:  rotate(calc(var(--progress)* -2deg)) translateX(calc(var(--progress)* 2%)) scaleX(calc(var(--progress)* 1));
+}
+
+.get-progress\:do-xxxs-n {
+  transform:  rotate(calc(var(--progress)* 2deg)) translateX(calc(var(--progress)* -2%)) scaleX(calc(var(--progress)* -1));
+}
+
+.get-progress\:do-xxxs-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -2deg)) translateX(calc(calc(1 - var(--progress))* 2%)) scaleX(calc(calc(1 - var(--progress))* 1));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
 .get-progress\:trans-y-xxxs {
-  transform: translateY(calc(var(--progress)* 3.4%));
+  transform:  translateY(calc(var(--progress)* 3%));
 }
 
 .get-progress\:trans-y-xxxs-n {
-  transform: translateY(calc(var(--progress)* -3.4%));
+  transform:  translateY(calc(var(--progress)* -3%));
 }
 
-.get-progress\:opacity-xxxs {
-  opacity: calc(var(--progress) * 1);
+.get-progress\:trans-y-xxxs-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 3%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:top-xxxs {
+  top: calc(var(--progress)* 3%);
+}
+
+.get-progress\:top-xxxs-n {
+  top: calc(var(--progress)* -3%);
+}
+
+.get-progress\:top-xxxs-reverse {
+  top: calc(calc(1 - var(--progress))* 3%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:bottom-xxxs {
+  bottom: calc(var(--progress)* 3%);
+}
+
+.get-progress\:bottom-xxxs-n {
+  bottom: calc(var(--progress)* -3%);
+}
+
+.get-progress\:bottom-xxxs-reverse {
+  bottom: calc(calc(1 - var(--progress))* 3%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:o {
+  opacity: calc(var(--progress)* 1);
+}
+
+.get-progress\:o-n {
+  opacity: calc(var(--progress)* -1);
+}
+
+.get-progress\:o-reverse {
+  opacity: calc(calc(1 - var(--progress))* 1);
 }
 
 .do-px-fluid-xxxs {
@@ -785,16 +893,124 @@ $max: $max + -1;
   bottom: 0.275rem;
 }
 
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:do-xxs {
+  transform:  rotate(calc(var(--progress)* -3deg)) translateX(calc(var(--progress)* 3%)) scaleX(calc(var(--progress)* 2));
+}
+
+.get-progress\:do-xxs-n {
+  transform:  rotate(calc(var(--progress)* 3deg)) translateX(calc(var(--progress)* -3%)) scaleX(calc(var(--progress)* -2));
+}
+
+.get-progress\:do-xxs-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -3deg)) translateX(calc(calc(1 - var(--progress))* 3%)) scaleX(calc(calc(1 - var(--progress))* 2));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
 .get-progress\:trans-y-xxs {
-  transform: translateY(calc(var(--progress)* 5.5%));
+  transform:  translateY(calc(var(--progress)* 6%));
 }
 
 .get-progress\:trans-y-xxs-n {
-  transform: translateY(calc(var(--progress)* -5.5%));
+  transform:  translateY(calc(var(--progress)* -6%));
 }
 
-.get-progress\:opacity-xxs {
-  opacity: calc(var(--progress) * 1);
+.get-progress\:trans-y-xxs-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 6%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:top-xxs {
+  top: calc(var(--progress)* 6%);
+}
+
+.get-progress\:top-xxs-n {
+  top: calc(var(--progress)* -6%);
+}
+
+.get-progress\:top-xxs-reverse {
+  top: calc(calc(1 - var(--progress))* 6%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:bottom-xxs {
+  bottom: calc(var(--progress)* 6%);
+}
+
+.get-progress\:bottom-xxs-n {
+  bottom: calc(var(--progress)* -6%);
+}
+
+.get-progress\:bottom-xxs-reverse {
+  bottom: calc(calc(1 - var(--progress))* 6%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:o {
+  opacity: calc(var(--progress)* 1);
+}
+
+.get-progress\:o-n {
+  opacity: calc(var(--progress)* -1);
+}
+
+.get-progress\:o-reverse {
+  opacity: calc(calc(1 - var(--progress))* 1);
 }
 
 .do-px-fluid-xxs {
@@ -1172,16 +1388,124 @@ $max: $max + -1;
   bottom: 0.445rem;
 }
 
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:do-xs {
+  transform:  rotate(calc(var(--progress)* -4deg)) translateX(calc(var(--progress)* 4%)) scaleX(calc(var(--progress)* 3));
+}
+
+.get-progress\:do-xs-n {
+  transform:  rotate(calc(var(--progress)* 4deg)) translateX(calc(var(--progress)* -4%)) scaleX(calc(var(--progress)* -3));
+}
+
+.get-progress\:do-xs-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -4deg)) translateX(calc(calc(1 - var(--progress))* 4%)) scaleX(calc(calc(1 - var(--progress))* 3));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
 .get-progress\:trans-y-xs {
-  transform: translateY(calc(var(--progress)* 8.9%));
+  transform:  translateY(calc(var(--progress)* 9%));
 }
 
 .get-progress\:trans-y-xs-n {
-  transform: translateY(calc(var(--progress)* -8.9%));
+  transform:  translateY(calc(var(--progress)* -9%));
 }
 
-.get-progress\:opacity-xs {
-  opacity: calc(var(--progress) * 1);
+.get-progress\:trans-y-xs-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 9%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:top-xs {
+  top: calc(var(--progress)* 9%);
+}
+
+.get-progress\:top-xs-n {
+  top: calc(var(--progress)* -9%);
+}
+
+.get-progress\:top-xs-reverse {
+  top: calc(calc(1 - var(--progress))* 9%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:bottom-xs {
+  bottom: calc(var(--progress)* 9%);
+}
+
+.get-progress\:bottom-xs-n {
+  bottom: calc(var(--progress)* -9%);
+}
+
+.get-progress\:bottom-xs-reverse {
+  bottom: calc(calc(1 - var(--progress))* 9%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:o {
+  opacity: calc(var(--progress)* 1);
+}
+
+.get-progress\:o-n {
+  opacity: calc(var(--progress)* -1);
+}
+
+.get-progress\:o-reverse {
+  opacity: calc(calc(1 - var(--progress))* 1);
 }
 
 .do-px-fluid-xs {
@@ -1558,16 +1882,124 @@ $max: $max + -1;
   bottom: 0.72rem;
 }
 
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:do-sm {
+  transform:  rotate(calc(var(--progress)* -7deg)) translateX(calc(var(--progress)* 7%)) scaleX(calc(var(--progress)* 4));
+}
+
+.get-progress\:do-sm-n {
+  transform:  rotate(calc(var(--progress)* 7deg)) translateX(calc(var(--progress)* -7%)) scaleX(calc(var(--progress)* -4));
+}
+
+.get-progress\:do-sm-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -7deg)) translateX(calc(calc(1 - var(--progress))* 7%)) scaleX(calc(calc(1 - var(--progress))* 4));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
 .get-progress\:trans-y-sm {
-  transform: translateY(calc(var(--progress)* 14.4%));
+  transform:  translateY(calc(var(--progress)* 14%));
 }
 
 .get-progress\:trans-y-sm-n {
-  transform: translateY(calc(var(--progress)* -14.4%));
+  transform:  translateY(calc(var(--progress)* -14%));
 }
 
-.get-progress\:opacity-sm {
-  opacity: calc(var(--progress) * 1);
+.get-progress\:trans-y-sm-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 14%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:top-sm {
+  top: calc(var(--progress)* 15%);
+}
+
+.get-progress\:top-sm-n {
+  top: calc(var(--progress)* -15%);
+}
+
+.get-progress\:top-sm-reverse {
+  top: calc(calc(1 - var(--progress))* 15%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:bottom-sm {
+  bottom: calc(var(--progress)* 15%);
+}
+
+.get-progress\:bottom-sm-n {
+  bottom: calc(var(--progress)* -15%);
+}
+
+.get-progress\:bottom-sm-reverse {
+  bottom: calc(calc(1 - var(--progress))* 15%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:o {
+  opacity: calc(var(--progress)* 1);
+}
+
+.get-progress\:o-n {
+  opacity: calc(var(--progress)* -1);
+}
+
+.get-progress\:o-reverse {
+  opacity: calc(calc(1 - var(--progress))* 1);
 }
 
 .do-px-fluid-sm {
@@ -1948,16 +2380,124 @@ $max: $max + -1;
   bottom: 1.165rem;
 }
 
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:do-md {
+  transform:  rotate(calc(var(--progress)* -12deg)) translateX(calc(var(--progress)* 12%)) scaleX(calc(var(--progress)* 7));
+}
+
+.get-progress\:do-md-n {
+  transform:  rotate(calc(var(--progress)* 12deg)) translateX(calc(var(--progress)* -12%)) scaleX(calc(var(--progress)* -7));
+}
+
+.get-progress\:do-md-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -12deg)) translateX(calc(calc(1 - var(--progress))* 12%)) scaleX(calc(calc(1 - var(--progress))* 7));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
 .get-progress\:trans-y-md {
-  transform: translateY(calc(var(--progress)* 23.3%));
+  transform:  translateY(calc(var(--progress)* 23%));
 }
 
 .get-progress\:trans-y-md-n {
-  transform: translateY(calc(var(--progress)* -23.3%));
+  transform:  translateY(calc(var(--progress)* -23%));
 }
 
-.get-progress\:opacity-md {
-  opacity: calc(var(--progress) * 1);
+.get-progress\:trans-y-md-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 23%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:top-md {
+  top: calc(var(--progress)* 24%);
+}
+
+.get-progress\:top-md-n {
+  top: calc(var(--progress)* -24%);
+}
+
+.get-progress\:top-md-reverse {
+  top: calc(calc(1 - var(--progress))* 24%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:bottom-md {
+  bottom: calc(var(--progress)* 24%);
+}
+
+.get-progress\:bottom-md-n {
+  bottom: calc(var(--progress)* -24%);
+}
+
+.get-progress\:bottom-md-reverse {
+  bottom: calc(calc(1 - var(--progress))* 24%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:o {
+  opacity: calc(var(--progress)* 1);
+}
+
+.get-progress\:o-n {
+  opacity: calc(var(--progress)* -1);
+}
+
+.get-progress\:o-reverse {
+  opacity: calc(calc(1 - var(--progress))* 1);
 }
 
 .do-px-fluid-md {
@@ -2344,16 +2884,124 @@ $max: $max + -1;
   bottom: 1.885rem;
 }
 
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:do-lg {
+  transform:  rotate(calc(var(--progress)* -19deg)) translateX(calc(var(--progress)* 19%)) scaleX(calc(var(--progress)* 11));
+}
+
+.get-progress\:do-lg-n {
+  transform:  rotate(calc(var(--progress)* 19deg)) translateX(calc(var(--progress)* -19%)) scaleX(calc(var(--progress)* -11));
+}
+
+.get-progress\:do-lg-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -19deg)) translateX(calc(calc(1 - var(--progress))* 19%)) scaleX(calc(calc(1 - var(--progress))* 11));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
 .get-progress\:trans-y-lg {
-  transform: translateY(calc(var(--progress)* 37.7%));
+  transform:  translateY(calc(var(--progress)* 38%));
 }
 
 .get-progress\:trans-y-lg-n {
-  transform: translateY(calc(var(--progress)* -37.7%));
+  transform:  translateY(calc(var(--progress)* -38%));
 }
 
-.get-progress\:opacity-lg {
-  opacity: calc(var(--progress) * 1);
+.get-progress\:trans-y-lg-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 38%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:top-lg {
+  top: calc(var(--progress)* 38%);
+}
+
+.get-progress\:top-lg-n {
+  top: calc(var(--progress)* -38%);
+}
+
+.get-progress\:top-lg-reverse {
+  top: calc(calc(1 - var(--progress))* 38%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:bottom-lg {
+  bottom: calc(var(--progress)* 38%);
+}
+
+.get-progress\:bottom-lg-n {
+  bottom: calc(var(--progress)* -38%);
+}
+
+.get-progress\:bottom-lg-reverse {
+  bottom: calc(calc(1 - var(--progress))* 38%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:o {
+  opacity: calc(var(--progress)* 1);
+}
+
+.get-progress\:o-n {
+  opacity: calc(var(--progress)* -1);
+}
+
+.get-progress\:o-reverse {
+  opacity: calc(calc(1 - var(--progress))* 1);
 }
 
 .do-px-fluid-lg {
@@ -2746,16 +3394,124 @@ $max: $max + -1;
   bottom: 3.05rem;
 }
 
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:do-xl {
+  transform:  rotate(calc(var(--progress)* -31deg)) translateX(calc(var(--progress)* 31%)) scaleX(calc(var(--progress)* 18));
+}
+
+.get-progress\:do-xl-n {
+  transform:  rotate(calc(var(--progress)* 31deg)) translateX(calc(var(--progress)* -31%)) scaleX(calc(var(--progress)* -18));
+}
+
+.get-progress\:do-xl-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -31deg)) translateX(calc(calc(1 - var(--progress))* 31%)) scaleX(calc(calc(1 - var(--progress))* 18));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
 .get-progress\:trans-y-xl {
-  transform: translateY(calc(var(--progress)* 61%));
+  transform:  translateY(calc(var(--progress)* 61%));
 }
 
 .get-progress\:trans-y-xl-n {
-  transform: translateY(calc(var(--progress)* -61%));
+  transform:  translateY(calc(var(--progress)* -61%));
 }
 
-.get-progress\:opacity-xl {
-  opacity: calc(var(--progress) * 1);
+.get-progress\:trans-y-xl-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 61%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:top-xl {
+  top: calc(var(--progress)* 62%);
+}
+
+.get-progress\:top-xl-n {
+  top: calc(var(--progress)* -62%);
+}
+
+.get-progress\:top-xl-reverse {
+  top: calc(calc(1 - var(--progress))* 62%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:bottom-xl {
+  bottom: calc(var(--progress)* 62%);
+}
+
+.get-progress\:bottom-xl-n {
+  bottom: calc(var(--progress)* -62%);
+}
+
+.get-progress\:bottom-xl-reverse {
+  bottom: calc(calc(1 - var(--progress))* 62%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:o {
+  opacity: calc(var(--progress)* 1);
+}
+
+.get-progress\:o-n {
+  opacity: calc(var(--progress)* -1);
+}
+
+.get-progress\:o-reverse {
+  opacity: calc(calc(1 - var(--progress))* 1);
 }
 
 .do-px-fluid-xl {
@@ -3154,16 +3910,124 @@ $max: $max + -1;
   bottom: 4.935rem;
 }
 
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:do-xxl {
+  transform:  rotate(calc(var(--progress)* -49deg)) translateX(calc(var(--progress)* 49%)) scaleX(calc(var(--progress)* 30));
+}
+
+.get-progress\:do-xxl-n {
+  transform:  rotate(calc(var(--progress)* 49deg)) translateX(calc(var(--progress)* -49%)) scaleX(calc(var(--progress)* -30));
+}
+
+.get-progress\:do-xxl-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -49deg)) translateX(calc(calc(1 - var(--progress))* 49%)) scaleX(calc(calc(1 - var(--progress))* 30));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
 .get-progress\:trans-y-xxl {
-  transform: translateY(calc(var(--progress)* 98.7%));
+  transform:  translateY(calc(var(--progress)* 99%));
 }
 
 .get-progress\:trans-y-xxl-n {
-  transform: translateY(calc(var(--progress)* -98.7%));
+  transform:  translateY(calc(var(--progress)* -99%));
 }
 
-.get-progress\:opacity-xxl {
-  opacity: calc(var(--progress) * 1);
+.get-progress\:trans-y-xxl-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 99%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:top-xxl {
+  top: calc(var(--progress)* 100%);
+}
+
+.get-progress\:top-xxl-n {
+  top: calc(var(--progress)* -100%);
+}
+
+.get-progress\:top-xxl-reverse {
+  top: calc(calc(1 - var(--progress))* 100%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:bottom-xxl {
+  bottom: calc(var(--progress)* 100%);
+}
+
+.get-progress\:bottom-xxl-n {
+  bottom: calc(var(--progress)* -100%);
+}
+
+.get-progress\:bottom-xxl-reverse {
+  bottom: calc(calc(1 - var(--progress))* 100%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:o {
+  opacity: calc(var(--progress)* 1);
+}
+
+.get-progress\:o-n {
+  opacity: calc(var(--progress)* -1);
+}
+
+.get-progress\:o-reverse {
+  opacity: calc(calc(1 - var(--progress))* 1);
 }
 
 .do-px-fluid-xxl {
@@ -3574,16 +4438,124 @@ section {
   bottom: 7.985rem;
 }
 
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:do-xxxl {
+  transform:  rotate(calc(var(--progress)* -80deg)) translateX(calc(var(--progress)* 80%)) scaleX(calc(var(--progress)* 48));
+}
+
+.get-progress\:do-xxxl-n {
+  transform:  rotate(calc(var(--progress)* 80deg)) translateX(calc(var(--progress)* -80%)) scaleX(calc(var(--progress)* -48));
+}
+
+.get-progress\:do-xxxl-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -80deg)) translateX(calc(calc(1 - var(--progress))* 80%)) scaleX(calc(calc(1 - var(--progress))* 48));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
 .get-progress\:trans-y-xxxl {
-  transform: translateY(calc(var(--progress)* 159.7%));
+  transform:  translateY(calc(var(--progress)* 160%));
 }
 
 .get-progress\:trans-y-xxxl-n {
-  transform: translateY(calc(var(--progress)* -159.7%));
+  transform:  translateY(calc(var(--progress)* -160%));
 }
 
-.get-progress\:opacity-xxxl {
-  opacity: calc(var(--progress) * 1);
+.get-progress\:trans-y-xxxl-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 160%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:top-xxxl {
+  top: calc(var(--progress)* 162%);
+}
+
+.get-progress\:top-xxxl-n {
+  top: calc(var(--progress)* -162%);
+}
+
+.get-progress\:top-xxxl-reverse {
+  top: calc(calc(1 - var(--progress))* 162%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:bottom-xxxl {
+  bottom: calc(var(--progress)* 162%);
+}
+
+.get-progress\:bottom-xxxl-n {
+  bottom: calc(var(--progress)* -162%);
+}
+
+.get-progress\:bottom-xxxl-reverse {
+  bottom: calc(calc(1 - var(--progress))* 162%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:o {
+  opacity: calc(var(--progress)* 1);
+}
+
+.get-progress\:o-n {
+  opacity: calc(var(--progress)* -1);
+}
+
+.get-progress\:o-reverse {
+  opacity: calc(calc(1 - var(--progress))* 1);
 }
 
 .do-px-fluid-xxxl {

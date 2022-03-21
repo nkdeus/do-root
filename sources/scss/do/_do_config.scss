@@ -139,12 +139,55 @@ $do-aligns: "start", "center", "end", "flex-start","flex-end", "stretch", "space
 $do-custom-data: "background-color", "right", "top", "bottom";
 $do-base : 10; 
 $do-max : 16; 
+$do-ratio-to-100 : 10.17%; 
 
 $do-custom-data : (
-  "bg-color" : "progress",
   "trans-y"  : "progress",
+  "top"  : "progress",
   "opacity"  : "progress"
 );
+
+$do-custom-data-2 : (
+  do  : (
+
+      prop   : transform,
+      params :(rotate,translateX,scaleX),
+      unit   : (-5deg, 5%, 3)
+    
+  ),
+  trans-y  : (
+
+    prop   : "transform",
+    params :("translateY"),
+    unit   : (10%)
+  
+  ),
+  top  : (
+
+    prop   : "top",
+    params :(""),
+    unit   : ($do-ratio-to-100)
+  
+  ),
+  bottom  : (
+
+    prop   : "bottom",
+    params :(""),
+    unit   : ($do-ratio-to-100)
+  
+  ),
+  o  : (
+
+    prop   : "opacity",
+    params :(""),
+    unit   : (1),
+    responsive: false
+  
+  )
+);
+
+
+
 
 $do-sizes : (
   "xxxs"  : 0px,
@@ -157,6 +200,8 @@ $do-sizes : (
   "xxl"   : 0px,
   "xxxl"  : 0px
 );
+
+
 
 $do-colors-type : (
   "bg"  : background-color,
