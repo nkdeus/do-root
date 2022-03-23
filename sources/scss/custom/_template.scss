@@ -1,6 +1,6 @@
 
 @use '../do/do_core' as *;
-@use '../do/do_color' as *;
+@use '../do/do_color_v2' as *;
 @use '../custom/tweens' as *;
 
 //@use "../../node_modules/bootstrap/scss/bootstrap-utilities" as bs5;
@@ -404,7 +404,7 @@ section{
 		width: 100%;
 		transform: rotate(-3deg);
 		height: 0.08em;
-		background-color:var(--contraste-color);
+		background-color:rgba(var(--contraste-color), 1);
 		z-index: 2;
 		pointer-events: none;
 	}
@@ -518,7 +518,7 @@ section{
 	position: relative;
 
 	span{
-		color: var(--main-color);
+		color: rgba(var(--main-color), 1);
 	}
 
 	&:after{
@@ -529,7 +529,7 @@ section{
 		left:0px;
 		width: 100%;
 		height: 2px;
-		background-color: var(--main-color);
+		background-color: rgba(var(--main-color), 1);
 		pointer-events: none;
 		opacity:0.5;
 		transition:opacity 0.5s ease-out, transform 0.5s ease-out;
@@ -560,7 +560,7 @@ section{
 			left:0px;
 			width: 100%;
 			height: 100%;
-			background-color: var(--main-color);
+			background-color: rgba(var(--main-color), 1);
 			mix-blend-mode: soft-light;
 			pointer-events: none;
 			opacity:0;
@@ -620,14 +620,14 @@ section{
 		@extend %px-xs;
 		@extend %br-xs;
 
-		background-color: var(--extra-color);
+		background-color: rgba(var(--extra-color), 1);
 
 		span{
-			color: var(--contraste2-n-color);
+			color: rgba(var(--contraste-color), 1);
 		}
 		
 		&:after{
-			background-color: var(--second-color);
+			background-color: rgba(var(--second-color), 1);
 		}
 			
 		&:hover{
@@ -669,8 +669,8 @@ section{
 			padding-right:0.5rem;
 			transform:translateX(-100%);
 			text-align: right;
-			color:var(--second2-color);
-			background-color: var(--contraste2-color);
+			color:rgba(var(--second-color), 1);
+			background-color: rgba(var(--contraste-color), 1);
 		}
 		&:after {
 			position: absolute;
@@ -700,7 +700,7 @@ section{
 		top:50%;
 		display: block;
 		transform:translateX(-50%) translateY(-50%);
-		color:var(--contraste2-color);
+		color:var(--contraste-color);
 	}
 }
 
@@ -723,18 +723,18 @@ section{
 		height:calc(100% + ( var(--md) * 1rem ));
 
 		transform:translateX(-50%) translateY(-50%);
-		background-color:var(--contraste1-color);
+		background-color:var(--contraste-color);
 	}
 	h5{
 		margin-top:0px;
 		color:var(--main-color);
 	}
 	&:nth-child(odd):before{
-		background-color:var(--contraste2-color);
+		background-color:var(--contraste-color);
 	}
 	&.white{
 		&:before {
-			background-color:var(--contraste5-n-color);
+			background-color:var(--contraste-color);
 		}
 	}
 

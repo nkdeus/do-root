@@ -1,5 +1,5 @@
 @use 'do_config' as *;
-@use 'do_color' as *;
+@use 'do_color_v2' as *;
 @use "sass:string";
 @use "sass:map";
 @use "sass:math";
@@ -14,7 +14,7 @@ FRAMEWORK DO v1.1
 Core de la créature
 -
 */
-// Quelques outils
+// Quelques outilsd
 
 @function rem($px) {
     @return strip-unit($px) / $base-font-size * 1rem;
@@ -245,7 +245,7 @@ Core de la créature
 @mixin do-border-type() {
     @each $direction in $do-directions {
         .do-border-#{$direction} {
-            border-#{$direction}: 1px solid var(--main-color);
+            border-#{$direction}: 1px solid rgba(var(--main-color), 1);
         }
     }
 }
@@ -929,7 +929,7 @@ Core de la créature
 @include do-align('.do');
 @include do-border-type();
 @include do-maxo('do');
-@include do-colors('', false);
+@include do-colors('');
 @include do-display('do');
 @include do-tweens-type('tween');
 @include do-util('do');

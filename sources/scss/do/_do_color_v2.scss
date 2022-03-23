@@ -1,0 +1,177 @@
+@use "sass:color";
+@use "sass:math";
+@use 'do_config' as *;
+@use '../custom/do' as *;
+/*
+-
+Les couleurs v2 !!!
+
+ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
+-
+*/
+
+@mixin do-events-color-extend($class, $extendHover: true) {
+    .#{$class} {
+        @content;
+    }
+
+    @each $event-type, $type in $do-events-type {
+        @each $event, $event-class in $type {
+            [do-event-#{$event-type}='#{$event}'] {
+                .#{$event-type}-#{$event}\:#{$class} {
+                    @content;
+                }
+            }
+        }
+    }
+
+    .active {
+        .active\:#{$class} {
+            @content;
+        }
+        .deep-active\:#{$class} {
+            @content;
+        }
+        &.active\:#{$class} {
+            @content;
+        }
+    }
+    @if $extendHover == true {
+        @include do-extend-color-hover('hover', #{$class}) {
+            @content;
+        }
+    }
+}
+
+@mixin do-extend-color-hover($event, $class) {
+    .#{$event}:#{$event} {
+        .#{$event}\:#{$class} {
+            @content;
+        }
+    }
+
+    .#{$class}\:#{$event} {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin do-color-full-class($class, $color, $responsiveLoop:false) {
+
+    @each $color-type, $color-type-class in $do-colors-type {
+        //@debug(#{$class}-#{$color-type}-#{$color}-color);
+        @include do-events-color-extend(#{$class}-#{$color-type}-#{$color}-color) {
+            #{$color-type-class}: rgba(var(--#{$color}-color,1)) !important;
+            @if($responsiveLoop == false){
+                @for $i from 0 through $do-max {
+                    &-#{$i}{
+
+                        #{$color-type-class}: rgba(var(--#{$color}-color),math.div($i,10)) !important;
+                    }
+                }
+            }
+        }
+
+        @each $child-type, $child-type-class in $do-childs-selector {
+            //@debug(#{$child-type}\:#{$class}-#{$color-type}-#{$color}-color);
+            .#{$child-type}\:#{$class}-#{$color-type}-#{$color}-color {
+                > #{$child-type-class} {
+                    #{$color-type-class}: rgba(var(--#{$color}-color),1) !important;
+                }
+            }
+        }
+    }
+    %bg-#{$color}-color {
+        background-color: rgba(var(--#{$color}-color),1);
+    }
+}
+
+@mixin do-color-extend($className, $colorName, $totalExtend: false) {
+    @each $colorNameBase, $colorVar in $colorsVar {
+        // @debug("--> "#{$className}-all-#{$colorNameBase} ':' #{$colorName});
+        @if ($totalExtend == true) {
+          @include do-events-color-extend(#{$className}-all-#{$colorNameBase}\:#{$colorName}) {
+            --#{$colorNameBase}-color: var(--#{$colorName}) !important;
+          }
+        }
+        @include do-events-color-extend(#{$className}-#{$colorNameBase}\:#{$colorName}) {
+          --#{$colorNameBase}-color: var(--#{$colorName}) !important;
+        }
+    }
+    [data-do-bg='#{$colorName}'] {
+        //background-color: var(--#{$colorName}-color) !important;
+        background-color: rgba(var(--#{$colorName}-color),1);
+    }
+    [data-do-txt='#{$colorName}'] {
+        color: rgba(var(--#{$colorName}-color),1);
+    }
+}
+
+@mixin do-colors($class, $responsive:false) {
+    @each $colorName in $colorsVar {
+
+        @if ($responsive == false) {
+            @include do-color-extend(#{$class}set, $colorName, true);
+        }
+
+        @include do-color-full-class(#{$class}do, $colorName, $responsive);
+
+        @if ($responsive == false) {
+    
+            @each $colorName2 in $colorsVar {
+                @if ($colorName2 != $colorName) {
+                    [data-set-#{$colorName}='#{$colorName2}'],
+                    .set-#{$colorName}-#{$colorName2} {
+                        --#{$colorName}-color: var(--#{$colorName2}) !important;
+                    }
+
+                    [data-do='#{$colorName}-#{$colorName2}'] {
+                        background-color: var(--#{$colorName}-color) !important;
+                        color: var(--#{$colorName2}-color) !important;
+                    }
+                    [data-do-hover='#{$colorName}-#{$colorName2}']:hover {
+                        background-color: var(--#{$colorName}-color) !important;
+                        color: var(--#{$colorName2}-color) !important;
+                        path {
+                            fill: var(--#{$colorName2}-color) !important;
+                        }
+                        rect {
+                            fill: var(--#{$colorName2}-color) !important;
+                        }
+                        polygon {
+                            fill: var(--#{$colorName2}-color) !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @if ($responsive == false) {
+        :root{
+            @each $colorName in $colorsVar {
+                --#{$colorName}-color: var(--#{$colorName});
+            }
+        }
+    }
+}
+
+
+// DARK MODE
+
+.filter-invert{
+    filter:invert(1) grayscale(1);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    
+    .trigger-filter-invert{
+        filter:invert(1) grayscale(1);
+    }
+    
+    .filter-invert{
+        filter:invert(0) grayscale(0) !important;
+    }
+}

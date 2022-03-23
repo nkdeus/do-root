@@ -26,14 +26,33 @@
 		]
 	},
 	"copyright": "© Ulysse-2029",
-	"theme": "do",
+	"fonts": [
+		{
+			"name": "roboto",
+			"weight": "200;400;700"
+		},
+		{
+			"name": "Economica",
+			"weight": "400"
+		}
+	],
+	"typos": {
+		"body": {
+			"name": "roboto",
+			"weight": "200"
+		},
+		"heading": {
+			"name": "Economica",
+			"weight": "400"
+		}
+	},
 	"themes": {
 		"do": {
-			"main": "#FF0000",
-			"second": "#ffffff",
-			"contraste": "#00ff00",
-			"extra": "#222222",
-			"fade": "#111111"
+			"main": "255, 174, 148",
+			"extra": "10, 255, 238",
+			"contraste": "78, 76, 73",
+			"second": "255, 255, 255",
+			"fade": "223, 217, 207"
 		}
 	},
 	"pageHome": {

@@ -152,8 +152,8 @@ $do-custom-data-2 : (
   do  : (
 
       prop   : transform,
-      params :(rotate,translateX,scale),
-      unit   : (-2deg, 2%, 1)
+      params :(rotate,scaleX),
+      unit   : (-16.28deg, 1)
     
   ),
   rotate  : (

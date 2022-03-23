@@ -7,6 +7,7 @@ Les couleurs !!!
 -
 */
 
+
 @mixin do-events-color-extend($class, $extendHover: true) {
     .#{$class} {
         @content;
@@ -145,7 +146,7 @@ Les couleurs !!!
     }
 }
 
-@mixin do-colors($class, $responsive) {
+@mixin do-colors($class, $responsive : false) {
     @each $colorName, $colorVar in $colorsVar {
         //.lg-set-main:extra
         //.set-main:extra

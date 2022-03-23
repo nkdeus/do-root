@@ -80,4 +80,51 @@ $(document).ready(function() {
 
     }
 
+    $('#color-random').on('click',function(e) {
+      
+      var newMain =  randomColor({
+        luminosity: 'light', // bright , light, dark
+        format: 'rgbArray',
+        alpha: 1
+      });
+      var newSecond =  randomColor({
+        luminosity: 'light', // bright , light, dark
+        hue:$('body').css('--second-color'),
+        format: 'rgbArray',
+        alpha: 1
+      });
+      var newContraste =  randomColor({
+        luminosity: 'dark', // bright , light, dark
+        hue:"#000000",
+        format: 'rgbArray',
+        alpha: 1
+      });
+      var newExtra =  randomColor({
+        luminosity: 'bright', // bright , light, dark
+        format: 'rgbArray',
+        alpha: 1
+      });
+      var newFade =  randomColor({
+        luminosity: 'light', // bright , light, dark
+        hue:$('body').css('--fade-color'),
+        format: 'rgbArray',
+        alpha: 1
+      });
+
+
+      if($('body').hasClass('toggleColor')){
+     
+        $('body').css('--main-color',newFade);
+        $('body').css('--extra-color',newMain);
+        $('body').css('--fade-color',newFade);
+
+      }else{
+        $('body').css('--main-color',newMain);
+        $('body').css('--extra-color',newExtra);
+        $('body').css('--fade-color',newFade);
+
+      }
+     
+    });
+
 });

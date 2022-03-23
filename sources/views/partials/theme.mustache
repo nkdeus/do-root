@@ -1,10 +1,58 @@
 
 <style>
+@charset "UTF-8";
+
   :root{
-    --main-color:{{themes.do.main}};
-    --contraste-color:{{themes.do.contraste}};
-    --second-color:{{themes.do.second}};
-    --extra-color:{{themes.do.extra}};
-    --fade-color:{{themes.do.fade}};
+    --main:{{themes.do.main}};
+    --contraste:{{themes.do.contraste}};
+    --second:{{themes.do.second}};
+    --extra:{{themes.do.extra}};
+    --fade:{{themes.do.fade}};
   }
+
+  .toggleColor{
+    --main-color:{{themes.do.fade}};
+    --contraste-color:{{themes.do.second}};
+    --second-color:{{themes.do.main}};
+    --extra-color:{{themes.do.extra}};
+    --fade-color:{{themes.do.contraste}};
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+      :root{
+
+        --main:{{themes.do.fade}};
+        --contraste:{{themes.do.second}};
+        --second:{{themes.do.main}};
+        --extra:{{themes.do.extra}};
+        --fade:{{themes.do.contraste}};
+      }
+
+      body.toggleColor{
+        --main-color:{{themes.do.main}};
+        --contraste-color:{{themes.do.contraste}};
+        --second-color:{{themes.do.second}};
+        --extra-color:{{themes.do.extra}};
+        --fade-color:{{themes.do.fade}};
+      }
+
+  }
+
+  body{
+    font-family: {{typos.body.name}}, sans-serif;
+    font-weight: {{typos.body.weight}};
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: {{typos.heading.name}}, sans-serif;
+    margin-bottom: 0px;
+    font-weight: {{typos.heading.weight}};
+  }
+
 </style>

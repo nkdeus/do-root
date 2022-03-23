@@ -67,6 +67,8 @@ moduleManager["domousedatas"] = function () {
         distance = Number((distanceMax-distance)/distanceMax).toFixed(4);
         if(distance >= 0){
             targetItem.css("--progress",Number(distance)+$scope.offsetVal);
+        }else{
+            targetItem.css("--progress",$scope.offsetVal);
         }
         //
      

@@ -18,11 +18,11 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  color:var(--contraste-color);
+
+  font-size: 1rem;
+  color:rgba(var(--contraste-color, 1));
   -webkit-text-size-adjust: 100%; 
-  -webkit-tap-highlight-color: rgba(0,0,0, 0);
+  -webkit-tap-highlight-color: rgba(var(--main-color, 0.1));
   margin: 0;
 }
 
@@ -33,7 +33,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", sans-serif;
   margin-bottom: 0px;
   font-weight: 700;
 }
@@ -49,7 +48,7 @@ p {
 
 a {
   text-decoration: none;
-  color: var(--main-color);
+  color: rgba(var(--main-color, 1));
 }
 
 .do-fw-strong {
@@ -87,20 +86,20 @@ a {
 
 a {
   text-decoration: none;
-  color: var(--contraste-color);
+  color: rgba(var(--contraste-color, 1));
   transition-property: background-color, color, box-shadow;
   transition-duration: math.div($duration, 2);
   transition-timing-function: $easing;
   &:hover {
     text-decoration: none;
-    color: var(--main-color);
+    color: rgba(var(--main-color, 1));
   }
 }
 
 a.reset{
-  color: var(--main2-color);
+  color: rgba(var(--main-color, 1));
   &:hover {
-    color: var(--main-color);
+    color: rgba(var(--main-color, 0.8));
   }
 }
 
@@ -108,11 +107,11 @@ a.reset{
   a {
     text-decoration: underline;
     font-weight: bold;
-    color: var(--contraste-color) !important;
+    color: rgba(var(--contraste-color, 1)) !important;
 
     &:hover {
-      color: var(--main-color) !important;
-      background-color: var(--second-color) !important;
+      color: rgba(var(--main-color, 1)) !important;
+      background-color: rgba(var(--second-color, 1)) !important;
     }
   }
 }

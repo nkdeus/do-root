@@ -7,19 +7,13 @@ $do-u: 0.21;
 $do : 1.61803398875;
 
 // les couleurs
-$mainColor: #2E3454;
-$secondColor: #ffffff;
-$contrasteColor: #131319;
-$extraColor: #FA372E;
-$fadeColor: #D2D4EA;
-$colorsVarMax: 5;
-$colorsAdjustDark: 5%;
-$colorsAdjustLight: 5%;
+
+
 $colorsVar: (
-  main: $mainColor,
-  second: $secondColor,
-  contraste: $contrasteColor,
-  extra: $extraColor,
-  fade: $fadeColor
+  main,
+  second,
+  contraste,
+  extra,
+  fade
 );
 
