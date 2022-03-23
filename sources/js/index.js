@@ -25,8 +25,36 @@ $(document).ready(function() {
         }
     });
 
+    var futurAction = function(){
+
+       var wH = $( window ).height();
+       var limite = wH/6.4;
+       var body = $('body');
+       var toggleIn = false;
+
+      $(document).mousemove(function(e){
+
+          var lastX = e.clientX;
+          var lastY = e.clientY;
+       
+          if(lastY < limite && body.attr('do-event-scroll') == 'down' && toggleIn == false){
+             body.attr('do-event-scroll','up');
+             toggleIn = true;
+            
+          }
+
+          if(lastY > limite && body.attr('do-event-scroll') == 'up' && toggleIn == true){
+            body.attr('do-event-scroll','down');
+            toggleIn = false;
+          }
+
+      });
+    }
+
+    futurAction();
 
     $(document).on("darkMode", darkModeChange);
+
     function darkModeChange(e) {
       if(e.class == "darkmodetrigger"){
        
@@ -50,65 +78,6 @@ $(document).ready(function() {
         $(this).toggleClass('do-grad-0-second-color');
       });
 
-     
-      
     }
-
-    var SubMenuIsOpen = false;
-    var SubMenuTvIsOpen = false;
-
-    var resetSub = function(){
-
-      if(SubMenuIsOpen){
-        $('.js-hover').removeClass('active');
-        SubMenuIsOpen = false;
-      }
-
-      if(SubMenuTvIsOpen){
-        $('.js-hover-tv').removeClass('active');
-        SubMenuTvIsOpen = false;
-      }
-
-    }
-   
-
-    if($('body').hasClass('page-series') == false){
-
-          $('.js-hover').on('mouseover',function(e) {
-              resetSub();
-              $(this).addClass('active');
-              SubMenuIsOpen = true;
-              
-          });
-
-
-          $('#nav').on('mouseleave',function(e) {
-            if(SubMenuIsOpen){
-              $('.js-hover').removeClass('active');
-              SubMenuIsOpen = false;
-            }
-          });      
-
-    }
-
-    if($('body').hasClass('page-gttv') == false){
-
-      $('.js-hover-tv').on('mouseover',function(e) {
-        resetSub();
-          $(this).addClass('active');
-          SubMenuTvIsOpen = true;
-      });
-
-
-      $('#nav').on('mouseleave',function(e) {
-        if(SubMenuTvIsOpen){
-          $('.js-hover-tv').removeClass('active');
-          SubMenuTvIsOpen = false;
-        }
-      });      
-
-}
-    
-
 
 });

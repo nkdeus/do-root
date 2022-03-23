@@ -1,7 +1,7 @@
 {
     "titre" : "Ulysse 2029",
     "logo" : "imgs/logo.svg",
-    "rootPath" : "/",
+    "rootPath" : "./",
     "nav" :{
       "background":"hide",
       "header":[

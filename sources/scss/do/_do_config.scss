@@ -97,7 +97,8 @@ $do-width-height : (
   "w-vw"    : ("props" : "width" , "unit": 6vw),
   "wh"      : ("props" :("width","height"), "unit": 1rem),
   "wh-vw"      : ("props" :("width","height"), "unit": 6vw),
-  "hw"      : ("props" :("height","width"), "unit": 1rem)
+  "hw"      : ("props" :("height","width"), "unit": 1rem),
+  "gold"      : ("props" :("height","width"), "unit": 1%)
 );
 
 $do-others : (
@@ -151,15 +152,29 @@ $do-custom-data-2 : (
   do  : (
 
       prop   : transform,
-      params :(rotate,translateX,scaleX),
-      unit   : (-5deg, 5%, 3)
+      params :(rotate,translateX,scale),
+      unit   : (-2deg, 2%, 1)
     
+  ),
+  rotate  : (
+
+    prop   : transform,
+    params :(rotate),
+    unit   : (-4.2deg)
+  
   ),
   trans-y  : (
 
     prop   : "transform",
     params :("translateY"),
     unit   : (10%)
+  
+  ),
+  trans-mouse  : (
+
+    prop   : transform,
+    params :(translateX,translateY),
+    unit   : (10%,-10%)
   
   ),
   top  : (
@@ -176,6 +191,13 @@ $do-custom-data-2 : (
     unit   : ($do-ratio-to-100)
   
   ),
+  scale  : (
+
+    prop   : transform,
+    params : scale,
+    unit   : ($do-ratio-to-100)
+  
+  ),
   o  : (
 
     prop   : "opacity",
@@ -184,6 +206,7 @@ $do-custom-data-2 : (
     responsive: false
   
   )
+
 );
 
 

@@ -124,7 +124,7 @@ Core de la créature
             @each $prop in $props {
                 #{$prop}: calc(100% - #{$value * $unit * 1});
             }
-        } @else if $class == 'w-gold' or $class == 'h-gold' {
+        } @else if $class == 'w-gold' or $class == 'h-gold' or $class == 'gold' {
             @each $prop in $props {
                 //@debug map.get($do-matrix, "xxxl");
 
@@ -312,12 +312,12 @@ Core de la créature
             $multiProps:"";
             @each $param in $params {
 
-                $tempDelta : math.round(list.nth($unit,$u) * $size);     
+                $tempDelta : decimal-round(list.nth($unit,$u) * $size,2);     
                 @if($isResponsive == false){
                     $tempDelta : list.nth($unit,$u);  
                 }
                 $tempCss : #{$param}(calc(var(--#{$var-name})* #{$tempDelta}));
-                @debug(" tempCss :" $tempCss);
+            
                 @if($prop == "transform"){
                     $multiProps : $multiProps + ' ' + $tempCss;
                 }@else{
@@ -336,7 +336,7 @@ Core de la créature
                 $u:1;
                 @each $param in $params {
     
-                    $tempDelta : math.round(list.nth($unit,$u) * $size) * -1;
+                    $tempDelta : decimal-round((list.nth($unit,$u) * $size) * -1,2);
                     @if($isResponsive == false){
                         $tempDelta : list.nth($unit,$u) * -1;  
                     }
@@ -360,7 +360,7 @@ Core de la créature
                 $u:1;
                 @each $param in $params {
     
-                    $tempDelta : math.round(list.nth($unit,$u) * $size);
+                    $tempDelta : decimal-round(list.nth($unit,$u) * $size,2);
                     @if($isResponsive == false){
                         $tempDelta : list.nth($unit,$u);  
                     }

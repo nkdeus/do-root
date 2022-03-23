@@ -276,6 +276,19 @@ Core de la créature
   width: 0.34rem;
 }
 
+.do-gold-xxxs {
+  height: 2.129%;
+  width: 2.129%;
+}
+
+.do-gold-xxxs-100 {
+  height: 102.129%;
+}
+
+.do-gold-xxxs-100 {
+  width: 102.129%;
+}
+
 .do-br-xxxs {
   border-radius: 0.34rem;
 }
@@ -414,15 +427,39 @@ Core de la créature
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:do-xxxs {
-  transform:  rotate(calc(var(--progress)* -2deg)) translateX(calc(var(--progress)* 2%)) scaleX(calc(var(--progress)* 1));
+  transform:  rotate(calc(var(--progress)* -0.68deg)) translateX(calc(var(--progress)* 0.68%)) scale(calc(var(--progress)* 0.34));
 }
 
 .get-progress\:do-xxxs-n {
-  transform:  rotate(calc(var(--progress)* 2deg)) translateX(calc(var(--progress)* -2%)) scaleX(calc(var(--progress)* -1));
+  transform:  rotate(calc(var(--progress)* 0.68deg)) translateX(calc(var(--progress)* -0.68%)) scale(calc(var(--progress)* -0.34));
 }
 
 .get-progress\:do-xxxs-reverse {
-  transform:  rotate(calc(calc(1 - var(--progress))* -2deg)) translateX(calc(calc(1 - var(--progress))* 2%)) scaleX(calc(calc(1 - var(--progress))* 1));
+  transform:  rotate(calc(calc(1 - var(--progress))* -0.68deg)) translateX(calc(calc(1 - var(--progress))* 0.68%)) scale(calc(calc(1 - var(--progress))* 0.34));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:rotate-xxxs {
+  transform:  rotate(calc(var(--progress)* -1.43deg));
+}
+
+.get-progress\:rotate-xxxs-n {
+  transform:  rotate(calc(var(--progress)* 1.43deg));
+}
+
+.get-progress\:rotate-xxxs-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -1.43deg));
 }
 
 /*
@@ -438,15 +475,39 @@ Core de la créature
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:trans-y-xxxs {
-  transform:  translateY(calc(var(--progress)* 3%));
+  transform:  translateY(calc(var(--progress)* 3.4%));
 }
 
 .get-progress\:trans-y-xxxs-n {
-  transform:  translateY(calc(var(--progress)* -3%));
+  transform:  translateY(calc(var(--progress)* -3.4%));
 }
 
 .get-progress\:trans-y-xxxs-reverse {
-  transform:  translateY(calc(calc(1 - var(--progress))* 3%));
+  transform:  translateY(calc(calc(1 - var(--progress))* 3.4%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:trans-mouse-xxxs {
+  transform:  translateX(calc(var(--progress)* 3.4%)) translateY(calc(var(--progress)* -3.4%));
+}
+
+.get-progress\:trans-mouse-xxxs-n {
+  transform:  translateX(calc(var(--progress)* -3.4%)) translateY(calc(var(--progress)* 3.4%));
+}
+
+.get-progress\:trans-mouse-xxxs-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 3.4%)) translateY(calc(calc(1 - var(--progress))* -3.4%));
 }
 
 /*
@@ -462,15 +523,15 @@ Core de la créature
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:top-xxxs {
-  top: calc(var(--progress)* 3%);
+  top: calc(var(--progress)* 3.46%);
 }
 
 .get-progress\:top-xxxs-n {
-  top: calc(var(--progress)* -3%);
+  top: calc(var(--progress)* -3.46%);
 }
 
 .get-progress\:top-xxxs-reverse {
-  top: calc(calc(1 - var(--progress))* 3%);
+  top: calc(calc(1 - var(--progress))* 3.46%);
 }
 
 /*
@@ -486,15 +547,39 @@ Core de la créature
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:bottom-xxxs {
-  bottom: calc(var(--progress)* 3%);
+  bottom: calc(var(--progress)* 3.46%);
 }
 
 .get-progress\:bottom-xxxs-n {
-  bottom: calc(var(--progress)* -3%);
+  bottom: calc(var(--progress)* -3.46%);
 }
 
 .get-progress\:bottom-xxxs-reverse {
-  bottom: calc(calc(1 - var(--progress))* 3%);
+  bottom: calc(calc(1 - var(--progress))* 3.46%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:scale-xxxs {
+  transform:  scale(calc(var(--progress)* 3.46%));
+}
+
+.get-progress\:scale-xxxs-n {
+  transform:  scale(calc(var(--progress)* -3.46%));
+}
+
+.get-progress\:scale-xxxs-reverse {
+  transform:  scale(calc(calc(1 - var(--progress))* 3.46%));
 }
 
 /*
@@ -768,6 +853,19 @@ $max: $max + -1;
   width: 0.55rem;
 }
 
+.do-gold-xxs {
+  height: 3.444%;
+  width: 3.444%;
+}
+
+.do-gold-xxs-100 {
+  height: 103.444%;
+}
+
+.do-gold-xxs-100 {
+  width: 103.444%;
+}
+
 .do-br-xxs {
   border-radius: 0.55rem;
 }
@@ -906,15 +1004,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:do-xxs {
-  transform:  rotate(calc(var(--progress)* -3deg)) translateX(calc(var(--progress)* 3%)) scaleX(calc(var(--progress)* 2));
+  transform:  rotate(calc(var(--progress)* -1.1deg)) translateX(calc(var(--progress)* 1.1%)) scale(calc(var(--progress)* 0.55));
 }
 
 .get-progress\:do-xxs-n {
-  transform:  rotate(calc(var(--progress)* 3deg)) translateX(calc(var(--progress)* -3%)) scaleX(calc(var(--progress)* -2));
+  transform:  rotate(calc(var(--progress)* 1.1deg)) translateX(calc(var(--progress)* -1.1%)) scale(calc(var(--progress)* -0.55));
 }
 
 .get-progress\:do-xxs-reverse {
-  transform:  rotate(calc(calc(1 - var(--progress))* -3deg)) translateX(calc(calc(1 - var(--progress))* 3%)) scaleX(calc(calc(1 - var(--progress))* 2));
+  transform:  rotate(calc(calc(1 - var(--progress))* -1.1deg)) translateX(calc(calc(1 - var(--progress))* 1.1%)) scale(calc(calc(1 - var(--progress))* 0.55));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:rotate-xxs {
+  transform:  rotate(calc(var(--progress)* -2.31deg));
+}
+
+.get-progress\:rotate-xxs-n {
+  transform:  rotate(calc(var(--progress)* 2.31deg));
+}
+
+.get-progress\:rotate-xxs-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -2.31deg));
 }
 
 /*
@@ -930,15 +1052,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:trans-y-xxs {
-  transform:  translateY(calc(var(--progress)* 6%));
+  transform:  translateY(calc(var(--progress)* 5.5%));
 }
 
 .get-progress\:trans-y-xxs-n {
-  transform:  translateY(calc(var(--progress)* -6%));
+  transform:  translateY(calc(var(--progress)* -5.5%));
 }
 
 .get-progress\:trans-y-xxs-reverse {
-  transform:  translateY(calc(calc(1 - var(--progress))* 6%));
+  transform:  translateY(calc(calc(1 - var(--progress))* 5.5%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:trans-mouse-xxs {
+  transform:  translateX(calc(var(--progress)* 5.5%)) translateY(calc(var(--progress)* -5.5%));
+}
+
+.get-progress\:trans-mouse-xxs-n {
+  transform:  translateX(calc(var(--progress)* -5.5%)) translateY(calc(var(--progress)* 5.5%));
+}
+
+.get-progress\:trans-mouse-xxs-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 5.5%)) translateY(calc(calc(1 - var(--progress))* -5.5%));
 }
 
 /*
@@ -954,15 +1100,15 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:top-xxs {
-  top: calc(var(--progress)* 6%);
+  top: calc(var(--progress)* 5.59%);
 }
 
 .get-progress\:top-xxs-n {
-  top: calc(var(--progress)* -6%);
+  top: calc(var(--progress)* -5.59%);
 }
 
 .get-progress\:top-xxs-reverse {
-  top: calc(calc(1 - var(--progress))* 6%);
+  top: calc(calc(1 - var(--progress))* 5.59%);
 }
 
 /*
@@ -978,15 +1124,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:bottom-xxs {
-  bottom: calc(var(--progress)* 6%);
+  bottom: calc(var(--progress)* 5.59%);
 }
 
 .get-progress\:bottom-xxs-n {
-  bottom: calc(var(--progress)* -6%);
+  bottom: calc(var(--progress)* -5.59%);
 }
 
 .get-progress\:bottom-xxs-reverse {
-  bottom: calc(calc(1 - var(--progress))* 6%);
+  bottom: calc(calc(1 - var(--progress))* 5.59%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:scale-xxs {
+  transform:  scale(calc(var(--progress)* 5.59%));
+}
+
+.get-progress\:scale-xxs-n {
+  transform:  scale(calc(var(--progress)* -5.59%));
+}
+
+.get-progress\:scale-xxs-reverse {
+  transform:  scale(calc(calc(1 - var(--progress))* 5.59%));
 }
 
 /*
@@ -1262,6 +1432,19 @@ $max: $max + -1;
   width: 0.89rem;
 }
 
+.do-gold-xs {
+  height: 5.573%;
+  width: 5.573%;
+}
+
+.do-gold-xs-100 {
+  height: 105.573%;
+}
+
+.do-gold-xs-100 {
+  width: 105.573%;
+}
+
 .do-br-xs,
 .do-bt.sobre {
   border-radius: 0.89rem;
@@ -1401,15 +1584,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:do-xs {
-  transform:  rotate(calc(var(--progress)* -4deg)) translateX(calc(var(--progress)* 4%)) scaleX(calc(var(--progress)* 3));
+  transform:  rotate(calc(var(--progress)* -1.78deg)) translateX(calc(var(--progress)* 1.78%)) scale(calc(var(--progress)* 0.89));
 }
 
 .get-progress\:do-xs-n {
-  transform:  rotate(calc(var(--progress)* 4deg)) translateX(calc(var(--progress)* -4%)) scaleX(calc(var(--progress)* -3));
+  transform:  rotate(calc(var(--progress)* 1.78deg)) translateX(calc(var(--progress)* -1.78%)) scale(calc(var(--progress)* -0.89));
 }
 
 .get-progress\:do-xs-reverse {
-  transform:  rotate(calc(calc(1 - var(--progress))* -4deg)) translateX(calc(calc(1 - var(--progress))* 4%)) scaleX(calc(calc(1 - var(--progress))* 3));
+  transform:  rotate(calc(calc(1 - var(--progress))* -1.78deg)) translateX(calc(calc(1 - var(--progress))* 1.78%)) scale(calc(calc(1 - var(--progress))* 0.89));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:rotate-xs {
+  transform:  rotate(calc(var(--progress)* -3.74deg));
+}
+
+.get-progress\:rotate-xs-n {
+  transform:  rotate(calc(var(--progress)* 3.74deg));
+}
+
+.get-progress\:rotate-xs-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -3.74deg));
 }
 
 /*
@@ -1425,15 +1632,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:trans-y-xs {
-  transform:  translateY(calc(var(--progress)* 9%));
+  transform:  translateY(calc(var(--progress)* 8.9%));
 }
 
 .get-progress\:trans-y-xs-n {
-  transform:  translateY(calc(var(--progress)* -9%));
+  transform:  translateY(calc(var(--progress)* -8.9%));
 }
 
 .get-progress\:trans-y-xs-reverse {
-  transform:  translateY(calc(calc(1 - var(--progress))* 9%));
+  transform:  translateY(calc(calc(1 - var(--progress))* 8.9%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:trans-mouse-xs {
+  transform:  translateX(calc(var(--progress)* 8.9%)) translateY(calc(var(--progress)* -8.9%));
+}
+
+.get-progress\:trans-mouse-xs-n {
+  transform:  translateX(calc(var(--progress)* -8.9%)) translateY(calc(var(--progress)* 8.9%));
+}
+
+.get-progress\:trans-mouse-xs-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 8.9%)) translateY(calc(calc(1 - var(--progress))* -8.9%));
 }
 
 /*
@@ -1449,15 +1680,15 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:top-xs {
-  top: calc(var(--progress)* 9%);
+  top: calc(var(--progress)* 9.05%);
 }
 
 .get-progress\:top-xs-n {
-  top: calc(var(--progress)* -9%);
+  top: calc(var(--progress)* -9.05%);
 }
 
 .get-progress\:top-xs-reverse {
-  top: calc(calc(1 - var(--progress))* 9%);
+  top: calc(calc(1 - var(--progress))* 9.05%);
 }
 
 /*
@@ -1473,15 +1704,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:bottom-xs {
-  bottom: calc(var(--progress)* 9%);
+  bottom: calc(var(--progress)* 9.05%);
 }
 
 .get-progress\:bottom-xs-n {
-  bottom: calc(var(--progress)* -9%);
+  bottom: calc(var(--progress)* -9.05%);
 }
 
 .get-progress\:bottom-xs-reverse {
-  bottom: calc(calc(1 - var(--progress))* 9%);
+  bottom: calc(calc(1 - var(--progress))* 9.05%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:scale-xs {
+  transform:  scale(calc(var(--progress)* 9.05%));
+}
+
+.get-progress\:scale-xs-n {
+  transform:  scale(calc(var(--progress)* -9.05%));
+}
+
+.get-progress\:scale-xs-reverse {
+  transform:  scale(calc(calc(1 - var(--progress))* 9.05%));
 }
 
 /*
@@ -1757,6 +2012,19 @@ $max: $max + -1;
   width: 1.44rem;
 }
 
+.do-gold-sm {
+  height: 9.017%;
+  width: 9.017%;
+}
+
+.do-gold-sm-100 {
+  height: 109.017%;
+}
+
+.do-gold-sm-100 {
+  width: 109.017%;
+}
+
 .do-br-sm {
   border-radius: 1.44rem;
 }
@@ -1895,15 +2163,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:do-sm {
-  transform:  rotate(calc(var(--progress)* -7deg)) translateX(calc(var(--progress)* 7%)) scaleX(calc(var(--progress)* 4));
+  transform:  rotate(calc(var(--progress)* -2.88deg)) translateX(calc(var(--progress)* 2.88%)) scale(calc(var(--progress)* 1.44));
 }
 
 .get-progress\:do-sm-n {
-  transform:  rotate(calc(var(--progress)* 7deg)) translateX(calc(var(--progress)* -7%)) scaleX(calc(var(--progress)* -4));
+  transform:  rotate(calc(var(--progress)* 2.88deg)) translateX(calc(var(--progress)* -2.88%)) scale(calc(var(--progress)* -1.44));
 }
 
 .get-progress\:do-sm-reverse {
-  transform:  rotate(calc(calc(1 - var(--progress))* -7deg)) translateX(calc(calc(1 - var(--progress))* 7%)) scaleX(calc(calc(1 - var(--progress))* 4));
+  transform:  rotate(calc(calc(1 - var(--progress))* -2.88deg)) translateX(calc(calc(1 - var(--progress))* 2.88%)) scale(calc(calc(1 - var(--progress))* 1.44));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:rotate-sm {
+  transform:  rotate(calc(var(--progress)* -6.05deg));
+}
+
+.get-progress\:rotate-sm-n {
+  transform:  rotate(calc(var(--progress)* 6.05deg));
+}
+
+.get-progress\:rotate-sm-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -6.05deg));
 }
 
 /*
@@ -1919,15 +2211,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:trans-y-sm {
-  transform:  translateY(calc(var(--progress)* 14%));
+  transform:  translateY(calc(var(--progress)* 14.4%));
 }
 
 .get-progress\:trans-y-sm-n {
-  transform:  translateY(calc(var(--progress)* -14%));
+  transform:  translateY(calc(var(--progress)* -14.4%));
 }
 
 .get-progress\:trans-y-sm-reverse {
-  transform:  translateY(calc(calc(1 - var(--progress))* 14%));
+  transform:  translateY(calc(calc(1 - var(--progress))* 14.4%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:trans-mouse-sm {
+  transform:  translateX(calc(var(--progress)* 14.4%)) translateY(calc(var(--progress)* -14.4%));
+}
+
+.get-progress\:trans-mouse-sm-n {
+  transform:  translateX(calc(var(--progress)* -14.4%)) translateY(calc(var(--progress)* 14.4%));
+}
+
+.get-progress\:trans-mouse-sm-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 14.4%)) translateY(calc(calc(1 - var(--progress))* -14.4%));
 }
 
 /*
@@ -1943,15 +2259,15 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:top-sm {
-  top: calc(var(--progress)* 15%);
+  top: calc(var(--progress)* 14.64%);
 }
 
 .get-progress\:top-sm-n {
-  top: calc(var(--progress)* -15%);
+  top: calc(var(--progress)* -14.64%);
 }
 
 .get-progress\:top-sm-reverse {
-  top: calc(calc(1 - var(--progress))* 15%);
+  top: calc(calc(1 - var(--progress))* 14.64%);
 }
 
 /*
@@ -1967,15 +2283,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:bottom-sm {
-  bottom: calc(var(--progress)* 15%);
+  bottom: calc(var(--progress)* 14.64%);
 }
 
 .get-progress\:bottom-sm-n {
-  bottom: calc(var(--progress)* -15%);
+  bottom: calc(var(--progress)* -14.64%);
 }
 
 .get-progress\:bottom-sm-reverse {
-  bottom: calc(calc(1 - var(--progress))* 15%);
+  bottom: calc(calc(1 - var(--progress))* 14.64%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:scale-sm {
+  transform:  scale(calc(var(--progress)* 14.64%));
+}
+
+.get-progress\:scale-sm-n {
+  transform:  scale(calc(var(--progress)* -14.64%));
+}
+
+.get-progress\:scale-sm-reverse {
+  transform:  scale(calc(calc(1 - var(--progress))* 14.64%));
 }
 
 /*
@@ -2255,6 +2595,19 @@ $max: $max + -1;
   width: 2.33rem;
 }
 
+.do-gold-md {
+  height: 14.59%;
+  width: 14.59%;
+}
+
+.do-gold-md-100 {
+  height: 114.59%;
+}
+
+.do-gold-md-100 {
+  width: 114.59%;
+}
+
 .do-br-md {
   border-radius: 2.33rem;
 }
@@ -2393,15 +2746,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:do-md {
-  transform:  rotate(calc(var(--progress)* -12deg)) translateX(calc(var(--progress)* 12%)) scaleX(calc(var(--progress)* 7));
+  transform:  rotate(calc(var(--progress)* -4.66deg)) translateX(calc(var(--progress)* 4.66%)) scale(calc(var(--progress)* 2.33));
 }
 
 .get-progress\:do-md-n {
-  transform:  rotate(calc(var(--progress)* 12deg)) translateX(calc(var(--progress)* -12%)) scaleX(calc(var(--progress)* -7));
+  transform:  rotate(calc(var(--progress)* 4.66deg)) translateX(calc(var(--progress)* -4.66%)) scale(calc(var(--progress)* -2.33));
 }
 
 .get-progress\:do-md-reverse {
-  transform:  rotate(calc(calc(1 - var(--progress))* -12deg)) translateX(calc(calc(1 - var(--progress))* 12%)) scaleX(calc(calc(1 - var(--progress))* 7));
+  transform:  rotate(calc(calc(1 - var(--progress))* -4.66deg)) translateX(calc(calc(1 - var(--progress))* 4.66%)) scale(calc(calc(1 - var(--progress))* 2.33));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:rotate-md {
+  transform:  rotate(calc(var(--progress)* -9.79deg));
+}
+
+.get-progress\:rotate-md-n {
+  transform:  rotate(calc(var(--progress)* 9.79deg));
+}
+
+.get-progress\:rotate-md-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -9.79deg));
 }
 
 /*
@@ -2417,15 +2794,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:trans-y-md {
-  transform:  translateY(calc(var(--progress)* 23%));
+  transform:  translateY(calc(var(--progress)* 23.3%));
 }
 
 .get-progress\:trans-y-md-n {
-  transform:  translateY(calc(var(--progress)* -23%));
+  transform:  translateY(calc(var(--progress)* -23.3%));
 }
 
 .get-progress\:trans-y-md-reverse {
-  transform:  translateY(calc(calc(1 - var(--progress))* 23%));
+  transform:  translateY(calc(calc(1 - var(--progress))* 23.3%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:trans-mouse-md {
+  transform:  translateX(calc(var(--progress)* 23.3%)) translateY(calc(var(--progress)* -23.3%));
+}
+
+.get-progress\:trans-mouse-md-n {
+  transform:  translateX(calc(var(--progress)* -23.3%)) translateY(calc(var(--progress)* 23.3%));
+}
+
+.get-progress\:trans-mouse-md-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 23.3%)) translateY(calc(calc(1 - var(--progress))* -23.3%));
 }
 
 /*
@@ -2441,15 +2842,15 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:top-md {
-  top: calc(var(--progress)* 24%);
+  top: calc(var(--progress)* 23.7%);
 }
 
 .get-progress\:top-md-n {
-  top: calc(var(--progress)* -24%);
+  top: calc(var(--progress)* -23.7%);
 }
 
 .get-progress\:top-md-reverse {
-  top: calc(calc(1 - var(--progress))* 24%);
+  top: calc(calc(1 - var(--progress))* 23.7%);
 }
 
 /*
@@ -2465,15 +2866,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:bottom-md {
-  bottom: calc(var(--progress)* 24%);
+  bottom: calc(var(--progress)* 23.7%);
 }
 
 .get-progress\:bottom-md-n {
-  bottom: calc(var(--progress)* -24%);
+  bottom: calc(var(--progress)* -23.7%);
 }
 
 .get-progress\:bottom-md-reverse {
-  bottom: calc(calc(1 - var(--progress))* 24%);
+  bottom: calc(calc(1 - var(--progress))* 23.7%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:scale-md {
+  transform:  scale(calc(var(--progress)* 23.7%));
+}
+
+.get-progress\:scale-md-n {
+  transform:  scale(calc(var(--progress)* -23.7%));
+}
+
+.get-progress\:scale-md-reverse {
+  transform:  scale(calc(calc(1 - var(--progress))* 23.7%));
 }
 
 /*
@@ -2759,6 +3184,19 @@ $max: $max + -1;
   width: 3.77rem;
 }
 
+.do-gold-lg {
+  height: 23.607%;
+  width: 23.607%;
+}
+
+.do-gold-lg-100 {
+  height: 123.607%;
+}
+
+.do-gold-lg-100 {
+  width: 123.607%;
+}
+
 .do-br-lg {
   border-radius: 3.77rem;
 }
@@ -2897,15 +3335,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:do-lg {
-  transform:  rotate(calc(var(--progress)* -19deg)) translateX(calc(var(--progress)* 19%)) scaleX(calc(var(--progress)* 11));
+  transform:  rotate(calc(var(--progress)* -7.54deg)) translateX(calc(var(--progress)* 7.54%)) scale(calc(var(--progress)* 3.77));
 }
 
 .get-progress\:do-lg-n {
-  transform:  rotate(calc(var(--progress)* 19deg)) translateX(calc(var(--progress)* -19%)) scaleX(calc(var(--progress)* -11));
+  transform:  rotate(calc(var(--progress)* 7.54deg)) translateX(calc(var(--progress)* -7.54%)) scale(calc(var(--progress)* -3.77));
 }
 
 .get-progress\:do-lg-reverse {
-  transform:  rotate(calc(calc(1 - var(--progress))* -19deg)) translateX(calc(calc(1 - var(--progress))* 19%)) scaleX(calc(calc(1 - var(--progress))* 11));
+  transform:  rotate(calc(calc(1 - var(--progress))* -7.54deg)) translateX(calc(calc(1 - var(--progress))* 7.54%)) scale(calc(calc(1 - var(--progress))* 3.77));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:rotate-lg {
+  transform:  rotate(calc(var(--progress)* -15.83deg));
+}
+
+.get-progress\:rotate-lg-n {
+  transform:  rotate(calc(var(--progress)* 15.83deg));
+}
+
+.get-progress\:rotate-lg-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -15.83deg));
 }
 
 /*
@@ -2921,15 +3383,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:trans-y-lg {
-  transform:  translateY(calc(var(--progress)* 38%));
+  transform:  translateY(calc(var(--progress)* 37.7%));
 }
 
 .get-progress\:trans-y-lg-n {
-  transform:  translateY(calc(var(--progress)* -38%));
+  transform:  translateY(calc(var(--progress)* -37.7%));
 }
 
 .get-progress\:trans-y-lg-reverse {
-  transform:  translateY(calc(calc(1 - var(--progress))* 38%));
+  transform:  translateY(calc(calc(1 - var(--progress))* 37.7%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:trans-mouse-lg {
+  transform:  translateX(calc(var(--progress)* 37.7%)) translateY(calc(var(--progress)* -37.7%));
+}
+
+.get-progress\:trans-mouse-lg-n {
+  transform:  translateX(calc(var(--progress)* -37.7%)) translateY(calc(var(--progress)* 37.7%));
+}
+
+.get-progress\:trans-mouse-lg-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 37.7%)) translateY(calc(calc(1 - var(--progress))* -37.7%));
 }
 
 /*
@@ -2945,15 +3431,15 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:top-lg {
-  top: calc(var(--progress)* 38%);
+  top: calc(var(--progress)* 38.34%);
 }
 
 .get-progress\:top-lg-n {
-  top: calc(var(--progress)* -38%);
+  top: calc(var(--progress)* -38.34%);
 }
 
 .get-progress\:top-lg-reverse {
-  top: calc(calc(1 - var(--progress))* 38%);
+  top: calc(calc(1 - var(--progress))* 38.34%);
 }
 
 /*
@@ -2969,15 +3455,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:bottom-lg {
-  bottom: calc(var(--progress)* 38%);
+  bottom: calc(var(--progress)* 38.34%);
 }
 
 .get-progress\:bottom-lg-n {
-  bottom: calc(var(--progress)* -38%);
+  bottom: calc(var(--progress)* -38.34%);
 }
 
 .get-progress\:bottom-lg-reverse {
-  bottom: calc(calc(1 - var(--progress))* 38%);
+  bottom: calc(calc(1 - var(--progress))* 38.34%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:scale-lg {
+  transform:  scale(calc(var(--progress)* 38.34%));
+}
+
+.get-progress\:scale-lg-n {
+  transform:  scale(calc(var(--progress)* -38.34%));
+}
+
+.get-progress\:scale-lg-reverse {
+  transform:  scale(calc(calc(1 - var(--progress))* 38.34%));
 }
 
 /*
@@ -3269,6 +3779,19 @@ $max: $max + -1;
   width: 6.1rem;
 }
 
+.do-gold-xl {
+  height: 38.197%;
+  width: 38.197%;
+}
+
+.do-gold-xl-100 {
+  height: 138.197%;
+}
+
+.do-gold-xl-100 {
+  width: 138.197%;
+}
+
 .do-br-xl {
   border-radius: 6.1rem;
 }
@@ -3407,15 +3930,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:do-xl {
-  transform:  rotate(calc(var(--progress)* -31deg)) translateX(calc(var(--progress)* 31%)) scaleX(calc(var(--progress)* 18));
+  transform:  rotate(calc(var(--progress)* -12.2deg)) translateX(calc(var(--progress)* 12.2%)) scale(calc(var(--progress)* 6.1));
 }
 
 .get-progress\:do-xl-n {
-  transform:  rotate(calc(var(--progress)* 31deg)) translateX(calc(var(--progress)* -31%)) scaleX(calc(var(--progress)* -18));
+  transform:  rotate(calc(var(--progress)* 12.2deg)) translateX(calc(var(--progress)* -12.2%)) scale(calc(var(--progress)* -6.1));
 }
 
 .get-progress\:do-xl-reverse {
-  transform:  rotate(calc(calc(1 - var(--progress))* -31deg)) translateX(calc(calc(1 - var(--progress))* 31%)) scaleX(calc(calc(1 - var(--progress))* 18));
+  transform:  rotate(calc(calc(1 - var(--progress))* -12.2deg)) translateX(calc(calc(1 - var(--progress))* 12.2%)) scale(calc(calc(1 - var(--progress))* 6.1));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:rotate-xl {
+  transform:  rotate(calc(var(--progress)* -25.62deg));
+}
+
+.get-progress\:rotate-xl-n {
+  transform:  rotate(calc(var(--progress)* 25.62deg));
+}
+
+.get-progress\:rotate-xl-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -25.62deg));
 }
 
 /*
@@ -3454,16 +4001,40 @@ $max: $max + -1;
 @debug(" 3 $unit :"$unit);
 @debug(" 4 $class-full-name :"$class-full-name);
 */
+.get-progress\:trans-mouse-xl {
+  transform:  translateX(calc(var(--progress)* 61%)) translateY(calc(var(--progress)* -61%));
+}
+
+.get-progress\:trans-mouse-xl-n {
+  transform:  translateX(calc(var(--progress)* -61%)) translateY(calc(var(--progress)* 61%));
+}
+
+.get-progress\:trans-mouse-xl-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 61%)) translateY(calc(calc(1 - var(--progress))* -61%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
 .get-progress\:top-xl {
-  top: calc(var(--progress)* 62%);
+  top: calc(var(--progress)* 62.04%);
 }
 
 .get-progress\:top-xl-n {
-  top: calc(var(--progress)* -62%);
+  top: calc(var(--progress)* -62.04%);
 }
 
 .get-progress\:top-xl-reverse {
-  top: calc(calc(1 - var(--progress))* 62%);
+  top: calc(calc(1 - var(--progress))* 62.04%);
 }
 
 /*
@@ -3479,15 +4050,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:bottom-xl {
-  bottom: calc(var(--progress)* 62%);
+  bottom: calc(var(--progress)* 62.04%);
 }
 
 .get-progress\:bottom-xl-n {
-  bottom: calc(var(--progress)* -62%);
+  bottom: calc(var(--progress)* -62.04%);
 }
 
 .get-progress\:bottom-xl-reverse {
-  bottom: calc(calc(1 - var(--progress))* 62%);
+  bottom: calc(calc(1 - var(--progress))* 62.04%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:scale-xl {
+  transform:  scale(calc(var(--progress)* 62.04%));
+}
+
+.get-progress\:scale-xl-n {
+  transform:  scale(calc(var(--progress)* -62.04%));
+}
+
+.get-progress\:scale-xl-reverse {
+  transform:  scale(calc(calc(1 - var(--progress))* 62.04%));
 }
 
 /*
@@ -3785,6 +4380,19 @@ $max: $max + -1;
   width: 9.87rem;
 }
 
+.do-gold-xxl {
+  height: 61.803%;
+  width: 61.803%;
+}
+
+.do-gold-xxl-100 {
+  height: 161.803%;
+}
+
+.do-gold-xxl-100 {
+  width: 161.803%;
+}
+
 .do-br-xxl {
   border-radius: 9.87rem;
 }
@@ -3923,15 +4531,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:do-xxl {
-  transform:  rotate(calc(var(--progress)* -49deg)) translateX(calc(var(--progress)* 49%)) scaleX(calc(var(--progress)* 30));
+  transform:  rotate(calc(var(--progress)* -19.74deg)) translateX(calc(var(--progress)* 19.74%)) scale(calc(var(--progress)* 9.87));
 }
 
 .get-progress\:do-xxl-n {
-  transform:  rotate(calc(var(--progress)* 49deg)) translateX(calc(var(--progress)* -49%)) scaleX(calc(var(--progress)* -30));
+  transform:  rotate(calc(var(--progress)* 19.74deg)) translateX(calc(var(--progress)* -19.74%)) scale(calc(var(--progress)* -9.87));
 }
 
 .get-progress\:do-xxl-reverse {
-  transform:  rotate(calc(calc(1 - var(--progress))* -49deg)) translateX(calc(calc(1 - var(--progress))* 49%)) scaleX(calc(calc(1 - var(--progress))* 30));
+  transform:  rotate(calc(calc(1 - var(--progress))* -19.74deg)) translateX(calc(calc(1 - var(--progress))* 19.74%)) scale(calc(calc(1 - var(--progress))* 9.87));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:rotate-xxl {
+  transform:  rotate(calc(var(--progress)* -41.45deg));
+}
+
+.get-progress\:rotate-xxl-n {
+  transform:  rotate(calc(var(--progress)* 41.45deg));
+}
+
+.get-progress\:rotate-xxl-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -41.45deg));
 }
 
 /*
@@ -3947,15 +4579,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:trans-y-xxl {
-  transform:  translateY(calc(var(--progress)* 99%));
+  transform:  translateY(calc(var(--progress)* 98.7%));
 }
 
 .get-progress\:trans-y-xxl-n {
-  transform:  translateY(calc(var(--progress)* -99%));
+  transform:  translateY(calc(var(--progress)* -98.7%));
 }
 
 .get-progress\:trans-y-xxl-reverse {
-  transform:  translateY(calc(calc(1 - var(--progress))* 99%));
+  transform:  translateY(calc(calc(1 - var(--progress))* 98.7%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:trans-mouse-xxl {
+  transform:  translateX(calc(var(--progress)* 98.7%)) translateY(calc(var(--progress)* -98.7%));
+}
+
+.get-progress\:trans-mouse-xxl-n {
+  transform:  translateX(calc(var(--progress)* -98.7%)) translateY(calc(var(--progress)* 98.7%));
+}
+
+.get-progress\:trans-mouse-xxl-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 98.7%)) translateY(calc(calc(1 - var(--progress))* -98.7%));
 }
 
 /*
@@ -3971,15 +4627,15 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:top-xxl {
-  top: calc(var(--progress)* 100%);
+  top: calc(var(--progress)* 100.38%);
 }
 
 .get-progress\:top-xxl-n {
-  top: calc(var(--progress)* -100%);
+  top: calc(var(--progress)* -100.38%);
 }
 
 .get-progress\:top-xxl-reverse {
-  top: calc(calc(1 - var(--progress))* 100%);
+  top: calc(calc(1 - var(--progress))* 100.38%);
 }
 
 /*
@@ -3995,15 +4651,39 @@ $max: $max + -1;
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:bottom-xxl {
-  bottom: calc(var(--progress)* 100%);
+  bottom: calc(var(--progress)* 100.38%);
 }
 
 .get-progress\:bottom-xxl-n {
-  bottom: calc(var(--progress)* -100%);
+  bottom: calc(var(--progress)* -100.38%);
 }
 
 .get-progress\:bottom-xxl-reverse {
-  bottom: calc(calc(1 - var(--progress))* 100%);
+  bottom: calc(calc(1 - var(--progress))* 100.38%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:scale-xxl {
+  transform:  scale(calc(var(--progress)* 100.38%));
+}
+
+.get-progress\:scale-xxl-n {
+  transform:  scale(calc(var(--progress)* -100.38%));
+}
+
+.get-progress\:scale-xxl-reverse {
+  transform:  scale(calc(calc(1 - var(--progress))* 100.38%));
 }
 
 /*
@@ -4313,6 +4993,19 @@ section {
   width: 15.97rem;
 }
 
+.do-gold-xxxl {
+  height: 100%;
+  width: 100%;
+}
+
+.do-gold-xxxl-100 {
+  height: 200%;
+}
+
+.do-gold-xxxl-100 {
+  width: 200%;
+}
+
 .do-br-xxxl {
   border-radius: 15.97rem;
 }
@@ -4451,15 +5144,39 @@ section {
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:do-xxxl {
-  transform:  rotate(calc(var(--progress)* -80deg)) translateX(calc(var(--progress)* 80%)) scaleX(calc(var(--progress)* 48));
+  transform:  rotate(calc(var(--progress)* -31.94deg)) translateX(calc(var(--progress)* 31.94%)) scale(calc(var(--progress)* 15.97));
 }
 
 .get-progress\:do-xxxl-n {
-  transform:  rotate(calc(var(--progress)* 80deg)) translateX(calc(var(--progress)* -80%)) scaleX(calc(var(--progress)* -48));
+  transform:  rotate(calc(var(--progress)* 31.94deg)) translateX(calc(var(--progress)* -31.94%)) scale(calc(var(--progress)* -15.97));
 }
 
 .get-progress\:do-xxxl-reverse {
-  transform:  rotate(calc(calc(1 - var(--progress))* -80deg)) translateX(calc(calc(1 - var(--progress))* 80%)) scaleX(calc(calc(1 - var(--progress))* 48));
+  transform:  rotate(calc(calc(1 - var(--progress))* -31.94deg)) translateX(calc(calc(1 - var(--progress))* 31.94%)) scale(calc(calc(1 - var(--progress))* 15.97));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:rotate-xxxl {
+  transform:  rotate(calc(var(--progress)* -67.07deg));
+}
+
+.get-progress\:rotate-xxxl-n {
+  transform:  rotate(calc(var(--progress)* 67.07deg));
+}
+
+.get-progress\:rotate-xxxl-reverse {
+  transform:  rotate(calc(calc(1 - var(--progress))* -67.07deg));
 }
 
 /*
@@ -4475,15 +5192,39 @@ section {
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:trans-y-xxxl {
-  transform:  translateY(calc(var(--progress)* 160%));
+  transform:  translateY(calc(var(--progress)* 159.7%));
 }
 
 .get-progress\:trans-y-xxxl-n {
-  transform:  translateY(calc(var(--progress)* -160%));
+  transform:  translateY(calc(var(--progress)* -159.7%));
 }
 
 .get-progress\:trans-y-xxxl-reverse {
-  transform:  translateY(calc(calc(1 - var(--progress))* 160%));
+  transform:  translateY(calc(calc(1 - var(--progress))* 159.7%));
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:trans-mouse-xxxl {
+  transform:  translateX(calc(var(--progress)* 159.7%)) translateY(calc(var(--progress)* -159.7%));
+}
+
+.get-progress\:trans-mouse-xxxl-n {
+  transform:  translateX(calc(var(--progress)* -159.7%)) translateY(calc(var(--progress)* 159.7%));
+}
+
+.get-progress\:trans-mouse-xxxl-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 159.7%)) translateY(calc(calc(1 - var(--progress))* -159.7%));
 }
 
 /*
@@ -4499,15 +5240,15 @@ section {
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:top-xxxl {
-  top: calc(var(--progress)* 162%);
+  top: calc(var(--progress)* 162.41%);
 }
 
 .get-progress\:top-xxxl-n {
-  top: calc(var(--progress)* -162%);
+  top: calc(var(--progress)* -162.41%);
 }
 
 .get-progress\:top-xxxl-reverse {
-  top: calc(calc(1 - var(--progress))* 162%);
+  top: calc(calc(1 - var(--progress))* 162.41%);
 }
 
 /*
@@ -4523,15 +5264,39 @@ section {
 @debug(" 4 $class-full-name :"$class-full-name);
 */
 .get-progress\:bottom-xxxl {
-  bottom: calc(var(--progress)* 162%);
+  bottom: calc(var(--progress)* 162.41%);
 }
 
 .get-progress\:bottom-xxxl-n {
-  bottom: calc(var(--progress)* -162%);
+  bottom: calc(var(--progress)* -162.41%);
 }
 
 .get-progress\:bottom-xxxl-reverse {
-  bottom: calc(calc(1 - var(--progress))* 162%);
+  bottom: calc(calc(1 - var(--progress))* 162.41%);
+}
+
+/*
+@debug(" INIT $var-name :"$var-name);
+@debug(" 0 :"$data-class);
+@debug(" 1 $props:"$props);
+*/
+/*
+@debug(" ? isResponsive:"$isResponsive);
+@debug(" 2 $prop:"$prop);
+@debug(" 3 $params :"$params);
+@debug(" 3 $unit :"$unit);
+@debug(" 4 $class-full-name :"$class-full-name);
+*/
+.get-progress\:scale-xxxl {
+  transform:  scale(calc(var(--progress)* 162.41%));
+}
+
+.get-progress\:scale-xxxl-n {
+  transform:  scale(calc(var(--progress)* -162.41%));
+}
+
+.get-progress\:scale-xxxl-reverse {
+  transform:  scale(calc(calc(1 - var(--progress))* 162.41%));
 }
 
 /*
@@ -62546,6 +63311,19 @@ section {
     width: 0.34rem !important;
   }
 
+  .xs-do-gold-xxxs {
+    height: 2.129%;
+    width: 2.129%;
+  }
+
+  .xs-do-gold-xxxs-100 {
+    height: 102.129%;
+  }
+
+  .xs-do-gold-xxxs-100 {
+    width: 102.129%;
+  }
+
   .xs-do-br-xxxs {
     border-radius: 0.34rem !important;
   }
@@ -62836,6 +63614,19 @@ section {
   .xs-do-hw-xxs {
     height: 0.55rem !important;
     width: 0.55rem !important;
+  }
+
+  .xs-do-gold-xxs {
+    height: 3.444%;
+    width: 3.444%;
+  }
+
+  .xs-do-gold-xxs-100 {
+    height: 103.444%;
+  }
+
+  .xs-do-gold-xxs-100 {
+    width: 103.444%;
   }
 
   .xs-do-br-xxs {
@@ -63130,6 +63921,19 @@ section {
     width: 0.89rem !important;
   }
 
+  .xs-do-gold-xs {
+    height: 5.573%;
+    width: 5.573%;
+  }
+
+  .xs-do-gold-xs-100 {
+    height: 105.573%;
+  }
+
+  .xs-do-gold-xs-100 {
+    width: 105.573%;
+  }
+
   .xs-do-br-xs {
     border-radius: 0.89rem !important;
   }
@@ -63420,6 +64224,19 @@ section {
   .xs-do-hw-sm {
     height: 1.44rem !important;
     width: 1.44rem !important;
+  }
+
+  .xs-do-gold-sm {
+    height: 9.017%;
+    width: 9.017%;
+  }
+
+  .xs-do-gold-sm-100 {
+    height: 109.017%;
+  }
+
+  .xs-do-gold-sm-100 {
+    width: 109.017%;
   }
 
   .xs-do-br-sm {
@@ -63714,6 +64531,19 @@ section {
     width: 2.33rem !important;
   }
 
+  .xs-do-gold-md {
+    height: 14.59%;
+    width: 14.59%;
+  }
+
+  .xs-do-gold-md-100 {
+    height: 114.59%;
+  }
+
+  .xs-do-gold-md-100 {
+    width: 114.59%;
+  }
+
   .xs-do-br-md {
     border-radius: 2.33rem !important;
   }
@@ -64004,6 +64834,19 @@ section {
   .xs-do-hw-lg {
     height: 3.77rem !important;
     width: 3.77rem !important;
+  }
+
+  .xs-do-gold-lg {
+    height: 23.607%;
+    width: 23.607%;
+  }
+
+  .xs-do-gold-lg-100 {
+    height: 123.607%;
+  }
+
+  .xs-do-gold-lg-100 {
+    width: 123.607%;
   }
 
   .xs-do-br-lg {
@@ -64298,6 +65141,19 @@ section {
     width: 6.1rem !important;
   }
 
+  .xs-do-gold-xl {
+    height: 38.197%;
+    width: 38.197%;
+  }
+
+  .xs-do-gold-xl-100 {
+    height: 138.197%;
+  }
+
+  .xs-do-gold-xl-100 {
+    width: 138.197%;
+  }
+
   .xs-do-br-xl {
     border-radius: 6.1rem !important;
   }
@@ -64590,6 +65446,19 @@ section {
     width: 9.87rem !important;
   }
 
+  .xs-do-gold-xxl {
+    height: 61.803%;
+    width: 61.803%;
+  }
+
+  .xs-do-gold-xxl-100 {
+    height: 161.803%;
+  }
+
+  .xs-do-gold-xxl-100 {
+    width: 161.803%;
+  }
+
   .xs-do-br-xxl {
     border-radius: 9.87rem !important;
   }
@@ -64880,6 +65749,19 @@ section {
   .xs-do-hw-xxxl {
     height: 15.97rem !important;
     width: 15.97rem !important;
+  }
+
+  .xs-do-gold-xxxl {
+    height: 100%;
+    width: 100%;
+  }
+
+  .xs-do-gold-xxxl-100 {
+    height: 200%;
+  }
+
+  .xs-do-gold-xxxl-100 {
+    width: 200%;
   }
 
   .xs-do-br-xxxl {
@@ -74310,6 +75192,19 @@ section {
     width: 0.34rem !important;
   }
 
+  .sm-do-gold-xxxs {
+    height: 2.129%;
+    width: 2.129%;
+  }
+
+  .sm-do-gold-xxxs-100 {
+    height: 102.129%;
+  }
+
+  .sm-do-gold-xxxs-100 {
+    width: 102.129%;
+  }
+
   .sm-do-br-xxxs {
     border-radius: 0.34rem !important;
   }
@@ -74600,6 +75495,19 @@ section {
   .sm-do-hw-xxs {
     height: 0.55rem !important;
     width: 0.55rem !important;
+  }
+
+  .sm-do-gold-xxs {
+    height: 3.444%;
+    width: 3.444%;
+  }
+
+  .sm-do-gold-xxs-100 {
+    height: 103.444%;
+  }
+
+  .sm-do-gold-xxs-100 {
+    width: 103.444%;
   }
 
   .sm-do-br-xxs {
@@ -74894,6 +75802,19 @@ section {
     width: 0.89rem !important;
   }
 
+  .sm-do-gold-xs {
+    height: 5.573%;
+    width: 5.573%;
+  }
+
+  .sm-do-gold-xs-100 {
+    height: 105.573%;
+  }
+
+  .sm-do-gold-xs-100 {
+    width: 105.573%;
+  }
+
   .sm-do-br-xs {
     border-radius: 0.89rem !important;
   }
@@ -75184,6 +76105,19 @@ section {
   .sm-do-hw-sm {
     height: 1.44rem !important;
     width: 1.44rem !important;
+  }
+
+  .sm-do-gold-sm {
+    height: 9.017%;
+    width: 9.017%;
+  }
+
+  .sm-do-gold-sm-100 {
+    height: 109.017%;
+  }
+
+  .sm-do-gold-sm-100 {
+    width: 109.017%;
   }
 
   .sm-do-br-sm {
@@ -75478,6 +76412,19 @@ section {
     width: 2.33rem !important;
   }
 
+  .sm-do-gold-md {
+    height: 14.59%;
+    width: 14.59%;
+  }
+
+  .sm-do-gold-md-100 {
+    height: 114.59%;
+  }
+
+  .sm-do-gold-md-100 {
+    width: 114.59%;
+  }
+
   .sm-do-br-md {
     border-radius: 2.33rem !important;
   }
@@ -75768,6 +76715,19 @@ section {
   .sm-do-hw-lg {
     height: 3.77rem !important;
     width: 3.77rem !important;
+  }
+
+  .sm-do-gold-lg {
+    height: 23.607%;
+    width: 23.607%;
+  }
+
+  .sm-do-gold-lg-100 {
+    height: 123.607%;
+  }
+
+  .sm-do-gold-lg-100 {
+    width: 123.607%;
   }
 
   .sm-do-br-lg {
@@ -76062,6 +77022,19 @@ section {
     width: 6.1rem !important;
   }
 
+  .sm-do-gold-xl {
+    height: 38.197%;
+    width: 38.197%;
+  }
+
+  .sm-do-gold-xl-100 {
+    height: 138.197%;
+  }
+
+  .sm-do-gold-xl-100 {
+    width: 138.197%;
+  }
+
   .sm-do-br-xl {
     border-radius: 6.1rem !important;
   }
@@ -76354,6 +77327,19 @@ section {
     width: 9.87rem !important;
   }
 
+  .sm-do-gold-xxl {
+    height: 61.803%;
+    width: 61.803%;
+  }
+
+  .sm-do-gold-xxl-100 {
+    height: 161.803%;
+  }
+
+  .sm-do-gold-xxl-100 {
+    width: 161.803%;
+  }
+
   .sm-do-br-xxl {
     border-radius: 9.87rem !important;
   }
@@ -76644,6 +77630,19 @@ section {
   .sm-do-hw-xxxl {
     height: 15.97rem !important;
     width: 15.97rem !important;
+  }
+
+  .sm-do-gold-xxxl {
+    height: 100%;
+    width: 100%;
+  }
+
+  .sm-do-gold-xxxl-100 {
+    height: 200%;
+  }
+
+  .sm-do-gold-xxxl-100 {
+    width: 200%;
   }
 
   .sm-do-br-xxxl {
@@ -86074,6 +87073,19 @@ section {
     width: 0.34rem !important;
   }
 
+  .md-do-gold-xxxs {
+    height: 2.129%;
+    width: 2.129%;
+  }
+
+  .md-do-gold-xxxs-100 {
+    height: 102.129%;
+  }
+
+  .md-do-gold-xxxs-100 {
+    width: 102.129%;
+  }
+
   .md-do-br-xxxs {
     border-radius: 0.34rem !important;
   }
@@ -86364,6 +87376,19 @@ section {
   .md-do-hw-xxs {
     height: 0.55rem !important;
     width: 0.55rem !important;
+  }
+
+  .md-do-gold-xxs {
+    height: 3.444%;
+    width: 3.444%;
+  }
+
+  .md-do-gold-xxs-100 {
+    height: 103.444%;
+  }
+
+  .md-do-gold-xxs-100 {
+    width: 103.444%;
   }
 
   .md-do-br-xxs {
@@ -86658,6 +87683,19 @@ section {
     width: 0.89rem !important;
   }
 
+  .md-do-gold-xs {
+    height: 5.573%;
+    width: 5.573%;
+  }
+
+  .md-do-gold-xs-100 {
+    height: 105.573%;
+  }
+
+  .md-do-gold-xs-100 {
+    width: 105.573%;
+  }
+
   .md-do-br-xs {
     border-radius: 0.89rem !important;
   }
@@ -86948,6 +87986,19 @@ section {
   .md-do-hw-sm {
     height: 1.44rem !important;
     width: 1.44rem !important;
+  }
+
+  .md-do-gold-sm {
+    height: 9.017%;
+    width: 9.017%;
+  }
+
+  .md-do-gold-sm-100 {
+    height: 109.017%;
+  }
+
+  .md-do-gold-sm-100 {
+    width: 109.017%;
   }
 
   .md-do-br-sm {
@@ -87242,6 +88293,19 @@ section {
     width: 2.33rem !important;
   }
 
+  .md-do-gold-md {
+    height: 14.59%;
+    width: 14.59%;
+  }
+
+  .md-do-gold-md-100 {
+    height: 114.59%;
+  }
+
+  .md-do-gold-md-100 {
+    width: 114.59%;
+  }
+
   .md-do-br-md {
     border-radius: 2.33rem !important;
   }
@@ -87532,6 +88596,19 @@ section {
   .md-do-hw-lg {
     height: 3.77rem !important;
     width: 3.77rem !important;
+  }
+
+  .md-do-gold-lg {
+    height: 23.607%;
+    width: 23.607%;
+  }
+
+  .md-do-gold-lg-100 {
+    height: 123.607%;
+  }
+
+  .md-do-gold-lg-100 {
+    width: 123.607%;
   }
 
   .md-do-br-lg {
@@ -87826,6 +88903,19 @@ section {
     width: 6.1rem !important;
   }
 
+  .md-do-gold-xl {
+    height: 38.197%;
+    width: 38.197%;
+  }
+
+  .md-do-gold-xl-100 {
+    height: 138.197%;
+  }
+
+  .md-do-gold-xl-100 {
+    width: 138.197%;
+  }
+
   .md-do-br-xl {
     border-radius: 6.1rem !important;
   }
@@ -88118,6 +89208,19 @@ section {
     width: 9.87rem !important;
   }
 
+  .md-do-gold-xxl {
+    height: 61.803%;
+    width: 61.803%;
+  }
+
+  .md-do-gold-xxl-100 {
+    height: 161.803%;
+  }
+
+  .md-do-gold-xxl-100 {
+    width: 161.803%;
+  }
+
   .md-do-br-xxl {
     border-radius: 9.87rem !important;
   }
@@ -88408,6 +89511,19 @@ section {
   .md-do-hw-xxxl {
     height: 15.97rem !important;
     width: 15.97rem !important;
+  }
+
+  .md-do-gold-xxxl {
+    height: 100%;
+    width: 100%;
+  }
+
+  .md-do-gold-xxxl-100 {
+    height: 200%;
+  }
+
+  .md-do-gold-xxxl-100 {
+    width: 200%;
   }
 
   .md-do-br-xxxl {
@@ -97838,6 +98954,19 @@ section {
     width: 0.34rem !important;
   }
 
+  .lg-do-gold-xxxs {
+    height: 2.129%;
+    width: 2.129%;
+  }
+
+  .lg-do-gold-xxxs-100 {
+    height: 102.129%;
+  }
+
+  .lg-do-gold-xxxs-100 {
+    width: 102.129%;
+  }
+
   .lg-do-br-xxxs {
     border-radius: 0.34rem !important;
   }
@@ -98128,6 +99257,19 @@ section {
   .lg-do-hw-xxs {
     height: 0.55rem !important;
     width: 0.55rem !important;
+  }
+
+  .lg-do-gold-xxs {
+    height: 3.444%;
+    width: 3.444%;
+  }
+
+  .lg-do-gold-xxs-100 {
+    height: 103.444%;
+  }
+
+  .lg-do-gold-xxs-100 {
+    width: 103.444%;
   }
 
   .lg-do-br-xxs {
@@ -98422,6 +99564,19 @@ section {
     width: 0.89rem !important;
   }
 
+  .lg-do-gold-xs {
+    height: 5.573%;
+    width: 5.573%;
+  }
+
+  .lg-do-gold-xs-100 {
+    height: 105.573%;
+  }
+
+  .lg-do-gold-xs-100 {
+    width: 105.573%;
+  }
+
   .lg-do-br-xs {
     border-radius: 0.89rem !important;
   }
@@ -98712,6 +99867,19 @@ section {
   .lg-do-hw-sm {
     height: 1.44rem !important;
     width: 1.44rem !important;
+  }
+
+  .lg-do-gold-sm {
+    height: 9.017%;
+    width: 9.017%;
+  }
+
+  .lg-do-gold-sm-100 {
+    height: 109.017%;
+  }
+
+  .lg-do-gold-sm-100 {
+    width: 109.017%;
   }
 
   .lg-do-br-sm {
@@ -99006,6 +100174,19 @@ section {
     width: 2.33rem !important;
   }
 
+  .lg-do-gold-md {
+    height: 14.59%;
+    width: 14.59%;
+  }
+
+  .lg-do-gold-md-100 {
+    height: 114.59%;
+  }
+
+  .lg-do-gold-md-100 {
+    width: 114.59%;
+  }
+
   .lg-do-br-md {
     border-radius: 2.33rem !important;
   }
@@ -99296,6 +100477,19 @@ section {
   .lg-do-hw-lg {
     height: 3.77rem !important;
     width: 3.77rem !important;
+  }
+
+  .lg-do-gold-lg {
+    height: 23.607%;
+    width: 23.607%;
+  }
+
+  .lg-do-gold-lg-100 {
+    height: 123.607%;
+  }
+
+  .lg-do-gold-lg-100 {
+    width: 123.607%;
   }
 
   .lg-do-br-lg {
@@ -99590,6 +100784,19 @@ section {
     width: 6.1rem !important;
   }
 
+  .lg-do-gold-xl {
+    height: 38.197%;
+    width: 38.197%;
+  }
+
+  .lg-do-gold-xl-100 {
+    height: 138.197%;
+  }
+
+  .lg-do-gold-xl-100 {
+    width: 138.197%;
+  }
+
   .lg-do-br-xl {
     border-radius: 6.1rem !important;
   }
@@ -99882,6 +101089,19 @@ section {
     width: 9.87rem !important;
   }
 
+  .lg-do-gold-xxl {
+    height: 61.803%;
+    width: 61.803%;
+  }
+
+  .lg-do-gold-xxl-100 {
+    height: 161.803%;
+  }
+
+  .lg-do-gold-xxl-100 {
+    width: 161.803%;
+  }
+
   .lg-do-br-xxl {
     border-radius: 9.87rem !important;
   }
@@ -100172,6 +101392,19 @@ section {
   .lg-do-hw-xxxl {
     height: 15.97rem !important;
     width: 15.97rem !important;
+  }
+
+  .lg-do-gold-xxxl {
+    height: 100%;
+    width: 100%;
+  }
+
+  .lg-do-gold-xxxl-100 {
+    height: 200%;
+  }
+
+  .lg-do-gold-xxxl-100 {
+    width: 200%;
   }
 
   .lg-do-br-xxxl {
@@ -109602,6 +110835,19 @@ section {
     width: 0.34rem !important;
   }
 
+  .xl-do-gold-xxxs {
+    height: 2.129%;
+    width: 2.129%;
+  }
+
+  .xl-do-gold-xxxs-100 {
+    height: 102.129%;
+  }
+
+  .xl-do-gold-xxxs-100 {
+    width: 102.129%;
+  }
+
   .xl-do-br-xxxs {
     border-radius: 0.34rem !important;
   }
@@ -109892,6 +111138,19 @@ section {
   .xl-do-hw-xxs {
     height: 0.55rem !important;
     width: 0.55rem !important;
+  }
+
+  .xl-do-gold-xxs {
+    height: 3.444%;
+    width: 3.444%;
+  }
+
+  .xl-do-gold-xxs-100 {
+    height: 103.444%;
+  }
+
+  .xl-do-gold-xxs-100 {
+    width: 103.444%;
   }
 
   .xl-do-br-xxs {
@@ -110186,6 +111445,19 @@ section {
     width: 0.89rem !important;
   }
 
+  .xl-do-gold-xs {
+    height: 5.573%;
+    width: 5.573%;
+  }
+
+  .xl-do-gold-xs-100 {
+    height: 105.573%;
+  }
+
+  .xl-do-gold-xs-100 {
+    width: 105.573%;
+  }
+
   .xl-do-br-xs {
     border-radius: 0.89rem !important;
   }
@@ -110476,6 +111748,19 @@ section {
   .xl-do-hw-sm {
     height: 1.44rem !important;
     width: 1.44rem !important;
+  }
+
+  .xl-do-gold-sm {
+    height: 9.017%;
+    width: 9.017%;
+  }
+
+  .xl-do-gold-sm-100 {
+    height: 109.017%;
+  }
+
+  .xl-do-gold-sm-100 {
+    width: 109.017%;
   }
 
   .xl-do-br-sm {
@@ -110770,6 +112055,19 @@ section {
     width: 2.33rem !important;
   }
 
+  .xl-do-gold-md {
+    height: 14.59%;
+    width: 14.59%;
+  }
+
+  .xl-do-gold-md-100 {
+    height: 114.59%;
+  }
+
+  .xl-do-gold-md-100 {
+    width: 114.59%;
+  }
+
   .xl-do-br-md {
     border-radius: 2.33rem !important;
   }
@@ -111060,6 +112358,19 @@ section {
   .xl-do-hw-lg {
     height: 3.77rem !important;
     width: 3.77rem !important;
+  }
+
+  .xl-do-gold-lg {
+    height: 23.607%;
+    width: 23.607%;
+  }
+
+  .xl-do-gold-lg-100 {
+    height: 123.607%;
+  }
+
+  .xl-do-gold-lg-100 {
+    width: 123.607%;
   }
 
   .xl-do-br-lg {
@@ -111354,6 +112665,19 @@ section {
     width: 6.1rem !important;
   }
 
+  .xl-do-gold-xl {
+    height: 38.197%;
+    width: 38.197%;
+  }
+
+  .xl-do-gold-xl-100 {
+    height: 138.197%;
+  }
+
+  .xl-do-gold-xl-100 {
+    width: 138.197%;
+  }
+
   .xl-do-br-xl {
     border-radius: 6.1rem !important;
   }
@@ -111646,6 +112970,19 @@ section {
     width: 9.87rem !important;
   }
 
+  .xl-do-gold-xxl {
+    height: 61.803%;
+    width: 61.803%;
+  }
+
+  .xl-do-gold-xxl-100 {
+    height: 161.803%;
+  }
+
+  .xl-do-gold-xxl-100 {
+    width: 161.803%;
+  }
+
   .xl-do-br-xxl {
     border-radius: 9.87rem !important;
   }
@@ -111936,6 +113273,19 @@ section {
   .xl-do-hw-xxxl {
     height: 15.97rem !important;
     width: 15.97rem !important;
+  }
+
+  .xl-do-gold-xxxl {
+    height: 100%;
+    width: 100%;
+  }
+
+  .xl-do-gold-xxxl-100 {
+    height: 200%;
+  }
+
+  .xl-do-gold-xxxl-100 {
+    width: 200%;
   }
 
   .xl-do-br-xxxl {
@@ -121366,6 +122716,19 @@ section {
     width: 0.34rem !important;
   }
 
+  .xxl-do-gold-xxxs {
+    height: 2.129%;
+    width: 2.129%;
+  }
+
+  .xxl-do-gold-xxxs-100 {
+    height: 102.129%;
+  }
+
+  .xxl-do-gold-xxxs-100 {
+    width: 102.129%;
+  }
+
   .xxl-do-br-xxxs {
     border-radius: 0.34rem !important;
   }
@@ -121656,6 +123019,19 @@ section {
   .xxl-do-hw-xxs {
     height: 0.55rem !important;
     width: 0.55rem !important;
+  }
+
+  .xxl-do-gold-xxs {
+    height: 3.444%;
+    width: 3.444%;
+  }
+
+  .xxl-do-gold-xxs-100 {
+    height: 103.444%;
+  }
+
+  .xxl-do-gold-xxs-100 {
+    width: 103.444%;
   }
 
   .xxl-do-br-xxs {
@@ -121950,6 +123326,19 @@ section {
     width: 0.89rem !important;
   }
 
+  .xxl-do-gold-xs {
+    height: 5.573%;
+    width: 5.573%;
+  }
+
+  .xxl-do-gold-xs-100 {
+    height: 105.573%;
+  }
+
+  .xxl-do-gold-xs-100 {
+    width: 105.573%;
+  }
+
   .xxl-do-br-xs {
     border-radius: 0.89rem !important;
   }
@@ -122240,6 +123629,19 @@ section {
   .xxl-do-hw-sm {
     height: 1.44rem !important;
     width: 1.44rem !important;
+  }
+
+  .xxl-do-gold-sm {
+    height: 9.017%;
+    width: 9.017%;
+  }
+
+  .xxl-do-gold-sm-100 {
+    height: 109.017%;
+  }
+
+  .xxl-do-gold-sm-100 {
+    width: 109.017%;
   }
 
   .xxl-do-br-sm {
@@ -122534,6 +123936,19 @@ section {
     width: 2.33rem !important;
   }
 
+  .xxl-do-gold-md {
+    height: 14.59%;
+    width: 14.59%;
+  }
+
+  .xxl-do-gold-md-100 {
+    height: 114.59%;
+  }
+
+  .xxl-do-gold-md-100 {
+    width: 114.59%;
+  }
+
   .xxl-do-br-md {
     border-radius: 2.33rem !important;
   }
@@ -122824,6 +124239,19 @@ section {
   .xxl-do-hw-lg {
     height: 3.77rem !important;
     width: 3.77rem !important;
+  }
+
+  .xxl-do-gold-lg {
+    height: 23.607%;
+    width: 23.607%;
+  }
+
+  .xxl-do-gold-lg-100 {
+    height: 123.607%;
+  }
+
+  .xxl-do-gold-lg-100 {
+    width: 123.607%;
   }
 
   .xxl-do-br-lg {
@@ -123118,6 +124546,19 @@ section {
     width: 6.1rem !important;
   }
 
+  .xxl-do-gold-xl {
+    height: 38.197%;
+    width: 38.197%;
+  }
+
+  .xxl-do-gold-xl-100 {
+    height: 138.197%;
+  }
+
+  .xxl-do-gold-xl-100 {
+    width: 138.197%;
+  }
+
   .xxl-do-br-xl {
     border-radius: 6.1rem !important;
   }
@@ -123410,6 +124851,19 @@ section {
     width: 9.87rem !important;
   }
 
+  .xxl-do-gold-xxl {
+    height: 61.803%;
+    width: 61.803%;
+  }
+
+  .xxl-do-gold-xxl-100 {
+    height: 161.803%;
+  }
+
+  .xxl-do-gold-xxl-100 {
+    width: 161.803%;
+  }
+
   .xxl-do-br-xxl {
     border-radius: 9.87rem !important;
   }
@@ -123700,6 +125154,19 @@ section {
   .xxl-do-hw-xxxl {
     height: 15.97rem !important;
     width: 15.97rem !important;
+  }
+
+  .xxl-do-gold-xxxl {
+    height: 100%;
+    width: 100%;
+  }
+
+  .xxl-do-gold-xxxl-100 {
+    height: 200%;
+  }
+
+  .xxl-do-gold-xxxl-100 {
+    width: 200%;
   }
 
   .xxl-do-br-xxxl {
@@ -133130,6 +134597,19 @@ section {
     width: 0.34rem !important;
   }
 
+  .xxxl-do-gold-xxxs {
+    height: 2.129%;
+    width: 2.129%;
+  }
+
+  .xxxl-do-gold-xxxs-100 {
+    height: 102.129%;
+  }
+
+  .xxxl-do-gold-xxxs-100 {
+    width: 102.129%;
+  }
+
   .xxxl-do-br-xxxs {
     border-radius: 0.34rem !important;
   }
@@ -133420,6 +134900,19 @@ section {
   .xxxl-do-hw-xxs {
     height: 0.55rem !important;
     width: 0.55rem !important;
+  }
+
+  .xxxl-do-gold-xxs {
+    height: 3.444%;
+    width: 3.444%;
+  }
+
+  .xxxl-do-gold-xxs-100 {
+    height: 103.444%;
+  }
+
+  .xxxl-do-gold-xxs-100 {
+    width: 103.444%;
   }
 
   .xxxl-do-br-xxs {
@@ -133714,6 +135207,19 @@ section {
     width: 0.89rem !important;
   }
 
+  .xxxl-do-gold-xs {
+    height: 5.573%;
+    width: 5.573%;
+  }
+
+  .xxxl-do-gold-xs-100 {
+    height: 105.573%;
+  }
+
+  .xxxl-do-gold-xs-100 {
+    width: 105.573%;
+  }
+
   .xxxl-do-br-xs {
     border-radius: 0.89rem !important;
   }
@@ -134004,6 +135510,19 @@ section {
   .xxxl-do-hw-sm {
     height: 1.44rem !important;
     width: 1.44rem !important;
+  }
+
+  .xxxl-do-gold-sm {
+    height: 9.017%;
+    width: 9.017%;
+  }
+
+  .xxxl-do-gold-sm-100 {
+    height: 109.017%;
+  }
+
+  .xxxl-do-gold-sm-100 {
+    width: 109.017%;
   }
 
   .xxxl-do-br-sm {
@@ -134298,6 +135817,19 @@ section {
     width: 2.33rem !important;
   }
 
+  .xxxl-do-gold-md {
+    height: 14.59%;
+    width: 14.59%;
+  }
+
+  .xxxl-do-gold-md-100 {
+    height: 114.59%;
+  }
+
+  .xxxl-do-gold-md-100 {
+    width: 114.59%;
+  }
+
   .xxxl-do-br-md {
     border-radius: 2.33rem !important;
   }
@@ -134588,6 +136120,19 @@ section {
   .xxxl-do-hw-lg {
     height: 3.77rem !important;
     width: 3.77rem !important;
+  }
+
+  .xxxl-do-gold-lg {
+    height: 23.607%;
+    width: 23.607%;
+  }
+
+  .xxxl-do-gold-lg-100 {
+    height: 123.607%;
+  }
+
+  .xxxl-do-gold-lg-100 {
+    width: 123.607%;
   }
 
   .xxxl-do-br-lg {
@@ -134882,6 +136427,19 @@ section {
     width: 6.1rem !important;
   }
 
+  .xxxl-do-gold-xl {
+    height: 38.197%;
+    width: 38.197%;
+  }
+
+  .xxxl-do-gold-xl-100 {
+    height: 138.197%;
+  }
+
+  .xxxl-do-gold-xl-100 {
+    width: 138.197%;
+  }
+
   .xxxl-do-br-xl {
     border-radius: 6.1rem !important;
   }
@@ -135174,6 +136732,19 @@ section {
     width: 9.87rem !important;
   }
 
+  .xxxl-do-gold-xxl {
+    height: 61.803%;
+    width: 61.803%;
+  }
+
+  .xxxl-do-gold-xxl-100 {
+    height: 161.803%;
+  }
+
+  .xxxl-do-gold-xxl-100 {
+    width: 161.803%;
+  }
+
   .xxxl-do-br-xxl {
     border-radius: 9.87rem !important;
   }
@@ -135464,6 +137035,19 @@ section {
   .xxxl-do-hw-xxxl {
     height: 15.97rem !important;
     width: 15.97rem !important;
+  }
+
+  .xxxl-do-gold-xxxl {
+    height: 100%;
+    width: 100%;
+  }
+
+  .xxxl-do-gold-xxxl-100 {
+    height: 200%;
+  }
+
+  .xxxl-do-gold-xxxl-100 {
+    width: 200%;
   }
 
   .xxxl-do-br-xxxl {

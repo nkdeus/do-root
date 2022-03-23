@@ -5,7 +5,7 @@
 	},
 	"titre": "Ulysse 2029",
 	"logo": "imgs/logo.svg",
-	"rootPath": "/",
+	"rootPath": "./",
 	"nav": {
 		"background": "hide",
 		"header": [
@@ -38,6 +38,6 @@
 	},
 	"pageHome": {
 		"title": "Home Ulysse 2029",
-		"text": "lorem ipsum dolor update 8 !"
+		"text": "lorem ipsum dolor update 9 !"
 	}
 }

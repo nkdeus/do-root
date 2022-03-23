@@ -1,5 +1,7 @@
-// doXXX version 1
-// update : 9 marss 2022
+// do-scroll-datas v1
+// connecter le framework SCSS Do avec la position du scroll par rapport à un point ou objet.
+// @use scrolltrigger.js from gsap
+// update : 22 marss 2022
 
 var moduleManager = window.WFmodules;
 if(moduleManager == undefined){
@@ -19,7 +21,7 @@ moduleManager["doscrolldatas"] = function () {
     $scope.end = $($scope).attr("data-do-end") || "bottom center+=10%";
     
     if($scope.calcul=="full-reverse"){
-        $($scope.target).css("--progress",1);
+        $($scope.target).css("--progress",1*$scope.force);
     }else{
         $($scope.target).css("--progress",0);
     }
@@ -81,7 +83,7 @@ moduleManager["doscrolldatas"] = function () {
                 }
                 
             }
-            console.log("toggled, isActive:", self.isActive)
+           // console.log("toggled, isActive:", self.isActive)
         },
         onUpdate: self => {
             if($scope.update){
