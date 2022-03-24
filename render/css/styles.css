@@ -26,9 +26,6 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
 }
 
 @media (prefers-color-scheme: dark) {
-  .trigger-filter-invert {
-    filter: invert(1) grayscale(1);
-  }
 
   .filter-invert {
     filter: invert(0) grayscale(0) !important;
@@ -67,10 +64,6 @@ Core de la créature
 }
 :root {
   --xxxl: 15.97;
-}
-
-.do-h-px-xxxs {
-  height: 0.34px;
 }
 
 .do-w-xxxs {
@@ -234,8 +227,16 @@ $max: $max + -1;
   padding-bottom: 0.55rem;
 }
 
+.do-h-px-xxs {
+  height: 0.55px;
+}
+
 .do-w-xxs {
   width: 0.55rem;
+}
+
+.do-w-px-xxs {
+  width: 0.55px;
 }
 
 .do-wh-xxs {
@@ -395,8 +396,8 @@ $max: $max + -1;
   margin-left: 0.89rem;
 }
 
-.do-h-xs {
-  height: 0.89rem;
+.do-h-px-xs {
+  height: 0.89px;
 }
 
 .do-w-xs {
@@ -570,6 +571,10 @@ $max: $max + -1;
   height: 1.44rem;
 }
 
+.do-h-px-sm {
+  height: 1.44px;
+}
+
 .do-w-sm {
   width: 1.44rem;
 }
@@ -731,6 +736,10 @@ $max: $max + -1;
 
 .do-h-md {
   height: 2.33rem;
+}
+
+.do-h-px-md {
+  height: 2.33px;
 }
 
 .do-w-md {
@@ -921,10 +930,6 @@ $max: $max + -1;
   height: 3.77rem;
 }
 
-.do-scale-lg {
-  transform: scale(3.77);
-}
-
 .top-lg-rem {
   top: 3.77rem;
 }
@@ -1098,6 +1103,10 @@ $max: $max + -1;
   }
 }
 
+.do-h-px-xl {
+  height: 6.1px;
+}
+
 .do-w-xl {
   width: 6.1rem;
 }
@@ -1105,10 +1114,6 @@ $max: $max + -1;
 .do-wh-xl {
   width: 6.1rem;
   height: 6.1rem;
-}
-
-.do-scale-xl {
-  transform: scale(6.1);
 }
 
 .do-gap-xl {
@@ -1266,6 +1271,10 @@ $max: $max + -1;
   padding-bottom: 9.87rem;
 }
 
+.do-h-px-xxl {
+  height: 9.87px;
+}
+
 .do-w-xxl {
   width: 9.87rem;
 }
@@ -1397,6 +1406,14 @@ $max: $max + -1;
   opacity: calc(calc(1 - var(--progress))* 1);
 }
 
+.do-fs-fluid-xxl {
+  font-size: clamp(
+                6.099995469rem,
+                7.896vw,
+                9.87rem
+            );
+}
+
 
 section {
   padding-left: 2.33rem;
@@ -1465,6 +1482,10 @@ section {
     padding-left: 9.87rem;
     padding-right: 9.87rem;
   }
+}
+
+.do-h-px-xxxl {
+  height: 15.97px;
 }
 
 .do-wh-xxxl {
@@ -1687,6 +1708,10 @@ $max: $max + -1;
   transform: translateY(100%);
 }
 
+.trans-x-before {
+  transform: translateX(-100%);
+}
+
 .left {
   left: 0%;
 }
@@ -1768,76 +1793,84 @@ section {
   transform: translateX(60%);
 }
 
+.do-bg-main-color {
+  background-color: hsla(var(--main-color), 1) !important;
+}
+
 .do-bg-second-color {
-  background-color: rgba(var(--second-color, 1)) !important;
+  background-color: hsla(var(--second-color), 1) !important;
 }
 
 .do-bg-second-color-1 {
-  background-color: rgba(var(--second-color), 0.1) !important;
+  background-color: hsla(var(--second-color), 0.1) !important;
 }
 
 .do-bg-second-color-2 {
-  background-color: rgba(var(--second-color), 0.2) !important;
+  background-color: hsla(var(--second-color), 0.2) !important;
 }
 
 .do-bg-second-color-3 {
-  background-color: rgba(var(--second-color), 0.3) !important;
+  background-color: hsla(var(--second-color), 0.3) !important;
 }
 
 .do-bg-second-color-4 {
-  background-color: rgba(var(--second-color), 0.4) !important;
+  background-color: hsla(var(--second-color), 0.4) !important;
 }
 
 .do-bg-second-color-5 {
-  background-color: rgba(var(--second-color), 0.5) !important;
+  background-color: hsla(var(--second-color), 0.5) !important;
 }
 
 .do-bg-second-color-6 {
-  background-color: rgba(var(--second-color), 0.6) !important;
+  background-color: hsla(var(--second-color), 0.6) !important;
 }
 
 .do-bg-second-color-7 {
-  background-color: rgba(var(--second-color), 0.7) !important;
+  background-color: hsla(var(--second-color), 0.7) !important;
 }
 
 .do-bg-second-color-8 {
-  background-color: rgba(var(--second-color), 0.8) !important;
+  background-color: hsla(var(--second-color), 0.8) !important;
 }
 
 .do-bg-second-color-9 {
-  background-color: rgba(var(--second-color), 0.9) !important;
+  background-color: hsla(var(--second-color), 0.9) !important;
 }
 
 .do-bg-contraste-color {
-  background-color: rgba(var(--contraste-color, 1)) !important;
+  background-color: hsla(var(--contraste-color), 1) !important;
 }
 
 .do-fill-contraste-color {
-  fill: rgba(var(--contraste-color, 1)) !important;
+  fill: hsla(var(--contraste-color), 1) !important;
+}
+
+.do-bg-extra-color {
+  background-color: hsla(var(--extra-color), 1) !important;
 }
 
 .do-bg-extra-color-1 {
-  background-color: rgba(var(--extra-color), 0.1) !important;
+  background-color: hsla(var(--extra-color), 0.1) !important;
 }
 
 .do-bg-extra-color-2 {
-  background-color: rgba(var(--extra-color), 0.2) !important;
+  background-color: hsla(var(--extra-color), 0.2) !important;
 }
 
 .do-bg-extra-color-3 {
-  background-color: rgba(var(--extra-color), 0.3) !important;
+  background-color: hsla(var(--extra-color), 0.3) !important;
 }
 
 .do-bg-extra-color-4 {
-  background-color: rgba(var(--extra-color), 0.4) !important;
+  background-color: hsla(var(--extra-color), 0.4) !important;
 }
 
 .do-bg-extra-color-5 {
-  background-color: rgba(var(--extra-color), 0.5) !important;
+  background-color: hsla(var(--extra-color), 0.5) !important;
 }
 
 [data-do-bg=fade] {
-  background-color: rgba(var(--fade-color), 1);
+  background-color: hsla(var(--fade-color), 1);
 }
 
 :root {
@@ -1893,6 +1926,16 @@ section {
 
   .lg-do-row {
     flex-direction: row;
+  }
+}
+@media screen and (min-width: 1200px) {
+
+  .xl-do-scale-lg {
+    transform: scale(3.77);
+  }
+
+  .xl-do-scale-xl {
+    transform: scale(6.1);
   }
 }
 h1 {
@@ -2027,9 +2070,9 @@ html {
 
 body {
   font-size: 1rem;
-  color: rgba(var(--contraste-color, 1));
+  color: hsla(var(--contraste-color), 1);
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(var(--main-color, 0.1));
+  -webkit-tap-highlight-color: hsla(var(--main-color), 0.2);
   margin: 0;
 }
 
@@ -2049,12 +2092,12 @@ p {
 
 a {
   text-decoration: none;
-  color: rgba(var(--main-color, 1));
+  color: hsla(var(--main-color), 1);
 }
 
 a {
   text-decoration: none;
-  color: rgba(var(--contraste-color, 1));
+  color: hsla(var(--contraste-color), 1);
   transition-property: background-color, color, box-shadow;
   transition-duration: 0.25s;
   transition-timing-function: ease-in-out;
@@ -2062,15 +2105,15 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: rgba(var(--main-color, 1));
+  color: hsla(var(--main-color), 1);
 }
 
 a.reset {
-  color: rgba(var(--main-color, 1));
+  color: hsla(var(--contraste-color), 1);
 }
 
 a.reset:hover {
-  color: rgba(var(--main-color, 0.8));
+  color: hsla(var(--contraste-color), 0.8);
 }
 
 /* Slider */
@@ -2097,7 +2140,7 @@ a.reset:hover {
     left: 0px !important;
     top: calc(var(--navHeight) * 1px);
     top: 0px;
-    background-color: rgba(var(--second-color), 0.8);
+    background-color: hsla(var(--second-color), 0.8);
     z-index: 1;
     backdrop-filter: blur(4.2px);
     transform: none !important;
@@ -2123,7 +2166,7 @@ a.reset:hover {
   height: 2px;
   bottom: 0px;
   left: 0px;
-  background-color: rgba(var(--main-color), 1);
+  background-color: hsla(var(--main-color), 1);
   transform: scale(0);
   opacity: 0;
   transition: opacity 0.2s, transform 0.4s;
@@ -2138,14 +2181,14 @@ a.reset:hover {
   height: 100%;
   bottom: 0px;
   left: 0px;
-  background-color: rgba(var(--contraste-color), 1);
+  background-color: hsla(var(--contraste-color), 1);
   transform: scale(0.9);
   opacity: 0;
   transition: opacity 0.2s, transform 0.4s;
 }
 
 #nav a.main-link:hover, #nav a.main-link.active {
-  color: rgba(var(--second-color), 0.8);
+  color: hsla(var(--second-color), 1);
 }
 
 #nav a.main-link:hover::after, #nav a.main-link.active::after {
@@ -2370,7 +2413,7 @@ section.full {
 }
 
 .do-bt-line span {
-  color: rgba(var(--main-color), 1);
+  color: hsla(var(--contraste-color), 1);
 }
 
 .do-bt-line:after {
@@ -2381,7 +2424,7 @@ section.full {
   left: 0px;
   width: 100%;
   height: 2px;
-  background-color: rgba(var(--main-color), 1);
+  background-color: hsla(var(--main-color), 1);
   pointer-events: none;
   opacity: 0.5;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
@@ -2404,10 +2447,5 @@ body, [data-do-bg], [class*="do-bg-"]{
 
 [data-do-mu="hide"]{
     display: none;
-}
-
-
-.trigger-filter-invert{
-    transition:filter 0.5s ease-in-out;
 }
 

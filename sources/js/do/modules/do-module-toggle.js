@@ -6,7 +6,7 @@ if(moduleManager == undefined){
     moduleManager = {};
 }
 
-moduleManager["dotoggle"] = moduleManager["dotoggle"] = function () {
+moduleManager["dotoggle"] = function () {
     const $scope = this;
     const isGlobal = $($scope).attr('data-global') == "true";
     var $parent = $($scope).parent();

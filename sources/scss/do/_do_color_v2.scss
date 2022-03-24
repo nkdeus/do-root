@@ -10,6 +10,12 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
 -
 */
 
+@function do-hsl($colorHsl,$opacity:1){
+
+    @return hsla(var(--#{$colorHsl}-color),$opacity);
+
+}
+
 @mixin do-events-color-extend($class, $extendHover: true) {
     .#{$class} {
         @content;
@@ -62,12 +68,13 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
     @each $color-type, $color-type-class in $do-colors-type {
         //@debug(#{$class}-#{$color-type}-#{$color}-color);
         @include do-events-color-extend(#{$class}-#{$color-type}-#{$color}-color) {
-            #{$color-type-class}: rgba(var(--#{$color}-color,1)) !important;
+            #{$color-type-class}: do-hsl($color) !important;
             @if($responsiveLoop == false){
                 @for $i from 0 through $do-max {
                     &-#{$i}{
 
-                        #{$color-type-class}: rgba(var(--#{$color}-color),math.div($i,10)) !important;
+                        #{$color-type-class}: do-hsl($color,math.div($i,10)) !important;
+                        
                     }
                 }
             }
@@ -77,13 +84,13 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
             //@debug(#{$child-type}\:#{$class}-#{$color-type}-#{$color}-color);
             .#{$child-type}\:#{$class}-#{$color-type}-#{$color}-color {
                 > #{$child-type-class} {
-                    #{$color-type-class}: rgba(var(--#{$color}-color),1) !important;
+                    #{$color-type-class}: do-hsl($color) !important;
                 }
             }
         }
     }
     %bg-#{$color}-color {
-        background-color: rgba(var(--#{$color}-color),1);
+        background-color: do-hsl($color);
     }
 }
 
@@ -101,10 +108,10 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
     }
     [data-do-bg='#{$colorName}'] {
         //background-color: var(--#{$colorName}-color) !important;
-        background-color: rgba(var(--#{$colorName}-color),1);
+        background-color: do-hsl($colorName);
     }
     [data-do-txt='#{$colorName}'] {
-        color: rgba(var(--#{$colorName}-color),1);
+        color: do-hsl($colorName);
     }
 }
 
@@ -127,20 +134,20 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                     }
 
                     [data-do='#{$colorName}-#{$colorName2}'] {
-                        background-color: var(--#{$colorName}-color) !important;
-                        color: var(--#{$colorName2}-color) !important;
+                        background-color: do-hsl($colorName) !important;
+                        color: do-hsl($colorName2) !important;
                     }
                     [data-do-hover='#{$colorName}-#{$colorName2}']:hover {
-                        background-color: var(--#{$colorName}-color) !important;
-                        color: var(--#{$colorName2}-color) !important;
+                        background-color: do-hsl($colorName) !important;
+                        color: do-hsl($colorName2) !important;
                         path {
-                            fill: var(--#{$colorName2}-color) !important;
+                            fill: do-hsl($colorName2) !important;
                         }
                         rect {
-                            fill: var(--#{$colorName2}-color) !important;
+                            fill: do-hsl($colorName2) !important;
                         }
                         polygon {
-                            fill: var(--#{$colorName2}-color) !important;
+                            fill: do-hsl($colorName2) !important;
                         }
                     }
                 }

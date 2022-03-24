@@ -518,7 +518,7 @@ section{
 	position: relative;
 
 	span{
-		color: rgba(var(--main-color), 1);
+		color: do-hsl('contraste');
 	}
 
 	&:after{
@@ -529,7 +529,7 @@ section{
 		left:0px;
 		width: 100%;
 		height: 2px;
-		background-color: rgba(var(--main-color), 1);
+		background-color: do-hsl('main');
 		pointer-events: none;
 		opacity:0.5;
 		transition:opacity 0.5s ease-out, transform 0.5s ease-out;
@@ -560,7 +560,7 @@ section{
 			left:0px;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(var(--main-color), 1);
+			background-color: do-hsl('main');
 			mix-blend-mode: soft-light;
 			pointer-events: none;
 			opacity:0;
@@ -620,14 +620,14 @@ section{
 		@extend %px-xs;
 		@extend %br-xs;
 
-		background-color: rgba(var(--extra-color), 1);
+		background-color: do-hsl('extra');
 
 		span{
-			color: rgba(var(--contraste-color), 1);
+			color: do-hsl('contraste');
 		}
 		
 		&:after{
-			background-color: rgba(var(--second-color), 1);
+			background-color: do-hsl('second');
 		}
 			
 		&:hover{
@@ -669,8 +669,8 @@ section{
 			padding-right:0.5rem;
 			transform:translateX(-100%);
 			text-align: right;
-			color:rgba(var(--second-color), 1);
-			background-color: rgba(var(--contraste-color), 1);
+			color:do-hsl('second');
+			background-color: do-hsl('contraste');
 		}
 		&:after {
 			position: absolute;
@@ -680,7 +680,7 @@ section{
 			height: 100%;
 			top:0px;
 			left:0px;
-			background-color: var(--main-color);
+			background-color: do-hsl('main');
 		}
 	}
 }
@@ -700,53 +700,9 @@ section{
 		top:50%;
 		display: block;
 		transform:translateX(-50%) translateY(-50%);
-		color:var(--contraste-color);
+		color:do-hsl('contraste');
 	}
 }
 
-
-.block{
-	position: relative;
-	margin-top: calc( var(--md) * 1rem );
-	strong{
-		color:var(--main-color);
-	}
-	&:before {
-			
-		content: "";
-		position: absolute;
-		left:50%;
-		top:50%;
-		z-index: -1;
-		display: block;
-		width:calc(100% + ( var(--md) * 1rem ));
-		height:calc(100% + ( var(--md) * 1rem ));
-
-		transform:translateX(-50%) translateY(-50%);
-		background-color:var(--contraste-color);
-	}
-	h5{
-		margin-top:0px;
-		color:var(--main-color);
-	}
-	&:nth-child(odd):before{
-		background-color:var(--contraste-color);
-	}
-	&.white{
-		&:before {
-			background-color:var(--contraste-color);
-		}
-	}
-
-}
-
-.page-series{
-	.do-grid{
-		.block{
-			margin-bottom:0px;
-		}
-		margin-bottom: calc( var(--md) * 1rem );
-	}
-}
 
 

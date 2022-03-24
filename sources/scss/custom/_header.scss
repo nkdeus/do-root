@@ -21,7 +21,7 @@
       left:0px !important;
       top:calc(var(--navHeight) * 1px);
       top:0px;
-      background-color: rgba(var(--second-color), 0.8);
+      background-color: do-hsl('second',0.8);
       z-index: 1;
       backdrop-filter: blur(4.2px);
       transform: none !important;
@@ -36,7 +36,7 @@
 
 .darkmode{
   #main-nav.open{
-    background-color: rgba(var(--contraste-color), 0.9);
+    background-color: do-hsl('contraste',0.9);
   }
 }
 
@@ -55,7 +55,7 @@
       overflow: auto;
       height: 100vh;
       left:0px !important;
-      background-color: rgba(var(--second-color), 0.8);
+      background-color: do-hsl('second',0.8);
       transform: none !important;
       
     }
@@ -69,7 +69,7 @@ body.blocus{
 body.light-mode{
   #main-nav{
     &.open{
-      background-color: rgba(var(--second-color), 0.8);
+      background-color: do-hsl('second',0.8);
     }
   }
 }
@@ -92,7 +92,7 @@ body.light-mode{
       height: 2px;
       bottom:0px;
       left:0px;
-      background-color: rgba(var(--main-color), 1);
+      background-color: do-hsl('main');
       transform:scale(0);
       opacity: 0;
       transition:opacity 0.2s, transform 0.4s;
@@ -109,7 +109,7 @@ body.light-mode{
       height: 100%;
       bottom:0px;
       left:0px;
-      background-color: rgba(var(--contraste-color), 1);
+      background-color: do-hsl('contraste');
       transform:scale(0.9);
       opacity: 0;
       transition:opacity 0.2s, transform 0.4s;
@@ -117,7 +117,7 @@ body.light-mode{
     }
   &:hover,&.active{
     
-    color:rgba(var(--second-color), 0.8);
+    color:do-hsl('second');
 
     &::after{
       opacity: 1;

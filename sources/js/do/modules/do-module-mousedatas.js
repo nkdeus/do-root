@@ -24,30 +24,7 @@ moduleManager["domousedatas"] = function () {
     var targetItem = $('#'+$scope.target);
     var distanceMax = parseInt(targetItem.width()/2*$scope.rayon);
     var calculType = {};   
-    calculType["go-in"] = function(pValue){
-
-        return 1;
-    }
-
-    var getPositionAtCenter = function(element) {
-        const {top, left, width, height} = element.getBoundingClientRect();
-        return {
-          x: left + width / 2,
-          y: top + height / 2
-        };
-      }
-     
-      var getDistanceBetweenElements = function(a, b) {
-       const aPosition = a;
-       const bPosition = b;
-     
-       return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);  
-     }
-     
-
-
-
-    $(document).mousemove(function(e){
+    calculType["go-in"] = function(pEvent){
 
         var screenX = e.clientX;
         var screenY = e.clientY;
@@ -70,6 +47,32 @@ moduleManager["domousedatas"] = function () {
         }else{
             targetItem.css("--progress",$scope.offsetVal);
         }
+    }
+
+    var getPositionAtCenter = function(element) {
+        const {top, left, width, height} = element.getBoundingClientRect();
+        return {
+          x: left + width / 2,
+          y: top + height / 2
+        };
+      }
+     
+      var getDistanceBetweenElements = function(a, b) {
+       const aPosition = a;
+       const bPosition = b;
+     
+       return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);  
+     }
+     
+
+
+
+    $(document).mousemove(function(e){
+
+
+        calculType[$scope.calcul](e)
+
+       
         //
      
 

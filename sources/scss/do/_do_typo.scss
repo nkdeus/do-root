@@ -1,5 +1,6 @@
 @use 'do_config' as *;
 @use '../custom/do' as *;
+@use 'do_color_v2' as *;
 @use "sass:math";
 // Typo
 
@@ -20,9 +21,9 @@ html {
 body {
 
   font-size: 1rem;
-  color:rgba(var(--contraste-color, 1));
+  color: do-hsl('contraste');
   -webkit-text-size-adjust: 100%; 
-  -webkit-tap-highlight-color: rgba(var(--main-color, 0.1));
+  -webkit-tap-highlight-color: do-hsl('main',0.2);
   margin: 0;
 }
 
@@ -48,7 +49,7 @@ p {
 
 a {
   text-decoration: none;
-  color: rgba(var(--main-color, 1));
+  color: do-hsl('main');
 }
 
 .do-fw-strong {
@@ -86,20 +87,20 @@ a {
 
 a {
   text-decoration: none;
-  color: rgba(var(--contraste-color, 1));
+  color: do-hsl('contraste',1);
   transition-property: background-color, color, box-shadow;
   transition-duration: math.div($duration, 2);
   transition-timing-function: $easing;
   &:hover {
     text-decoration: none;
-    color: rgba(var(--main-color, 1));
+    color: do-hsl('main',1);
   }
 }
 
 a.reset{
-  color: rgba(var(--main-color, 1));
+  color: do-hsl('contraste',1);
   &:hover {
-    color: rgba(var(--main-color, 0.8));
+    color: do-hsl('contraste',0.8);
   }
 }
 
@@ -107,11 +108,11 @@ a.reset{
   a {
     text-decoration: underline;
     font-weight: bold;
-    color: rgba(var(--contraste-color, 1)) !important;
+    color: do-hsl('contraste') !important;
 
     &:hover {
-      color: rgba(var(--main-color, 1)) !important;
-      background-color: rgba(var(--second-color, 1)) !important;
+      color: do-hsl('main') !important;
+      background-color: do-hsl('second') !important;
     }
   }
 }

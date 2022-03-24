@@ -36,7 +36,8 @@ $(document).ready(function() {
 
           var lastX = e.clientX;
           var lastY = e.clientY;
-       
+
+          console.log("?? toggleIn : ",toggleIn);
           if(lastY < limite && body.attr('do-event-scroll') == 'down' && toggleIn == false){
              body.attr('do-event-scroll','up');
              toggleIn = true;
@@ -55,6 +56,13 @@ $(document).ready(function() {
 
     $(document).on("darkMode", darkModeChange);
 
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
+    var randomUse = false;
+    if(prefersDarkMode){
+        $('body').addClass('toggleColor');
+        $('#color-switcher').addClass('active');
+    }
+
     function darkModeChange(e) {
       if(e.class == "darkmodetrigger"){
        
@@ -65,6 +73,9 @@ $(document).ready(function() {
     $('#color-switcher').on('click',function(e) {
       
       toggleFilter();
+      if(randomUse){
+        $('#color-random').click(); 
+      }
      
     });
 
@@ -80,48 +91,46 @@ $(document).ready(function() {
 
     }
 
-    $('#color-random').on('click',function(e) {
+    function generateHslaColor (pHue, pSaturation, pLightness) {
       
-      var newMain =  randomColor({
-        luminosity: 'light', // bright , light, dark
-        format: 'rgbArray',
-        alpha: 1
-      });
-      var newSecond =  randomColor({
-        luminosity: 'light', // bright , light, dark
-        hue:$('body').css('--second-color'),
-        format: 'rgbArray',
-        alpha: 1
-      });
-      var newContraste =  randomColor({
-        luminosity: 'dark', // bright , light, dark
-        hue:"#000000",
-        format: 'rgbArray',
-        alpha: 1
-      });
-      var newExtra =  randomColor({
-        luminosity: 'bright', // bright , light, dark
-        format: 'rgbArray',
-        alpha: 1
-      });
-      var newFade =  randomColor({
-        luminosity: 'light', // bright , light, dark
-        hue:$('body').css('--fade-color'),
-        format: 'rgbArray',
-        alpha: 1
-      });
+        var h = gsap.utils.random(pHue[0], pHue[1], 1);
+        var s = gsap.utils.random(pSaturation[0], pSaturation[1], 1);
+        var l = gsap.utils.random(pLightness[0], pLightness[1], 1);
 
+        console.log("COLOR ",h+","+s+"%,"+l+"%")
+        return h+","+s+"%,"+l+"%";
+      
+    }
+
+    gsap.delayedCall(1, function(){
+      $('#color-random').click(); 
+    });
+
+    $('#color-random').on('click',function(e) {
+
+      randomUse = true;
+      
+      var newMain =  generateHslaColor([0, 180],[80, 100],[50, 100]);
+      var newSecond = generateHslaColor([0, 0],[0, 0],[90, 100]);
+      var newContraste = generateHslaColor([0, 50],[0, 10],[0, 30]);
+      var newExtra = generateHslaColor([180, 360],[80, 100],[50, 100]);
+      var newFade = generateHslaColor([0, 360],[0, 20],[80, 90]);
 
       if($('body').hasClass('toggleColor')){
      
         $('body').css('--main-color',newFade);
         $('body').css('--extra-color',newMain);
-        $('body').css('--fade-color',newFade);
+        $('body').css('--fade-color',newContraste);
+        $('body').css('--second-color',newContraste);
+        $('body').css('--contraste-color',newSecond);
 
       }else{
+
         $('body').css('--main-color',newMain);
         $('body').css('--extra-color',newExtra);
         $('body').css('--fade-color',newFade);
+        $('body').css('--second-color',newSecond);
+        $('body').css('--contraste-color',newContraste);
 
       }
      

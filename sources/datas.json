@@ -48,6 +48,13 @@
 	},
 	"themes": {
 		"do": {
+			"main": "15, 100%, 79%",
+			"extra": "176, 96%, 52%",
+			"contraste": "36, 3.3%, 28%",
+			"second": "0, 0%, 100%",
+			"fade": "37, 20%, 84%"
+		},
+		"doRGB": {
 			"main": "255, 174, 148",
 			"extra": "10, 255, 238",
 			"contraste": "78, 76, 73",
@@ -56,7 +63,7 @@
 		}
 	},
 	"pageHome": {
-		"title": "Home Ulysse 2029",
+		"title": "$do : 1.61803398875;",
 		"text": "lorem ipsum dolor update 9 !"
 	}
 }

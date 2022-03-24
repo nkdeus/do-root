@@ -6,7 +6,7 @@ if(moduleManager == undefined){
     moduleManager = {};
 }
 
-moduleManager["dotrigger"] = moduleManager["dotrigger"] = function () {
+moduleManager["dotrigger"] = function () {
     
     var $scope = this;
     $scope.toggle = $($scope).attr("data-do-trigger") == "true";

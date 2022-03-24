@@ -285,7 +285,7 @@
     outline: none;
     opacity: .25;
     border-radius: 100%;
-    background-color: var(--second-color);
+    background-color: do-hsl('second');
 }
 .slick-dots li button:hover,
 .slick-dots li button:focus
@@ -313,7 +313,7 @@
 
 
     opacity: .25;
-    color: var(--second-color);
+    color: do-hsl('second');
 
 }
 .slick-dots li.slick-active button:before
