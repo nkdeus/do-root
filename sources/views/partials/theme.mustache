@@ -1,39 +1,105 @@
 
-<style>
-@charset "UTF-8";
+<style type="text/css">
 
   :root{
-    --main:{{themes.do.main}};
-    --contraste:{{themes.do.contraste}};
-    --second:{{themes.do.second}};
-    --extra:{{themes.do.extra}};
-    --fade:{{themes.do.fade}};
+    --main:{{themes.do.main.0}},{{themes.do.main.1}},{{themes.do.main.2}};
+    --contraste:{{themes.do.contraste.0}},{{themes.do.contraste.1}},{{themes.do.contraste.2}};
+    --second:{{themes.do.second.0}},{{themes.do.second.1}},{{themes.do.second.2}};
+    --extra:{{themes.do.extra.0}},{{themes.do.extra.1}},{{themes.do.extra.2}};
+    --fade:{{themes.do.fade.0}},{{themes.do.fade.1}},{{themes.do.fade.2}};
+
+    --main-H:{{themes.do.main.0}};
+    --main-S:{{themes.do.main.1}};
+    --main-L:{{themes.do.main.2}};
+
+    --extra-H:{{themes.do.extra.0}};
+    --extra-S:{{themes.do.extra.1}};
+    --extra-L:{{themes.do.extra.2}};
+
+    --fade-H:{{themes.do.fade.0}};
+    --fade-S:{{themes.do.fade.1}};
+    --fade-L:{{themes.do.fade.2}};
+
+    --contraste-H:{{themes.do.contraste.0}};
+    --contraste-S:{{themes.do.contraste.1}};
+    --contraste-L:{{themes.do.contraste.2}};
+
+  }
+
+
+  body{
+
+    --main-color:var(--main);
+    --extra-color:var(--extra);
+
+    --contraste-color:var(--contraste);
+    --second-color:var(--second);
+    --fade-color:var(--fade);
+
+
   }
 
   .toggleColor{
-    --main-color:{{themes.do.fade}};
-    --contraste-color:{{themes.do.second}};
-    --second-color:{{themes.do.main}};
-    --extra-color:{{themes.do.extra}};
-    --fade-color:{{themes.do.contraste}};
+
+    --main-color:var(--fade);
+    --extra-color:var(--extra);
+
+    --contraste-color:var(--second);
+    --second-color:var(--main);
+    --fade-color:var(--contraste);
+
+    --main-H:{{themes.do.fade.0}};
+    --main-S:{{themes.do.fade.1}};
+    --main-L:{{themes.do.fade.2}};
+
+    --fade-H:{{themes.do.contraste.0}};
+    --fade-S:{{themes.do.contraste.1}};
+    --fade-L:{{themes.do.contraste.2}};
+
   }
 
   @media (prefers-color-scheme: dark) {
 
-      body.toggleColor{
-        --main:{{themes.do.fade}};
-        --contraste:{{themes.do.second}};
-        --second:{{themes.do.main}};
-        --extra:{{themes.do.extra}};
-        --fade:{{themes.do.contraste}};
+
+      .toggleColor{
+
+        --main-color:var(--main);
+        --extra-color:var(--extra);
+
+        --contraste-color:var(--contraste);
+        --second-color:var(--second);
+        --fade-color:var(--fade);
+
+        --main-H:{{themes.do.main.0}};
+        --main-S:{{themes.do.main.1}};
+        --main-L:{{themes.do.main.2}};
+
+        --fade-H:{{themes.do.fade.0}};
+        --fade-S:{{themes.do.fade.1}};
+        --fade-L:{{themes.do.fade.2}};
+
       }
-      :root{
-        --main-color:{{themes.do.main}};
-        --contraste-color:{{themes.do.contraste}};
-        --second-color:{{themes.do.second}};
-        --extra-color:{{themes.do.extra}};
-        --fade-color:{{themes.do.fade}};
+
+      body{
+
+        --main-color:var(--fade);
+        --extra-color:var(--extra);
+
+        --contraste-color:var(--second);
+        --second-color:var(--main);
+        --fade-color:var(--contraste);
+
+        --main-H:{{themes.do.fade.0}};
+        --main-S:{{themes.do.fade.1}};
+        --main-L:{{themes.do.fade.2}};
+
+        --fade-H:{{themes.do.contraste.0}};
+        --fade-S:{{themes.do.contraste.1}};
+        --fade-L:{{themes.do.contraste.2}};
+
       }
+
+
 
   }
 

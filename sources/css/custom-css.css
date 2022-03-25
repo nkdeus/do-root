@@ -1,4 +1,4 @@
-body, [data-do-bg], [class*="do-bg-"],[data-do-txt], [class*="do-txt-"]{
+[data-do-bg], [class*="do-bg-"],[data-do-txt], [class*="do-txt-"]{
     transition:background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 [class*="do-fill-"]{

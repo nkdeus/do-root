@@ -33,41 +33,107 @@
   <script type="text/javascript" src="js/index.js"></script>
 
   
-  <style>
-  @charset "UTF-8";
+  <style type="text/css">
   
     :root{
-      --main:15, 100%, 79%;
-      --contraste:36, 3.3%, 28%;
-      --second:0, 0%, 100%;
-      --extra:176, 96%, 52%;
-      --fade:37, 20%, 84%;
+      --main:15,100%,79%;
+      --contraste:36,3.3%,28%;
+      --second:0,0%,100%;
+      --extra:176,96%,52%;
+      --fade:37,20%,84%;
+  
+      --main-H:15;
+      --main-S:100%;
+      --main-L:79%;
+  
+      --extra-H:176;
+      --extra-S:96%;
+      --extra-L:52%;
+  
+      --fade-H:37;
+      --fade-S:20%;
+      --fade-L:84%;
+  
+      --contraste-H:36;
+      --contraste-S:3.3%;
+      --contraste-L:28%;
+  
+    }
+  
+  
+    body{
+  
+      --main-color:var(--main);
+      --extra-color:var(--extra);
+  
+      --contraste-color:var(--contraste);
+      --second-color:var(--second);
+      --fade-color:var(--fade);
+  
+  
     }
   
     .toggleColor{
-      --main-color:37, 20%, 84%;
-      --contraste-color:0, 0%, 100%;
-      --second-color:15, 100%, 79%;
-      --extra-color:176, 96%, 52%;
-      --fade-color:36, 3.3%, 28%;
+  
+      --main-color:var(--fade);
+      --extra-color:var(--extra);
+  
+      --contraste-color:var(--second);
+      --second-color:var(--main);
+      --fade-color:var(--contraste);
+  
+      --main-H:37;
+      --main-S:20%;
+      --main-L:84%;
+  
+      --fade-H:36;
+      --fade-S:3.3%;
+      --fade-L:28%;
+  
     }
   
     @media (prefers-color-scheme: dark) {
   
-        body.toggleColor{
-          --main:37, 20%, 84%;
-          --contraste:0, 0%, 100%;
-          --second:15, 100%, 79%;
-          --extra:176, 96%, 52%;
-          --fade:36, 3.3%, 28%;
+  
+        .toggleColor{
+  
+          --main-color:var(--main);
+          --extra-color:var(--extra);
+  
+          --contraste-color:var(--contraste);
+          --second-color:var(--second);
+          --fade-color:var(--fade);
+  
+          --main-H:15;
+          --main-S:100%;
+          --main-L:79%;
+  
+          --fade-H:37;
+          --fade-S:20%;
+          --fade-L:84%;
+  
         }
-        :root{
-          --main-color:15, 100%, 79%;
-          --contraste-color:36, 3.3%, 28%;
-          --second-color:0, 0%, 100%;
-          --extra-color:176, 96%, 52%;
-          --fade-color:37, 20%, 84%;
+  
+        body{
+  
+          --main-color:var(--fade);
+          --extra-color:var(--extra);
+  
+          --contraste-color:var(--second);
+          --second-color:var(--main);
+          --fade-color:var(--contraste);
+  
+          --main-H:37;
+          --main-S:20%;
+          --main-L:84%;
+  
+          --fade-H:36;
+          --fade-S:3.3%;
+          --fade-L:28%;
+  
         }
+  
+  
   
     }
   
@@ -93,11 +159,11 @@
 
 
 
-<body data-do-bg="fade">
+<body class="get-progress:bg-xxl-fade">
 
   <div id="nav" class="do-w-10 pof do-px-smart-lg do-z-10 do-flex do-justify-content-space-between do-align-items-center tween-trans scroll-down:trans-y-before">
     <a id="logo" href="./" class="do-py-xxs por do-z-2 tween-trans scroll-down:trans-y-after">
-      <div class="por do-w-xl tween-trans scroll-down:do-scale-5">
+      <div class="por do-h-md tween-trans scroll-down:do-scale-5 transform-origin-left">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 143.559 60.524">
           <g id="logo" transform="translate(-582.695 -405.926)" class="do-fill-contraste-color">
             <path id="Tracé_1" data-name="Tracé 1" d="M627.974,461.339c.1-.044.211-.089.319-.138l.011-.056-.067.039Q628.094,461.271,627.974,461.339Z" transform="translate(-36.849 -44.939)"/>
@@ -177,33 +243,88 @@
 
 </section>
 
-<section class="por do-px-smart-xxxl do-py-xxl por do-z-1 do-h-10-vh do-flex do-align-items-center do-justify-content-center do-gap-xl">
+<section class="por do-px-smart-xxxl do-py-xxl por do-z-1 do-h-10-vh do-flex do-align-items-center do-justify-content-center do-gap-xls">
   
-    <div id="_cercle01" class=" do-flex do-flex-center poa center">
-      
+    <div class="do-wh-xxxl do-flex por do-align-items-end">
 
-        <div class="do-wh-xxxl xl-do-scale-lg do-bg-second-color-1 poa get-progress:rotate-lg">
-            <div class="do-wh-xxl do-bg-second-color-2 poa top left">
-                <div class="do-wh-xl do-bg-second-color-3 poa top right">
-                    <div class="do-wh-lg do-bg-second-color-4 poa bottom right">
-                        <div class="do-wh-md do-bg-second-color-5 poa bottom left">
-                            <div class="do-wh-sm do-bg-second-color-6 poa top left">
-                                <div class="do-wh-xs do-bg-second-color-7 poa top right">
-                                    <div class="do-wh-xxs do-bg-second-color-8 poa bottom right  do-blur-1 ">
-                                        <div class="do-wh-xxxs do-bg-second-color-9 poa bottom left  do-blur-1 ">
+        <div class="do-full poa do-bg-main-color"></div>
+    
+        <div class="do-gold-xxl por do-bg-main-color-lighten"></div>
+    
+        <div class="do-gold-xl por do-bg-main-color-darken"></div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="do-w-10 do-h-gold-md poa bottom trans-y-after do-grid-9">
+            <div class="do-bg-main-color-1"></div>
+            <div class="do-bg-main-color-2"></div>
+            <div class="do-bg-main-color-3"></div>
+            <div class="do-bg-main-color-4"></div>
+            <div class="do-bg-main-color-5"></div>
+            <div class="do-bg-main-color-6"></div>
+            <div class="do-bg-main-color-7"></div>
+            <div class="do-bg-main-color-8"></div>
+            <div class="do-bg-main-color-9"></div>
+
         </div>
 
-   
     </div>
+
+    <div class="do-wh-xxxl do-flex por do-align-items-end set-main-extra">
+
+        <div class="do-full poa do-bg-main-color"></div>
+
+        <div class="do-gold-xxl por do-bg-main-color-lighten"></div>
+    
+        <div class="do-gold-xl por do-bg-main-color-darken"></div>
+
+        <div class="do-w-10 do-h-gold-md poa bottom trans-y-after do-grid-9">
+            <div class="do-bg-main-color-1"></div>
+            <div class="do-bg-main-color-2"></div>
+            <div class="do-bg-main-color-3"></div>
+            <div class="do-bg-main-color-4"></div>
+            <div class="do-bg-main-color-5"></div>
+            <div class="do-bg-main-color-6"></div>
+            <div class="do-bg-main-color-7"></div>
+            <div class="do-bg-main-color-8"></div>
+            <div class="do-bg-main-color-9"></div>
+
+        </div>
+
+    </div>
+
+    <div class="do-wh-xxxl do-flex por do-align-items-end set-main-fade">
+
+        <div class="do-full poa do-bg-main-color"></div>
+
+        <div class="do-gold-xxl por do-bg-main-color-lighten"></div>
+    
+        <div class="do-gold-xl por do-bg-main-color-darken"></div>
+
+        <div class="do-w-10 do-h-gold-md poa bottom trans-y-after do-grid-9">
+            <div class="do-bg-main-color-1"></div>
+            <div class="do-bg-main-color-2"></div>
+            <div class="do-bg-main-color-3"></div>
+            <div class="do-bg-main-color-4"></div>
+            <div class="do-bg-main-color-5"></div>
+            <div class="do-bg-main-color-6"></div>
+            <div class="do-bg-main-color-7"></div>
+            <div class="do-bg-main-color-8"></div>
+            <div class="do-bg-main-color-9"></div>
+        </div>
+        <div class="do-w-10 do-h-gold-xs poa trans-y-push bottom do-grid-9 do-blur-1">
+            <div class="do-bg-main-color-1-lighten"></div>
+            <div class="do-bg-main-color-2-lighten"></div>
+            <div class="do-bg-main-color-3-lighten"></div>
+            <div class="do-bg-main-color-4-lighten"></div>
+            <div class="do-bg-main-color-5-lighten"></div>
+            <div class="do-bg-main-color-6-lighten"></div>
+            <div class="do-bg-main-color-7-lighten"></div>
+            <div class="do-bg-main-color-8-lighten"></div>
+            <div class="do-bg-main-color-9-lighten"></div>
+        </div>
+
+    </div>
+
+
 </section>
 <div 
   data-module="doscrolldatas"
@@ -219,8 +340,8 @@
 <div id="stageBg" class="bg-grid do-px-smart-xxxl pof top left do-full do-z-0 do-flex do-justify-content-space-between">
 
     <div class="do-w-xl por do-overflow-hidden">
-        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left do-bg-second-color-8"></div>
-        <div class="do-o-4 do-h-10-vh do-w-px-xxs poa right trans-x-before do-bg-second-color-8"></div>
+        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left do-bg-second-color-1"></div>
+        <div class="do-o-4 do-h-10-vh do-w-px-xxs poa right trans-x-before do-bg-second-color-1"></div>
         <div class="do-h-px-xxxl do-w-xxl do-bg-main-color poa do-z-2 get-progress:do-xxl get-progress:top-xxl"></div>
         <div class="do-h-px-xxl do-w-xl do-bg-second-color-3 poa do-z-2 get-progress:do-xl get-progress:top-xl"></div>
         <div class="do-h-px-xl do-w-lg do-bg-second-color-3 poa do-z-2 get-progress:do-lg get-progress:top-lg"></div>
@@ -231,13 +352,13 @@
         <div class="do-h-px-xxs do-w-xxxs do-bg-second-color-3 poa do-z-2 get-progress:do-xxxs get-progress:top-xxxs"></div>
     </div>
 
-    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa right-md-rem do-bg-second-color-8"></div>
-    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa do-z-1 center do-bg-second-color-8"></div>
-    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left-md-rem do-bg-second-color-8"></div>
+    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa right-md-rem do-bg-second-color-1"></div>
+    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa do-z-1 center do-bg-second-color-1"></div>
+    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left-md-rem do-bg-second-color-1"></div>
 
     <div class="do-w-xl por">
-        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left do-bg-second-color-8"></div>
-        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa right do-bg-second-color-8"></div>
+        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left do-bg-second-color-1"></div>
+        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa right do-bg-second-color-1"></div>
     </div>
    
 </div>

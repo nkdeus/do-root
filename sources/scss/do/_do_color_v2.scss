@@ -10,8 +10,17 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
 -
 */
 
-@function do-hsl($colorHsl,$opacity:1){
+@function do-hsl($colorHsl,$opacity:1,$filter:false,$offset:0){
 
+    //@debug(calc(var(--#{$colorHsl}-H) + math.random(10)));
+
+    @if($filter){
+        @return hsla(var(--#{$colorHsl}-H),
+                     var(--#{$colorHsl}-S),
+                     calc( var(--#{$colorHsl}-L) + $offset),
+                     $opacity
+        )
+    }
     @return hsla(var(--#{$colorHsl}-color),$opacity);
 
 }
@@ -69,15 +78,6 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
         //@debug(#{$class}-#{$color-type}-#{$color}-color);
         @include do-events-color-extend(#{$class}-#{$color-type}-#{$color}-color) {
             #{$color-type-class}: do-hsl($color) !important;
-            @if($responsiveLoop == false){
-                @for $i from 0 through $do-max {
-                    &-#{$i}{
-
-                        #{$color-type-class}: do-hsl($color,math.div($i,10)) !important;
-                        
-                    }
-                }
-            }
         }
 
         @each $child-type, $child-type-class in $do-childs-selector {
@@ -88,6 +88,40 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                 }
             }
         }
+
+        @if($responsiveLoop == false){
+
+            .#{$class}-#{$color-type}-#{$color}-color {
+
+                @if($color == "main" or $color == "extra" or $color == "fade"){
+                    &-darken{
+                        #{$color-type-class}: do-hsl($color,1,true,-10%) !important;       
+                    }
+                    &-lighten{
+                        #{$color-type-class}: do-hsl($color,1,true,10%) !important;
+                    }
+                }
+
+                @for $i from 0 through $do-max {
+                    &-#{$i}{
+
+                        #{$color-type-class}: do-hsl($color,math.div($i,10)) !important;
+
+                        @if($color == "main" or $color == "extra" or $color == "fade"){
+                            &-darken{
+                                #{$color-type-class}: do-hsl($color,math.div($i,10),true,-10%) !important;       
+                            }
+                            &-lighten{
+                                #{$color-type-class}: do-hsl($color,math.div($i,10),true,10%) !important;
+                            }
+                        }
+                    }
+    
+                }
+            }
+        }
+
+
     }
     %bg-#{$color}-color {
         background-color: do-hsl($color);
@@ -130,7 +164,14 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                 @if ($colorName2 != $colorName) {
                     [data-set-#{$colorName}='#{$colorName2}'],
                     .set-#{$colorName}-#{$colorName2} {
-                        --#{$colorName}-color: var(--#{$colorName2}) !important;
+                        --#{$colorName}-color: var(--#{$colorName2}-color) !important;
+
+                        @if($colorName == "main" or $colorName == "extra" or $colorName == "fade"){
+                            --#{$colorName}-H: var(--#{$colorName2}-H) !important;
+                            --#{$colorName}-S: var(--#{$colorName2}-S) !important;
+                            --#{$colorName}-L: var(--#{$colorName2}-L) !important;
+                        }
+
                     }
 
                     [data-do='#{$colorName}-#{$colorName2}'] {

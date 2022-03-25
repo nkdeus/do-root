@@ -320,8 +320,20 @@ Core de la créature
             
                 @if($prop == "transform"){
                     $multiProps : $multiProps + ' ' + $tempCss;
+                }@else if($prop == "background-color"){
+                    $tempCss : hsla(calc(var(--#{$var-name})* #{$tempDelta}), 50%, 50%, 1);
+                    #{$prop}:#{$tempCss};
+                    &-main{
+                        //calc(var(--#{$var-name}) * var(--main-S))
+                        $tempCss : hsla(var(--main-H), calc(var(--#{$var-name}) * 100%), var(--main-L), 1);  
+                        #{$prop}:#{$tempCss};
+                    }
+                    &-fade{
+                        $tempCss : hsla(var(--fade-H), calc(var(--#{$var-name}) * 25%), var(--fade-L), 1);  
+                        #{$prop}:#{$tempCss};
+                    }
                 }@else{
-                    $tempCss : #{$param}+calc(var(--#{$var-name})* #{$tempDelta});
+                    $tempCss : calc(var(--#{$var-name})* #{$tempDelta});
                     #{$prop}:#{$tempCss};
                 }  
                 $u : $u+1;

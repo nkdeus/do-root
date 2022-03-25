@@ -37,7 +37,6 @@ $(document).ready(function() {
           var lastX = e.clientX;
           var lastY = e.clientY;
 
-          console.log("?? toggleIn : ",toggleIn);
           if(lastY < limite && body.attr('do-event-scroll') == 'down' && toggleIn == false){
              body.attr('do-event-scroll','up');
              toggleIn = true;
@@ -59,7 +58,7 @@ $(document).ready(function() {
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
     var randomUse = false;
     if(prefersDarkMode){
-        $('body').addClass('toggleColor');
+        //$('body').addClass('toggleColor');
         $('#color-switcher').addClass('active');
     }
 
@@ -97,13 +96,13 @@ $(document).ready(function() {
         var s = gsap.utils.random(pSaturation[0], pSaturation[1], 1);
         var l = gsap.utils.random(pLightness[0], pLightness[1], 1);
 
-        console.log("COLOR ",h+","+s+"%,"+l+"%")
+        //console.log("COLOR ",h+","+s+"%,"+l+"%")
         return h+","+s+"%,"+l+"%";
       
     }
 
     gsap.delayedCall(1, function(){
-      $('#color-random').click(); 
+      //$('#color-random').click(); 
     });
 
     $('#color-random').on('click',function(e) {
@@ -116,13 +115,27 @@ $(document).ready(function() {
       var newExtra = generateHslaColor([180, 360],[80, 100],[50, 100]);
       var newFade = generateHslaColor([0, 360],[0, 20],[80, 90]);
 
-      if($('body').hasClass('toggleColor')){
+      var devide_newMain = newMain.split(',');
+      var devide_newExtra = newExtra.split(',');
+      var devide_newFade = newFade.split(',');
+      var devide_newContraste = newContraste.split(',');
+
+      //Le pire IF du monde ....
+      if((!$('body').hasClass('toggleColor') && prefersDarkMode) || ($('body').hasClass('toggleColor') && !prefersDarkMode) ){
      
         $('body').css('--main-color',newFade);
-        $('body').css('--extra-color',newMain);
+        $('body').css('--extra-color',newExtra);
         $('body').css('--fade-color',newContraste);
-        $('body').css('--second-color',newContraste);
+        $('body').css('--second-color',newMain);
         $('body').css('--contraste-color',newSecond);
+
+        $('body').css('--main-H',devide_newFade[0]);
+        $('body').css('--main-S',devide_newFade[1]);
+        $('body').css('--main-L',devide_newFade[2]);
+
+        $('body').css('--fade-H',devide_newContraste[0]);
+        $('body').css('--fade-S',devide_newContraste[1]);
+        $('body').css('--fade-L',devide_newContraste[2]);
 
       }else{
 
@@ -132,7 +145,19 @@ $(document).ready(function() {
         $('body').css('--second-color',newSecond);
         $('body').css('--contraste-color',newContraste);
 
+        $('body').css('--main-H',devide_newMain[0]);
+        $('body').css('--main-S',devide_newMain[1]);
+        $('body').css('--main-L',devide_newMain[2]);
+
+        $('body').css('--fade-H',devide_newFade[0]);
+        $('body').css('--fade-S',devide_newFade[1]);
+        $('body').css('--fade-L',devide_newFade[2]);
+
       }
+   
+      $('body').css('--extra-H',devide_newExtra[0]);
+      $('body').css('--extra-S',devide_newExtra[1]);
+      $('body').css('--extra-L',devide_newExtra[2]);
      
     });
 
