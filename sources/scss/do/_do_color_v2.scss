@@ -118,6 +118,40 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                     }
     
                 }
+                @if($color-type-class == "background-color"){
+                    @for $i from 0 through $do-max {
+                        &-grad-linear-#{$i}{
+    
+                            background: linear-gradient(#{36*$i}deg, do-hsl($color,0) 0%, do-hsl($color,1) 100%);
+    
+                        }
+                        &-grad-linear-gold-#{$i}{
+                            
+                            $grad-gold : "";
+                            $div : math.div(10,8);
+                            
+                            $u : 0;
+                            @each $key, $value in $do-matrix {
+                                $value : $value - 0.34;
+                                $grad-gold : #{$grad-gold}, do-hsl($color,#{1 - math.div($u,10)}) #{$value*math.div($do-ratio-to-100,$do)};
+                                $u : $u+$div; 
+                            }
+
+                            background: linear-gradient(#{36*$i}deg, #{$grad-gold});
+                            
+                        }
+                        &-grad-radial-#{$i}{
+    
+                            background: radial-gradient(#{36*$i}deg, do-hsl($color,0) 0%, do-hsl($color,1) 100%);
+    
+                        }
+    
+                    }
+                }
+                
+
+              
+
             }
         }
 

@@ -647,6 +647,7 @@ Core de la créature
             transform: translateY(math.div($i - math.div($do-max, 2), $do-base)*100%);
         }
         @include do-events-extend(#{$class}-trans-x-#{$temp-n-class}) {
+            @debug(#{$class}-trans-x-#{$temp-n-class});
             transform: translateX(math.div($i - math.div($do-max, 2), $do-base)*100%);
         }
 
