@@ -93,39 +93,53 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
 
             .#{$class}-#{$color-type}-#{$color}-color {
 
-                @if($color == "main" or $color == "extra" or $color == "fade"){
+                
                     &-darken{
                         #{$color-type-class}: do-hsl($color,1,true,-10%) !important;       
                     }
                     &-lighten{
                         #{$color-type-class}: do-hsl($color,1,true,10%) !important;
                     }
-                }
+                
 
                 @for $i from 0 through $do-max {
                     &-#{$i}{
 
                         #{$color-type-class}: do-hsl($color,math.div($i,10)) !important;
 
-                        @if($color == "main" or $color == "extra" or $color == "fade"){
-                            &-darken{
-                                #{$color-type-class}: do-hsl($color,math.div($i,10),true,-10%) !important;       
-                            }
-                            &-lighten{
-                                #{$color-type-class}: do-hsl($color,math.div($i,10),true,10%) !important;
-                            }
+                       
+                        &-darken{
+                            #{$color-type-class}: do-hsl($color,math.div($i,10),true,-10%) !important;       
                         }
+                        &-lighten{
+                            #{$color-type-class}: do-hsl($color,math.div($i,10),true,10%) !important;
+                        }
+                        
                     }
     
                 }
                 @if($color-type-class == "background-color"){
-                    @for $i from 0 through $do-max {
-                        &-grad-linear-#{$i}{
-    
-                            background: linear-gradient(#{36*$i}deg, do-hsl($color,0) 0%, do-hsl($color,1) 100%);
+
+                    @for $i from 0 through $do-num-angle - 1 {
+
+                        $angle : #{math.div(360,$do-num-angle)*$i}deg;
+
+                        @each $colorName in $colorsVar {
+
+                            &-#{$colorName}-grad-linear-#{$angle}{
+        
+                                background: linear-gradient($angle, do-hsl($color,1) 0%, do-hsl($colorName,1) 100%);
+        
+                            }
     
                         }
-                        &-grad-linear-gold-#{$i}{
+
+                        &-grad-linear-#{$angle}{
+    
+                            background: linear-gradient($angle, do-hsl($color,0) 0%, do-hsl($color,1) 100%);
+    
+                        }
+                        &-grad-linear-gold-#{$angle}{
                             
                             $grad-gold : "";
                             $div : math.div(10,8);
@@ -137,12 +151,12 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                                 $u : $u+$div; 
                             }
 
-                            background: linear-gradient(#{36*$i}deg, #{$grad-gold});
+                            background: linear-gradient($angle, #{$grad-gold});
                             
                         }
-                        &-grad-radial-#{$i}{
+                        &-grad-radial-#{$angle}{
     
-                            background: radial-gradient(#{36*$i}deg, do-hsl($color,0) 0%, do-hsl($color,1) 100%);
+                            background: radial-gradient($angle, do-hsl($color,0) 0%, do-hsl($color,1) 100%);
     
                         }
     
@@ -207,6 +221,7 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                         }
 
                     }
+                 
 
                     [data-do='#{$colorName}-#{$colorName2}'] {
                         background-color: do-hsl($colorName) !important;

@@ -119,10 +119,7 @@ $do-clamp : (
   "fs-fluid": ("props" :"font-size", "unit": 1rem)
 );
 
-$do-smart : (
-  "px-smart": ("props" :("padding-left","padding-right"), "unit": 1rem)
-);
-/*
+
 $do-smart : (
   "px-smart": ("props" :("padding-left","padding-right"), "unit": 1rem),
   "py-smart": ("props" :("padding-top","padding-bottom"), "unit": 1rem),
@@ -131,7 +128,7 @@ $do-smart : (
   "my-smart": ("props" :("margin-top","margin-bottom"), "unit": 1rem),
   "left-smart": ("props" :("left"), "unit": 1rem),
   "right-smart": ("props" :("right"), "unit": 1rem)
-);*/
+);
 
 $temp-class: ".do"; 
 $count: $do-u;
@@ -140,6 +137,7 @@ $do-aligns: "start", "center", "end", "flex-start","flex-end", "stretch", "space
 $do-custom-data: "background-color", "right", "top", "bottom";
 $do-base : 10; 
 $do-max : 16; 
+$do-num-angle : 6; 
 $do-ratio-to-100 : 10.17%; 
 
 $do-custom-data : (
@@ -202,7 +200,8 @@ $do-custom-data-2 : (
 
     prop   : background-color,
     params :(""),
-    unit   : (20)
+    unit   : (360),
+    responsive: false
 
   ),
   o  : (

@@ -25,6 +25,7 @@
   <script type="text/javascript" src="js/do/do-scrollEvents.js"></script>
   <script type="text/javascript" src="js/do/modules/do-module-scrolldatas.js"></script>
   <script type="text/javascript" src="js/do/modules/do-module-mousedatas.js"></script>
+  <script type="text/javascript" src="js/do/modules/do-module-tweens.js"></script>
 
 
 
@@ -57,6 +58,11 @@
       --contraste-H:36;
       --contraste-S:3.3%;
       --contraste-L:28%;
+  
+      --second-H:0;
+      --second-S:0%;
+      --second-L:100%;
+  
   
     }
   
@@ -159,7 +165,7 @@
 
 
 
-<body class="do-bg-fade-color-darken _get-progress:bg-sm">
+<body class="do-bg-fade-color">
 
   <div id="nav" class="do-w-10 pof do-px-smart-lg do-z-10 do-flex do-justify-content-space-between do-align-items-center tween-trans scroll-down:trans-y-before">
     <a id="logo" href="./" class="do-py-xxs por do-z-2 tween-trans scroll-down:trans-y-after">
@@ -225,111 +231,839 @@
 </div>
 
 
-<section class="por do-px-smart-xxxl do-flex do-gap-xxl do-col do-py-xxl por do-z-1">
-  
-    <div class="do-grid-2">
+<div class="do-hide" data-module="dotweens"
+        data-do-target=".square"
+        data-do-stage="#colors"
+        data-do-scrub="0"
+        data-do-order-tween="random"
+        data-do-batch-tween="false"
+        data-do-start="top center+=25%"
+        data-do-end="bottom bottom"
+        data-do-motion-tween="fade-in">
+</div>
 
-        <div class="do-w-10 do-flex do-col">
 
-            <div class="square do-w-10 do-bg-main-color get-progress:trans-y-xs-n">
-                <div class="content do-flex do-wrap do-align-content-end do-align-items-end">
-                    <div class="do-gold-xxl por do-bg-main-color-lighten do-flex">
-                        <div class="do-w-gold-xl do-h-gold-xl por do-bg-main-color-grad-linear-10"></div>
-                        <div class="do-w-gold-xxl do-h-gold-xl por do-bg-main-color-grad-linear-gold-5"></div>
+<section id="colors" class="por do-px-smart-xxxl h-auto  do-gap-xxxs do-grid-5 do-col do-py-xxl por do-z-1">
+
+
+    <div>
+    <div class="do-grid-3 do-gap-xxxs">
+        <div class="square">
+            <div class="content do-bg-main-color-darken">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9"></div>
                     </div>
-                    <div class="do-gold-xl por do-bg-main-color-darken"></div>
-                    <div class="do-w-10 do-h-lg poa bottom do-grid-9 trans-y-after">
-                        <div class="do-bg-main-color-1 do-full get-progress:trans-y-xxxs-n"></div>
-                        <div class="do-bg-main-color-2 do-full get-progress:trans-y-xxs-n"></div>
-                        <div class="do-bg-main-color-3 do-full get-progress:trans-y-xs-n"></div>
-                        <div class="do-bg-main-color-4 do-full get-progress:trans-y-sm-n"></div>
-                        <div class="do-bg-main-color-5 do-full get-progress:trans-y-md-n"></div>
-                        <div class="do-bg-main-color-6 do-full get-progress:trans-y-lg-n"></div>
-                        <div class="do-bg-main-color-7 do-full get-progress:trans-y-xl-n"></div>
-                        <div class="do-bg-main-color-8 do-full get-progress:trans-y-xxl-n"></div>
-                        <div class="do-bg-main-color-8 do-full get-progress:trans-y-xxxl-n"></div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8"></div>
                     </div>
-                    <div class="do-w-10 do-h-xxl poa bottom-n-xl-rem do-bg-main-color-grad-linear-gold-8 do-o-3 do-blur-2"></div>
-
+                    <div class="square">
+                        <div class="content do-bg-main-color-7"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1"></div>
+                    </div>
+            
                 </div>
             </div>
-           
-        </div>
-        <div class="do-p-sm">
-            <h2>MAIN</h2>
+            
         </div>
 
-    </div>
+        <div class="square">
+            <div class="content do-bg-main-color">
 
-    <div class="do-grid-2 set-main-extra">
-
-        <div class="do-w-10 do-flex do-col">
-
-            <div class="square do-w-10 do-bg-main-color get-progress:trans-y-xs-n">
-                <div class="content do-flex do-wrap do-align-content-end do-align-items-end">
-                    <div class="do-gold-xxl por do-bg-main-color-lighten do-flex">
-                        <div class="do-w-gold-xl do-h-gold-xl por do-bg-main-color-grad-linear-10"></div>
-                        <div class="do-w-gold-xxl do-h-gold-xl por do-bg-main-color-grad-linear-gold-5"></div>
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9-darken"></div>
                     </div>
-                    <div class="do-gold-xl por do-bg-main-color-darken"></div>
-                    <div class="do-w-10 do-h-lg poa bottom do-grid-9 trans-y-after">
-                        <div class="do-bg-main-color-1 do-full get-progress:trans-y-xxxs-n"></div>
-                        <div class="do-bg-main-color-2 do-full get-progress:trans-y-xxs-n"></div>
-                        <div class="do-bg-main-color-3 do-full get-progress:trans-y-xs-n"></div>
-                        <div class="do-bg-main-color-4 do-full get-progress:trans-y-sm-n"></div>
-                        <div class="do-bg-main-color-5 do-full get-progress:trans-y-md-n"></div>
-                        <div class="do-bg-main-color-6 do-full get-progress:trans-y-lg-n"></div>
-                        <div class="do-bg-main-color-7 do-full get-progress:trans-y-xl-n"></div>
-                        <div class="do-bg-main-color-8 do-full get-progress:trans-y-xxl-n"></div>
-                        <div class="do-bg-main-color-8 do-full get-progress:trans-y-xxxl-n"></div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8-darken"></div>
                     </div>
-                    <div class="do-w-10 do-h-xxl poa bottom-n-xl-rem do-bg-main-color-grad-linear-gold-8 do-o-3 do-blur-2"></div>
-
+                    <div class="square">
+                        <div class="content do-bg-main-color-7-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1-darken"></div>
+                    </div>
+            
                 </div>
             </div>
-           
+            
         </div>
-        <div class="do-p-sm">
-            <h2>EXTRA</h2>
-        </div>
+        <div class="square">
+            <div class="content do-bg-main-color">
 
-    </div>
-
-    <div class="do-grid-2 set-main-fade">
-
-        <div class="do-w-10 do-flex do-col">
-
-            <div class="square do-w-10 do-bg-main-color get-progress:trans-y-xs-n">
-                <div class="content do-flex do-wrap do-align-content-end do-align-items-end">
-                    <div class="do-gold-xxl por do-bg-main-color-lighten do-flex">
-                        <div class="do-w-gold-xl do-h-gold-xl por do-bg-main-color-grad-linear-10"></div>
-                        <div class="do-w-gold-xxl do-h-gold-xl por do-bg-main-color-grad-linear-gold-5"></div>
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9-lighten"></div>
                     </div>
-                    <div class="do-gold-xl por do-bg-main-color-darken"></div>
-                    <div class="do-w-10 do-h-lg poa bottom do-grid-9 trans-y-after">
-                        <div class="do-bg-main-color-1 do-full get-progress:trans-y-xxxs-n"></div>
-                        <div class="do-bg-main-color-2 do-full get-progress:trans-y-xxs-n"></div>
-                        <div class="do-bg-main-color-3 do-full get-progress:trans-y-xs-n"></div>
-                        <div class="do-bg-main-color-4 do-full get-progress:trans-y-sm-n"></div>
-                        <div class="do-bg-main-color-5 do-full get-progress:trans-y-md-n"></div>
-                        <div class="do-bg-main-color-6 do-full get-progress:trans-y-lg-n"></div>
-                        <div class="do-bg-main-color-7 do-full get-progress:trans-y-xl-n"></div>
-                        <div class="do-bg-main-color-8 do-full get-progress:trans-y-xxl-n"></div>
-                        <div class="do-bg-main-color-8 do-full get-progress:trans-y-xxxl-n"></div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8-lighten"></div>
                     </div>
-                    <div class="do-w-10 do-h-xxl poa bottom-n-xl-rem do-bg-main-color-grad-linear-gold-8 do-o-3 do-blur-2"></div>
-
+                    <div class="square">
+                        <div class="content do-bg-main-color-7-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1-lighten"></div>
+                    </div>
+            
                 </div>
             </div>
-           
+            
         </div>
-        <div class="do-p-sm">
-            <h2>EXTRA</h2>
-        </div>
-
     </div>
    
+    <div class="do-grid-12 do-gap-xxxs">
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-0deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-60deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-120deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-180deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-240deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-300deg"></div>
+        </div>
+
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-0deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-60deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-120deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-180deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-240deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-300deg"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="set-main-extra">
+    <div class="do-grid-3 do-gap-xxxs">
+        <div class="square">
+            <div class="content do-bg-main-color-darken">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="square">
+            <div class="content do-bg-main-color">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1-darken"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1-lighten"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   
+    <div class="do-grid-12 do-gap-xxxs">
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-0deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-60deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-120deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-180deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-240deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-300deg"></div>
+        </div>
+
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-0deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-60deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-120deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-180deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-240deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-300deg"></div>
+        </div>
+    </div>
+</div>
+
+<div class="set-main-fade">
+    <div class="do-grid-3 do-gap-xxxs">
+        <div class="square">
+            <div class="content do-bg-main-color-darken">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="square">
+            <div class="content do-bg-main-color">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1-darken"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1-lighten"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   
+    <div class="do-grid-12 do-gap-xxxs">
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-0deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-60deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-120deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-180deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-240deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-300deg"></div>
+        </div>
+
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-0deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-60deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-120deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-180deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-240deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-300deg"></div>
+        </div>
+    </div>
+</div>
+
+<div class="set-main-second">
+    <div class="do-grid-3 do-gap-xxxs">
+        <div class="square">
+            <div class="content do-bg-main-color-darken">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="square">
+            <div class="content do-bg-main-color">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1-darken"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1-lighten"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   
+    <div class="do-grid-12 do-gap-xxxs">
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-0deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-60deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-120deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-180deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-240deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-300deg"></div>
+        </div>
+
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-0deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-60deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-120deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-180deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-240deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-300deg"></div>
+        </div>
+    </div>
+</div>
+
+<div class="set-main-contraste">
+    <div class="do-grid-3 do-gap-xxxs">
+        <div class="square">
+            <div class="content do-bg-main-color-darken">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="square">
+            <div class="content do-bg-main-color">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2-darken"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1-darken"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color">
+
+                <div class="do-grid-3 do-gap-xxxs">
+                    <div class="square">
+                        <div class="content do-bg-main-color-9-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-8-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-7-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-6-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-5-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-4-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-3-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-2-lighten"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-1-lighten"></div>
+                    </div>
+            
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   
+    <div class="do-grid-12 do-gap-xxxs">
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-0deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-60deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-120deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-180deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-240deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-gold-300deg"></div>
+        </div>
+
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-0deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-60deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-120deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-180deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-240deg"></div>
+        </div>
+        <div class="square">
+            <div class="content do-bg-main-color-grad-linear-300deg"></div>
+        </div>
+    </div>
+</div>
+  
 </section>
+
+
+<div 
+  data-module="doscrolldatas"
+  data-do-target="#colors-progress"
+  data-do-calcul="full"
+  data-do-update="true"
+  data-do-start="top-=0% center"
+  data-do-end="bottom-=0% bottom"
+  data-do-force="1"
+  >
+</div>
+<section id="colors-progress" class="por h-auto do-px-smart-xxxl do-gap-xxxs do-grid-1 do-col do-py-xxl por do-z-1">
+
+    <div class="do-ml-xl do-mb-xl">
+        <h2 class="do-mb-0">Colors motions</h2>
+    </div>
+    <div class="poa do-full do-bg-second-color-1-lighten"></div>
+    <div class="do-grid-3 do-gap-xxxs por do-z-1">
+ 
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-main"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-extra"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-fade"></div>
+            </div>
+        </div>
+       
+    </div>
+
+  
+  
+</section>
+
+
+
+
+
 <div 
   data-module="doscrolldatas"
   data-do-target="body"
@@ -368,11 +1102,11 @@
 </div>
 
 
-<footer class="do-overflow-hidden do-px-smart-lg do-pt-smart-xxl por do-z-1 do-flex do-col do-justify-content-end do-align-items-center">
+<footer class="do-overflow-hidden do-px-smart-lg do-py-smart-xl por do-z-1 do-flex do-col do-justify-content-end do-align-items-center">
     
 
 
-    <div class="por do-z-2 do-w-10  do-mb-lg do-flex do-gap-md do-justify-content-space-between do-align-items-center">
+    <div class="por do-z-2 do-w-10 do-flex do-gap-md do-justify-content-space-between do-align-items-center">
 
         <a class="do-bt-line" href="./">© Ulysse-2029</a>
         <div class="poa center do-w-md do-z-2">

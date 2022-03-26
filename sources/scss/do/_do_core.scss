@@ -325,11 +325,15 @@ Core de la créature
                     #{$prop}:#{$tempCss};
                     &-main{
                         //calc(var(--#{$var-name}) * var(--main-S))
-                        $tempCss : hsla(var(--main-H), calc(var(--#{$var-name}) * 100%), var(--main-L), 1);  
+                        $tempCss : hsla(var(--main-H), calc(var(--#{$var-name}) * var(--main-S)), var(--main-L), 1);  
                         #{$prop}:#{$tempCss};
                     }
                     &-fade{
-                        $tempCss : hsla(var(--fade-H), calc(var(--#{$var-name}) * 25%), var(--fade-L), 1);  
+                        $tempCss : hsla(var(--fade-H), calc(var(--#{$var-name}) * var(--fade-S)), var(--fade-L), 1);  
+                        #{$prop}:#{$tempCss};
+                    }
+                    &-extra{
+                        $tempCss : hsla(var(--extra-H), calc(var(--#{$var-name}) * var(--extra-S)), var(--extra-L), 1);  
                         #{$prop}:#{$tempCss};
                     }
                 }@else{
@@ -647,7 +651,7 @@ Core de la créature
             transform: translateY(math.div($i - math.div($do-max, 2), $do-base)*100%);
         }
         @include do-events-extend(#{$class}-trans-x-#{$temp-n-class}) {
-            @debug(#{$class}-trans-x-#{$temp-n-class});
+            //@debug(#{$class}-trans-x-#{$temp-n-class});
             transform: translateX(math.div($i - math.div($do-max, 2), $do-base)*100%);
         }
 
