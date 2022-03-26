@@ -53,7 +53,6 @@ moduleManager["doscrolldatas"] = function () {
         trigger: $scope.target,
         start: $scope.start,
         end: $scope.end,
-        markers:false,
         onEnter: self => {
             if($scope.classik){
                 $($scope.target).css("--progress",1);

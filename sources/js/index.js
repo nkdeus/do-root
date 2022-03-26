@@ -54,28 +54,44 @@ $(document).ready(function() {
     futurAction();
 
     $(document).on("darkMode", darkModeChange);
-
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
-    var randomUse = false;
-    if(prefersDarkMode){
-        //$('body').addClass('toggleColor');
-        $('#color-switcher').addClass('active');
-    }
-
     function darkModeChange(e) {
-      if(e.class == "darkmodetrigger"){
-       
+      if(e.class == "darkmodetrigger"){   
           $('#color-switcher').click(); 
       }
     }
 
-    $('#color-switcher').on('click',function(e) {
-      
-      toggleFilter();
-      if(randomUse){
-        $('#color-random').click(); 
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches; 
+
+
+    var itemMode = "toggleMode12"
+    var toggleMode = getParamSingle(itemMode) == "true";
+
+    if(prefersDarkMode){
+      //$('body').addClass('toggleColor');
+      $('#color-switcher').addClass('active');
+
+    }
+    console.log("MODE SAVE", getParamSingle(itemMode));
+    console.log("MODE ON/OFF ",toggleMode);
+
+
+    if(toggleMode != null){
+ 
+      if(toggleMode){
+
+         console.log("CHANGE AUTO ",toggleMode);
+          $('#color-switcher').click(); 
+
       }
-     
+
+    }
+
+    $('#color-switcher').on('click',function(e) {    
+       toggleFilter();
+       toggleMode = !toggleMode;
+       console.log("toggleMode save ",toggleMode);
+       saveParamSingle(itemMode,toggleMode);
+
     });
 
     function toggleFilter(){
@@ -84,80 +100,92 @@ $(document).ready(function() {
         $(this).toggleClass('filter-invert');
       });
 
-      $(".trigger-gradient").each(function(){
-        $(this).toggleClass('do-grad-0-second-color');
+    }
+
+    function generateHslaColor (pHue, pSaturation, pLightness) { 
+        var h = gsap.utils.random(pHue[0], pHue[1], 1);
+        var s = gsap.utils.random(pSaturation[0], pSaturation[1], 1);
+        var l = gsap.utils.random(pLightness[0], pLightness[1], 1);
+        return h+","+s+"%,"+l+"%";   
+    }
+
+
+
+    var savedTheme = getParams('theme');
+   
+    if(savedTheme != undefined){
+      setColors(savedTheme);
+    }
+
+    function saveParams(pName,pParams){
+      localStorage.setItem(pName, JSON.stringify(pParams));
+    }
+    function saveParamSingle(pName,pParam){
+      localStorage.setItem(pName, pParam);
+    }
+    function getParams(pName){
+      return JSON.parse(localStorage.getItem(pName));
+    }
+    function getParamSingle(pName){
+      return localStorage.getItem(pName);
+    }
+
+    function setColors(pColors){
+
+      $.each(pColors, function (index, value) {
+
+        $('body').css('--'+value.name+'',value.hsl);
+        $('body').css('--'+value.name+'-H',value.splited[0]);
+        $('body').css('--'+value.name+'-S',value.splited[1]);
+        $('body').css('--'+value.name+'-L',value.splited[2]);
+
       });
 
     }
 
-    function generateHslaColor (pHue, pSaturation, pLightness) {
-      
-        var h = gsap.utils.random(pHue[0], pHue[1], 1);
-        var s = gsap.utils.random(pSaturation[0], pSaturation[1], 1);
-        var l = gsap.utils.random(pLightness[0], pLightness[1], 1);
+    function randomColors(){
+      var newMain =  generateHslaColor([0, 220],[70, 100],[50, 90]);
+      var newSecond = generateHslaColor([0, 360],[0, 10],[80, 90]);
+      var newContraste = generateHslaColor([0, 360],[0, 10],[0, 10]);
+      var newExtra = generateHslaColor([140, 360],[70, 100],[50, 90]);
+      var newFade = generateHslaColor([0, 360],[0, 10],[80, 90]);
 
-        //console.log("COLOR ",h+","+s+"%,"+l+"%")
-        return h+","+s+"%,"+l+"%";
-      
+      var colors = [
+        {
+          "name":"main",
+          "hsl":newMain,
+          "splited":newMain.split(',')
+        },
+        {
+          "name":"extra",
+          "hsl":newExtra,
+          "splited":newExtra.split(',')
+        },
+        {
+          "name":"second",
+          "hsl":newSecond,
+          "splited":newSecond.split(',')
+        },
+        {
+          "name":"contraste",
+          "hsl":newContraste,
+          "splited":newContraste.split(',')
+        },
+        {
+          "name":"fade",
+          "hsl":newFade,
+          "splited":newFade.split(',')
+        }
+      ]
+
+      return colors;
     }
-
-    gsap.delayedCall(1, function(){
-      //$('#color-random').click(); 
-    });
 
     $('#color-random').on('click',function(e) {
 
-      randomUse = true;
-      
-      var newMain =  generateHslaColor([0, 180],[80, 100],[50, 100]);
-      var newSecond = generateHslaColor([0, 0],[0, 0],[90, 100]);
-      var newContraste = generateHslaColor([0, 50],[0, 10],[0, 30]);
-      var newExtra = generateHslaColor([180, 360],[80, 100],[50, 100]);
-      var newFade = generateHslaColor([0, 360],[0, 20],[80, 90]);
-
-      var devide_newMain = newMain.split(',');
-      var devide_newExtra = newExtra.split(',');
-      var devide_newFade = newFade.split(',');
-      var devide_newContraste = newContraste.split(',');
-
-      //Le pire IF du monde ....
-      if((!$('body').hasClass('toggleColor') && prefersDarkMode) || ($('body').hasClass('toggleColor') && !prefersDarkMode) ){
-     
-        $('body').css('--main-color',newFade);
-        $('body').css('--extra-color',newExtra);
-        $('body').css('--fade-color',newContraste);
-        $('body').css('--second-color',newMain);
-        $('body').css('--contraste-color',newSecond);
-
-        $('body').css('--main-H',devide_newFade[0]);
-        $('body').css('--main-S',devide_newFade[1]);
-        $('body').css('--main-L',devide_newFade[2]);
-
-        $('body').css('--fade-H',devide_newContraste[0]);
-        $('body').css('--fade-S',devide_newContraste[1]);
-        $('body').css('--fade-L',devide_newContraste[2]);
-
-      }else{
-
-        $('body').css('--main-color',newMain);
-        $('body').css('--extra-color',newExtra);
-        $('body').css('--fade-color',newFade);
-        $('body').css('--second-color',newSecond);
-        $('body').css('--contraste-color',newContraste);
-
-        $('body').css('--main-H',devide_newMain[0]);
-        $('body').css('--main-S',devide_newMain[1]);
-        $('body').css('--main-L',devide_newMain[2]);
-
-        $('body').css('--fade-H',devide_newFade[0]);
-        $('body').css('--fade-S',devide_newFade[1]);
-        $('body').css('--fade-L',devide_newFade[2]);
-
-      }
-   
-      $('body').css('--extra-H',devide_newExtra[0]);
-      $('body').css('--extra-S',devide_newExtra[1]);
-      $('body').css('--extra-L',devide_newExtra[2]);
+      var c = randomColors();
+      saveParams("theme",c);
+      setColors(c);
      
     });
 

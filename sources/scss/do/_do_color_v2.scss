@@ -15,9 +15,9 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
     //@debug(calc(var(--#{$colorHsl}-H) + math.random(10)));
 
     @if($filter){
-        @return hsla(var(--#{$colorHsl}-H),
-                     var(--#{$colorHsl}-S),
-                     calc( var(--#{$colorHsl}-L) + $offset),
+        @return hsla(var(--#{$colorHsl}-color-H),
+                     var(--#{$colorHsl}-color-S),
+                     calc( var(--#{$colorHsl}-color-L) + $offset),
                      $opacity
         )
     }
@@ -212,13 +212,12 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                 @if ($colorName2 != $colorName) {
                     [data-set-#{$colorName}='#{$colorName2}'],
                     .set-#{$colorName}-#{$colorName2} {
+
                         --#{$colorName}-color: var(--#{$colorName2}-color) !important;
 
-                        @if($colorName == "main" or $colorName == "extra" or $colorName == "fade"){
-                            --#{$colorName}-H: var(--#{$colorName2}-H) !important;
-                            --#{$colorName}-S: var(--#{$colorName2}-S) !important;
-                            --#{$colorName}-L: var(--#{$colorName2}-L) !important;
-                        }
+                        --#{$colorName}-color-H: var(--#{$colorName2}-color-H) !important;
+                        --#{$colorName}-color-S: var(--#{$colorName2}-color-S) !important;
+                        --#{$colorName}-color-L: var(--#{$colorName2}-color-L) !important;
 
                     }
                  

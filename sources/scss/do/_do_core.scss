@@ -281,11 +281,6 @@ Core de la créature
 
     @each $data-class, $props in $do-custom-data-2 {
 
-        /*
-        @debug(" INIT $var-name :"$var-name);
-        @debug(" 0 :"$data-class);
-        @debug(" 1 $props:"$props);
-        */
 
         $prop : map.get($props,"prop");
         $params : map.get($props,"params");
@@ -298,14 +293,6 @@ Core de la créature
             $class-full-name : get-#{$var-name}\:#{$data-class};
         }
 
-        /*
-        @debug(" ? isResponsive:"$isResponsive);
-        @debug(" 2 $prop:"$prop);
-        @debug(" 3 $params :"$params);
-        @debug(" 3 $unit :"$unit);
-        @debug(" 4 $class-full-name :"$class-full-name);
-        */
-            
         .#{$class-full-name}{
 
             $u:1;
@@ -323,19 +310,21 @@ Core de la créature
                 }@else if($prop == "background-color"){
                     $tempCss : hsla(calc(var(--#{$var-name})* #{$tempDelta}), 50%, 50%, 1);
                     #{$prop}:#{$tempCss};
-                    &-main{
-                        //calc(var(--#{$var-name}) * var(--main-S))
-                        $tempCss : hsla(var(--main-H), calc(var(--#{$var-name}) * var(--main-S)), var(--main-L), 1);  
-                        #{$prop}:#{$tempCss};
+                    @each $colorName in $colorsVar {
+       
+                        &-#{$colorName}-S{
+    
+                            $tempCss : hsla(var(--#{$colorName}-color-H), calc(var(--#{$var-name}) * var(--#{$colorName}-color-S)), var(--#{$colorName}-color-L), 1);  
+                            #{$prop}:#{$tempCss};
+                        }
+                        &-#{$colorName}-L{
+    
+                            $tempCss : hsla(var(--#{$colorName}-color-H), var(--#{$colorName}-color-S), calc(var(--#{$var-name}) * var(--#{$colorName}-color-L)), 1);  
+                            #{$prop}:#{$tempCss};
+                        }
+
                     }
-                    &-fade{
-                        $tempCss : hsla(var(--fade-H), calc(var(--#{$var-name}) * var(--fade-S)), var(--fade-L), 1);  
-                        #{$prop}:#{$tempCss};
-                    }
-                    &-extra{
-                        $tempCss : hsla(var(--extra-H), calc(var(--#{$var-name}) * var(--extra-S)), var(--extra-L), 1);  
-                        #{$prop}:#{$tempCss};
-                    }
+
                 }@else{
                     $tempCss : calc(var(--#{$var-name})* #{$tempDelta});
                     #{$prop}:#{$tempCss};
@@ -996,8 +985,10 @@ Core de la créature
         
         font-size: $tempSize * 1rem;
         $tempSize2: $tempSize * 1rem;
+        $minSizePx: math.round(10 +( $tempSize * 3 )) * 1px;
+        @debug($fs,$tempSize,$minSizePx);
         $tempSize3: math.div($tempSize * 1rem, $do);
-        font-size: max(#{$tempSize2}, 16px);
+        font-size: max(#{$tempSize2}, #{$minSizePx});
 
         &.big {
             font-size: $tempSize * 1rem * $do !important;

@@ -47,50 +47,118 @@
 		}
 	},
 	"themes": {
-		"do": {
-			"main": [
-				15,
-				"100%",
-				"79%"
-			],
-			"extra": [
-				176,
-				"96%",
-				"52%"
-			],
-			"contraste": [
-				36,
-				"3.3%",
-				"28%"
-			],
-			"second": [
-				0,
-				"0%",
-				"100%"
-			],
-			"fade": [
-				37,
-				"20%",
-				"84%"
-			]
-		},
-		"doHSL": {
-			"main": "15, 100%, 79%",
-			"extra": "176, 96%, 52%",
-			"contraste": "36, 3.3%, 28%",
-			"second": "0, 0%, 100%",
-			"fade": "37, 20%, 84%"
-		},
-		"doRGB": {
-			"main": "255, 174, 148",
-			"extra": "10, 255, 238",
-			"contraste": "78, 76, 73",
-			"second": "255, 255, 255",
-			"fade": "223, 217, 207"
-		}
+		"current": [
+			{
+				"name": "main",
+				"toggleColor": "fade",
+				"hsl": [
+					15,
+					"100%",
+					"79%"
+				]
+			},
+			{
+				"name": "extra",
+				"toggleColor": "extra",
+				"hsl": [
+					176,
+					"96%",
+					"52%"
+				]
+			},
+			{
+				"name": "contraste",
+				"toggleColor": "second",
+				"hsl": [
+					36,
+					"3.3%",
+					"28%"
+				]
+			},
+			{
+				"name": "second",
+				"toggleColor": "main",
+				"hsl": [
+					0,
+					"0%",
+					"100%"
+				]
+			},
+			{
+				"name": "fade",
+				"toggleColor": "contraste",
+				"hsl": [
+					37,
+					"20%",
+					"84%"
+				]
+			}
+		]
 	},
 	"pageHome": {
 		"title": "$do : 1.61803398875;",
-		"text": "lorem ipsum dolor update 9 !"
+		"text": "lorem ipsum dolor update 9 !",
+		"colors": [
+			{
+				"name": "main",
+				"title": "main title"
+			},
+			{
+				"name": "extra",
+				"title": "extra title"
+			},
+			{
+				"name": "second",
+				"title": "second title"
+			},
+			{
+				"name": "contraste",
+				"title": "contraste title"
+			},
+			{
+				"name": "fade",
+				"title": "fade title"
+			}
+		],
+		"variantes": [
+			{
+				"variante": ""
+			},
+			{
+				"variante": "-darken"
+			},
+			{
+				"variante": "-lighten"
+			}
+		],
+		"looper": [
+			{
+				"i": 1
+			},
+			{
+				"i": 2
+			},
+			{
+				"i": 3
+			},
+			{
+				"i": 4
+			},
+			{
+				"i": 5
+			},
+			{
+				"i": 6
+			},
+			{
+				"i": 7
+			},
+			{
+				"i": 8
+			},
+			{
+				"i": 9
+			}
+		]
 	}
 }

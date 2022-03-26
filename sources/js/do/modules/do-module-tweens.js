@@ -218,8 +218,7 @@ moduleManager["dotweens"] = function () {
             start: $scope.start,
             end: $scope.end,
             scrub: $scope.scrub,
-            toggleActions:"play resume play pause",
-            markers:true
+            toggleActions:"play resume play pause"
         }});
 
         var np = params["onEnter"];
