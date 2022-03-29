@@ -28,25 +28,19 @@ $(document).ready(function() {
     var futurAction = function(){
 
        var wH = $( window ).height();
-       var limite = wH/6.4;
+       var wW = $( window ).width();
+       var limiteY = wH/6.4;
+       var limiteX = wW/1.62;
        var body = $('body');
-       var toggleIn = false;
 
       $(document).mousemove(function(e){
 
           var lastX = e.clientX;
           var lastY = e.clientY;
 
-          if(lastY < limite && body.attr('do-event-scroll') == 'down' && toggleIn == false){
-             body.attr('do-event-scroll','up');
-             toggleIn = true;
-            
-          }
-
-          if(lastY > limite && body.attr('do-event-scroll') == 'up' && toggleIn == true){
-            body.attr('do-event-scroll','down');
-            toggleIn = false;
-          }
+          /*if(lastY < limiteY){
+             body.attr('do-event-scroll','up');  
+          }*/
 
       });
     }
@@ -134,12 +128,57 @@ $(document).ready(function() {
 
       $.each(pColors, function (index, value) {
 
-        $('body').css('--'+value.name+'',value.hsl);
-        $('body').css('--'+value.name+'-H',value.splited[0]);
-        $('body').css('--'+value.name+'-S',value.splited[1]);
-        $('body').css('--'+value.name+'-L',value.splited[2]);
+        setColor(value.hsl,value.name,value.splited);
 
       });
+
+      saveParams("theme",pColors);
+
+    }
+
+    function setColor(pColor,pName,pSplit,pTarget = 'body'){
+
+        $(pTarget).css('--'+pName+'',pColor);
+        $(pTarget).css('--'+pName+'-H',pSplit[0]);
+        $(pTarget).css('--'+pName+'-S',pSplit[1]);
+        $(pTarget).css('--'+pName+'-L',pSplit[2]);
+
+        if(currentColor){
+          saveColors[pName] = currentColor;
+        }
+    
+    }
+
+    function convertStyleToJson(pStyle,pSetColors = false){
+
+       var result =  [];
+       var arrayRaw = pStyle.split('; ');
+        for (const key in arrayRaw) {
+            
+            if (key % 4 == 0)
+            {
+              var colorKey = arrayRaw[key].split(':')[0];
+              colorKey = colorKey.substring(2, colorKey.length);
+              var colorHSL = arrayRaw[key].split(':')[1];
+              colorHSL = colorHSL.substring(0, colorHSL.length);
+              var splitColor = colorHSL.split(',');
+              var obj =  {
+                "name":colorKey,
+                "hsl":colorHSL,
+                "splited":splitColor
+              }
+              result.push(obj);
+            }
+            
+        }
+        console.dir("...................................");
+        console.dir(result);
+        if(pSetColors){
+          setColors(result);
+        }
+
+        return result;
+        
 
     }
 
@@ -184,9 +223,167 @@ $(document).ready(function() {
     $('#color-random').on('click',function(e) {
 
       var c = randomColors();
-      saveParams("theme",c);
       setColors(c);
      
     });
+
+    
+    $('.theme-item').on('click',function(e) {
+
+      convertStyleToJson($(this)[0].style.cssText);
+     
+    });
+
+
+
+    var moving = false;
+  
+    var currentMode = "";
+
+    var startY = 0;
+    var mY = 0;
+    var currentColor = null;
+    var currentColorVar = null;
+    var currentTarget = null;
+    var saveColors = {};
+
+                
+    $(document).mousemove(function(e){
+
+      if (!moving) return;
+
+      mY = startY - e.clientY;
+      colorSetter[currentMode](mY);
+
+      injectColors(true);
+
+    });
+
+    const getDelta = (pY) => {
+
+      if(mY<1){
+        return -1;
+      }
+      return 1;
+
+    };
+
+    const colorSetter = {
+
+      "h" : function(pY){
+
+        currentColor[0] = currentColor[0]+getDelta(pY);
+        if(currentColor[0] >= 360){
+          currentColor[0] = 0;
+        }else if(currentColor[0] <= 0){
+          currentColor[0] = 360;
+        }
+
+      },
+      "s" : function(pY){
+
+        currentColor[1] = currentColor[1]+getDelta(pY);
+        if(currentColor[1] >= 99){
+          currentColor[1] = 99;
+        }else if(currentColor[1] <= 1){
+          currentColor[1] = 1;
+        }
+
+      },
+      "l" : function(pY){
+        currentColor[2] = currentColor[2]+getDelta(pY);
+        if(currentColor[2] >= 99){
+          currentColor[2] = 99;
+        }else if(currentColor[2] <= 1){
+          currentColor[2] = 1;
+        }
+      }
+
+    }
+
+
+
+    function joinHSL(pColor){
+        return pColor[0]+","+pColor[1]+"%,"+pColor[2]+"%";
+    }
+
+    $(document).on("mouseup", function(e) {
+
+      if(currentTarget == null){
+          return;
+      }
+    
+      moving = false;
+
+      injectColors();
+
+      currentTarget = null;
+      currentMode = null;
+
+      saveNewColors();
+
+
+    });
+
+    const saveNewColors = () => {
+
+      console.log("save new color")
+      saveParams("theme", convertStyleToJson($('body')[0].style.cssText, false));
+
+    }
+
+    const injectColors = (pLocal = false) => {
+      var hslNew = joinHSL(currentColor);
+      var hslSplit = hslNew.split(",");
+      if(pLocal){
+        setColor(hslNew,currentColorVar+"-color",hslSplit,currentTarget.parent());
+      }else{
+        setColor(hslNew,currentColorVar,hslSplit);
+      }
+      
+    }
+
+
+    const cssVar = ( name, value ) => {
+
+      if(name.substr(0, 2) !== "--") {
+          name = "--" + name;
+      }
+  
+      if(value) {
+          document.documentElement.style.setProperty(name, value)
+      }
+  
+      return getComputedStyle(document.documentElement).getPropertyValue(name);
+  
+   }
+
+
+    $('[data-do-color]').on('mousedown',function(e) {
+
+      moving = true;
+      startY = e.clientY;
+
+      currentTarget = $(this);
+      currentMode = currentTarget.attr('data-do-mode-color');
+      currentColorVar = currentTarget.attr('data-do-color');
+
+      if(saveColors[currentColorVar] != undefined){
+        currentColor = saveColors[currentColorVar];
+        console.log("COLOR CLICK DEJA LA ",currentColorVar,currentColor);
+
+      }else{
+        var hsla = chroma(currentTarget.css('background-color')).hsl();
+        if(isNaN(hsla[0])){
+          hsla[0] = 1;
+        }
+        console.log("HEUUUU ",isNaN(hsla[0]),hsla[0]);
+        currentColor = [hsla[0],Math.round(hsla[1]*100),Math.round(hsla[2]*100)];
+        saveColors[currentColorVar] = currentColor;
+        console.log("COLOR CLICK NEW ",currentColorVar,currentColor);
+      }
+
+    });
+ 
 
 });

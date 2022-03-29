@@ -124,212 +124,13 @@ Core de la créature
   opacity: calc(calc(1 - var(--progress))* 1);
 }
 
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
 .do-py-xxs {
   padding-top: 0.55rem;
   padding-bottom: 0.55rem;
+}
+
+.do-mb-xxs {
+  margin-bottom: 0.55rem;
 }
 
 .do-h-px-xxs {
@@ -342,6 +143,17 @@ $max: $max + -1;
 
 .do-w-px-xxs {
   width: 0.55px;
+}
+
+.do-fs-xxs {
+  font-size: max(0.55rem, 12px);
+  line-height: 1.2;
+  margin-block-end: 0.5rem;
+}
+
+.do-fs-xxs.reset {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .get-progress\:do-xxs {
@@ -396,216 +208,9 @@ $max: $max + -1;
   opacity: calc(calc(1 - var(--progress))* 1);
 }
 
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
 .do-py-xs {
   padding-top: 0.89rem;
   padding-bottom: 0.89rem;
-}
-
-.do-ml-xs {
-  margin-left: 0.89rem;
 }
 
 .do-h-px-xs {
@@ -616,8 +221,34 @@ $max: $max + -1;
   width: 0.89rem;
 }
 
+.do-wh-xs {
+  width: 0.89rem;
+  height: 0.89rem;
+}
+
+
+a,
+p,
+h6 {
+  font-size: max(0.89rem, 13px);
+  line-height: 1.2;
+  margin-block-end: 0.5rem;
+}
+
+
+a.reset,
+p.reset,
+h6.reset {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 .do-scale-xs {
   transform: scale(0.89);
+}
+
+.left-n-xs-rem {
+  left: -0.89rem;
 }
 
 .get-progress\:do-xs {
@@ -672,208 +303,9 @@ $max: $max + -1;
   opacity: calc(calc(1 - var(--progress))* 1);
 }
 
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
+.do-p-sm {
+  padding: 1.44rem;
+}
 
 
 #nav a.main-link {
@@ -911,12 +343,38 @@ $max: $max + -1;
   height: 1.44rem;
 }
 
+.do-gold-sm {
+  height: 9.017%;
+  width: 9.017%;
+}
+
+.do-fs-sm,
+h5 {
+  font-size: max(1.44rem, 14px);
+  line-height: 1.2;
+  margin-block-end: 0.5rem;
+}
+
+.do-fs-sm.reset,
+h5.reset {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.do-gap-sm {
+  grid-gap: 1.44rem;
+}
+
 .right-sm-rem {
   right: 1.44rem;
 }
 
 .get-progress\:do-sm {
   transform:  rotate(calc(var(--progress)* -23.44deg)) scaleX(calc(var(--progress)* 1.44));
+}
+
+.get-progress\:rotate-sm {
+  transform:  rotate(calc(var(--progress)* -6.05deg));
 }
 
 .get-progress\:top-sm {
@@ -967,209 +425,6 @@ $max: $max + -1;
   opacity: calc(calc(1 - var(--progress))* 1);
 }
 
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
 .do-h-md {
   height: 2.33rem;
 }
@@ -1182,8 +437,31 @@ $max: $max + -1;
   width: 2.33rem;
 }
 
+.do-wh-md {
+  width: 2.33rem;
+  height: 2.33rem;
+}
+
+.do-gold-md {
+  height: 14.59%;
+  width: 14.59%;
+}
+
 .do-br-md {
   border-radius: 2.33rem;
+}
+
+
+h4 {
+  font-size: max(2.33rem, 17px);
+  line-height: 1.2;
+  margin-block-end: 0.5rem;
+}
+
+
+h4.reset {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .do-gap-md {
@@ -1254,215 +532,21 @@ $max: $max + -1;
   opacity: calc(calc(1 - var(--progress))* 1);
 }
 
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
 .do-h-px-lg {
   height: 3.77px;
 }
 
 .do-w-lg {
   width: 3.77rem;
+}
+
+.do-max-w-lg {
+  max-width: 37.7rem;
+}
+
+.do-gold-lg {
+  height: 23.607%;
+  width: 23.607%;
 }
 
 .top-lg-rem {
@@ -1521,231 +605,38 @@ $max: $max + -1;
   opacity: calc(calc(1 - var(--progress))* 1);
 }
 
-.do-px-smart-lg {
-  padding-left: 2.33rem;
-  padding-right: 2.33rem;
+
+h3 {
+  font-size: clamp(
+                2.3299881376rem,
+                3.016vw,
+                3.77rem
+            );
 }
 
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
+.do-px-smart-lg {
+  padding-left: 1.44rem;
+  padding-right: 1.44rem;
+}
+
 @media screen and (min-width: 1200px) {
   .do-px-smart-lg {
     padding-left: 1.44rem;
     padding-right: 1.44rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1400px) {
   .do-px-smart-lg {
     padding-left: 2.33rem;
     padding-right: 2.33rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1600px) {
   .do-px-smart-lg {
     padding-left: 3.77rem;
     padding-right: 3.77rem;
   }
 }
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 
 .do-mb-xl {
   margin-bottom: 6.1rem;
@@ -1761,6 +652,11 @@ $max: $max + -1;
 
 .do-w-xl {
   width: 6.1rem;
+}
+
+.do-gold-xl {
+  height: 38.197%;
+  width: 38.197%;
 }
 
 .get-progress\:do-xl {
@@ -1819,236 +715,43 @@ $max: $max + -1;
   opacity: calc(calc(1 - var(--progress))* 1);
 }
 
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
+
+h2 {
+  font-size: clamp(
+                3.7700073314rem,
+                4.88vw,
+                6.1rem
+            );
+}
 .do-py-smart-xl {
-  padding-top: 2.33rem;
-  padding-bottom: 2.33rem;
+  padding-top: 1.44rem;
+  padding-bottom: 1.44rem;
 }
 
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 992px) {
   .do-py-smart-xl {
     padding-top: 1.44rem;
     padding-bottom: 1.44rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1200px) {
   .do-py-smart-xl {
     padding-top: 2.33rem;
     padding-bottom: 2.33rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1400px) {
   .do-py-smart-xl {
     padding-top: 3.77rem;
     padding-bottom: 3.77rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1600px) {
   .do-py-smart-xl {
     padding-top: 6.1rem;
     padding-bottom: 6.1rem;
   }
 }
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 
 .do-py-xxl {
   padding-top: 9.87rem;
@@ -2065,6 +768,11 @@ $max: $max + -1;
 
 .do-w-xxl {
   width: 9.87rem;
+}
+
+.do-gold-xxl {
+  height: 61.803%;
+  width: 61.803%;
 }
 
 .get-progress\:do-xxl {
@@ -2119,7 +827,8 @@ $max: $max + -1;
   opacity: calc(calc(1 - var(--progress))* 1);
 }
 
-.do-fs-fluid-xxl {
+
+h1 {
   font-size: clamp(
                 6.099995469rem,
                 7.896vw,
@@ -2129,22 +838,10 @@ $max: $max + -1;
 
 
 section {
-  padding-left: 2.33rem;
-  padding-right: 2.33rem;
+  padding-left: 1.44rem;
+  padding-right: 1.44rem;
 }
 
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 768px) {
   
 section {
@@ -2152,10 +849,6 @@ section {
     padding-right: 1.44rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 992px) {
   
 section {
@@ -2163,10 +856,6 @@ section {
     padding-right: 2.33rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1200px) {
   
 section {
@@ -2174,10 +863,6 @@ section {
     padding-right: 3.77rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1400px) {
   
 section {
@@ -2185,10 +870,6 @@ section {
     padding-right: 6.1rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1600px) {
   
 section {
@@ -2196,180 +877,6 @@ section {
     padding-right: 9.87rem;
   }
 }
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 
 .do-mt-n-xxxl {
   margin-top: -15.97rem;
@@ -2381,6 +888,11 @@ $max: $max + -1;
 
 .do-h-px-xxxl {
   height: 15.97px;
+}
+
+.do-gold-xxxl {
+  height: 100%;
+  width: 100%;
 }
 
 .get-progress\:trans-y-xxxl {
@@ -2436,248 +948,46 @@ $max: $max + -1;
 }
 
 .do-px-smart-xxxl {
-  padding-left: 2.33rem;
-  padding-right: 2.33rem;
+  padding-left: 1.44rem;
+  padding-right: 1.44rem;
 }
 
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 576px) {
   .do-px-smart-xxxl {
     padding-left: 1.44rem;
     padding-right: 1.44rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 768px) {
   .do-px-smart-xxxl {
     padding-left: 2.33rem;
     padding-right: 2.33rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 992px) {
   .do-px-smart-xxxl {
     padding-left: 3.77rem;
     padding-right: 3.77rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1200px) {
   .do-px-smart-xxxl {
     padding-left: 6.1rem;
     padding-right: 6.1rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1400px) {
   .do-px-smart-xxxl {
     padding-left: 9.87rem;
     padding-right: 9.87rem;
   }
 }
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 @media screen and (min-width: 1600px) {
   .do-px-smart-xxxl {
     padding-left: 15.97rem;
     padding-right: 15.97rem;
   }
 }
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
-/*
-$smart-value: decimal-round(math.div($value, $max), 2);
-$max: $max + -1;
-*/
 
 .pof {
   position: fixed !important;
@@ -2707,6 +1017,18 @@ $max: $max + -1;
 
 .trans-x-before {
   transform: translateX(-100%);
+}
+
+.open.open\:trans-x-before {
+  transform: translateX(-100%);
+}
+
+.active .deep-active\:anim-scale-in {
+  animation-name: tween-scale-in;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
+  animation-iteration-count: 1;
 }
 
 .left {
@@ -2749,6 +1071,14 @@ $max: $max + -1;
   opacity: 0;
 }
 
+.do-o-0 {
+  opacity: 0;
+}
+
+.open .deep-open\:do-scale-x-0 {
+  transform: scaleX(0);
+}
+
 .do-z-0 {
   z-index: 0;
 }
@@ -2765,6 +1095,10 @@ $max: $max + -1;
   filter: blur(1rem);
 }
 
+.do-grid-2 {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
 .do-z-2 {
   z-index: 2;
 }
@@ -2773,12 +1107,20 @@ $max: $max + -1;
   grid-template-columns: repeat(3, 1fr) !important;
 }
 
+.do-z-3 {
+  z-index: 3;
+}
+
 .do-o-4 {
   opacity: 0.4;
 }
 
 .do-grid-5 {
   grid-template-columns: repeat(5, 1fr) !important;
+}
+
+.do-o-5 {
+  opacity: 0.5;
 }
 
 [do-event-scroll=down] .scroll-down\:do-scale-5 {
@@ -2793,29 +1135,61 @@ $max: $max + -1;
   width: 50%;
 }
 
-.do-grid-6 {
-  grid-template-columns: repeat(6, 1fr) !important;
+.hover:hover .hover\:do-trans-x-n-3 {
+  transform: translateX(-30%);
 }
 
 .do-z-9 {
   z-index: 9;
 }
 
+.open.open\:do-o-10 {
+  opacity: 1;
+}
+
+.do-h-10 {
+  height: 100%;
+}
+
 .do-h-10-vh,
 section {
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .do-w-10 {
   width: 100%;
 }
 
+.do-w-10-vw {
+  width: 100vw;
+}
+
 .do-z-10 {
   z-index: 10;
 }
 
+.hover:hover .hover\:do-scale-x-12 {
+  transform: scaleX(1.2);
+}
+
+.do-grid-14 {
+  grid-template-columns: repeat(14, 1fr) !important;
+}
+
 .active .deep-active\:do-trans-x-6 {
   transform: translateX(60%);
+}
+
+.active > .active\:do-rotate-20 {
+  transform: rotate(360deg);
+}
+
+.active .deep-active\:do-rotate-20 {
+  transform: rotate(360deg);
+}
+
+.active.active\:do-rotate-20 {
+  transform: rotate(360deg);
 }
 
 .do-bg-main-color {
@@ -2830,6 +1204,18 @@ section {
   background-color: hsla(var(--main-color-H), var(--main-color-S), calc(var(--main-color-L) + 10%), 1) !important;
 }
 
+.do-bg-main-color-hue {
+  background-color: hsla(var(--main-color-H), 100%, 50%, 1);
+}
+
+.do-bg-main-color-gray {
+  background-color: hsla(var(--main-color-H), 5%, 50%, 1);
+}
+
+.do-bg-main-color-auto {
+  background-color: hsla(var(--main-color-H), 0%, calc((var(--main-color-L) - 65%) * -100), 1) !important;
+}
+
 .do-bg-main-color-1 {
   background-color: hsla(var(--main-color), 0.1) !important;
 }
@@ -2840,6 +1226,10 @@ section {
 
 .do-bg-main-color-1-lighten {
   background-color: hsla(var(--main-color-H), var(--main-color-S), calc(var(--main-color-L) + 10%), 0.1) !important;
+}
+
+.do-bg-main-color-1-auto {
+  background-color: hsla(var(--main-color-H), 0%, calc((var(--main-color-L) - 65%) * -100), 0.1) !important;
 }
 
 .do-bg-main-color-2 {
@@ -2938,52 +1328,72 @@ section {
   background-color: hsla(var(--main-color-H), var(--main-color-S), calc(var(--main-color-L) + 10%), 0.9) !important;
 }
 
-.do-bg-main-color-grad-linear-0deg {
-  background: linear-gradient(0deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
+.do-bg-main-color-grad-linear-1 {
+  background: linear-gradient(45deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
 }
 
-.do-bg-main-color-grad-linear-gold-0deg {
-  background: linear-gradient(0deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
+.do-bg-main-color-grad-linear-gold-1 {
+  background: linear-gradient(45deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
 }
 
-.do-bg-main-color-grad-linear-60deg {
-  background: linear-gradient(60deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
+.do-bg-main-color-grad-linear-2 {
+  background: linear-gradient(90deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
 }
 
-.do-bg-main-color-grad-linear-gold-60deg {
-  background: linear-gradient(60deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
+.do-bg-main-color-grad-linear-gold-2 {
+  background: linear-gradient(90deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
 }
 
-.do-bg-main-color-grad-linear-120deg {
-  background: linear-gradient(120deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
+.do-bg-main-color-grad-linear-3 {
+  background: linear-gradient(135deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
 }
 
-.do-bg-main-color-grad-linear-gold-120deg {
-  background: linear-gradient(120deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
+.do-bg-main-color-grad-linear-gold-3 {
+  background: linear-gradient(135deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
 }
 
-.do-bg-main-color-grad-linear-180deg {
+.do-bg-main-color-grad-linear-4 {
   background: linear-gradient(180deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
 }
 
-.do-bg-main-color-grad-linear-gold-180deg {
+.do-bg-main-color-grad-linear-gold-4 {
   background: linear-gradient(180deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
 }
 
-.do-bg-main-color-grad-linear-240deg {
-  background: linear-gradient(240deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
+.do-bg-main-color-grad-linear-5 {
+  background: linear-gradient(225deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
 }
 
-.do-bg-main-color-grad-linear-gold-240deg {
-  background: linear-gradient(240deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
+.do-bg-main-color-grad-linear-gold-5 {
+  background: linear-gradient(225deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
 }
 
-.do-bg-main-color-grad-linear-300deg {
-  background: linear-gradient(300deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
+.do-bg-main-color-grad-linear-6 {
+  background: linear-gradient(270deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
 }
 
-.do-bg-main-color-grad-linear-gold-300deg {
-  background: linear-gradient(300deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
+.do-bg-main-color-grad-linear-gold-6 {
+  background: linear-gradient(270deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
+}
+
+.do-bg-main-color-extra-grad-linear-7 {
+  background: linear-gradient(315deg, hsla(var(--main-color), 1) 0%, hsla(var(--extra-color), 1) 100%);
+}
+
+.do-bg-main-color-grad-linear-7 {
+  background: linear-gradient(315deg, hsla(var(--main-color), 0) 0%, hsla(var(--main-color), 1) 100%);
+}
+
+.do-bg-main-color-grad-linear-gold-7 {
+  background: linear-gradient(315deg, hsla(var(--main-color), 1) 0%, hsla(var(--main-color), 0.875) 1.3199351898%, hsla(var(--main-color), 0.75) 3.4569731161%, hsla(var(--main-color), 0.625) 6.9139462321%, hsla(var(--main-color), 0.5) 12.5079572745%, hsla(var(--main-color), 0.375) 21.558941433%, hsla(var(--main-color), 0.25) 36.2039366338%, hsla(var(--main-color), 0.125) 59.899915993%, hsla(var(--main-color), 0) 98.2408905531%);
+}
+
+.do-txt-main-color {
+  color: hsla(var(--main-color), 1) !important;
+}
+
+.do-fill-main-color-auto {
+  fill: hsla(var(--main-color-H), 0%, calc((var(--main-color-L) - 65%) * -100), 1) !important;
 }
 
 
@@ -3022,8 +1432,16 @@ section {
   background-color: hsla(var(--second-color), 1) !important;
 }
 
-.do-bg-second-color-1 {
-  background-color: hsla(var(--second-color), 0.1) !important;
+.do-bg-second-color-hue {
+  background-color: hsla(var(--second-color-H), 100%, 50%, 1);
+}
+
+.do-bg-second-color-gray {
+  background-color: hsla(var(--second-color-H), 5%, 50%, 1);
+}
+
+.do-bg-second-color-auto {
+  background-color: hsla(var(--second-color-H), 0%, calc((var(--second-color-L) - 65%) * -100), 1) !important;
 }
 
 .do-bg-second-color-1-lighten {
@@ -3034,8 +1452,40 @@ section {
   background-color: hsla(var(--second-color), 0.3) !important;
 }
 
+.do-txt-second-color {
+  color: hsla(var(--second-color), 1) !important;
+}
+
 .do-bg-contraste-color {
   background-color: hsla(var(--contraste-color), 1) !important;
+}
+
+.do-bg-contraste-color-hue {
+  background-color: hsla(var(--contraste-color-H), 100%, 50%, 1);
+}
+
+.do-bg-contraste-color-gray {
+  background-color: hsla(var(--contraste-color-H), 5%, 50%, 1);
+}
+
+.do-bg-contraste-color-auto {
+  background-color: hsla(var(--contraste-color-H), 0%, calc((var(--contraste-color-L) - 65%) * -100), 1) !important;
+}
+
+.do-bg-contraste-color-3 {
+  background-color: hsla(var(--contraste-color), 0.3) !important;
+}
+
+.do-bg-contraste-color-8-darken {
+  background-color: hsla(var(--contraste-color-H), var(--contraste-color-S), calc(var(--contraste-color-L) - 10%), 0.8) !important;
+}
+
+.do-bg-contraste-color-9 {
+  background-color: hsla(var(--contraste-color), 0.9) !important;
+}
+
+.do-txt-contraste-color {
+  color: hsla(var(--contraste-color), 1) !important;
 }
 
 .do-fill-contraste-color {
@@ -3046,8 +1496,44 @@ section {
   background-color: hsla(var(--extra-color), 1) !important;
 }
 
+.do-bg-extra-color-hue {
+  background-color: hsla(var(--extra-color-H), 100%, 50%, 1);
+}
+
+.do-bg-extra-color-gray {
+  background-color: hsla(var(--extra-color-H), 5%, 50%, 1);
+}
+
+.do-bg-extra-color-auto {
+  background-color: hsla(var(--extra-color-H), 0%, calc((var(--extra-color-L) - 65%) * -100), 1) !important;
+}
+
+.do-bg-extra-color-main-grad-linear-3 {
+  background: linear-gradient(135deg, hsla(var(--extra-color), 1) 0%, hsla(var(--main-color), 1) 100%);
+}
+
+.do-txt-extra-color {
+  color: hsla(var(--extra-color), 1) !important;
+}
+
 .do-bg-fade-color {
   background-color: hsla(var(--fade-color), 1) !important;
+}
+
+.do-bg-fade-color-hue {
+  background-color: hsla(var(--fade-color-H), 100%, 50%, 1);
+}
+
+.do-bg-fade-color-gray {
+  background-color: hsla(var(--fade-color-H), 5%, 50%, 1);
+}
+
+.do-bg-fade-color-auto {
+  background-color: hsla(var(--fade-color-H), 0%, calc((var(--fade-color-L) - 65%) * -100), 1) !important;
+}
+
+.do-txt-fade-color {
+  color: hsla(var(--fade-color), 1) !important;
 }
 
 :root {
@@ -3074,6 +1560,10 @@ section {
   display: none;
 }
 
+.tween-all {
+  transition-property: all !important;
+}
+
 .tween-trans {
   transition-property: transform !important;
 }
@@ -3083,8 +1573,16 @@ section {
   width: 100%;
 }
 
+.do-grid-col-full {
+  grid-column: 1/-1;
+}
+
 .do-overflow-hidden {
   overflow: hidden;
+}
+
+.do-overflow-auto {
+  overflow: auto;
 }
 
 .do-flex-center {
@@ -3092,8 +1590,27 @@ section {
   justify-content: center;
 }
 
-.do-col {
+ .do-x {
+  flex-direction: row;
+}
+
+.do-col, .do-y {
   flex-direction: column;
+}
+
+.do-start-center {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.do-center {
+  justify-content: center;
+}
+
+.do-center-center {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .do-wrap {
@@ -3113,117 +1630,12 @@ section {
     flex-direction: row;
   }
 }
-h1 {
-  font-size: 3.77rem;
-  font-size: max(3.77rem, 21px);
-}
+@media screen and (min-width: 1200px) {
 
-h1.reset-x {
-  transform: translateX(-0.075em);
-}
-
-h2 {
-  font-size: 2.33rem;
-  font-size: max(2.33rem, 17px);
-}
-
-h2.reset-x {
-  transform: translateX(-0.075em);
-}
-
-h3 {
-  font-size: 1.44rem;
-  font-size: max(1.44rem, 14px);
-}
-
-h3.reset-x {
-  transform: translateX(-0.075em);
-}
-
-h4 {
-  font-size: 1.44rem;
-  font-size: max(1.44rem, 14px);
-}
-
-h4.reset-x {
-  transform: translateX(-0.075em);
-}
-
-h5 {
-  font-size: 0.89rem;
-  font-size: max(0.89rem, 13px);
-}
-
-h5.reset-x {
-  transform: translateX(-0.075em);
-}
-
-@media screen and (max-width: 768px) {
-  h5 {
-    font-size: 16px;
+  .xl-do-grid-5 {
+    grid-template-columns: repeat(5, 1fr) !important;
   }
 }
-
-h6 {
-  font-size: 0.89rem;
-  font-size: max(0.89rem, 13px);
-}
-
-h6.reset-x {
-  transform: translateX(-0.075em);
-}
-
-@media screen and (max-width: 768px) {
-  h6 {
-    font-size: 16px;
-  }
-}
-
-p {
-  font-size: 0.89rem;
-  font-size: max(0.89rem, 13px);
-}
-
-p.reset-x {
-  transform: translateX(-0.075em);
-}
-
-@media screen and (max-width: 768px) {
-  p {
-    font-size: 16px;
-  }
-}
-
-a {
-  font-size: 0.89rem;
-  font-size: max(0.89rem, 13px);
-}
-
-a.reset-x {
-  transform: translateX(-0.075em);
-}
-
-@media screen and (max-width: 768px) {
-  a {
-    font-size: 16px;
-  }
-}
-
-span {
-  font-size: 0.89rem;
-  font-size: max(0.89rem, 13px);
-}
-
-span.reset-x {
-  transform: translateX(-0.075em);
-}
-
-@media screen and (max-width: 768px) {
-  span {
-    font-size: 16px;
-  }
-}
-
 /*
 -
 FRAMEWORK DO
@@ -3274,17 +1686,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  margin-bottom: 0px;
-}
-
-h1,
-h2 {
-  font-weight: 700;
-}
-
-p {
-  margin-bottom: 0px;
+h6, p {
+  margin: 0px;
+  margin-block-end: 0.5rem;
 }
 
 a {
@@ -3315,6 +1719,10 @@ a.reset {
 
 a.reset:hover {
   color: hsla(var(--contraste-color), 0.8);
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 [class*=do-grid] {
@@ -3415,7 +1823,7 @@ Tweens système
 -
 */
 *[class*=tween-] {
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .transform-origin-left {
@@ -3436,7 +1844,7 @@ Tweens système
 
 @keyframes tween-pulse {
   0% {
-    opacity: 0;
+    opacity: 0.5;
     transform: scale(0.8);
   }
   50% {
@@ -3445,6 +1853,14 @@ Tweens système
   100% {
     transform: scale(1.2);
     opacity: 0;
+  }
+}
+@keyframes tween-scale-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 @keyframes tween-roll-y {
@@ -3658,7 +2074,7 @@ section.full-x {
 
 /*# sourceMappingURL=do.css.map */
 
- [class*="do-bg-"]{
+ [class*="do-bg-"], [class*="do-txt-"]{
     transition:background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
@@ -3672,5 +2088,9 @@ section.full-x {
 
 [data-do-mu="hide"]{
     display: none;
+}
+
+.tween-none{
+    transition: none !important;
 }
 

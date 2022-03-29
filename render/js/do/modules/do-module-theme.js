@@ -1,1 +1,121 @@
-var moduleManager=window.WFmodules;(moduleManager=null==moduleManager?{}:moduleManager).dotheme=function(){var e=this,c=$(e),l=null,r=null;return c.click(function(){c.toggleClass("active")}),e.getCssLine=function(){return null==l?"null":"$"+l.attr("data-bt-color")+"Color: "+l.attr("data-color")+";<br>"},e.changeSelectedColor=function(o,t){o="--"+o;null!=$(e).attr("data-custom-target")&&$($(e).attr("data-custom-target")).css(o,t)},c.on("click","[data-bt-color]",function(o){var t,a=0;l&&(a=300,(t=l).removeClass("active")),(l=$(this)).addClass("active"),e.changeSelectedColor(l.attr("data-bt-color"),l.attr("data-color")),clearTimeout(r),r=setTimeout(function(){t&&c.append(t),c.prepend(l)},a),window.doautotheme.doconsole()}),e.itemsCreat=!1,e.colorsList=void 0,e.itemsList=[],null!=$(e).attr("data-colors")&&(e.colorsList=$(e).attr("data-colors").split(",")),e.pushColors=function(o){for(var t,a=o,l=$(e).attr("data-type-color"),r=0,r=0;r<a.length;++r)0==e.itemsCreat?(t="<div class='color-"+r+"' data-bt-color='"+l+"' data-color='"+a[r]+"'></div>",c.append(t),e.itemsList.push(t)):$(".color-"+r,e).removeClass("active"),$(".color-"+r,e).attr("data-color",a[r]),$(".color-"+r,e).css("background-color",a[r]);o={main:0,second:5,contraste:2,extra:6}[l];$(".color-"+o,e).css("background-color",a[o]),$(".color-"+o,e).attr("data-color",a[o]),$(".color-"+o,e).click(),c.toggleClass("active"),e.itemsCreat=!0},null!=e.colorsList&&e.pushColors(e.colorsList),e},window.WFmodules=moduleManager;
+// doXXX version 1
+// update : 9 marss 2022
+
+var moduleManager = window.WFmodules;
+if(moduleManager == undefined){
+    moduleManager = {};
+}
+
+moduleManager["dotheme"] = function () {
+    var $scope = this;
+    var containerItem = $($scope);
+    var currentItem = null;
+
+    var timeOut = null;
+    containerItem.click(function () {
+        containerItem.toggleClass('active');
+    });
+
+    $scope.getCssLine = function () {
+
+        if (currentItem == null) {
+            return "null"
+        }
+        return "$" + currentItem.attr("data-bt-color") + "Color: " + currentItem.attr("data-color") + ";<br>";
+    }
+
+    $scope.changeSelectedColor = function (type, color) {
+
+        var cssVar = "--" + type;
+        //console.log(cssVar);
+        if ($($scope).attr("data-custom-target") != undefined) {
+            $($($scope).attr("data-custom-target")).css(cssVar, color);
+        }
+
+    };
+
+    containerItem.on('click', '[data-bt-color]', function (e) {
+
+        var timeOutDelay = 0;
+        if (currentItem) {
+            timeOutDelay = 300;
+            var tempItem = currentItem;
+            currentItem.removeClass('active');
+        }
+
+        currentItem = $(this);
+        currentItem.addClass('active');
+        $scope.changeSelectedColor(currentItem.attr("data-bt-color"), currentItem.attr("data-color"));
+        clearTimeout(timeOut);
+        timeOut = setTimeout(function () {
+            if (tempItem) {
+                containerItem.append(tempItem);
+            }
+            containerItem.prepend(currentItem);
+        }, timeOutDelay);
+
+        //$('#console').append($scope.getCssLine());
+        window.doautotheme.doconsole();
+
+    });
+
+    $scope.itemsCreat = false;
+    $scope.colorsList = undefined;
+    $scope.itemsList = [];
+    if ($($scope).attr("data-colors") != undefined) {
+
+        $scope.colorsList = $($scope).attr("data-colors").split(",");
+
+    }
+
+    $scope.pushColors = function (colors) {
+
+        var newColors = colors;
+
+        var typeC = $($scope).attr("data-type-color");
+        //console.log("max -- ",newColors.length);
+        var i = 0;
+        for (i = 0; i < newColors.length; ++i) {
+
+            if ($scope.itemsCreat == false) {
+                var cItem = "<div class='color-" + i + "' data-bt-color='" + typeC + "' data-color='" + newColors[i] + "'></div>";
+                containerItem.append(cItem);
+                $scope.itemsList.push(cItem);
+                //console.log("__ __itemsCreat ");
+
+            } else {
+                //console.log("__reset");
+                $(".color-" + i, $scope).removeClass('active');
+            }
+            $(".color-" + i, $scope).attr("data-color", newColors[i]);
+            $(".color-" + i, $scope).css("background-color", newColors[i]);
+
+        }
+
+        var currentIndex = 0;
+        //var customChoice = {"main":0,"second":9,"contraste":6,"extra":5};
+        var customChoice = { "main": 0, "second": 5, "contraste": 2, "extra": 6 };
+        currentIndex = customChoice[typeC];
+
+
+
+
+        $(".color-" + currentIndex, $scope).css("background-color", newColors[currentIndex]);
+        $(".color-" + currentIndex, $scope).attr("data-color", newColors[currentIndex]);
+        $(".color-" + currentIndex, $scope).click();
+        containerItem.toggleClass('active');
+        $scope.itemsCreat = true;
+        //containerItem.click();
+
+    };
+
+    if ($scope.colorsList != undefined) {
+        $scope.pushColors($scope.colorsList);
+    }
+
+    return $scope;
+
+
+}
+
+window.WFmodules = moduleManager;

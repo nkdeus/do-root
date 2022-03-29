@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="do-bg-second-color-second-grad-linear-0deg">
 
 <head>
   <meta charset="utf-8">
@@ -16,6 +16,7 @@
   <link type="text/css" rel="stylesheet" href="css/styles.css" />
 
   <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js" integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script type="text/javascript" src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
   <script type="text/javascript" src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
@@ -111,16 +112,16 @@
   
   
         /* init toggleColor : main */
-        --main-color:var(--fade);
-        --main-color-H:var(--fade-H);
-        --main-color-S:var(--fade-S);
-        --main-color-L:var(--fade-L);
+        --main-color:var(--extra);
+        --main-color-H:var(--extra-H);
+        --main-color-S:var(--extra-S);
+        --main-color-L:var(--extra-L);
   
         /* init toggleColor : extra */
-        --extra-color:var(--extra);
-        --extra-color-H:var(--extra-H);
-        --extra-color-S:var(--extra-S);
-        --extra-color-L:var(--extra-L);
+        --extra-color:var(--main);
+        --extra-color-H:var(--main-H);
+        --extra-color-S:var(--main-S);
+        --extra-color-L:var(--main-L);
   
         /* init toggleColor : contraste */
         --contraste-color:var(--second);
@@ -129,16 +130,16 @@
         --contraste-color-L:var(--second-L);
   
         /* init toggleColor : second */
-        --second-color:var(--main);
-        --second-color-H:var(--main-H);
-        --second-color-S:var(--main-S);
-        --second-color-L:var(--main-L);
+        --second-color:var(--contraste);
+        --second-color-H:var(--contraste-H);
+        --second-color-S:var(--contraste-S);
+        --second-color-L:var(--contraste-L);
   
         /* init toggleColor : fade */
-        --fade-color:var(--contraste);
-        --fade-color-H:var(--contraste-H);
-        --fade-color-S:var(--contraste-S);
-        --fade-color-L:var(--contraste-L);
+        --fade-color:var(--fade);
+        --fade-color-H:var(--fade-H);
+        --fade-color-S:var(--fade-S);
+        --fade-color-L:var(--fade-L);
   
   
     }
@@ -184,16 +185,16 @@
         body{
   
           /* init reverse body: main */
-          --main-color:var(--fade);
-          --main-color-H:var(--fade-H);
-          --main-color-S:var(--fade-S);
-          --main-color-L:var(--fade-L);
+          --main-color:var(--extra);
+          --main-color-H:var(--extra-H);
+          --main-color-S:var(--extra-S);
+          --main-color-L:var(--extra-L);
   
           /* init reverse body: extra */
-          --extra-color:var(--extra);
-          --extra-color-H:var(--extra-H);
-          --extra-color-S:var(--extra-S);
-          --extra-color-L:var(--extra-L);
+          --extra-color:var(--main);
+          --extra-color-H:var(--main-H);
+          --extra-color-S:var(--main-S);
+          --extra-color-L:var(--main-L);
   
           /* init reverse body: contraste */
           --contraste-color:var(--second);
@@ -202,16 +203,16 @@
           --contraste-color-L:var(--second-L);
   
           /* init reverse body: second */
-          --second-color:var(--main);
-          --second-color-H:var(--main-H);
-          --second-color-S:var(--main-S);
-          --second-color-L:var(--main-L);
+          --second-color:var(--contraste);
+          --second-color-H:var(--contraste-H);
+          --second-color-S:var(--contraste-S);
+          --second-color-L:var(--contraste-L);
   
           /* init reverse body: fade */
-          --fade-color:var(--contraste);
-          --fade-color-H:var(--contraste-H);
-          --fade-color-S:var(--contraste-S);
-          --fade-color-L:var(--contraste-L);
+          --fade-color:var(--fade);
+          --fade-color-H:var(--fade-H);
+          --fade-color-S:var(--fade-S);
+          --fade-color-L:var(--fade-L);
   
   
         }
@@ -222,8 +223,16 @@
   
     body{
       font-family: roboto, sans-serif;
-      font-weight: 200;
+      font-weight: 400;
     }
+  
+      .do-ff-main {
+        font-family: roboto, sans-serif;
+      }
+      .do-ff-extra {
+        font-family: Economica, sans-serif;
+      }
+  
     
     h1,
     h2,
@@ -232,7 +241,6 @@
     h5,
     h6 {
       font-family: Economica, sans-serif;
-      margin-bottom: 0px;
       font-weight: 400;
     }
   
@@ -242,9 +250,373 @@
 
 
 
-<body class="do-bg-fade-color">
+<body class="do-bg-second-color">
+  
+    <div id="tools" class="do-w-lg do-h-10  pof do-z-10 top right do-z-10 do-flex do-y do-center hover">
+  
+      <div class="do-full poa do-z-2 do-bg-main-color-extra-grad-linear-7 tween-trans hover:do-scale-x-12"></div>
+  
+      <div id="tools-toggle" class="cursor-pointer poa do-z-3 center do-flex do-y do-align-items-center do-z-2 do-py-xs " data-module="dotoggle" data-global="false" data-do-group="theme" data-do-master-grp="theme" data-bt-toggle-add="active,#tools-nav,open">       
+        <div class="do-wh-md do-bg-main-color-1-auto do-br-md por do-flex do-y do-center-center tween-trans hover:do-trans-x-n-3">
+          
+            <div class="do-wh-sm do-br-md tween-trans deep-active:do-rotate-20">
+  
+              
+              <svg class="do-fill-main-color-auto" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+              
+                <path class="st0" d="M450.3,287.2l-47.1,7.3c-3.5,13.4-8.8,26.2-15.8,38.2l28.7,37.6c2,2.6,1.8,6.4-0.6,8.7l-35.5,35.8
+              	c-2.3,2.3-6,2.6-8.7,0.7L333,387.2c-12,7.1-24.9,12.4-38.4,15.9l-6.2,46.9c-0.4,3.3-3.2,5.8-6.6,5.8l-50.4,0.2c0,0,0,0,0,0
+              	c-3.3,0-6.1-2.4-6.6-5.7l-7.2-47c-13.3-3.4-26.1-8.7-38.1-15.7l-37.8,28.5c-2.7,2-6.4,1.8-8.7-0.6l-35.8-35.5
+              	c-2.3-2.3-2.6-6-0.7-8.7l28-38.4c-7.2-12.2-12.6-25.3-16.1-38.9L62,288.4c-3.3-0.4-5.8-3.2-5.8-6.6L56,231.5c0-3.3,2.4-6.1,5.7-6.6
+              	l47-7.1c3.6-13.7,9.1-26.7,16.3-38.8l-29.1-37.2c-2.1-2.6-1.8-6.4,0.5-8.8L132,97.2c2.4-2.4,6.1-2.6,8.8-0.6l38,28.9
+              	c12.1-7.1,25.1-12.5,38.7-16.1l6.1-47.5c0.4-3.3,3.2-5.8,6.6-5.8l50.4-0.1c0,0,0,0,0,0c3.3,0,6.1,2.4,6.6,5.7l6.9,47.7
+              	c13.2,3.4,26,8.6,37.9,15.6l38.2-29.1c2.6-2,6.4-1.8,8.7,0.6l35.8,35.6c2.4,2.3,2.6,6.1,0.6,8.7l-28.7,38.1
+              	c7.2,12.1,12.7,25.1,16.3,38.7l47,6.2c3.3,0.4,5.8,3.2,5.8,6.6l0.2,50.4C456,283.9,453.6,286.7,450.3,287.2z M442.5,236.1l-45.7-6
+              	c-2.8-0.4-5-2.4-5.6-5.1c-3.5-15.3-9.6-29.7-18.1-43c-1.5-2.3-1.4-5.4,0.3-7.6l27.9-37.1l-27.5-27.4l-37.2,28.3
+              	c-2.2,1.7-5.2,1.8-7.5,0.4c-13.2-8.1-27.4-14-42.3-17.3c-2.7-0.6-4.7-2.8-5.1-5.5l-6.7-46.4L236,69.5l-6,46.2
+              	c-0.4,2.8-2.4,5-5.1,5.6c-15.3,3.5-29.7,9.5-43.1,17.9c-2.3,1.5-5.4,1.4-7.6-0.3l-37-28.1L110,138.2l28.3,36.2
+              	c1.7,2.2,1.9,5.3,0.4,7.7c-8.5,13.3-14.6,27.8-18.1,43.1c-0.6,2.7-2.8,4.7-5.5,5.1l-45.7,6.9l0.1,38.7l45.2,5.6
+              	c2.8,0.3,5.1,2.4,5.7,5.2c3.4,15.2,9.4,29.7,17.9,43.1c1.5,2.3,1.4,5.3-0.3,7.5l-27.3,37.3l27.6,27.4l36.8-27.8
+              	c1.2-0.9,2.6-1.3,4-1.3c1.2,0,2.4,0.3,3.5,1c13.2,8.2,27.4,14.1,42.4,17.4c2.7,0.6,4.7,2.8,5.1,5.5l7,45.8l38.8-0.1l6.1-45.6
+              	c0.4-2.8,2.4-5,5.1-5.6c15.1-3.5,29.5-9.4,42.7-17.7c2.3-1.5,5.3-1.3,7.5,0.3l37.4,27.5l27.4-27.6l-27.9-36.6
+              	c-1.7-2.2-1.8-5.2-0.4-7.6c8.3-13.2,14.2-27.5,17.6-42.5c0.6-2.7,2.8-4.7,5.5-5.1l45.8-7.1L442.5,236.1z M255.2,335.8
+              	c-44.1,0-80-35.9-80-80s35.9-80,80-80c44.1,0,80,35.9,80,80S299.3,335.8,255.2,335.8z M255.2,189.1c-36.8,0-66.7,29.9-66.7,66.7
+              	s29.9,66.7,66.7,66.7c36.8,0,66.7-29.9,66.7-66.7S291.9,189.1,255.2,189.1z"/>
+              </svg>
+  
+            </div>
+    
+        </div>
+      </div>
+  
+  
+  
+      <nav id="tools-nav" class="do-flex do-z-1 do-w-xxl do-h-10 do-bg-contraste-color do-y do-center-center tween-all open:trans-x-before do-o-5 open:do-o-10">
+        
+        <div class="do-w-xs do-h-10 do-bg-extra-color-main-grad-linear-3 poa top left-n-xs-rem tween-trans deep-open:do-scale-x-0"></div>
+  
+  
+        <div id="theme-edit" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="true" data-do-group="theme" data-bt-toggle-add="active,#color-edit,open">   
+          <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
+              <div class="do-h-md do-w-10 do-bg-main-color tween-trans deep-active:anim-scale-in "> </div>
+              <div class="do-h-md do-w-10 do-bg-extra-color tween-trans deep-active:anim-scale-in "> </div>
+              <div class="do-h-md do-w-10 do-bg-second-color tween-trans deep-active:anim-scale-in "> </div>
+              <div class="do-h-md do-w-10 do-bg-contraste-color tween-trans deep-active:anim-scale-in "> </div>  
+              <div class="do-h-md do-w-10 do-bg-fade-color tween-trans deep-active:anim-scale-in "> </div>  
+          </div>
+          <span class="do-txt-second-color uppercase do-fs-xxs">Colors</span>
+        </div>
+  
+        <div id="theme-change" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="true" data-do-group="theme" data-bt-toggle-add="active,#themes-nav,open">   
+          <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-grid-2 active:do-rotate-20">
+              <div class="do-full do-bg-main-color tween-trans deep-active:anim-scale-in" style="
+    
+                --main-color:15,100%,79%;
+                --main-color-H:15;
+                --main-color-S:;
+                --main-color-L:79%;
+  
+              "></div>
+  
+              <div class="do-full do-bg-extra-color tween-trans deep-active:anim-scale-in" style="
+                
+              --extra-color:176,96%,52%;
+              --extra-color-H:176;
+              --extra-color-S:;
+              --extra-color-L:52%;
+  
+              "></div>
+  
+              
+              <div class="do-full do-bg-main-color tween-trans deep-active:anim-scale-in" style="
+    
+                --main-color:62,100%,79%;
+                --main-color-H:62;
+                --main-color-S:;
+                --main-color-L:79%;
+  
+              "></div>
+  
+              <div class="do-full do-bg-extra-color tween-trans deep-active:anim-scale-in" style="
+                
+              --extra-color:120,96%,52%;
+              --extra-color-H:120;
+              --extra-color-S:;
+              --extra-color-L:52%;
+  
+              "></div>
+  
+              
+       
+          </div>
+          <span class="do-txt-second-color uppercase do-fs-xxs">Themes</span>
+        </div>
+  
+        <div id="color-random" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="false" data-bt-toggle-add="colorRandom,#color-random,active">     
+            <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-grid-2 active:do-rotate-20">
+                <div class="do-full do-bg-extra-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
+                <div class="do-full do-bg-second-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
+                <div class="do-full do-bg-fade-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
+                <div class="do-full do-bg-contraste-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
+                <div class="do-wh-xs poa center do-bg-main-color do-br-md tween-trans"> </div>
+            </div>
+            <span class="do-txt-second-color uppercase do-fs-xxs">Random</span>
+        </div>
+  
+        <div id="color-switcher" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="true" data-bt-toggle-add="active,body,toggleColor">    
+            <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-h-sm por do-mb-xxs">
+              <div class="do-wh-sm tween-trans poa left deep-active:do-trans-x-6">
+                <div class="por do-full do-br-md do-scale-xs do-bg-second-color"></div>
+              </div>
+            </div>
+            <span class="do-txt-second-color uppercase do-fs-xxs">Dark & light</span>
+        </div>
+  
+        <nav id="color-edit" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-y do-grid-5 do-start-center tween-all open:trans-x-before do-o-0 open:do-o-10">
+        
+          
+          <div class="do-full do-grid-2 por">
+               
+              <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">main</h5>
+              <div data-do-color="main" data-do-mode-color="h" class="do-full do-bg-main-color tween-none do-grid-col-full"></div>
+              <div data-do-color="main" data-do-mode-color="s" class="do-full do-bg-main-color-hue tween-none"></div>
+              <div data-do-color="main" data-do-mode-color="l" class="do-full do-bg-main-color-gray tween-none"></div>
+             
+          </div>
+          <div class="do-full do-grid-2 por">
+               
+              <h5 class="poa do-z-2 uppercase reset top left do-txt-extra-color do-bg-extra-color-auto">extra</h5>
+              <div data-do-color="extra" data-do-mode-color="h" class="do-full do-bg-extra-color tween-none do-grid-col-full"></div>
+              <div data-do-color="extra" data-do-mode-color="s" class="do-full do-bg-extra-color-hue tween-none"></div>
+              <div data-do-color="extra" data-do-mode-color="l" class="do-full do-bg-extra-color-gray tween-none"></div>
+             
+          </div>
+          <div class="do-full do-grid-2 por">
+               
+              <h5 class="poa do-z-2 uppercase reset top left do-txt-second-color do-bg-second-color-auto">second</h5>
+              <div data-do-color="second" data-do-mode-color="h" class="do-full do-bg-second-color tween-none do-grid-col-full"></div>
+              <div data-do-color="second" data-do-mode-color="s" class="do-full do-bg-second-color-hue tween-none"></div>
+              <div data-do-color="second" data-do-mode-color="l" class="do-full do-bg-second-color-gray tween-none"></div>
+             
+          </div>
+          <div class="do-full do-grid-2 por">
+               
+              <h5 class="poa do-z-2 uppercase reset top left do-txt-contraste-color do-bg-contraste-color-auto">contraste</h5>
+              <div data-do-color="contraste" data-do-mode-color="h" class="do-full do-bg-contraste-color tween-none do-grid-col-full"></div>
+              <div data-do-color="contraste" data-do-mode-color="s" class="do-full do-bg-contraste-color-hue tween-none"></div>
+              <div data-do-color="contraste" data-do-mode-color="l" class="do-full do-bg-contraste-color-gray tween-none"></div>
+             
+          </div>
+          <div class="do-full do-grid-2 por">
+               
+              <h5 class="poa do-z-2 uppercase reset top left do-txt-fade-color do-bg-fade-color-auto">fade</h5>
+              <div data-do-color="fade" data-do-mode-color="h" class="do-full do-bg-fade-color tween-none do-grid-col-full"></div>
+              <div data-do-color="fade" data-do-mode-color="s" class="do-full do-bg-fade-color-hue tween-none"></div>
+              <div data-do-color="fade" data-do-mode-color="l" class="do-full do-bg-fade-color-gray tween-none"></div>
+             
+          </div>
+  
+        </nav>
+  
+        <nav id="themes-nav" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-y do-grid-2 do-start-center tween-all open:trans-x-before do-o-0 open:do-o-10">
+        
+  
+            
+            <div class="do-w-10 square theme-item" style="
+    
+    
+                --main:15,100%,79%;
+                --main-H:15;
+                --main-S:100%;
+                --main-L:79%;
+    
+    
+                --extra:176,96%,52%;
+                --extra-H:176;
+                --extra-S:96%;
+                --extra-L:52%;
+    
+    
+                --contraste:36,3.3%,28%;
+                --contraste-H:36;
+                --contraste-S:3.3%;
+                --contraste-L:28%;
+    
+    
+                --second:0,0%,100%;
+                --second-H:0;
+                --second-S:0%;
+                --second-L:100%;
+    
+    
+                --fade:37,20%,84%;
+                --fade-H:37;
+                --fade-S:20%;
+                --fade-L:84%;
+    
+            
+            ">
+    
+              <div class="content" style="
+    
+    
+                --main-color:15,100%,79%;
+                --main-color-H:15;
+                --main-color-S:100%;
+                --main-color-L:79%;
+    
+    
+                --extra-color:176,96%,52%;
+                --extra-color-H:176;
+                --extra-color-S:96%;
+                --extra-color-L:52%;
+    
+    
+                --contraste-color:36,3.3%,28%;
+                --contraste-color-H:36;
+                --contraste-color-S:3.3%;
+                --contraste-color-L:28%;
+    
+    
+                --second-color:0,0%,100%;
+                --second-color-H:0;
+                --second-color-S:0%;
+                --second-color-L:100%;
+    
+    
+                --fade-color:37,20%,84%;
+                --fade-color-H:37;
+                --fade-color-S:20%;
+                --fade-color-L:84%;
+    
+            
+            ">
+    
+                  <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">test test</h5>
+    
+                  <div class="do-full poa">
+    
+                    <div class="do-gold-xxxl poa do-bg-main-color">
+                    </div>
+                    <div class="do-gold-xxl poa bottom right do-bg-extra-color">
+                    </div>
+                    <div class="do-gold-xl poa bottom right do-bg-fade-color">
+                    </div>
+                    <div class="do-gold-lg poa bottom right do-bg-second-color">
+                    </div>
+                    <div class="do-gold-md poa bottom right do-bg-contraste-color">
+                    </div>
+                    <div class="do-gold-sm poa bottom right do-bg-main-color-extra-grad-linear-7"> 
+                    </div>
+    
+                  </div>
+    
+              </div>
+            </div>
+    
+            
+            <div class="do-w-10 square theme-item" style="
+    
+    
+                --main:62,100%,79%;
+                --main-H:62;
+                --main-S:100%;
+                --main-L:79%;
+    
+    
+                --extra:120,96%,52%;
+                --extra-H:120;
+                --extra-S:96%;
+                --extra-L:52%;
+    
+    
+                --contraste:36,3.3%,28%;
+                --contraste-H:36;
+                --contraste-S:3.3%;
+                --contraste-L:28%;
+    
+    
+                --second:0,0%,100%;
+                --second-H:0;
+                --second-S:0%;
+                --second-L:100%;
+    
+    
+                --fade:37,20%,84%;
+                --fade-H:37;
+                --fade-S:20%;
+                --fade-L:84%;
+    
+            
+            ">
+    
+              <div class="content" style="
+    
+    
+                --main-color:62,100%,79%;
+                --main-color-H:62;
+                --main-color-S:100%;
+                --main-color-L:79%;
+    
+    
+                --extra-color:120,96%,52%;
+                --extra-color-H:120;
+                --extra-color-S:96%;
+                --extra-color-L:52%;
+    
+    
+                --contraste-color:36,3.3%,28%;
+                --contraste-color-H:36;
+                --contraste-color-S:3.3%;
+                --contraste-color-L:28%;
+    
+    
+                --second-color:0,0%,100%;
+                --second-color-H:0;
+                --second-color-S:0%;
+                --second-color-L:100%;
+    
+    
+                --fade-color:37,20%,84%;
+                --fade-color-H:37;
+                --fade-color-S:20%;
+                --fade-color-L:84%;
+    
+            
+            ">
+    
+                  <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">test test 2</h5>
+    
+                  <div class="do-full poa">
+    
+                    <div class="do-gold-xxxl poa do-bg-main-color">
+                    </div>
+                    <div class="do-gold-xxl poa bottom right do-bg-extra-color">
+                    </div>
+                    <div class="do-gold-xl poa bottom right do-bg-fade-color">
+                    </div>
+                    <div class="do-gold-lg poa bottom right do-bg-second-color">
+                    </div>
+                    <div class="do-gold-md poa bottom right do-bg-contraste-color">
+                    </div>
+                    <div class="do-gold-sm poa bottom right do-bg-main-color-extra-grad-linear-7"> 
+                    </div>
+    
+                  </div>
+    
+              </div>
+            </div>
+    
+    
+        </nav>
+  
+      </nav>    
+  
+    </div>
+  
+  
 
-  <div id="nav" class="do-w-10 pof do-px-smart-lg do-z-10 do-flex do-justify-content-space-between do-align-items-center tween-trans scroll-down:trans-y-before">
+  <div id="nav" class="do-w-10 pof do-px-smart-lg do-z-9 do-flex do-justify-content-space-between do-align-items-center tween-trans scroll-down:trans-y-before">
     <a id="logo" href="./" class="do-py-xxs por do-z-2 tween-trans scroll-down:trans-y-after">
       <div class="por do-h-md tween-trans scroll-down:do-scale-5 transform-origin-left">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 143.559 60.524">
@@ -277,22 +649,6 @@
 
     <nav id="main-nav" class="nav-container do-hide lg-do-block do-flex-center top-lg-rem do-z-9">
       <div class="do-flex-center do-flex do-col lg-do-row do-gap-md">
-            <div id="color-random" class="cursor-pointer do-flex do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="false" data-bt-toggle-add="colorRandom,#color-random,active">
-                <span>Random</span>
-                <div class="do-w-md do-bg-second-color do-br-md do-h-sm por do-ml-xs">
-                  <div class="do-wh-sm tween-trans poa left deep-active:do-trans-x-6">
-                    <div class="por do-full do-br-md do-scale-xs do-bg-contraste-color"></div>
-                  </div>
-                </div>
-            </div>
-            <div id="color-switcher" class="cursor-pointer do-flex do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="true" data-bt-toggle-add="active,body,toggleColor">
-                <span>Dark & light</span>
-                <div class="do-w-md do-bg-second-color do-br-md do-h-sm por do-ml-xs">
-                  <div class="do-wh-sm tween-trans poa left deep-active:do-trans-x-6">
-                    <div class="por do-full do-br-md do-scale-xs do-bg-contraste-color"></div>
-                  </div>
-                </div>
-            </div>
             <a class="main-link reset do-block" href="./about.html">about</a>
       </div>
     </nav>
@@ -309,8 +665,8 @@
 
 <section class="por do-px-smart-xxxl do-py-xxl por do-z-1 do-h-10-vh">
     <div class="get-progress:trans-y-xxxl">
-        <h1 class="reset-x get-progress:o-reverse do-fs-fluid-xxl">$do : 1.61803398875;</h1>
-        <p class="get-progress:o-reverse">lorem ipsum dolor update 9 !</p>
+        <h1 class="get-progress:o-reverse">$do : 1.61803398875;</h1>
+        <p class="get-progress:o-reverse">lorem ipsum dolor update 10 !</p>
     </div>
 </section>
 <div class="do-hide"
@@ -336,13 +692,13 @@
 </div>
 
 
-<section id="colors" class="por do-px-smart-xxxl h-auto  do-gap-md do-grid-5 do-col do-py-xxl por do-z-1">
+<section id="colors" class="por do-px-smart-xxxl h-auto do-gap-md do-grid-2 xl-do-grid-5 do-col do-py-xxl por do-z-1">
 
     <div class="set-main-main">
-        <h3 class="do-mb-sm do-inline-block por">
-          <div class="poa do-z-1 do-full do-bg-fade-color"></div>
-          <span class="por do-z-2 font-size-inherit do-block get-progress:trans-y-xl-n">
-            main title
+        <h3 class="do-mb-sm do-inline-block do-fs-sm por">
+          <div class="poa do-z-1 do-full do-bg-contraste-color get-progress:rotate-sm"></div>
+          <span class="por do-z-2 font-size-inherit do-txt-second-color do-block get-progress:trans-y-xl-n">
+            var(--main-color)
           </span>
           <div class="do-h-xxxl do-mt-n-xl do-z-0 do-w-px-sm do-bg-main-color-darken poa get-progress:trans-y-md-n"></div>
           <div class="do-h-xxl do-mt-n-xxxl do-z-0 do-w-px-sm do-bg-main-color-2-darken poa get-progress:trans-y-xxxl-n"></div>
@@ -466,51 +822,70 @@
             </div>
         </div>
    
-        <div class="do-grid-6 do-gap-xxxs">
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-0deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-60deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-120deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-180deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-240deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-300deg"></div>
-            </div>
+        <div class="do-grid-14 do-gap-xxxs">
 
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-0deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-60deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-120deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-180deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-240deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-300deg"></div>
-            </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-1"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-1"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-2"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-2"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-3"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-3"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-4"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-4"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-5"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-5"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-6"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-6"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-7"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-7"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-8"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-8"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-9"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-9"></div>
+                </div>
+
         </div>
     </div>
     <div class="set-main-extra">
-        <h3 class="do-mb-sm do-inline-block por">
-          <div class="poa do-z-1 do-full do-bg-fade-color"></div>
-          <span class="por do-z-2 font-size-inherit do-block get-progress:trans-y-xl-n">
-            extra title
+        <h3 class="do-mb-sm do-inline-block do-fs-sm por">
+          <div class="poa do-z-1 do-full do-bg-contraste-color get-progress:rotate-sm"></div>
+          <span class="por do-z-2 font-size-inherit do-txt-second-color do-block get-progress:trans-y-xl-n">
+            var(--extra-color)
           </span>
           <div class="do-h-xxxl do-mt-n-xl do-z-0 do-w-px-sm do-bg-main-color-darken poa get-progress:trans-y-md-n"></div>
           <div class="do-h-xxl do-mt-n-xxxl do-z-0 do-w-px-sm do-bg-main-color-2-darken poa get-progress:trans-y-xxxl-n"></div>
@@ -634,51 +1009,70 @@
             </div>
         </div>
    
-        <div class="do-grid-6 do-gap-xxxs">
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-0deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-60deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-120deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-180deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-240deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-300deg"></div>
-            </div>
+        <div class="do-grid-14 do-gap-xxxs">
 
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-0deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-60deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-120deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-180deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-240deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-300deg"></div>
-            </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-1"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-1"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-2"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-2"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-3"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-3"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-4"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-4"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-5"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-5"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-6"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-6"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-7"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-7"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-8"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-8"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-9"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-9"></div>
+                </div>
+
         </div>
     </div>
     <div class="set-main-second">
-        <h3 class="do-mb-sm do-inline-block por">
-          <div class="poa do-z-1 do-full do-bg-fade-color"></div>
-          <span class="por do-z-2 font-size-inherit do-block get-progress:trans-y-xl-n">
-            second title
+        <h3 class="do-mb-sm do-inline-block do-fs-sm por">
+          <div class="poa do-z-1 do-full do-bg-contraste-color get-progress:rotate-sm"></div>
+          <span class="por do-z-2 font-size-inherit do-txt-second-color do-block get-progress:trans-y-xl-n">
+            var(--second-color)
           </span>
           <div class="do-h-xxxl do-mt-n-xl do-z-0 do-w-px-sm do-bg-main-color-darken poa get-progress:trans-y-md-n"></div>
           <div class="do-h-xxl do-mt-n-xxxl do-z-0 do-w-px-sm do-bg-main-color-2-darken poa get-progress:trans-y-xxxl-n"></div>
@@ -802,51 +1196,70 @@
             </div>
         </div>
    
-        <div class="do-grid-6 do-gap-xxxs">
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-0deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-60deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-120deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-180deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-240deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-300deg"></div>
-            </div>
+        <div class="do-grid-14 do-gap-xxxs">
 
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-0deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-60deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-120deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-180deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-240deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-300deg"></div>
-            </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-1"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-1"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-2"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-2"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-3"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-3"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-4"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-4"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-5"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-5"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-6"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-6"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-7"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-7"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-8"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-8"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-9"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-9"></div>
+                </div>
+
         </div>
     </div>
     <div class="set-main-contraste">
-        <h3 class="do-mb-sm do-inline-block por">
-          <div class="poa do-z-1 do-full do-bg-fade-color"></div>
-          <span class="por do-z-2 font-size-inherit do-block get-progress:trans-y-xl-n">
-            contraste title
+        <h3 class="do-mb-sm do-inline-block do-fs-sm por">
+          <div class="poa do-z-1 do-full do-bg-contraste-color get-progress:rotate-sm"></div>
+          <span class="por do-z-2 font-size-inherit do-txt-second-color do-block get-progress:trans-y-xl-n">
+            var(--contraste-color)
           </span>
           <div class="do-h-xxxl do-mt-n-xl do-z-0 do-w-px-sm do-bg-main-color-darken poa get-progress:trans-y-md-n"></div>
           <div class="do-h-xxl do-mt-n-xxxl do-z-0 do-w-px-sm do-bg-main-color-2-darken poa get-progress:trans-y-xxxl-n"></div>
@@ -970,51 +1383,70 @@
             </div>
         </div>
    
-        <div class="do-grid-6 do-gap-xxxs">
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-0deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-60deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-120deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-180deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-240deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-300deg"></div>
-            </div>
+        <div class="do-grid-14 do-gap-xxxs">
 
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-0deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-60deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-120deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-180deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-240deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-300deg"></div>
-            </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-1"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-1"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-2"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-2"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-3"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-3"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-4"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-4"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-5"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-5"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-6"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-6"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-7"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-7"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-8"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-8"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-9"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-9"></div>
+                </div>
+
         </div>
     </div>
     <div class="set-main-fade">
-        <h3 class="do-mb-sm do-inline-block por">
-          <div class="poa do-z-1 do-full do-bg-fade-color"></div>
-          <span class="por do-z-2 font-size-inherit do-block get-progress:trans-y-xl-n">
-            fade title
+        <h3 class="do-mb-sm do-inline-block do-fs-sm por">
+          <div class="poa do-z-1 do-full do-bg-contraste-color get-progress:rotate-sm"></div>
+          <span class="por do-z-2 font-size-inherit do-txt-second-color do-block get-progress:trans-y-xl-n">
+            var(--fade-color)
           </span>
           <div class="do-h-xxxl do-mt-n-xl do-z-0 do-w-px-sm do-bg-main-color-darken poa get-progress:trans-y-md-n"></div>
           <div class="do-h-xxl do-mt-n-xxxl do-z-0 do-w-px-sm do-bg-main-color-2-darken poa get-progress:trans-y-xxxl-n"></div>
@@ -1138,44 +1570,63 @@
             </div>
         </div>
    
-        <div class="do-grid-6 do-gap-xxxs">
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-0deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-60deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-120deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-180deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-240deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-gold-300deg"></div>
-            </div>
+        <div class="do-grid-14 do-gap-xxxs">
 
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-0deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-60deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-120deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-180deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-240deg"></div>
-            </div>
-            <div class="square">
-                <div class="content do-bg-main-color-grad-linear-300deg"></div>
-            </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-1"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-1"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-2"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-2"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-3"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-3"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-4"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-4"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-5"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-5"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-6"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-6"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-7"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-7"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-8"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-8"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-gold-9"></div>
+                </div>
+                <div class="square">
+                    <div class="content do-bg-main-color-grad-linear-9"></div>
+                </div>
+
         </div>
     </div>
 
@@ -1263,7 +1714,7 @@
 
 <div 
   data-module="doscrolldatas"
-  data-do-target="body"
+  data-do-target="html"
   data-do-calcul="full"
   data-do-update="true"
   data-do-start="top+=0% top"
@@ -1275,8 +1726,8 @@
 <div id="stageBg" class="bg-grid do-px-smart-xxxl pof top left do-full do-z-0 do-flex do-justify-content-space-between">
 
     <div class="do-w-xl por do-overflow-hidden">
-        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left do-bg-second-color-1"></div>
-        <div class="do-o-4 do-h-10-vh do-w-px-xxs poa right trans-x-before do-bg-second-color-1"></div>
+        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left do-bg-contraste-color-3"></div>
+        <div class="do-o-4 do-h-10-vh do-w-px-xxs poa right trans-x-before do-bg-contraste-color-3"></div>
         <div class="do-h-px-xxxl do-w-xxl do-bg-main-color poa do-z-2 get-progress:do-xxl get-progress:top-xxl"></div>
         <div class="do-h-px-xxl do-w-xl do-bg-second-color-3 poa do-z-2 get-progress:do-xl get-progress:top-xl"></div>
         <div class="do-h-px-xl do-w-lg do-bg-second-color-3 poa do-z-2 get-progress:do-lg get-progress:top-lg"></div>
@@ -1287,13 +1738,13 @@
         <div class="do-h-px-xxs do-w-xxxs do-bg-second-color-3 poa do-z-2 get-progress:do-xxxs get-progress:top-xxxs"></div>
     </div>
 
-    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa right-md-rem do-bg-second-color-1"></div>
-    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa do-z-1 center do-bg-second-color-1"></div>
-    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left-md-rem do-bg-second-color-1"></div>
+    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa right-md-rem do-bg-contraste-color-3"></div>
+    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa do-z-1 center do-bg-contraste-color-3"></div>
+    <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left-md-rem do-bg-contraste-color-3"></div>
 
     <div class="do-w-xl por">
-        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left do-bg-second-color-1"></div>
-        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa right do-bg-second-color-1"></div>
+        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left do-bg-contraste-color-3"></div>
+        <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa right do-bg-contraste-color-3"></div>
     </div>
    
 </div>

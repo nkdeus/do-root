@@ -1,3 +1,5 @@
+@use '../do/do_config' as *;
+
 /*
 -
 FRAMEWORK DO
@@ -7,9 +9,8 @@ Tweens système
 */
 
 *[class*="tween-"] {
-	transition:all 0.3s ease-out;
+	transition:all $duration $easing;
 }
-
 
 .a-transform{
   transition:transform 0.4s ease-out;
@@ -116,7 +117,7 @@ Tweens système
 
 @keyframes tween-pulse {
 	0% {
-	  opacity: 0;
+	  opacity: 0.5;
 	  transform:scale(0.8);  
 	}
 	50% {
@@ -125,6 +126,15 @@ Tweens système
 	100% {
 	  transform:scale(1.2);   
 	  opacity: 0;
+	}
+  }
+
+  @keyframes tween-scale-in {
+	0% {
+	  transform:scale(0);  
+	}
+	100% {
+	  transform:scale(1);   
 	}
   }
 

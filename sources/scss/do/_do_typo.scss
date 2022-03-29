@@ -33,23 +33,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  margin-bottom: 0px;
-}
-
-h1,
-h2{
-
-  font-weight: 700;
-}
-
-p.big {
-  font-family: "Futura", sans-serif;
-}
-
-
-p {
-  margin-bottom: 0px;
+h6,p {
+  margin: 0px;
+  margin-block-end: 0.5rem;
 }
 
 a {
@@ -60,7 +46,6 @@ a {
 .do-fw-strong {
   font-weight: 900;
 }
-
 .do-fw-bold {
   font-weight: 400;
 }
@@ -72,17 +57,18 @@ a {
 }
 
 .reset-y {
-  line-height: 0.75em;
+  line-height: 0.75;
   margin-bottom: 0px;
   margin-top: 0px;
 }
+
 .press {
   line-height: 1.25;
 }
 .expend {
   line-height: 1.5;
 }
-.text-right {
+.txt-right, .txt-end {
   text-align: right;
 }
 
@@ -122,19 +108,18 @@ a.reset{
   }
 }
 
-ul {
+ul.reset {
   list-style: none;
   margin: 0px;
   padding: 0px;
-
   li {
     list-style: none;
   }
 }
-li {
+li.reset {
   list-style: none;
 }
-.do-txt ul li {
+ul.custom li {
   @extend .do-pl-sm !optional;
   position: relative;
   &:before {
@@ -151,72 +136,15 @@ li {
   }
 }
 
-.flex-list {
-  .do-txt ul {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .do-txt ul li {
-    flex: 0 0 50%;
-    @extend .do-p-sm !optional;
-    text-align: center;
-    position: relative;
-    &:before {
-      display: block;
-      content: "";
-      position: absolute;
-      left: 50%;
-      @extend .top-xs-rem !optional;
-      @extend .trans-x-middle !optional;
-      @extend .do-w-xxs !optional;
-      @extend .do-h-xxs !optional;
-      @extend .do-br-md !optional;
-      @extend .do-bg-main-color !optional;
-    }
-  }
-}
-
-.tti {
-  text-transform: initial !important;
-}
-
-.do-txt ul {
-  @extend .do-my-sm !optional;
-  text-align: left;
-}
-
 @media screen and (min-width: $lg) {
-  .do-txt,
-  ul {
-    &.columns-1 {
-      columns: 1;
-      column-gap: $do-u * 30;
-    }
-    &.columns-2 {
-      columns: 2;
-      column-gap: $do-u * 30;
-    }
-    &.columns-3 {
-      columns: 3;
-      column-gap: $do-u * 30;
-    }
-    &.columns-4 {
-      columns: 4;
-      column-gap: $do-u * 30;
-    }
-  }
+  
 }
 
-.title-style {
-  font-family: "Quicksand", sans-serif;
-}
-
-.font-body {
-  font-family: "Nunito", sans-serif;
+.uppercase, .ttu {
+  text-transform: uppercase;
 }
 
 
-
-.nowrap {
+.nowrap, .nw {
   white-space: nowrap;
 }

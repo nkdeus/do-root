@@ -29,28 +29,37 @@
 	"fonts": [
 		{
 			"name": "roboto",
+			"className": "main",
 			"weight": "200;400;700"
 		},
 		{
 			"name": "Economica",
+			"className": "extra",
 			"weight": "400"
 		}
 	],
 	"typos": {
 		"body": {
 			"name": "roboto",
-			"weight": "200"
+			"weight": "400"
 		},
 		"heading": {
 			"name": "Economica",
 			"weight": "400"
 		}
 	},
+	"colors": [
+		"main",
+		"extra",
+		"second",
+		"contraste",
+		"fade"
+	],
 	"themes": {
 		"current": [
 			{
 				"name": "main",
-				"toggleColor": "fade",
+				"toggleColor": "extra",
 				"hsl": [
 					15,
 					"100%",
@@ -59,7 +68,7 @@
 			},
 			{
 				"name": "extra",
-				"toggleColor": "extra",
+				"toggleColor": "main",
 				"hsl": [
 					176,
 					"96%",
@@ -77,7 +86,7 @@
 			},
 			{
 				"name": "second",
-				"toggleColor": "main",
+				"toggleColor": "contraste",
 				"hsl": [
 					0,
 					"0%",
@@ -86,38 +95,130 @@
 			},
 			{
 				"name": "fade",
-				"toggleColor": "contraste",
+				"toggleColor": "fade",
 				"hsl": [
 					37,
 					"20%",
 					"84%"
 				]
 			}
+		],
+		"gallerie": [
+			{
+				"name": "test test",
+				"colors": [
+					{
+						"name": "main",
+						"hsl": [
+							15,
+							"100%",
+							"79%"
+						]
+					},
+					{
+						"name": "extra",
+						"hsl": [
+							176,
+							"96%",
+							"52%"
+						]
+					},
+					{
+						"name": "contraste",
+						"hsl": [
+							36,
+							"3.3%",
+							"28%"
+						]
+					},
+					{
+						"name": "second",
+						"hsl": [
+							0,
+							"0%",
+							"100%"
+						]
+					},
+					{
+						"name": "fade",
+						"hsl": [
+							37,
+							"20%",
+							"84%"
+						]
+					}
+				]
+			},
+			{
+				"name": "test test 2",
+				"colors": [
+					{
+						"name": "main",
+						"hsl": [
+							62,
+							"100%",
+							"79%"
+						]
+					},
+					{
+						"name": "extra",
+						"hsl": [
+							120,
+							"96%",
+							"52%"
+						]
+					},
+					{
+						"name": "contraste",
+						"hsl": [
+							36,
+							"3.3%",
+							"28%"
+						]
+					},
+					{
+						"name": "second",
+						"hsl": [
+							0,
+							"0%",
+							"100%"
+						]
+					},
+					{
+						"name": "fade",
+						"hsl": [
+							37,
+							"20%",
+							"84%"
+						]
+					}
+				]
+			}
 		]
 	},
 	"pageHome": {
 		"title": "$do : 1.61803398875;",
-		"text": "lorem ipsum dolor update 9 !",
+		"text": "lorem ipsum dolor update 10 !",
 		"colors": [
 			{
 				"name": "main",
-				"title": "main title"
+				"title": "var(--main-color)"
 			},
 			{
 				"name": "extra",
-				"title": "extra title"
+				"title": "var(--extra-color)"
 			},
 			{
 				"name": "second",
-				"title": "second title"
+				"title": "var(--second-color)"
 			},
 			{
 				"name": "contraste",
-				"title": "contraste title"
+				"title": "var(--contraste-color)"
 			},
 			{
 				"name": "fade",
-				"title": "fade title"
+				"title": "var(--fade-color)"
 			}
 		],
 		"variantes": [

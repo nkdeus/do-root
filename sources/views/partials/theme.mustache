@@ -79,6 +79,13 @@
     font-family: {{typos.body.name}}, sans-serif;
     font-weight: {{typos.body.weight}};
   }
+
+  {{#fonts}}
+    .do-ff-{{className}} {
+      font-family: {{name}}, sans-serif;
+    }
+  {{/fonts}}
+
   
   h1,
   h2,
@@ -87,7 +94,6 @@
   h5,
   h6 {
     font-family: {{typos.heading.name}}, sans-serif;
-    margin-bottom: 0px;
     font-weight: {{typos.heading.weight}};
   }
 

@@ -1,1 +1,71 @@
-var moduleManager=window.WFmodules;(moduleManager=null==moduleManager?{}:moduleManager).dochronos=function(){var t=$(this),e=t.attr("data-do-chronos"),o="true"==t.attr("data-do-notrigger"),n=t.attr("data-do-date"),a=$(".do-date",t),r=new Date("2004-01-01T00:00"),u=(null!=n&&(r=new Date(n)),new Date);var n={annees:function(){return e=u,t=(t=r).getTime()/864e5/360,e=e.getTime()/864e5/360,new Number(e-t).toFixed(0);var t,e},epoque:function(){return r.getFullYear()},number:function(){return Number(t.attr("data-do-number"))}},d={count:a.text(),max:n[e]};o?gsap.to(d,{duration:1,count:d.max,onUpdate:function(){a.text(d.count.toFixed(0))}}):gsap.to(d,{count:d.max,onUpdate:function(){a.text(d.count.toFixed(0))},scrollTrigger:{trigger:a,scrub:1,start:"bottom bottom",end:"top top+=50%",ease:"expo.in"}})},window.WFmodules=moduleManager;
+// doXXX version 1
+// update : 9 marss 2022
+
+var moduleManager = window.WFmodules;
+if(moduleManager == undefined){
+    moduleManager = {};
+}
+
+moduleManager["dochronos"] = function () {
+    
+    var $target = $(this);
+    var $type = $target.attr('data-do-chronos');
+    var $notrigger = $target.attr('data-do-notrigger') == "true";
+    var $dateStart = $target.attr('data-do-date');
+    // console.log("$dateStart ",$dateStart);
+    var cible = ".do-date";
+    var $container = $(cible, $target);
+
+    var start = new Date('2004-01-01T00:00');
+    if ($dateStart != undefined) {
+        start = new Date($dateStart);
+    }
+    var now = new Date();
+
+    function dayDiff(d1, d2) {
+        d1 = d1.getTime() / 86400000 / 360;
+        d2 = d2.getTime() / 86400000 / 360;
+        return new Number(d2 - d1).toFixed(0);
+    }
+
+
+    var getData = {
+
+        annees: function () {
+            return dayDiff(start, now);
+        },
+        epoque: function () {
+            return start.getFullYear();
+        },
+        number: function () {
+            return Number($target.attr('data-do-number'));
+        }
+
+    }
+
+    var result = { count: $container.text(), max: getData[$type] };
+
+
+
+    if ($notrigger) {
+        gsap.to(result, {
+            duration: 1, count: result.max, onUpdate: function () {
+                $container.text(result.count.toFixed(0));
+            }
+        });
+    } else {
+        gsap.to(result, {
+            count: result.max, onUpdate: function () {
+                $container.text(result.count.toFixed(0));
+            }, scrollTrigger: {
+                trigger: $container,
+                scrub: 1,
+                start: 'bottom bottom',
+                end: 'top top+=50%',
+                ease: 'expo.in'
+            }
+        });
+    }
+
+}
+window.WFmodules = moduleManager;

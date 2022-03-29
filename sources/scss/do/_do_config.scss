@@ -11,7 +11,7 @@ FRAMEWORK DO v1.1
 $duration: 0.5s;
 $easing: ease-in-out;
 
-// BreakPoints ( bootstrap 5 )
+// BreakPoints ( Bootstrap v.5 )
 
 $xs: 320px; // new
 $sm: 576px;
@@ -21,7 +21,7 @@ $xl: 1200px;
 $xxl: 1400px;
 $xxxl: 1600px; // new
 
-// BreakPoints ( pour DO )
+// BreakPoints ( Do v.1 )
 $do-screen : (
   "xs"      : $xs,  
   "sm"      : $sm,
@@ -36,19 +36,14 @@ $do-screen : (
 $do-fs: () !default;
 $do-fs: map-merge(
   (
-    "h1": "lg",
-    "h2": "md",
-    "h3": "sm",
-    "h4": "sm",
-    "h5": "xs",
-    "h6": "xs",
-    "p": "xs",
-    "a": "xs",
-    "input": "xs",
-    "label": "xs",
-    "textarea": "xs",
-    "select": "xs",
-    "span": "xs"  
+    "h1": "fs-fluid-xxl",
+    "h2": "fs-fluid-xl",
+    "h3": "fs-fluid-lg",
+    "h4": "fs-md",
+    "h5": "fs-sm",
+    "h6": "fs-xs",
+    "p": "fs-xs",
+    "a": "fs-xs"  
   ),
   $do-fs
 );
@@ -78,34 +73,34 @@ $do-margins : (
 );
 
 $do-width-height : (
-  "h"       : ("props" : "height" , "unit": 1rem),
-  "h-gold"  : ("props" :"height" , "unit": 1%),
-  "h-100"   : ("props" : "height" , "unit": 1rem),
-  "h-n-100" : ("props" : "height" , "unit": 1rem),
-  "h-px"    : ("props" : "height" , "unit": 1px),
-  "max-h"   : ("props" :"max-height" , "unit": 10rem),
-  "min-h"   : ("props" :"min-height" , "unit": 10rem),
-  "h-vh"    : ("props" : "height" , "unit": 6vh),
-  "w"       : ("props" :"width" , "unit": 1rem),
-  "w-gold"  : ("props" :"width" , "unit": 1%),
-  "w-gold-vw": ("props" :"width" , "unit": 1vw),
-  "max-w"   : ("props" :"max-width" , "unit": 10rem),
-  "min-w"   : ("props" :"min-width" , "unit": 10rem),
-  "w-100"   : ("props" :"width" , "unit": 1rem),
-  "w-n-100" : ("props" :"width" , "unit": 1rem),
-  "w-px"    : ("props" :"width" , "unit": 1px),
-  "w-vw"    : ("props" : "width" , "unit": 6vw),
-  "wh"      : ("props" :("width","height"), "unit": 1rem),
-  "wh-vw"      : ("props" :("width","height"), "unit": 6vw),
-  "hw"      : ("props" :("height","width"), "unit": 1rem),
-  "gold"      : ("props" :("height","width"), "unit": 1%)
+  "h"           : ("props" : "height" , "unit": 1rem),
+  "h-gold"      : ("props" :"height" , "unit": 1%),
+  "h-100"       : ("props" : "height" , "unit": 1rem),
+  "h-n-100"     : ("props" : "height" , "unit": 1rem),
+  "h-px"        : ("props" : "height" , "unit": 1px),
+  "max-h"       : ("props" :"max-height" , "unit": 10rem),
+  "min-h"       : ("props" :"min-height" , "unit": 10rem),
+  "h-vh"        : ("props" : "height" , "unit": 6vh),
+  "w"           : ("props" :"width" , "unit": 1rem),
+  "w-gold"      : ("props" :"width" , "unit": 1%),
+  "w-gold-vw"   : ("props" :"width" , "unit": 1vw),
+  "max-w"       : ("props" :"max-width" , "unit": 10rem),
+  "min-w"       : ("props" :"min-width" , "unit": 10rem),
+  "w-100"       : ("props" :"width" , "unit": 1rem),
+  "w-n-100"     : ("props" :"width" , "unit": 1rem),
+  "w-px"        : ("props" :"width" , "unit": 1px),
+  "w-vw"        : ("props" : "width" , "unit": 6vw),
+  "wh"          : ("props" :("width","height"), "unit": 1rem),
+  "wh-vw"       : ("props" :("width","height"), "unit": 6vw),
+  "hw"          : ("props" :("height","width"), "unit": 1rem),
+  "gold"        : ("props" :("height","width"), "unit": 1%)
 );
 
 $do-others : (
   "br"      : ("props" :"border-radius", "unit": 1rem),
   "bw"      : ("props" :"border-width", "unit": 1px),
   "bw-rem"  : ("props" :"border-width", "unit": 1rem),
-  "fs"      : ("props" :"font-size", "unit": 1.4rem),
+  "fs"      : ("props" :"font-size", "unit": 1rem),
   "scale"   : ("props" :"transform", "unit": 1),
   "auto"    : ("props" :"grid-template-columns", "unit": 10rem),
   "gap"     : ("props" :"grid-gap", "unit": 1rem)
@@ -135,88 +130,61 @@ $count: $do-u;
 $do-directions: "left", "right", "top", "bottom";
 $do-aligns: "start", "center", "end", "flex-start","flex-end", "stretch", "space-between", "space-around";
 $do-custom-data: "background-color", "right", "top", "bottom";
-$do-base : 10; 
-$do-max : 16; 
-$do-num-angle : 6; 
+$do-base : 5; 
+$do-max : 20; 
+$do-num-angle : 8; 
 $do-ratio-to-100 : 10.17%; 
 
+
 $do-custom-data : (
-  "trans-y"  : "progress",
-  "top"  : "progress",
-  "opacity"  : "progress"
-);
-
-$do-custom-data-2 : (
   do  : (
-
       prop   : transform,
       params :(rotate,scaleX),
-      unit   : (-16.28deg, 1)
-    
+      unit   : (-16.28deg, 1) 
   ),
   rotate  : (
-
     prop   : transform,
     params :(rotate),
     unit   : (-4.2deg)
-  
   ),
   trans-y  : (
-
     prop   : "transform",
     params :("translateY"),
-    unit   : (10%)
-  
+    unit   : (10%) 
   ),
   trans-mouse  : (
-
     prop   : transform,
     params :(translateX,translateY),
     unit   : (10%,-10%)
-  
   ),
   top  : (
-
     prop   : "top",
     params :(""),
-    unit   : ($do-ratio-to-100)
-  
+    unit   : ($do-ratio-to-100) 
   ),
   bottom  : (
-
     prop   : "bottom",
     params :(""),
     unit   : ($do-ratio-to-100)
-  
   ),
   scale  : (
-
     prop   : transform,
     params : scale,
     unit   : ($do-ratio-to-100)
-  
   ),
   bg  : (
-
     prop   : background-color,
     params :(""),
     unit   : (360),
     responsive: false
-
   ),
   o  : (
-
     prop   : "opacity",
     params :(""),
     unit   : (1),
     responsive: false
-  
   )
-
 );
-
-
-
 
 $do-sizes : (
   "xxxs"  : 0px,
@@ -229,8 +197,6 @@ $do-sizes : (
   "xxl"   : 0px,
   "xxxl"  : 0px
 );
-
-
 
 $do-colors-type : (
   "bg"  : background-color,
@@ -246,6 +212,12 @@ $do-displays : (
   "flex"   : flex,
   "grid"    : grid,
   "hide"    : none
+);
+
+$do-animations : (
+  "pulse"  : "tween-pulse",
+  "scale-in" : "tween-scale-in",
+  "roll"  : "tween-roll-y"
 );
 
 

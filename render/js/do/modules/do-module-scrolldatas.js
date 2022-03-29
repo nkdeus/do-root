@@ -1,1 +1,97 @@
-var moduleManager=window.WFmodules;(moduleManager=null==moduleManager?{}:moduleManager).doscrolldatas=function(){var e=this,r=(e.target=$(e).attr("data-do-target")||e,e.calcul=$(e).attr("data-do-calcul")||"yoyo",e.force=Number($(e).attr("data-do-force"))||1,e.update="true"==$(e).attr("data-do-update")||!1,e.toggle="true"==$(e).attr("data-do-toggle")||!1,e.classik="true"==$(e).attr("data-do-classik")||!1,e.start=$(e).attr("data-do-start")||"top center+=10%",e.end=$(e).attr("data-do-end")||"bottom center+=10%","full-reverse"==e.calcul?$(e.target).css("--progress",+e.force):$(e.target).css("--progress",0),{});r.yoyo=function(t){return Number(2*(.5<=t?1-t:t)*e.force).toFixed(4)},r.full=function(t){return t*e.force},r["full-reverse"]=function(t){return(1-t)*e.force},ScrollTrigger.create({trigger:e.target,start:e.start,end:e.end,onEnter:t=>{e.classik&&$(e.target).css("--progress",1)},onLeave:t=>{e.classik&&$(e.target).css("--progress",1)},onEnterBack:t=>{e.classik&&$(e.target).css("--progress",1)},onLeaveBack:t=>{e.classik&&$(e.target).css("--progress",0)},onToggle:t=>{e.toggle&&(t.isActive?$(e.target).css("--progress",1):$(e.target).css("--progress",0))},onUpdate:t=>{e.update&&$(e.target).css("--progress",r[e.calcul](t.progress.toFixed(4)))}})},window.WFmodules=moduleManager;
+// do-scroll-datas v1
+// connecter le framework SCSS Do avec la position du scroll par rapport à un point ou objet.
+// @use scrolltrigger.js from gsap
+// update : 22 marss 2022
+
+var moduleManager = window.WFmodules;
+if(moduleManager == undefined){
+    moduleManager = {};
+}
+
+moduleManager["doscrolldatas"] = function () {
+
+    var $scope = this;
+    $scope.target = $($scope).attr("data-do-target") || $scope;
+    $scope.calcul = $($scope).attr("data-do-calcul") || "yoyo";
+    $scope.force = Number($($scope).attr("data-do-force")) || 1;
+    $scope.update = $($scope).attr("data-do-update") == "true" || false;
+    $scope.toggle = $($scope).attr("data-do-toggle") == "true" || false;
+    $scope.classik = $($scope).attr("data-do-classik") == "true" || false;
+    $scope.start = $($scope).attr("data-do-start") || "top center+=10%";
+    $scope.end = $($scope).attr("data-do-end") || "bottom center+=10%";
+    
+    if($scope.calcul=="full-reverse"){
+        $($scope.target).css("--progress",1*$scope.force);
+    }else{
+        $($scope.target).css("--progress",0);
+    }
+
+    var calculType = {};   
+    calculType["yoyo"] = function(pValue){
+
+        var result = pValue;
+        if(pValue >= 0.5){
+            result = 1-pValue;
+        }
+        return Number(result*2*$scope.force).toFixed(4);
+
+    }
+
+    calculType["full"] = function(pValue){
+
+        return pValue*$scope.force;
+
+    }
+
+    calculType["full-reverse"] = function(pValue){
+
+        return (1-pValue)*$scope.force;
+
+    }
+
+    ScrollTrigger.create({
+        trigger: $scope.target,
+        start: $scope.start,
+        end: $scope.end,
+        onEnter: self => {
+            if($scope.classik){
+                $($scope.target).css("--progress",1);
+            }
+        },
+        onLeave: self => {
+            if($scope.classik){
+                $($scope.target).css("--progress",1);
+            }
+        },
+        onEnterBack: self => {
+            if($scope.classik){
+                $($scope.target).css("--progress",1);
+            }
+        },
+        onLeaveBack: self => {
+            if($scope.classik){
+                $($scope.target).css("--progress",0);
+            }
+        },
+        onToggle: self => {
+            if($scope.toggle){
+                if(self.isActive){
+                    $($scope.target).css("--progress",1);
+                }else{
+                    $($scope.target).css("--progress",0);
+                }
+                
+            }
+           // console.log("toggled, isActive:", self.isActive)
+        },
+        onUpdate: self => {
+            if($scope.update){
+                //console.log("[scroll-event] progress:", self.progress.toFixed(1), "direction:", self.direction, "velocity", self.getVelocity());
+                $($scope.target).css("--progress",calculType[$scope.calcul](self.progress.toFixed(4)));
+            }
+  
+        }
+    });
+
+}
+window.WFmodules = moduleManager;

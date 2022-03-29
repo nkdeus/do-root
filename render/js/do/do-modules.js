@@ -1,1 +1,1139 @@
-var moduleManager=window.WFmodules;(moduleManager=null==moduleManager?{}:moduleManager).dowtf=function(){const o=this;o.max=$(o).attr("data-do-max")||6,o.space=$(o).attr("data-do-space")||2,o.itemClass=$(o).attr("data-do-wtf")||"do-wtf-item",o.gap=$(o).attr("data-do-gap")||"1px",o.force=$(o).attr("data-do-force")||5,o.blend=$(o).attr("data-do-blend")||"screen",o.random=[],o.random=$(o).attr("data-do-tween").split(","),o.getParams=function(){let e={duration:20,ease:"power3.inOut"};return $.each(o.random,function(t,a){"scale"!=a&&"scaleX"!=a&&"scaleY"!=a&&"opacity"!=a||(e[a]="random(0,"+.2*o.force+")"),"x"!=a&&"y"!=a||(e[a]="random(0,"+20*o.force+")"),"rotation"!=a&&"rotationX"!=a&&"rotationY"!=a&&"rotationZ"!=a||(e[a]="random(0,"+10*o.force+")")}),e},$(o).css("position",$(o).attr("data-do-position")||"relative");for(var a=$("<div>"),t=(a.addClass("do-grid-wtf"),a.css("mix-blend-mode",o.blend),Math.floor(o.max/o.space)),e=(a.css("grid-template-columns","repeat("+t+", 1fr)"),a.css("gap",o.gap),o.append(a[0]),gsap.timeline({yoyo:!0,repeat:5})),r=(o.creatWtf=function(){let t=$("<li></li>");return t.addClass(o.itemClass),a.append(t[0]),gsap.set(t,o.getParams()),e.to(t,o.getParams(),0),t},[]),n=0;n<o.max;n++)r.push(o.creatWtf())},moduleManager.dotoggle=function(){const a=this;var t="true"==$(a).attr("data-global"),e=$(a).parent(),t=(t&&(e=$("html")),$(a).attr("data-bt-toggle-add")),o=$(a).attr("data-bt-toggle-remove"),r=$(a).attr("data-bt-type")||"click",n=null,s=!0;null!=t&&(n=$(a).attr("data-bt-toggle-add").split(","),s=!0),null!=o&&(n=$(a).attr("data-bt-toggle-remove").split(","),s=!1);const l=n[0];t=n[1]||"do";const d=$(n[1],e)||a,g=n[2]||l;a.toggleKey=l+t,null==window.togglesKey[a.toggleKey]&&(window.togglesKey[a.toggleKey]={},window.togglesKey[a.toggleKey].bool=s),null==window.togglesKey[l]&&(window.togglesKey[l]=[]),window.togglesKey[l].push(d),a.toggles={},$(a).on(r,a,function(t){a.toggle()}),a.toggle=function(){$.each(window.togglesKey[l],function(t,a){a!=d&&$(a).removeClass(g)}),null==a.toggles[l]&&(a.toggles[l]=window.togglesKey[a.toggleKey].bool),window.togglesKey[a.toggleKey].bool=!window.togglesKey[a.toggleKey].bool,a.toggles[l]=window.togglesKey[a.toggleKey].bool,$(a).toggleClass(l),1<window.togglesKey[l].length?d.toggleClass(g):a.toggles[l]?d.removeClass(g):d.addClass(g)}},moduleManager.doautotheme=function(){var t,r=this,n=!1,e=$(r).attr("data-do-input-url"),s=$(r).attr("data-do-custom-target")||r,o=null!=e,l=$(r).attr("data-do-target-container")||$(r),a=$("img",l),d=a[0],g=a.attr("data-src")||a.attr("src");return null==window.doautotheme&&(window.doautotheme=r),r.colors=[],o&&$(e).focusout(function(){r.forceLoad()}),r.getPalette=function(t){if(0!=n){var a,t=new Vibrant(t,64,5);for(a in r.swatches=t.swatches(),r.colors=[],r.swatches)r.swatches.hasOwnProperty(a)&&r.swatches[a]&&r.colors.push(r.swatches[a].getHex());if(null==r.swatches.Vibrant)return console.log("__error :/"),void(r.colors=[]);r.colors.push(r.swatches.Vibrant.getTitleTextColor());var e,t=Please.HEX_to_HSV(r.swatches.Vibrant.getHex()),t=(result=Please.make_scheme(t,{scheme_type:"complementary",format:"hex"}),Please.make_color({golden:!0,base_color:t,saturation:.01,value:.15,colors_returned:2,format:"hex"})),o=Please.make_color({golden:!0,base_color:Please.HEX_to_HSV(result[1]),saturation:.01,value:.91,colors_returned:2,format:"hex"});if(r.colors.push(result[1]),r.colors=$.merge(r.colors,t),r.colors=$.merge(r.colors,o),null!=window.dothemes&&"html"==s)for(e=0;e<window.dothemes.length;++e)window.dothemes[e].pushColors(r.colors);else $.each({main:0,second:5,contraste:2,extra:6},function(t,a){var e="--"+t+"-color",t=("html"==s&&(e="--"+t),r.colors[a]);$(s).css(e,t)})}},r.doconsole=function(){for(var t="",a=0;a<window.dothemes.length;++a)t+=window.dothemes[a].getCssLine();$("#console").html(t)},r.imageLoaded=function(){n=!0,setTimeout(function(){r.getPalette(d)},0)},r.forceLoad=function(){var t,a;""==$(e).val()&&o?(console.log("$scope.imageLoaded()"),d.onload=r.imageLoaded()):(d&&(d.remove(),d.onload=null,d=null),t=new Image,a=$(e).val()||g,t.crossOrigin="anonymous",t.addEventListener("load",function(){d=t,r.imageLoaded()},!1),t.src=a,$(l).html(t))},o?($(r).click(function(){var t=window.innerWidth-Math.floor(window.innerWidth/10)-Math.floor(10*Math.random());$(e).val(g+t.toString()),r.forceLoad()}),t=window.innerWidth-Math.floor(window.innerWidth/10)-Math.floor(10*Math.random()),$(e).val(g+t.toString()),r.forceLoad()):($(r).click(function(){console.log("click"),r.imageLoaded()}),a.prop("complete")?(console.log("deja load"),r.imageLoaded()):(console.log("on load"),a.on("load",function(){r.imageLoaded()}))),r},moduleManager.dotheme=function(){var n=this,s=$(n),o=null,r=null;return s.click(function(){s.toggleClass("active")}),n.getCssLine=function(){return null==o?"null":"$"+o.attr("data-bt-color")+"Color: "+o.attr("data-color")+";<br>"},n.changeSelectedColor=function(t,a){t="--"+t;null!=$(n).attr("data-custom-target")&&$($(n).attr("data-custom-target")).css(t,a)},s.on("click","[data-bt-color]",function(t){var a,e=0;o&&(e=300,(a=o).removeClass("active")),(o=$(this)).addClass("active"),n.changeSelectedColor(o.attr("data-bt-color"),o.attr("data-color")),clearTimeout(r),r=setTimeout(function(){a&&s.append(a),s.prepend(o)},e),window.doautotheme.doconsole()}),n.itemsCreat=!1,n.colorsList=void 0,n.itemsList=[],null!=$(n).attr("data-colors")&&(n.colorsList=$(n).attr("data-colors").split(",")),n.pushColors=function(t){for(var a,e=t,o=$(n).attr("data-type-color"),r=0,r=0;r<e.length;++r)0==n.itemsCreat?(a="<div class='color-"+r+"' data-bt-color='"+o+"' data-color='"+e[r]+"'></div>",s.append(a),n.itemsList.push(a)):$(".color-"+r,n).removeClass("active"),$(".color-"+r,n).attr("data-color",e[r]),$(".color-"+r,n).css("background-color",e[r]);t={main:0,second:5,contraste:2,extra:6}[o];$(".color-"+t,n).css("background-color",e[t]),$(".color-"+t,n).attr("data-color",e[t]),$(".color-"+t,n).click(),s.toggleClass("active"),n.itemsCreat=!0},null!=n.colorsList&&n.pushColors(n.colorsList),n},moduleManager.copyright=function(){const t=new Date;$("[data-year]",this).text(t.getFullYear())},moduleManager.do=function(){console.log("DO "+str)},moduleManager.dochronos=function(){var t=$(this),a=t.attr("data-do-chronos"),e="true"==t.attr("data-do-notrigger"),o=t.attr("data-do-date"),r=$(".do-date",t),n=new Date("2004-01-01T00:00"),s=(null!=o&&(n=new Date(o)),new Date);var o={annees:function(){return a=s,t=(t=n).getTime()/864e5/360,a=a.getTime()/864e5/360,new Number(a-t).toFixed(0);var t,a},epoque:function(){return n.getFullYear()},number:function(){return Number(t.attr("data-do-number"))}},l={count:r.text(),max:o[a]};e?gsap.to(l,{duration:1,count:l.max,onUpdate:function(){r.text(l.count.toFixed(0))}}):gsap.to(l,{count:l.max,onUpdate:function(){r.text(l.count.toFixed(0))},scrollTrigger:{trigger:r,scrub:1,start:"bottom bottom",end:"top top+=50%",ease:"expo.in"}})},moduleManager.dopara=function(){var r=this;r.stage=$(r).attr("data-do-stage")||!1,r.target=$(r).attr("data-do-target")||r,r.triggerContainer=$(r),0!=r.stage&&(r.target=$(r.target,$(r.stage)),r.triggerContainer=$(r.stage)),r.force=$(r).attr("data-do-force")||5,r.scrub=Number($(r).attr("data-do-scrub"))||!0,r.start=$(r).attr("data-do-start")||"top top",r.end=$(r).attr("data-do-end")||"bottom top",r.type=$(r).attr("data-do-type-tween")||"to",r.tweens=[],r.tweens=$(r).attr("data-do-tween").split(","),r.getParams=function(e){let o={ease:"none",scrollTrigger:{trigger:r.triggerContainer,start:r.start,end:r.end,scrub:r.scrub}};return $.each(r.tweens,function(t,a){"scale"!=a&&"scaleX"!=a&&"scaleY"!=a&&"opacity"!=a||(o[a]=r.force*e),"in"==a&&(o.opacity=1),"out"==a&&(o.opacity=0),"x"!=a&&"y"!=a||(o[a]=42*r.force*e),"rotation"!=a&&"rotationX"!=a&&"rotationY"!=a&&"rotationZ"!=a||(o[a]=+r.force*e)}),o},$(r.target,r).each((t,a)=>{let e=Number($(a).attr("data-do-deph"))||1+.1*t;ScrollTrigger.matchMedia({"(min-width: 960px)":function(){"to"==r.type?gsap.to(a,r.getParams(e)):gsap.from(a,r.getParams(e))},"(max-width: 799px)":function(){},all:function(){}})})},moduleManager.doscrolldatas=function(){var a=this,e=(a.target=$(a).attr("data-do-target")||a,a.calcul=$(a).attr("data-do-calcul")||"yoyo",a.update="true"==$(a).attr("data-do-update")||!1,a.toggle="true"==$(a).attr("data-do-toggle")||!1,a.classik="true"==$(a).attr("data-do-classik")||!1,{});e.yoyo=function(t){return Number(2*(.5<=t?1-t:t)).toFixed(4)},e.full=function(t){return t},ScrollTrigger.create({trigger:a.target,start:"top center+=10%",end:"bottom center-=10%",markers:!0,onEnter:t=>{a.classik&&($(a.target).css("--progress",1),$(a.target).attr("data-do-progress",1))},onLeave:t=>{a.classik&&($(a.target).css("--progress",1),$(a.target).attr("data-do-progress",1))},onEnterBack:t=>{a.classik&&($(a.target).css("--progress",1),$(a.target).attr("data-do-progress",1))},onLeaveBack:t=>{a.classik&&($(a.target).css("--progress",0),$(a.target).attr("data-do-progress",0))},onToggle:t=>{a.toggle&&(t.isActive?($(a.target).css("--progress",1),$(a.target).attr("data-do-progress",1)):($(a.target).css("--progress",0),$(a.target).attr("data-do-progress",0))),console.log("toggled, isActive:",t.isActive)},onUpdate:t=>{a.update&&($(a.target).css("--progress",e[a.calcul](t.progress.toFixed(4))),$(a.target).attr("data-do-progress",e[a.calcul](t.progress.toFixed(4))))}})},moduleManager.dotweens=function(){var a,t,e,d=this;d.stage=$(d).attr("data-do-stage")||!1,d.target=$(d).attr("data-do-target")||d,0!=(d.triggerContainer=d).stage&&(d.target=$(d.target,$(d.stage)),d.triggerContainer=$(d.stage)),d.force=$(d).attr("data-do-force")||5,d.scrub=Number($(d).attr("data-do-scrub"))||!0,d.start=$(d).attr("data-do-start")||"top center+=20%",d.end=$(d).attr("data-do-end")||"bottom center-=20%",d.type=$(d).attr("data-do-type-tween")||"to",d.order=$(d).attr("data-do-order-tween")||"top",d.batch="true"==$(d).attr("data-do-batch-tween")||!1,d.motion=$(d).attr("data-do-motion-tween")||"fade-in",d.ease=$(d).attr("data-do-ease-tween")||"sine.inOut",d.duration=$(d).attr("data-do-duration-tween")||.4,d.stagger=$(d).attr("data-do-stagger-tween")||.15,d.amount=$(d).attr("data-do-amount-tween")||1.5,null!=$(d).attr("data-do-target")&&(d.target=$(d.target,d)),d.getParams=function(t,a,e=!0){let o=[],r={overwrite:e},n={overwrite:e},s={stagger:d.stagger,overwrite:e,duration:d.duration},l={stagger:d.stagger,overwrite:e,duration:d.duration};return"fade-in"==t&&(s.opacity=1,o.onEnter=s,r.opacity=0,o.onLeave=r,s.opacity=1,o.onEnterBack=s,r.opacity=0,o.onLeaveBack=r,o.init={opacity:0}),"fade-out"==t&&(s.opacity=0,o.onEnter=s,r.opacity=1,o.onLeave=r,l.opacity=0,o.onEnterBack=l,n.opacity=1,o.onLeaveBack=n,o.init={opacity:1}),"slide-in"==t&&(s.opacity=1,s.y=0,o.onEnter=s,r.opacity=0,r.y=-62,o.onLeave=r,l.opacity=1,l.y=0,o.onEnterBack=l,n.opacity=0,n.y=62,o.onLeaveBack=n,o.init={opacity:0,y:62}),"slide-out"==t&&(s.opacity=0,s.y=0,o.onEnter=s,r.opacity=1,r.y=-62,o.onLeave=r,l.opacity=0,l.y=0,o.onEnterBack=l,n.opacity=1,n.y=62,o.onLeaveBack=n,o.init={opacity:1,y:62}),"slide-in-percent"==t&&(s.opacity=1,s.y=0,o.onEnter=s,r.opacity=0,r.y="-=50%",o.onLeave=r,l.opacity=1,l.y=0,o.onEnterBack=l,n.opacity=0,n.y="+=50%",o.onLeaveBack=n,o.init={opacity:0,y:"+=50%"}),"zoom-in"==t&&(s.scale=1,o.onEnter=s,r.scale=0,o.onLeave=r,l.scale=1,o.onEnterBack=l,n.scale=0,o.onLeaveBack=n,o.init={scale:0}),o},d.batch?(a=d.getParams(d.motion,d.target),gsap.set(d.target,a.init),ScrollTrigger.batch(d.target,{onEnter:t=>gsap.to(t,a.onEnter),onLeave:t=>gsap.set(t,a.onLeave),onEnterBack:t=>gsap.to(t,a.onEnterBack),onLeaveBack:t=>gsap.set(t,a.onLeaveBack),start:d.start,end:d.end,marker:!1}),ScrollTrigger.addEventListener("refreshInit",()=>gsap.set(d.target,a.init))):(a=d.getParams(d.motion,d.target,!1),gsap.set(d.target,a.init),t=gsap.timeline({scrollTrigger:{trigger:d.triggerContainer,start:d.start,end:d.end,scrub:d.scrub,toggleActions:"play resume play pause",markers:!0}}),(e=a.onEnter).ease="sine.inOut",e.stagger={amount:d.amount,from:d.order,ease:d.ease,repeat:0},t.to(d.target,e))},moduleManager.dotrigger=function(){var t,a,e,o=this;o.toggle="true"==$(o).attr("data-do-trigger"),o.target=$(o).attr("data-do-target"),o.classToggle=$(o).attr("data-do-class")||"active",o.creatNav="true"==$(o).attr("data-do-scroll-nav"),o.targetNav=$(o).attr("data-do-target-nav"),o.targetNavOffsetY=$(o).attr("data-do-target-nav-offset-y")||90,o.btName=$(o).attr("data-do-bt-name"),o.start=$(o).attr("data-do-start")||"top center",o.end=$(o).attr("data-do-end")||"bottom center",o.isClone=!1;o.creatNav&&(a=$(o).attr("data-do-section-id")||$(o).attr("id"),null==window.WFmodules[o.targetNav.toString()]&&(window.WFmodules[o.targetNav.toString()]=$("li",o.targetNav),window.WFmodules[o.targetNav.toString()].remove()),t=window.WFmodules[o.targetNav.toString()].clone(),$("ul",o.targetNav).append(t),$("span",t).html(o.btName),$("a",t).attr("href","#"+a),o.targetClone=$("a",t),o.isClone=!0,a=$(o.targetNav),e=$(window),$("a",a).click(function(t){t.preventDefault();t=$(this).attr("href"),t=$(t).offset().top-o.targetNavOffsetY;return TweenMax.to(e,1,{scrollTo:{y:t,autoKill:!0},ease:Power3.easeOut}),!1})),ScrollTrigger.create({trigger:o,start:o.start,end:o.end,onToggle:function(){o.toggle=!o.toggle,$(o).toggleClass("active"),$(o).attr("data-do-trigger",o.toggle),o.target&&0==o.isClone&&($(o.target).toggleClass(o.classToggle),$.event.trigger({type:"darkMode",class:o.classToggle,toggle:o.toggle})),o.isClone&&o.targetClone.toggleClass(o.classToggle)}})},moduleManager.dotexture=function(){$(this).append('<div class="texture"></div>')},moduleManager.dochange=function(){const a=this;var e=$(a),o=$(".do-span",e),r=e.css("--main-color"),n=e.css("color"),s=e.attr("data-do-change").split(","),l=s.length,d=(s.push(o.text()),"true"==e.attr("data-do-random")),g=0,i=!1,c=!1;a.random=function(t){for(var a=Math.floor(Math.random()*(l+1));a==t;)a=Math.floor(Math.random()*(l+1));return a},a.randomDelay=function(){return d?Number(2+Math.floor(4*Math.random())):3},a.changeMot=function(){0!=i&&(c=!0,gsap.to(o,{duration:.1,delay:a.randomDelay,color:r,opacity:0,y:-5,onComplete:function(){var t=s[g];o.text(t),o.attr("data-do-fx","wtf"),setTimeout(function(){o.attr("data-do-fx","none")},200),gsap.fromTo(o,{duration:10,y:5,color:r},{opacity:1,y:0,color:n,onComplete:function(){c=!1,1==i&&a.changeMot()}}),d?g=a.random(g):l<++g&&(g=0)}}))},a.getCurrentSection=function(){var t=e.hasClass("ok");i!=t&&(i=t,0==c&&a.changeMot())},ScrollTrigger.create({trigger:this,start:"bottom bottom-=10%",end:"top top+=10%",toggleClass:{targets:e,className:"ok"},onUpdate:a.getCurrentSection})},window.WFmodules=moduleManager;
+// version 1
+// update : 8 marss 2022
+
+var moduleManager = window.WFmodules;
+if(moduleManager == undefined){
+    moduleManager = {};
+}
+
+moduleManager["dowtf"] = function () {
+
+    const $scope = this;
+    $scope.max = $($scope).attr('data-do-max') || 6;
+    $scope.space = $($scope).attr('data-do-space') || 2;
+    $scope.itemClass = $($scope).attr('data-do-wtf') || 'do-wtf-item';
+    $scope.gap = $($scope).attr('data-do-gap') || '1px';
+    $scope.force = $($scope).attr('data-do-force') || 5;
+    $scope.blend = $($scope).attr('data-do-blend') || 'screen';
+    $scope.random = [];
+    $scope.random = $($scope).attr('data-do-tween').split(",");
+    //console.log($scope.random);
+
+    $scope.getParams = function () {
+        let gsapParams = { duration: 20, ease: 'power3.inOut' };
+        $.each($scope.random, function (index, value) {
+
+            if (value == "scale" || value == "scaleX" || value == "scaleY" || value == "opacity") {
+                gsapParams[value] = "random(0," + (0.2 * $scope.force) + ")";
+            }
+            if (value == "x" || value == "y") {
+                gsapParams[value] = "random(0," + (20 * $scope.force) + ")";
+            }
+            if (value == "rotation" || value == "rotationX" || value == "rotationY" || value == "rotationZ") {
+                gsapParams[value] = "random(0," + (10 * $scope.force) + ")";
+            }
+
+        });
+        return gsapParams;
+    }
+
+
+    //gsap.set(item,{opacity:0,x:"random(0,50)", y:"random(0,50)"});
+    $($scope).css('position', $($scope).attr('data-do-position') || 'relative');
+
+    var containerItems = $("<div>");
+    containerItems.addClass('do-grid-wtf');
+    containerItems.css("mix-blend-mode", $scope.blend);
+    var columns = Math.floor($scope.max / $scope.space);
+    var cssRepeat = "repeat(" + columns + ", 1fr)";
+    containerItems.css("grid-template-columns", cssRepeat);
+    containerItems.css("gap", $scope.gap);
+    //console.log(cssRepeat);
+
+
+    $scope.append(containerItems[0]);
+    var tl = gsap.timeline({ yoyo: true, repeat: 5 });
+
+    $scope.creatWtf = function () {
+
+        let item = $("<li></li>");
+        item.addClass($scope.itemClass);
+        containerItems.append(item[0]);
+        gsap.set(item, $scope.getParams());
+        tl.to(item, $scope.getParams(), 0)
+        return item;
+
+    }
+    var wtfItems = [];
+
+    for (var i = 0; i < $scope.max; i++) {
+
+        wtfItems.push($scope.creatWtf());
+
+    }
+}
+
+moduleManager["dotoggle"] = function () {
+    const $scope = this;
+    const isGlobal = $($scope).attr('data-global') == "true";
+    var $parent = $($scope).parent();
+    if (isGlobal) {
+        $parent = $("html");
+    }
+    const actionToggleAdd = $($scope).attr('data-bt-toggle-add');
+    const actionToggleRemove = $($scope).attr('data-bt-toggle-remove');
+    const actionToggleType = $($scope).attr('data-bt-type') || 'click';
+    var datas = null;
+    var toggleSens = true;
+    if (actionToggleAdd != undefined) {
+
+        datas = $($scope).attr('data-bt-toggle-add').split(',');
+        toggleSens = true;
+
+    }
+    if (actionToggleRemove != undefined) {
+
+        datas = $($scope).attr('data-bt-toggle-remove').split(',');
+        toggleSens = false;
+
+    }
+    const active = datas[0];
+    const targetName = datas[1] || 'do'
+    const target = $(datas[1], $parent) || $scope;
+    const classToggle = datas[2] || active;
+    $scope.toggleKey = active + targetName;
+
+    if (window.togglesKey[$scope.toggleKey] == undefined) {
+        //console.log('NEW KEY ',$scope.toggleKey);
+        window.togglesKey[$scope.toggleKey] = {};
+        window.togglesKey[$scope.toggleKey].bool = toggleSens;
+        //console.log('RESULT ',window.togglesKey[$scope.toggleKey].bool);
+    } else {
+        //console.log('ADD KEY ',$scope.toggleKey);
+    }
+
+    if (window.togglesKey[active] == undefined) {
+        //console.log('NEW KEY ',$scope.toggleKey);
+        window.togglesKey[active] = [];
+        window.togglesKey[active].push(target);
+        //console.log('RESULT ',window.togglesKey[$scope.toggleKey].bool);
+    } else {
+       
+        window.togglesKey[active].push(target);
+    }
+    //console.log('RESET  KEY ',window.togglesKey[active]);
+
+    $scope.toggles = {};
+
+    $($scope).on(actionToggleType, $scope, function (e) {
+
+        $scope.toggle();
+
+    });
+    $scope.toggle = function () {
+
+        $.each(window.togglesKey[active], function (index, value) {
+
+            if(value != target){
+                $(value).removeClass(classToggle);
+            }
+        
+        });
+        //console.log("TOGGLE ")
+        //console.log('TEST KEY ',window.togglesKey[$scope.toggleKey].bool);
+        if ($scope.toggles[active] == undefined) {
+            $scope.toggles[active] = window.togglesKey[$scope.toggleKey].bool;
+        }
+        window.togglesKey[$scope.toggleKey].bool = !window.togglesKey[$scope.toggleKey].bool;
+        $scope.toggles[active] = window.togglesKey[$scope.toggleKey].bool;
+        $($scope).toggleClass(active);
+        if(window.togglesKey[active].length > 1){
+            target.toggleClass(classToggle);
+        }else{
+            if ($scope.toggles[active]) {
+                target.removeClass(classToggle);
+            } else {
+                target.addClass(classToggle);
+            }
+        }
+        //console.log("TOGGLE ",classToggle,$scope.toggles[active]);
+    }
+    //
+}
+
+moduleManager["doautotheme"] = function () {
+    var $scope = this;
+    var paletteReady = false;
+    var urlInput = $($scope).attr('data-do-input-url');
+    var customTarget = $($scope).attr('data-do-custom-target') || $scope;
+    var urlInputPhoto = urlInput != undefined;
+    var datac = $($scope).attr('data-do-target-container');
+    var imgContainer = datac || $($scope);
+    var imgDom = $("img", imgContainer);
+    var img = imgDom[0];
+    var imgSrc = imgDom.attr('data-src') || imgDom.attr('src');
+    var consoleCss;
+    if (window.doautotheme == null) {
+        window.doautotheme = $scope;
+    }
+
+    $scope.colors = [];
+
+    if (urlInputPhoto) {
+        var inputUrl = $(urlInput);
+        inputUrl.focusout(function () {
+            $scope.forceLoad();
+        })
+    }
+
+    $scope.getPalette = function (targetImg) {
+        if (paletteReady == false) {
+            return;
+        }
+        // https://jariz.github.io/vibrant.js/
+        var vibrant = new Vibrant(targetImg, 64, 5);
+        $scope.swatches = vibrant.swatches();
+        $scope.colors = [];
+        // console.log('__$scope.swatches ',$scope.swatches);
+        for (var swatch in $scope.swatches) {
+            if ($scope.swatches.hasOwnProperty(swatch) && $scope.swatches[swatch]) {
+                $scope.colors.push($scope.swatches[swatch].getHex());
+            }
+        }
+        if ($scope.swatches['Vibrant'] != undefined) {
+            $scope.colors.push($scope.swatches['Vibrant'].getTitleTextColor());
+            var hsv = Please.HEX_to_HSV($scope.swatches['Vibrant'].getHex());
+            result = Please.make_scheme(hsv, { 'scheme_type': 'complementary', format: 'hex' });
+            var result2 = Please.make_color({
+                golden: true,
+                base_color: hsv,
+                saturation: 0.01,
+                value: 0.15,
+                colors_returned: 2,
+                format: 'hex'
+            });
+            var result3 = Please.make_color({
+                golden: true,
+                base_color: Please.HEX_to_HSV(result[1]),
+                saturation: 0.01,
+                value: 0.91,
+                colors_returned: 2,
+                format: 'hex'
+            });
+            $scope.colors.push(result[1]);
+            $scope.colors = $.merge($scope.colors, result2);
+            $scope.colors = $.merge($scope.colors, result3);
+        } else {
+
+            console.log("__error :/");
+            $scope.colors = [];
+            //$scope.forceLoad();
+            return;
+        }
+        var i;
+        //console.log("window.dothemes : ",window.dothemes);
+        if (window.dothemes != null && customTarget == "html") {
+
+            for (i = 0; i < window.dothemes.length; ++i) {
+                var cItem = window.dothemes[i];
+                cItem.pushColors($scope.colors);
+            }
+
+        } else {
+
+            var currentIndex = 0;
+            var customChoice = { "main": 0, "second": 5, "contraste": 2, "extra": 6 };
+            $.each(customChoice, function (key, value) {
+
+                var cssVar = "--" + key + "-color";
+                if (customTarget == "html") {
+                    cssVar = "--" + key;
+                }
+                var color = $scope.colors[value];
+                //console.log("OK --> ",cssVar, color);
+                $(customTarget).css(cssVar, color);
+            });
+
+        }
+
+
+
+
+    }
+
+    $scope.doconsole = function () {
+        var i;
+        var consoleCss = ""
+        for (i = 0; i < window.dothemes.length; ++i) {
+            var cItem = window.dothemes[i];
+            consoleCss += cItem.getCssLine();
+        }
+        $('#console').html(consoleCss);
+    };
+
+    $scope.imageLoaded = function () {
+
+        paletteReady = true;
+        setTimeout(function () {
+            $scope.getPalette(img);
+        }, 0);
+
+    }
+
+    $scope.forceLoad = function () {
+
+        if ($(urlInput).val() == "" && urlInputPhoto) {
+            console.log("$scope.imageLoaded()");
+            img.onload = $scope.imageLoaded();
+
+        } else {
+
+            if (img) {
+                img.remove();
+                img.onload = null;
+                img = null;
+            }
+
+            var tmpImg = new Image();
+            var urlImg = $(urlInput).val() || imgSrc;
+
+            tmpImg.crossOrigin = "anonymous";
+
+            tmpImg.addEventListener("load", function () {
+                img = tmpImg;
+                $scope.imageLoaded();
+            }, false);
+
+            tmpImg.src = urlImg;
+            $(imgContainer).html(tmpImg);
+
+        }
+
+
+    }
+
+    if (urlInputPhoto) {
+
+        $($scope).click(function () {
+            var R = window.innerWidth - Math.floor(window.innerWidth / 10) - Math.floor(Math.random() * 10);
+            $(urlInput).val(imgSrc + R.toString());
+            $scope.forceLoad();
+        });
+
+        var R = window.innerWidth - Math.floor(window.innerWidth / 10) - Math.floor(Math.random() * 10);
+        $(urlInput).val(imgSrc + R.toString());
+        $scope.forceLoad();
+
+    } else {
+
+        $($scope).click(function () {
+            console.log("click")
+            $scope.imageLoaded();
+        });
+        //$scope.imageLoaded();
+        //$scope.forceLoad();
+
+        if (imgDom.prop('complete')) {
+            console.log("deja load")
+            $scope.imageLoaded();
+        } else {
+            console.log("on load")
+            imgDom.on('load', function () {
+                $scope.imageLoaded();
+            });
+        }
+
+
+
+    }
+
+    return $scope;
+
+}
+
+moduleManager["dotheme"] = function () {
+    var $scope = this;
+    var containerItem = $($scope);
+    var currentItem = null;
+
+    var timeOut = null;
+    containerItem.click(function () {
+        containerItem.toggleClass('active');
+    });
+
+    $scope.getCssLine = function () {
+
+        if (currentItem == null) {
+            return "null"
+        }
+        return "$" + currentItem.attr("data-bt-color") + "Color: " + currentItem.attr("data-color") + ";<br>";
+    }
+
+    $scope.changeSelectedColor = function (type, color) {
+
+        var cssVar = "--" + type;
+        //console.log(cssVar);
+        if ($($scope).attr("data-custom-target") != undefined) {
+            $($($scope).attr("data-custom-target")).css(cssVar, color);
+        }
+
+    };
+
+    containerItem.on('click', '[data-bt-color]', function (e) {
+
+        var timeOutDelay = 0;
+        if (currentItem) {
+            timeOutDelay = 300;
+            var tempItem = currentItem;
+            currentItem.removeClass('active');
+        }
+
+        currentItem = $(this);
+        currentItem.addClass('active');
+        $scope.changeSelectedColor(currentItem.attr("data-bt-color"), currentItem.attr("data-color"));
+        clearTimeout(timeOut);
+        timeOut = setTimeout(function () {
+            if (tempItem) {
+                containerItem.append(tempItem);
+            }
+            containerItem.prepend(currentItem);
+        }, timeOutDelay);
+
+        //$('#console').append($scope.getCssLine());
+        window.doautotheme.doconsole();
+
+    });
+
+    $scope.itemsCreat = false;
+    $scope.colorsList = undefined;
+    $scope.itemsList = [];
+    if ($($scope).attr("data-colors") != undefined) {
+
+        $scope.colorsList = $($scope).attr("data-colors").split(",");
+
+    }
+
+    $scope.pushColors = function (colors) {
+
+        var newColors = colors;
+
+        var typeC = $($scope).attr("data-type-color");
+        //console.log("max -- ",newColors.length);
+        var i = 0;
+        for (i = 0; i < newColors.length; ++i) {
+
+            if ($scope.itemsCreat == false) {
+                var cItem = "<div class='color-" + i + "' data-bt-color='" + typeC + "' data-color='" + newColors[i] + "'></div>";
+                containerItem.append(cItem);
+                $scope.itemsList.push(cItem);
+                //console.log("__ __itemsCreat ");
+
+            } else {
+                //console.log("__reset");
+                $(".color-" + i, $scope).removeClass('active');
+            }
+            $(".color-" + i, $scope).attr("data-color", newColors[i]);
+            $(".color-" + i, $scope).css("background-color", newColors[i]);
+
+        }
+
+        var currentIndex = 0;
+        //var customChoice = {"main":0,"second":9,"contraste":6,"extra":5};
+        var customChoice = { "main": 0, "second": 5, "contraste": 2, "extra": 6 };
+        currentIndex = customChoice[typeC];
+
+
+
+
+        $(".color-" + currentIndex, $scope).css("background-color", newColors[currentIndex]);
+        $(".color-" + currentIndex, $scope).attr("data-color", newColors[currentIndex]);
+        $(".color-" + currentIndex, $scope).click();
+        containerItem.toggleClass('active');
+        $scope.itemsCreat = true;
+        //containerItem.click();
+
+    };
+
+    if ($scope.colorsList != undefined) {
+        $scope.pushColors($scope.colorsList);
+    }
+
+    return $scope;
+
+
+}
+
+moduleManager["copyright"] = function () {
+    const d = new Date();
+    $('[data-year]', this).text(d.getFullYear())
+}
+
+moduleManager["do"] = function () {
+    console.log(`DO ${str}`);
+}
+
+moduleManager["dochronos"] = function () {
+    
+    var $target = $(this);
+    var $type = $target.attr('data-do-chronos');
+    var $notrigger = $target.attr('data-do-notrigger') == "true";
+    var $dateStart = $target.attr('data-do-date');
+    // console.log("$dateStart ",$dateStart);
+    var cible = ".do-date";
+    var $container = $(cible, $target);
+
+    var start = new Date('2004-01-01T00:00');
+    if ($dateStart != undefined) {
+        start = new Date($dateStart);
+    }
+    var now = new Date();
+
+    function dayDiff(d1, d2) {
+        d1 = d1.getTime() / 86400000 / 360;
+        d2 = d2.getTime() / 86400000 / 360;
+        return new Number(d2 - d1).toFixed(0);
+    }
+
+
+    var getData = {
+
+        annees: function () {
+            return dayDiff(start, now);
+        },
+        epoque: function () {
+            return start.getFullYear();
+        },
+        number: function () {
+            return Number($target.attr('data-do-number'));
+        }
+
+    }
+
+    var result = { count: $container.text(), max: getData[$type] };
+
+
+
+    if ($notrigger) {
+        gsap.to(result, {
+            duration: 1, count: result.max, onUpdate: function () {
+                $container.text(result.count.toFixed(0));
+            }
+        });
+    } else {
+        gsap.to(result, {
+            count: result.max, onUpdate: function () {
+                $container.text(result.count.toFixed(0));
+            }, scrollTrigger: {
+                trigger: $container,
+                scrub: 1,
+                start: 'bottom bottom',
+                end: 'top top+=50%',
+                ease: 'expo.in'
+            }
+        });
+    }
+
+}
+
+moduleManager["dopara"] = function () {
+    var $scope = this;
+
+    $scope.stage = $($scope).attr("data-do-stage") || false;
+
+    $scope.target = $($scope).attr("data-do-target") || $scope;
+    $scope.triggerContainer = $($scope);
+
+    if($scope.stage != false){
+        $scope.target = $($scope.target,$($scope.stage));
+        $scope.triggerContainer = $($scope.stage);
+    }
+
+    $scope.force = $($scope).attr('data-do-force') || 5;
+    $scope.scrub = Number($($scope).attr('data-do-scrub')) || true;
+    $scope.start = $($scope).attr('data-do-start') || "top top";
+    $scope.end = $($scope).attr('data-do-end') || "bottom top";
+    $scope.type = $($scope).attr('data-do-type-tween') || "to";
+    $scope.tweens = [];
+    $scope.tweens = $($scope).attr('data-do-tween').split(",");
+
+  
+
+    $scope.getParams = function (deph) {
+        let gsapParams = {
+            ease: 'none',
+            scrollTrigger: {
+                trigger: $scope.triggerContainer,
+                start: $scope.start,
+                end: $scope.end,
+                scrub: $scope.scrub
+            }
+        };
+        $.each($scope.tweens, function (index, value) {
+
+            if (value == "scale" || value == "scaleX" || value == "scaleY" || value == "opacity") {
+               // console.log($scope.force * deph)
+                gsapParams[value] = $scope.force * deph;
+            }
+            if (value == "in") {
+                gsapParams["opacity"] = 1;
+            }
+            if (value == "out") {
+                gsapParams["opacity"] = 0;
+            }
+            if (value == "x" || value == "y") {
+                gsapParams[value] = 42 * $scope.force * deph;
+            }
+            if (value == "rotation" || value == "rotationX" || value == "rotationY" || value == "rotationZ") {
+                gsapParams[value] = 1 * $scope.force * deph;
+            }
+
+        });
+        return gsapParams;
+    }
+
+
+    $($scope.target, $scope).each((i, el) => {
+        let deph = Number($(el).attr('data-do-deph')) || 1 + 0.1 * i;
+    
+        ScrollTrigger.matchMedia({
+
+            // desktop
+            "(min-width: 960px)": function() {
+              // setup animations and ScrollTriggers for screens 800px wide or greater (desktop) here...
+              // These ScrollTriggers will be reverted/killed when the media query doesn't match anymore.
+                if ($scope.type == "to") {
+                    gsap.to(el, $scope.getParams(deph));
+                } else {
+                    gsap.from(el, $scope.getParams(deph));
+                }
+            },
+          
+            // mobile
+            "(max-width: 799px)": function() {
+              // The ScrollTriggers created inside these functions are segregated and get
+              // reverted/killed when the media query doesn't match anymore. 
+             
+            },
+              
+            // all 
+            "all": function() {
+              // ScrollTriggers created here aren't associated with a particular media query,
+              // so they persist.
+            }
+              
+          }); 
+
+    });
+
+}
+
+moduleManager["doscrolldatas"] = function () {
+
+    var $scope = this;
+    $scope.target = $($scope).attr("data-do-target") || $scope;
+    $scope.calcul = $($scope).attr("data-do-calcul") || "yoyo";
+    $scope.update = $($scope).attr("data-do-update") == "true" || false;
+    $scope.toggle = $($scope).attr("data-do-toggle") == "true" || false;
+    $scope.classik = $($scope).attr("data-do-classik") == "true" || false;
+
+    var calculType = {};   
+    calculType["yoyo"] = function(pValue){
+
+        var result = pValue;
+        if(pValue >= 0.5){
+            result = 1-pValue;
+        }
+        return Number(result*2).toFixed(4);
+
+    }
+
+    calculType["full"] = function(pValue){
+
+        return pValue;
+
+    }
+
+    ScrollTrigger.create({
+        trigger: $scope.target,
+        start: "top center+=10%",
+        end: "bottom center-=10%",
+        markers:true,
+        onEnter: self => {
+            if($scope.classik){
+                $($scope.target).css("--progress",1);
+                $($scope.target).attr('data-do-progress',1);
+            }
+        },
+        onLeave: self => {
+            if($scope.classik){
+                $($scope.target).css("--progress",1);
+                $($scope.target).attr('data-do-progress',1);
+            }
+        },
+        onEnterBack: self => {
+            if($scope.classik){
+                $($scope.target).css("--progress",1);
+                $($scope.target).attr('data-do-progress',1);
+            }
+        },
+        onLeaveBack: self => {
+            if($scope.classik){
+                $($scope.target).css("--progress",0);
+                $($scope.target).attr('data-do-progress',0);
+            }
+        },
+        onToggle: self => {
+            if($scope.toggle){
+                if(self.isActive){
+                    $($scope.target).css("--progress",1);
+                    $($scope.target).attr('data-do-progress',1);
+                }else{
+                    $($scope.target).css("--progress",0);
+                    $($scope.target).attr('data-do-progress',0);
+                }
+                
+            }
+            console.log("toggled, isActive:", self.isActive)
+        },
+        onUpdate: self => {
+            if($scope.update){
+                //console.log("[scroll-event] progress:", self.progress.toFixed(1), "direction:", self.direction, "velocity", self.getVelocity());
+                $($scope.target).css("--progress",calculType[$scope.calcul](self.progress.toFixed(4)));
+                $($scope.target).attr('data-do-progress',calculType[$scope.calcul](self.progress.toFixed(4)));
+            }
+  
+        }
+    });
+
+}
+
+moduleManager["dotweens"] = function () {
+
+    
+    var $scope = this;
+    $scope.stage = $($scope).attr("data-do-stage") || false;
+
+    $scope.target = $($scope).attr("data-do-target") || $scope;
+    $scope.triggerContainer = $scope;
+
+    if($scope.stage != false){
+        $scope.target = $($scope.target,$($scope.stage));
+        $scope.triggerContainer = $($scope.stage);
+    }
+    $scope.force = $($scope).attr('data-do-force') || 5;
+    $scope.scrub = Number($($scope).attr('data-do-scrub')) || true;
+    $scope.start = $($scope).attr('data-do-start') || "top center+=20%";
+    $scope.end = $($scope).attr('data-do-end') || "bottom center-=20%";
+    $scope.type = $($scope).attr('data-do-type-tween') || "to";
+    $scope.order = $($scope).attr('data-do-order-tween') || "top";
+    $scope.batch = $($scope).attr('data-do-batch-tween') == "true" || false;
+    $scope.motion = $($scope).attr('data-do-motion-tween') || "fade-in";
+    $scope.ease = $($scope).attr('data-do-ease-tween') || "sine.inOut";
+    $scope.duration = $($scope).attr('data-do-duration-tween') || 0.4;
+    $scope.stagger = $($scope).attr('data-do-stagger-tween') || 0.15;
+    $scope.amount = $($scope).attr('data-do-amount-tween') || 1.5;
+
+    if($($scope).attr("data-do-target") != undefined){
+        $scope.target = $($scope.target,$scope);
+    }
+    
+
+    $scope.getParams = function (motion,target,pOverwrite=true) {
+
+        let onParams = [];
+        
+        let tempSetParams = {
+            overwrite: pOverwrite
+        };
+        let tempSetParamsBack = {
+            overwrite: pOverwrite
+        };
+
+        let tempToParams = {
+            stagger: $scope.stagger,
+            overwrite: pOverwrite,
+            duration:$scope.duration
+        };
+
+        
+        let tempToParamsBack = {
+            stagger: $scope.stagger,
+            overwrite: pOverwrite,
+            duration:$scope.duration
+        };
+    
+        if (motion == "fade-in") {
+          
+            tempToParams['opacity'] = 1;
+   
+            onParams["onEnter"] = tempToParams;
+
+            tempSetParams['opacity'] = 0;
+            onParams["onLeave"] = tempSetParams;
+
+            tempToParams['opacity'] = 1;
+            onParams["onEnterBack"] = tempToParams;
+
+            tempSetParams['opacity'] = 0;
+            onParams["onLeaveBack"] = tempSetParams;
+            
+            onParams["init"] = {opacity:0};
+        }
+
+        if (motion == "fade-out") {
+          
+            tempToParams['opacity'] = 0;
+            onParams["onEnter"] = tempToParams;
+
+            tempSetParams['opacity'] = 1;
+            onParams["onLeave"] = tempSetParams;
+
+            tempToParamsBack['opacity'] = 0;
+            onParams["onEnterBack"] = tempToParamsBack;
+
+            tempSetParamsBack['opacity'] = 1;
+            onParams["onLeaveBack"] = tempSetParamsBack;
+            
+            onParams["init"] = {opacity:1};
+        }
+
+        if (motion == "slide-in") {
+            
+
+            tempToParams['opacity'] = 1;
+            tempToParams['y'] = 0;
+            onParams["onEnter"] = tempToParams;
+
+            tempSetParams['opacity'] = 0;
+            tempSetParams['y'] = -62;
+            onParams["onLeave"] = tempSetParams;
+
+            tempToParamsBack['opacity'] = 1;
+            tempToParamsBack['y'] = 0;
+            onParams["onEnterBack"] = tempToParamsBack;
+
+            tempSetParamsBack['opacity'] = 0;
+            tempSetParamsBack['y'] = 62;
+            onParams["onLeaveBack"] = tempSetParamsBack;
+           
+            onParams["init"] = {opacity:0,y:62};
+         
+        }
+
+        if (motion == "slide-out") {
+            
+
+            tempToParams['opacity'] = 0;
+            tempToParams['y'] = 0;
+            onParams["onEnter"] = tempToParams;
+
+            tempSetParams['opacity'] = 1;
+            tempSetParams['y'] = -62;
+            onParams["onLeave"] = tempSetParams;
+
+            tempToParamsBack['opacity'] = 0;
+            tempToParamsBack['y'] = 0;
+            onParams["onEnterBack"] = tempToParamsBack;
+
+            tempSetParamsBack['opacity'] = 1;
+            tempSetParamsBack['y'] = 62;
+            onParams["onLeaveBack"] = tempSetParamsBack;
+           
+            onParams["init"] = {opacity:1,y:62};
+         
+        }
+
+        if (motion == "slide-in-percent") {
+            
+
+            tempToParams['opacity'] = 1;
+            tempToParams['y'] = 0;
+            onParams["onEnter"] = tempToParams;
+
+            tempSetParams['opacity'] = 0;
+            tempSetParams['y'] = "-=50%";
+            onParams["onLeave"] = tempSetParams;
+
+            tempToParamsBack['opacity'] = 1;
+            tempToParamsBack['y'] = 0;
+            onParams["onEnterBack"] = tempToParamsBack;
+
+            tempSetParamsBack['opacity'] = 0;
+            tempSetParamsBack['y'] = "+=50%";
+            onParams["onLeaveBack"] = tempSetParamsBack;
+           
+            onParams["init"] = {opacity:0,y:"+=50%"};
+         
+        }
+
+        if (motion == "zoom-in") {
+            
+
+            
+            tempToParams['scale'] = 1;
+            onParams["onEnter"] = tempToParams;
+
+            
+            tempSetParams['scale'] = 0;
+            onParams["onLeave"] = tempSetParams;
+
+            
+            tempToParamsBack['scale'] = 1;
+            onParams["onEnterBack"] = tempToParamsBack;
+
+            
+            tempSetParamsBack['scale'] = 0;
+            onParams["onLeaveBack"] = tempSetParamsBack;
+
+            onParams["init"] = {scale:0};
+             
+        }
+
+        return onParams;
+    }
+
+  
+    if($scope.batch){
+
+        var params = $scope.getParams($scope.motion,$scope.target);
+        gsap.set($scope.target,params["init"]);
+       
+        ScrollTrigger.batch($scope.target, {
+            onEnter: batch => gsap.to(batch,  params["onEnter"]),
+            onLeave: batch => gsap.set(batch, params["onLeave"] ),
+            onEnterBack: batch => gsap.to(batch, params["onEnterBack"] ),
+            onLeaveBack: batch => gsap.set(batch, params["onLeaveBack"] ),
+            start: $scope.start,
+            end: $scope.end,
+            marker:false
+        });
+        ScrollTrigger.addEventListener("refreshInit", () => gsap.set($scope.target, params["init"]));
+        
+    }else{
+
+        var params = $scope.getParams($scope.motion,$scope.target,false);
+        gsap.set($scope.target,params["init"]);
+
+        var tl = gsap.timeline({scrollTrigger:{
+            trigger:$scope.triggerContainer,
+            start: $scope.start,
+            end: $scope.end,
+            scrub: $scope.scrub,
+            toggleActions:"play resume play pause",
+            markers:true
+        }});
+
+        var np = params["onEnter"];
+        np["ease"] = "sine.inOut";
+        np["stagger"] = { // wrap advanced options in an object
+            amount: $scope.amount,
+            from: $scope.order,
+            ease: $scope.ease,
+            repeat: 0 // Repeats immediately, not waiting for the other staggered animations to finish
+          }
+
+        tl.to($scope.target, np); 
+    }
+}
+
+moduleManager["dotrigger"] = function () {
+    
+    var $scope = this;
+    $scope.toggle = $($scope).attr("data-do-trigger") == "true";
+    $scope.target = $($scope).attr("data-do-target");
+    $scope.classToggle = $($scope).attr("data-do-class") || "active"
+    $scope.creatNav = $($scope).attr("data-do-scroll-nav") == "true";
+    $scope.targetNav = $($scope).attr("data-do-target-nav");
+    $scope.targetNavOffsetY = $($scope).attr("data-do-target-nav-offset-y") ||90;
+    $scope.btName = $($scope).attr("data-do-bt-name");
+    $scope.start = $($scope).attr('data-do-start') || "top center";
+    $scope.end = $($scope).attr('data-do-end') || "bottom center";
+
+    $scope.isClone = false;
+                
+    var initScrollNav = function() {
+
+        var menu = $($scope.targetNav);
+        var win = $(window);
+
+        $('a', menu) .click(function (event) {
+        event.preventDefault();
+        
+        var scope = $(this),
+        href = scope.attr("href"),
+        topY = $(href).offset().top - $scope.targetNavOffsetY;
+    
+    
+        TweenMax.to(win, 1, {
+            scrollTo: {
+            y: topY,
+            autoKill: true
+            },
+            ease: Power3.easeOut
+        });
+    
+        return false;
+        });
+    
+    }
+
+    if($scope.creatNav){
+       
+        var idSection = $($scope).attr("data-do-section-id") || $($scope).attr("id");
+
+        if(window.WFmodules[$scope.targetNav.toString()] == undefined){
+            window.WFmodules[$scope.targetNav.toString()] = $("li", $scope.targetNav);
+            window.WFmodules[$scope.targetNav.toString()].remove();
+        }
+        var tpl = window.WFmodules[$scope.targetNav.toString()];
+        var clone = tpl.clone();
+       
+        $("ul", $scope.targetNav).append(clone);
+        $("span", clone).html($scope.btName);
+        $("a", clone).attr("href","#"+idSection);
+        $scope.targetClone = $("a", clone);
+        $scope.isClone = true;
+
+        initScrollNav();
+
+    }
+
+    ScrollTrigger.create({
+        trigger: $scope,
+        start: $scope.start,
+        end: $scope.end,
+
+        onToggle: function () {
+            $scope.toggle = !$scope.toggle;
+            $($scope).toggleClass("active");
+            //console.log("toggle ",$scope.toggle);
+            $($scope).attr("data-do-trigger", $scope.toggle);
+
+            if ($scope.target && $scope.isClone == false) {
+                $($scope.target).toggleClass($scope.classToggle);
+                $.event.trigger({
+                    type: "darkMode",
+                    class: $scope.classToggle,
+                    toggle: $scope.toggle     
+                });
+            }
+            if($scope.isClone){
+               // console.log("targetClone ",$scope.classToggle);
+                $scope.targetClone.toggleClass($scope.classToggle);
+            }
+        },
+
+    });
+
+}
+
+moduleManager["dotexture"] = function () {
+    var $scope = $(this);
+    $scope.append('<div class="texture"></div>');
+
+}
+
+moduleManager["dochange"] = function () {
+    const $scope = this;
+    var $target = $($scope);
+    var $container = $('.do-span', $target);
+    var $mainColor = $target.css("--main-color");
+    var $baseColor = $target.css("color");
+    var $mots = $target.attr('data-do-change').split(",");
+    var $max = $mots.length;
+    $mots.push($container.text());
+
+    var random = $target.attr('data-do-random') == "true";
+    var index = 0;
+    var duration = 0.2;
+    var delay = 3;
+
+    var stateActive = false;
+    var stateAnim = false;
+
+    $scope.random = function (exclude) {
+
+        var r = Math.floor(Math.random() * ($max + 1));
+
+        while (r == exclude) {
+            r = Math.floor(Math.random() * ($max + 1));
+
+        }
+
+        return r;
+    }
+    $scope.randomDelay = function () {
+        if (random) {
+            return Number(2 + Math.floor(Math.random() * 4));
+        } else {
+            return delay;
+        }
+    }
+
+    $scope.changeMot = function () {
+
+        if (stateActive == false) {
+            return;
+        }
+
+        stateAnim = true;
+        gsap.to($container, {
+            duration: duration / 2, delay: $scope.randomDelay, color: $mainColor, opacity: 0, y: -5, onComplete: function () {
+
+                var newMot = $mots[index];
+                $container.text(newMot);
+
+                $container.attr("data-do-fx", "wtf");
+                setTimeout(function () {
+                    $container.attr("data-do-fx", "none");
+                }, 200);
+
+                gsap.fromTo($container, { duration: duration * 50, y: 5, color: $mainColor }, {
+                    opacity: 1, y: 0, color: $baseColor, onComplete: function () {
+
+                        stateAnim = false;
+                        if (stateActive == true) {
+                            $scope.changeMot();
+                        }
+
+                    }
+                })
+                if (random) {
+
+                    index = $scope.random(index);
+
+                } else {
+                    index++;
+                    if (index > $max) {
+                        index = 0;
+                    }
+                }
+
+            }
+        })
+    }
+
+    $scope.getCurrentSection = function () {
+
+        var isActive = $target.hasClass("ok");
+        if (stateActive != isActive) {
+
+            stateActive = isActive;
+            if (stateAnim == false) {
+                $scope.changeMot();
+            }
+
+        }
+
+    }
+
+    ScrollTrigger.create({
+        trigger: this,
+        start: 'bottom bottom-=10%',
+        end: 'top top+=10%',
+        toggleClass: { targets: $target, className: "ok" },
+        onUpdate: $scope.getCurrentSection
+    });
+}
+
+window.WFmodules = moduleManager;

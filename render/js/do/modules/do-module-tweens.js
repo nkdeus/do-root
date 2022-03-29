@@ -1,1 +1,237 @@
-var moduleManager=window.WFmodules;(moduleManager=null==moduleManager?{}:moduleManager).dotweens=function(){var a,t,e,g=this;g.stage=$(g).attr("data-do-stage")||!1,g.target=$(g).attr("data-do-target")||g,0!=(g.triggerContainer=g).stage&&(g.target=$(g.target,$(g.stage)),g.triggerContainer=$(g.stage)),g.force=$(g).attr("data-do-force")||5,g.scrub=Number($(g).attr("data-do-scrub"))||!0,g.start=$(g).attr("data-do-start")||"top center+=20%",g.end=$(g).attr("data-do-end")||"bottom center-=20%",g.type=$(g).attr("data-do-type-tween")||"to",g.order=$(g).attr("data-do-order-tween")||"top",g.batch="true"==$(g).attr("data-do-batch-tween")||!1,g.motion=$(g).attr("data-do-motion-tween")||"fade-in",g.ease=$(g).attr("data-do-ease-tween")||"sine.inOut",g.duration=$(g).attr("data-do-duration-tween")||.4,g.stagger=$(g).attr("data-do-stagger-tween")||.15,g.amount=$(g).attr("data-do-amount-tween")||1.5,null!=$(g).attr("data-do-target")&&(g.target=$(g.target,g)),g.getParams=function(t,a,e=!0){let o=[],r={overwrite:e},n={overwrite:e},i={stagger:g.stagger,overwrite:e,duration:g.duration},c={stagger:g.stagger,overwrite:e,duration:g.duration};return"fade-in"==t&&(i.opacity=1,o.onEnter=i,r.opacity=0,o.onLeave=r,i.opacity=1,o.onEnterBack=i,r.opacity=0,o.onLeaveBack=r,o.init={opacity:0}),"fade-out"==t&&(i.opacity=0,o.onEnter=i,r.opacity=1,o.onLeave=r,c.opacity=0,o.onEnterBack=c,n.opacity=1,o.onLeaveBack=n,o.init={opacity:1}),"slide-in"==t&&(i.opacity=1,i.y=0,o.onEnter=i,r.opacity=0,r.y=-62,o.onLeave=r,c.opacity=1,c.y=0,o.onEnterBack=c,n.opacity=0,n.y=62,o.onLeaveBack=n,o.init={opacity:0,y:62}),"slide-out"==t&&(i.opacity=0,i.y=0,o.onEnter=i,r.opacity=1,r.y=-62,o.onLeave=r,c.opacity=0,c.y=0,o.onEnterBack=c,n.opacity=1,n.y=62,o.onLeaveBack=n,o.init={opacity:1,y:62}),"slide-in-percent"==t&&(i.opacity=1,i.y=0,o.onEnter=i,r.opacity=0,r.y="-=50%",o.onLeave=r,c.opacity=1,c.y=0,o.onEnterBack=c,n.opacity=0,n.y="+=50%",o.onLeaveBack=n,o.init={opacity:0,y:"+=50%"}),"zoom-in"==t&&(i.scale=1,o.onEnter=i,r.scale=0,o.onLeave=r,c.scale=1,o.onEnterBack=c,n.scale=0,o.onLeaveBack=n,o.init={scale:0}),o},g.batch?(a=g.getParams(g.motion,g.target),gsap.set(g.target,a.init),ScrollTrigger.batch(g.target,{onEnter:t=>gsap.to(t,a.onEnter),onLeave:t=>gsap.set(t,a.onLeave),onEnterBack:t=>gsap.to(t,a.onEnterBack),onLeaveBack:t=>gsap.set(t,a.onLeaveBack),start:g.start,end:g.end,marker:!1}),ScrollTrigger.addEventListener("refreshInit",()=>gsap.set(g.target,a.init))):(a=g.getParams(g.motion,g.target,!1),gsap.set(g.target,a.init),t=gsap.timeline({scrollTrigger:{trigger:g.triggerContainer,start:g.start,end:g.end,scrub:g.scrub,toggleActions:"play resume play pause"}}),(e=a.onEnter).ease="sine.inOut",e.stagger={amount:g.amount,from:g.order,ease:g.ease,repeat:0},t.to(g.target,e))},window.WFmodules=moduleManager;
+// doXXX version 1
+// update : 9 marss 2022
+
+var moduleManager = window.WFmodules;
+if(moduleManager == undefined){
+    moduleManager = {};
+}
+
+moduleManager["dotweens"] = function () {
+
+    
+    var $scope = this;
+    $scope.stage = $($scope).attr("data-do-stage") || false;
+
+    $scope.target = $($scope).attr("data-do-target") || $scope;
+    $scope.triggerContainer = $scope;
+
+    if($scope.stage != false){
+        $scope.target = $($scope.target,$($scope.stage));
+        $scope.triggerContainer = $($scope.stage);
+    }
+    $scope.force = $($scope).attr('data-do-force') || 5;
+    $scope.scrub = Number($($scope).attr('data-do-scrub')) || true;
+    $scope.start = $($scope).attr('data-do-start') || "top center+=20%";
+    $scope.end = $($scope).attr('data-do-end') || "bottom center-=20%";
+    $scope.type = $($scope).attr('data-do-type-tween') || "to";
+    $scope.order = $($scope).attr('data-do-order-tween') || "top";
+    $scope.batch = $($scope).attr('data-do-batch-tween') == "true" || false;
+    $scope.motion = $($scope).attr('data-do-motion-tween') || "fade-in";
+    $scope.ease = $($scope).attr('data-do-ease-tween') || "sine.inOut";
+    $scope.duration = $($scope).attr('data-do-duration-tween') || 0.4;
+    $scope.stagger = $($scope).attr('data-do-stagger-tween') || 0.15;
+    $scope.amount = $($scope).attr('data-do-amount-tween') || 1.5;
+
+    if($($scope).attr("data-do-target") != undefined){
+        $scope.target = $($scope.target,$scope);
+    }
+    
+
+    $scope.getParams = function (motion,target,pOverwrite=true) {
+
+        let onParams = [];
+        
+        let tempSetParams = {
+            overwrite: pOverwrite
+        };
+        let tempSetParamsBack = {
+            overwrite: pOverwrite
+        };
+
+        let tempToParams = {
+            stagger: $scope.stagger,
+            overwrite: pOverwrite,
+            duration:$scope.duration
+        };
+
+        
+        let tempToParamsBack = {
+            stagger: $scope.stagger,
+            overwrite: pOverwrite,
+            duration:$scope.duration
+        };
+    
+        if (motion == "fade-in") {
+          
+            tempToParams['opacity'] = 1;
+   
+            onParams["onEnter"] = tempToParams;
+
+            tempSetParams['opacity'] = 0;
+            onParams["onLeave"] = tempSetParams;
+
+            tempToParams['opacity'] = 1;
+            onParams["onEnterBack"] = tempToParams;
+
+            tempSetParams['opacity'] = 0;
+            onParams["onLeaveBack"] = tempSetParams;
+            
+            onParams["init"] = {opacity:0};
+        }
+
+        if (motion == "fade-out") {
+          
+            tempToParams['opacity'] = 0;
+            onParams["onEnter"] = tempToParams;
+
+            tempSetParams['opacity'] = 1;
+            onParams["onLeave"] = tempSetParams;
+
+            tempToParamsBack['opacity'] = 0;
+            onParams["onEnterBack"] = tempToParamsBack;
+
+            tempSetParamsBack['opacity'] = 1;
+            onParams["onLeaveBack"] = tempSetParamsBack;
+            
+            onParams["init"] = {opacity:1};
+        }
+
+        if (motion == "slide-in") {
+            
+
+            tempToParams['opacity'] = 1;
+            tempToParams['y'] = 0;
+            onParams["onEnter"] = tempToParams;
+
+            tempSetParams['opacity'] = 0;
+            tempSetParams['y'] = -62;
+            onParams["onLeave"] = tempSetParams;
+
+            tempToParamsBack['opacity'] = 1;
+            tempToParamsBack['y'] = 0;
+            onParams["onEnterBack"] = tempToParamsBack;
+
+            tempSetParamsBack['opacity'] = 0;
+            tempSetParamsBack['y'] = 62;
+            onParams["onLeaveBack"] = tempSetParamsBack;
+           
+            onParams["init"] = {opacity:0,y:62};
+         
+        }
+
+        if (motion == "slide-out") {
+            
+
+            tempToParams['opacity'] = 0;
+            tempToParams['y'] = 0;
+            onParams["onEnter"] = tempToParams;
+
+            tempSetParams['opacity'] = 1;
+            tempSetParams['y'] = -62;
+            onParams["onLeave"] = tempSetParams;
+
+            tempToParamsBack['opacity'] = 0;
+            tempToParamsBack['y'] = 0;
+            onParams["onEnterBack"] = tempToParamsBack;
+
+            tempSetParamsBack['opacity'] = 1;
+            tempSetParamsBack['y'] = 62;
+            onParams["onLeaveBack"] = tempSetParamsBack;
+           
+            onParams["init"] = {opacity:1,y:62};
+         
+        }
+
+        if (motion == "slide-in-percent") {
+            
+
+            tempToParams['opacity'] = 1;
+            tempToParams['y'] = 0;
+            onParams["onEnter"] = tempToParams;
+
+            tempSetParams['opacity'] = 0;
+            tempSetParams['y'] = "-=50%";
+            onParams["onLeave"] = tempSetParams;
+
+            tempToParamsBack['opacity'] = 1;
+            tempToParamsBack['y'] = 0;
+            onParams["onEnterBack"] = tempToParamsBack;
+
+            tempSetParamsBack['opacity'] = 0;
+            tempSetParamsBack['y'] = "+=50%";
+            onParams["onLeaveBack"] = tempSetParamsBack;
+           
+            onParams["init"] = {opacity:0,y:"+=50%"};
+         
+        }
+
+        if (motion == "zoom-in") {
+            
+
+            
+            tempToParams['scale'] = 1;
+            onParams["onEnter"] = tempToParams;
+
+            
+            tempSetParams['scale'] = 0;
+            onParams["onLeave"] = tempSetParams;
+
+            
+            tempToParamsBack['scale'] = 1;
+            onParams["onEnterBack"] = tempToParamsBack;
+
+            
+            tempSetParamsBack['scale'] = 0;
+            onParams["onLeaveBack"] = tempSetParamsBack;
+
+            onParams["init"] = {scale:0};
+             
+        }
+
+        return onParams;
+    }
+
+  
+    if($scope.batch){
+
+        var params = $scope.getParams($scope.motion,$scope.target);
+        gsap.set($scope.target,params["init"]);
+       
+        ScrollTrigger.batch($scope.target, {
+            onEnter: batch => gsap.to(batch,  params["onEnter"]),
+            onLeave: batch => gsap.set(batch, params["onLeave"] ),
+            onEnterBack: batch => gsap.to(batch, params["onEnterBack"] ),
+            onLeaveBack: batch => gsap.set(batch, params["onLeaveBack"] ),
+            start: $scope.start,
+            end: $scope.end,
+            marker:false
+        });
+        ScrollTrigger.addEventListener("refreshInit", () => gsap.set($scope.target, params["init"]));
+        
+    }else{
+
+        var params = $scope.getParams($scope.motion,$scope.target,false);
+        gsap.set($scope.target,params["init"]);
+
+        var tl = gsap.timeline({scrollTrigger:{
+            trigger:$scope.triggerContainer,
+            start: $scope.start,
+            end: $scope.end,
+            scrub: $scope.scrub,
+            toggleActions:"play resume play pause"
+        }});
+
+        var np = params["onEnter"];
+        np["ease"] = "sine.inOut";
+        np["stagger"] = { // wrap advanced options in an object
+            amount: $scope.amount,
+            from: $scope.order,
+            ease: $scope.ease,
+            repeat: 0 // Repeats immediately, not waiting for the other staggered animations to finish
+          }
+
+        tl.to($scope.target, np); 
+    }
+}
+
+window.WFmodules = moduleManager;

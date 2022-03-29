@@ -1,1 +1,226 @@
-var moduleManager=window.WFmodules;(moduleManager=null==moduleManager?{}:moduleManager).dofilters=function(){const o=this;o.stage=$($(o).attr("data-do-stage")||"#items-container"),o.target=$(o).attr("data-do-target"),o.subTarget=$(o).attr("data-do-sub-target"),o.nav=$(o).attr("data-do-nav")||"#nav-filters",o.type=$(o).attr("data-do-type")||"solo",o.toggleClass=$(o).attr("data-do-class-toggle")||"active:do-hide",o.btToggleClass=$(o).attr("data-do-class-toggle-bt")||"active",o.defaultClass=$(o).attr("data-do-class-default")||"do-block",o.customData=$(o).attr("data-do-custom-data")||"data-do-tag",o.inputArea=$(o).attr("data-do-target-input")||"rechercheArea",o.sep=$(o).attr("data-do-sep")||"/",o.tagIndex=parseInt($(o).attr("data-do-tag-index"))||1;var n=[],l={},e=[],s=[],d=void 0,i=[];$(o.nav).find("a").each(function(){var a=$(this),t=(s.push(a),a.attr("href").split(o.sep)[o.tagIndex]);a.attr(o.customData,t),e.push(t),console.log("push ",t),l[t]=[],a.click(function(a){a.preventDefault(),o.updateTag($(this).attr(o.customData),$(this))})}),$.each($(o.target,o.stage),function(a,t){var t=$(t),e=(t.addClass(o.defaultClass),t.addClass(o.toggleClass),t.attr("href")),e=(e=null!=o.subTarget?t.find(o.subTarget).attr("href"):e).split(o.sep),e=$.grep(e,function(a){return""!=a||a}),s=(console.log("tempsTags ",e),{id:a,instance:t,tags:e});n.push(s),$.each(s.tags,function(a,t){l[t]&&l[t].push(s)})}),o.resetNav=function(a=void 0){(null==a?$(o.nav).find("a"):a).removeClass(o.btToggleClass)},o.activeItems=function(a){$.each(a,function(a,t){t.instance.removeClass(o.toggleClass),gsap.fromTo(t.instance,{duration:.5,opacity:0},{opacity:1})})},o.resetStage=function(a){o.stage.removeClass("active"),i=[],$.each(a,function(a,t){t.instance.addClass(o.toggleClass)}),d=void 0},o.containsAny=function(a,t){return 0<a.filter(function(a){return-1<t.indexOf(a)}).length},o.removeOneTag=function(a){i.splice($.inArray(a,i),1),console.log("multi : ",a," remove from array ",i),d="",$.each(l[a],function(a,t){o.containsAny(i,t.tags)||t.instance.addClass(o.toggleClass)}),$("["+o.customData+"="+a+"]").removeClass(o.btToggleClass),0==i.length&&(o.stage.removeClass("active"),d=void 0,$(o.nav).find("a").removeClass(o.btToggleClass))},o.activeOneTag=function(a){$.each(a,function(a,t){t.instance.removeClass(o.toggleClass),gsap.fromTo(t.instance,{duration:.5,opacity:0},{opacity:1})})},o.activeTags=function(){$.each(i,function(a,t){$("["+o.customData+"="+t+"]").addClass(o.btToggleClass),o.activeOneTag(l[t])})},o.updateTag=function(a,t=void 0){"solo"==o.type&&o.resetNav(),null==d?(console.log("[pas de filtre activé encore]"),o.stage.addClass("active"),o.activeItems(l[a]),d=a,i.push(d),t.addClass(o.btToggleClass)):a==d||null==a?(console.log("[tag identique ou tag undefined]"),"solo"==o.type?o.resetStage(l[d]):null!=a&&o.removeOneTag(a),t&&t.removeClass(o.btToggleClass)):(console.log("[nouveau tag]"),o.stage.addClass("active"),d=a,"solo"==o.type?($(o.target).addClass(o.toggleClass),t.addClass(o.btToggleClass),o.activeOneTag(l[d])):(-1!==$.inArray(d,i)?(console.log("multi : ",d," deja dans array ",i),o.updateTag(d)):(t.addClass(o.btToggleClass),i.push(d),console.log("multi : ",d," nouveau dans array ",i),o.activeOneTag(l[d])),console.log("multi : new result ",i)))},o.autocomplete=function(a,s,o){var n=!1;a.addEventListener("input",function(a){var t,e=this.value;if(n=!1,!e)return o(void 0),!1;for(t=0;t<s.length;t++)s[t].substr(0,e.length).toUpperCase()==e.toUpperCase()&&(n=!0,o(s[t]),(void 0).appendChild(void 0));0==n&&o(void 0)})},o.resultRecherche=function(a){a!=d&&(null==a?o.updateTag(a):o.updateTag(a,$("["+o.customData+"="+a+"]")))},o.autocomplete(document.getElementById(o.inputArea),e,o.resultRecherche)},window.WFmodules=moduleManager;
+// dofilters version 1
+// update : 8 marss 2022
+
+var moduleManager = window.WFmodules;
+if(moduleManager == undefined){
+    moduleManager = {};
+}
+
+moduleManager["dofilters"] = function () {
+
+    const $scope = this;
+    //data-do-stage="#items-container" data-do-target=".js-tween-item3" data-do-nav="#nav-filters" data-do-type="solo" data-do-class-toggle="active"
+    $scope.stage = $($($scope).attr("data-do-stage") || "#items-container");
+    $scope.target = $($scope).attr("data-do-target");
+    $scope.subTarget = $($scope).attr("data-do-sub-target");
+    $scope.nav = $($scope).attr("data-do-nav") || "#nav-filters";
+    $scope.type = $($scope).attr("data-do-type") || "solo"; // solo || multi
+    $scope.toggleClass = $($scope).attr("data-do-class-toggle") || "active:do-hide";
+    $scope.btToggleClass = $($scope).attr("data-do-class-toggle-bt") || "active";
+    $scope.defaultClass = $($scope).attr("data-do-class-default") || "do-block";
+    $scope.customData = $($scope).attr("data-do-custom-data") || "data-do-tag";
+    $scope.inputArea = $($scope).attr("data-do-target-input") || "rechercheArea";
+    $scope.sep = $($scope).attr("data-do-sep") || "/";
+    $scope.tagIndex = parseInt($($scope).attr("data-do-tag-index")) || 1;
+
+    var datas = [];
+    var tags = {};
+    var autoCompleteList = [];
+    var bts = [];
+    var currentTag = undefined;
+    var currentTags = [];
+
+    var item = {
+        id:"",
+        instance:"",
+        tags:""
+    }
+
+    $($scope.nav).find('a').each(function() {  
+        var bt = $(this);
+        bts.push(bt);
+        var tag = bt.attr("href").split($scope.sep)[$scope.tagIndex];
+        bt.attr($scope.customData,tag);
+        autoCompleteList.push(tag);
+        console.log("push ",tag);
+        tags[tag] = [];
+    
+        bt.click(function (event) {
+            event.preventDefault();
+            $scope.updateTag($(this).attr($scope.customData),$(this));
+        });     
+    });
+
+    $.each($($scope.target,$scope.stage), function (key, value) {         
+        var instance = $(value);
+        
+        instance.addClass($scope.defaultClass);
+        instance.addClass($scope.toggleClass);     
+        var tagsToSplit = instance.attr("href");
+        if($scope.subTarget != undefined){
+            tagsToSplit = instance.find($scope.subTarget).attr("href");
+        }
+        var tempsTags = tagsToSplit.split($scope.sep);
+        tempsTags = $.grep(tempsTags,function(n){ return n != '' || n });
+
+        console.log("tempsTags ",tempsTags);
+  
+        var item = 
+        {
+            id:key,
+            instance:instance,
+            tags:tempsTags
+        }
+        datas.push(item);
+        $.each(item.tags, function (key, value) {
+           
+            if(tags[value]){
+                tags[value].push(item);
+            }
+           
+        });
+    });
+
+    $scope.resetNav = function(pBt=undefined){
+        if(pBt == undefined){
+            $($scope.nav).find('a').removeClass($scope.btToggleClass);
+        }else{
+            pBt.removeClass($scope.btToggleClass);
+        }
+    }
+
+    $scope.activeItems = function(pItems){
+        $.each(pItems, function (key, value) {
+            value.instance.removeClass($scope.toggleClass);
+            gsap.fromTo(value.instance, { duration: 0.5, opacity:0 }, { opacity: 1 });
+        });
+    }
+
+    $scope.resetStage = function(pItems){
+        $scope.stage.removeClass('active');
+        currentTags = [];
+        $.each(pItems, function (key, value) {
+            value.instance.addClass($scope.toggleClass);
+        });
+        currentTag = undefined;
+    }
+
+    $scope.containsAny = function(source,target){
+        var result = source.filter(function(item){ return target.indexOf(item) > -1});   
+        return (result.length > 0);  
+    } 
+    
+    $scope.removeOneTag = function(pTag){
+        currentTags.splice($.inArray(pTag ,currentTags),1);
+        console.log("multi : ",pTag," remove from array ",currentTags);
+        currentTag = "";
+        $.each(tags[pTag], function (key, value) {
+            if(!$scope.containsAny(currentTags,value.tags)){
+                value.instance.addClass($scope.toggleClass);
+            }
+        });
+        $("["+$scope.customData+"="+pTag+"]").removeClass($scope.btToggleClass);
+        if(currentTags.length == 0){
+            $scope.stage.removeClass('active');
+            currentTag = undefined;
+            $($scope.nav).find('a').removeClass($scope.btToggleClass);
+        }
+    }
+
+    $scope.activeOneTag = function(pItems){
+        $.each(pItems, function (key, value) {
+            value.instance.removeClass($scope.toggleClass);
+            gsap.fromTo(value.instance, { duration: 0.5, opacity:0 }, { opacity: 1 });
+        });
+    }
+
+    $scope.activeTags = function(){
+        $.each(currentTags, function (key, value) {
+            $("["+$scope.customData+"="+value+"]").addClass($scope.btToggleClass);
+            $scope.activeOneTag(tags[value]);
+        });
+    }
+
+    $scope.updateTag = function(pTag,pBt=undefined){
+        var tag = pTag;
+        if($scope.type == "solo"){
+            $scope.resetNav();
+        }
+        if(currentTag == undefined){
+            console.log("[pas de filtre activé encore]");
+            $scope.stage.addClass('active');
+            $scope.activeItems(tags[tag]);
+            currentTag = tag;
+            currentTags.push(currentTag);
+            pBt.addClass($scope.btToggleClass);
+        }else if(tag == currentTag || tag == undefined){
+            console.log("[tag identique ou tag undefined]");
+            if($scope.type == "solo"){
+                $scope.resetStage(tags[currentTag]);
+            }else if(tag != undefined){
+                $scope.removeOneTag(tag);
+            }
+            if(pBt){
+                pBt.removeClass($scope.btToggleClass);
+            }          
+        }else{
+            console.log("[nouveau tag]");          
+            $scope.stage.addClass('active');
+            currentTag = tag;
+            if($scope.type == "solo"){
+                $($scope.target).addClass($scope.toggleClass);
+                pBt.addClass($scope.btToggleClass);
+                $scope.activeOneTag(tags[currentTag]);
+            }else{
+                if($.inArray(currentTag, currentTags) !== -1){
+                    console.log("multi : ",currentTag," deja dans array ",currentTags);
+                    $scope.updateTag(currentTag);
+                }else{     
+                    pBt.addClass($scope.btToggleClass);
+                    currentTags.push(currentTag);
+                    console.log("multi : ",currentTag," nouveau dans array ",currentTags);
+                    $scope.activeOneTag(tags[currentTag]);
+                }     
+                console.log("multi : new result ",currentTags);
+            }
+        }
+    }
+
+    $scope.autocomplete = function(inp, arr, callback) {
+        var success = false;
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;     
+            success = false;     
+            if (!val) {     
+                callback(undefined);
+                return false;  
+            }
+            for (i = 0; i < arr.length; i++) {    
+                if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {         
+                success = true;
+                callback(arr[i]);
+                a.appendChild(b);
+                }
+            }
+            if(success == false){
+                callback(undefined);
+            }
+        });     
+        }
+
+    $scope.resultRecherche = function(pTag){
+        if(pTag == currentTag){
+            return;
+        }
+        if(pTag == undefined){
+            $scope.updateTag(pTag);
+        }else{
+            $scope.updateTag(pTag,$("["+$scope.customData+"="+pTag+"]"));
+        }
+    };
+
+    $scope.autocomplete(document.getElementById($scope.inputArea),autoCompleteList, $scope.resultRecherche);
+
+}
+
+window.WFmodules = moduleManager;

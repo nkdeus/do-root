@@ -20,6 +20,15 @@ Core de la créature
     @return strip-unit($px) / $base-font-size * 1rem;
 }
 
+@function getMinPx($pValue){
+    @return math.round(10 +( $pValue * 3 )) * 1px;
+}
+
+@function getFontSize($pValue, $pValueMin){
+    @return max(#{$pValue}, #{$pValueMin});
+}
+
+
 @function decimal-round($number, $digits: 0, $mode: round) {
     $n: 1;
     // $number must be a number
@@ -152,6 +161,26 @@ Core de la créature
                 );
                 #{$prop}: $percent;
             }
+        } @else if $class == 'fs'{
+
+            font-size: getFontSize($value * $unit,getMinPx($value));
+            line-height: 1.2;
+            margin-block-end:0.5rem;
+
+            &.reset{
+                margin-block-start:0;
+                margin-block-end:0 ;
+            }        
+            &.big {
+                font-size: $value * $unit * $do !important;
+            }
+            &.small {
+                font-size: math.div($value * $unit, $do) !important;
+            }
+            &.medium {
+                font-size: math.div($value * $unit, math.div($do , 2)) !important;
+            }
+ 
         } @else {
             @each $prop in $props {
                 @if $important {
@@ -162,21 +191,6 @@ Core de la créature
             }
         }
 
-        @if $class == 'fs' {
-            line-height: 1.5;
-            &.big {
-                font-size: $value * $unit * $do !important;
-            }
-            &.small {
-                font-size: math.div($value * $unit, $do) !important;
-            }
-            &.medium {
-                font-size: math.div($value * $unit, 1.2) !important;
-            }
-            &.reset-x {
-                transform: translateX(-0.075em);
-            }
-        }
     }
 }
 
@@ -277,10 +291,9 @@ Core de la créature
     }
 }
 
-@mixin do-get-data-2($var-name,$size-do,$size) {
+@mixin do-get-data($var-name,$size-do,$size) {
 
-    @each $data-class, $props in $do-custom-data-2 {
-
+    @each $data-class, $props in $do-custom-data {
 
         $prop : map.get($props,"prop");
         $params : map.get($props,"params");
@@ -390,40 +403,6 @@ Core de la créature
     
 }
 
-@mixin do-get-data($var-name,$size-do,$size) {
-
-    @each $data-class, $var-name in $do-custom-data {
-
-        $class-full-name : get-#{$var-name}\:#{$data-class}-#{$size-do};
-  
-        //@debug("TODO SUPPRIMER LES SIZES POUR LES CLASS SIMPLES");
-        .#{$class-full-name}{
-            //@debug($class-full-name);
-            @if $data-class == "trans-y" {
-                $tempDelta : $size*10%;
-                //@debug($tempDelta);
-                transform: translateY(calc(var(--#{$var-name})* #{$tempDelta}));
-                &-n{
-                    $tempDelta : $size*-10%;
-                    transform: translateY(calc(var(--#{$var-name})* #{$tempDelta})); 
-                }
-            }
-            @if $data-class == "opacity" {
-                opacity: calc(var(--#{$var-name})* 1);
-            }
-            @if $data-class == "top" {
-                $tempDelta : math.round($size*10.17%);
-                top: calc(var(--#{$var-name})* #{$tempDelta});
-                &-n{
-                    $tempDelta : math.round($size*-10.17%);
-                    top: calc(var(--#{$var-name})* #{$tempDelta}); 
-                }
-            }
-        }
-
-    }
-}
-
 @mixin do-events-extend($class, $extendHover: true) {
     @each $event-type, $type in $do-events-type {
         @each $event, $event-class in $type {
@@ -445,6 +424,15 @@ Core de la créature
             @content;
         }
         &.active\:#{$class} {
+            @content;
+        }
+    }
+
+    .open{
+        &.open\:#{$class} {
+            @content;
+        }
+        .deep-open\:#{$class} {
             @content;
         }
     }
@@ -527,17 +515,71 @@ Core de la créature
         overflow: hidden;
     }
 
+    .#{$class}-overflow-auto {
+        overflow: auto;
+    }
+
     .#{$class}-flex-center {
         align-items: center;
         justify-content: center;
     }
 
-    .#{$class}-row {
+    .#{$class}-row, .#{$class}-x {
         flex-direction: row;
     }
 
-    .#{$class}-col {
+    .#{$class}-col, .#{$class}-y {
         flex-direction: column;
+    }
+
+    .#{$class}-start{
+        justify-content: flex-start;
+        &-start{
+            justify-content:  flex-start;
+            align-items: flex-start;
+        }
+        &-center{
+            justify-content: flex-start;
+            align-items: center;
+            
+        }
+        &-end{
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+    }
+
+    .#{$class}-center{
+        justify-content: center;
+        &-start{
+            justify-content: center;
+            align-items: flex-start;
+        }
+        &-center{
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        &-end{
+            justify-content: center;
+            align-items: flex-end;
+        }
+    }
+
+    .#{$class}-end{
+        justify-content: flex-end;
+         &-start{
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+        &-center{
+            justify-content: flex-end;
+            align-items: center;
+        }
+        &-end{
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
     }
 
     .#{$class}-wrap {
@@ -571,6 +613,13 @@ Core de la créature
 }
 
 @mixin do-maxo($class, $responsive: true) {
+
+
+    $do-base : math.div(100,$do-max);
+    $do-base-double : math.div(100,$do-max) * 2;
+    $do-base-min : 10;
+    $do-angle : math.div(360,$do-max);
+
     @for $i from 0 through $do-max {
         //grid-row: span 3;
         //grid-column: span 3;
@@ -611,65 +660,67 @@ Core de la créature
                 transition-delay: #{math.div($i, $do-base) * 1s} !important;
             }
         }
-
-        @include do-events-extend(#{$class}-o-#{$i}) {
-            opacity: #{math.div($i, $do-base)};
+        @if($i <= $do-base-min){
+            @include do-events-extend(#{$class}-o-#{$i}) {
+                opacity: #{math.div($i, $do-base-min)};
+            }
         }
+ 
         @include do-events-extend(#{$class}-scale-#{$i}) {
-            transform: scale(math.div($i, $do-base));
+          
+            transform: scale(math.div($i, $do-base-double));
         }
         @include do-events-extend(#{$class}-scale-x-#{$i}) {
-            transform: scaleX(math.div($i, $do-base));
+            transform: scaleX(math.div($i, $do-base-double));
         }
         @include do-events-extend(#{$class}-scale-y-#{$i}) {
-            transform: scaleY(math.div($i, $do-base));
+            transform: scaleY(math.div($i, $do-base-double));
         }
-
-    
+        @include do-events-extend(#{$class}-rotate-#{$i}) {
+            transform: rotate($i * $do-angle * 1deg);
+        }
 
         $temp-n-class: $i - math.div($do-max,2);
         @if($temp-n-class < 0){
-
-            $temp-n-class : #{n-#{math.abs($temp-n-class)}};
-          
-        }
-        
-        //@debug(#{$class}-trans-y-#{$temp-n-class});
-
+            $temp-n-class : #{n-#{math.abs($temp-n-class)}};      
+        }        
+    
         @include do-events-extend(#{$class}-trans-y-#{$temp-n-class}) {
-            transform: translateY(math.div($i - math.div($do-max, 2), $do-base)*100%);
+            transform: translateY(math.div($i - math.div($do-max, 2), $do-base-double)*100%);
         }
         @include do-events-extend(#{$class}-trans-x-#{$temp-n-class}) {
             //@debug(#{$class}-trans-x-#{$temp-n-class});
-            transform: translateX(math.div($i - math.div($do-max, 2), $do-base)*100%);
+            transform: translateX(math.div($i - math.div($do-max, 2), $do-base-double)*100%);
         }
+
+        //@debug($i * $do-base);
+
 
         .#{$class}-h,
         %h {
             &-#{$i} {
-                height: $i * $do-base * 1%;
+                height: $i * $do-base-double * 1%;
             }
             &-#{$i}-vh {
-                min-height: $i * $do-base * 1vh;
+                height: $i * $do-base-double * 1vh;
             }
             &-#{$i}-max-rem {
-                max-height: $i * $do-base * 1rem;
+                height: 100%;
+                max-height: $i * $do-base-double * 1rem;
             }
         }
 
         .#{$class}-w,
         %w {
             &-#{$i} {
-                width: $i * $do-base * 1%;
+                width: $i * $do-base-double * 1%;
             }
             &-#{$i}-vw {
-                min-width: $i * $do-base * 1vw;
-            }
-            &-#{$i}-max {
-                max-width: $i * $do-base * 1%;
+                width: $i * $do-base-double * 1vw;
             }
             &-#{$i}-max-rem {
-                max-width: $i * $do-base * 1rem;
+                width: 100%;
+                max-width: $i * $do-base-double * 1rem;
             }
         }
 
@@ -687,10 +738,10 @@ Core de la créature
 
         .#{$class}-rotation {
             &-#{$i} {
-                transform: rotate($i * -9deg);
+                transform: rotate($i * $do-angle * 1deg);
             }
             &-n-#{$i} {
-                transform: rotate($i * -1 * -9deg);
+                transform: rotate($i * $do-angle * 11deg);
             }
         }
 
@@ -713,6 +764,31 @@ Core de la créature
                 }
             }
         }
+    }
+}
+
+@mixin do-animation($class){
+    
+
+    @each $class-name, $anim-name in $do-animations {
+
+        @include do-events-extend(#{$class}-#{$class-name}, true) {
+
+            animation-name: #{$anim-name};
+            animation-duration: $duration;
+            animation-timing-function: $easing;
+            animation-direction: normal; // normal reverse alternate alternate-reverse
+            animation-iteration-count: 1;
+
+            &.slow{
+                animation-duration: $duration*5;
+            }
+            &.infinite{
+                animation-iteration-count: infinite;
+            }
+        
+        }
+       
     }
 }
 
@@ -850,7 +926,7 @@ Core de la créature
         $smart-value: math.div($smart-value, $do);
     }
 
-    $base-value : map.get($do-matrix, 'md');
+    $base-value : map.get($do-matrix, 'sm');
 
 
 
@@ -865,10 +941,6 @@ Core de la créature
 
     @each $break-class, $break-point in $do-screen {
         
-        /*
-        $smart-value: decimal-round(math.div($value, $max), 2);
-        $max: $max + -1;
-        */
         $smart-value:  decimal-round($smart-value * $do,2);
     
         //@debug $break-class" :",$full-class-name,$smart-value;
@@ -901,8 +973,8 @@ Core de la créature
     }
 
     @include do-full-dir($key, '.', $value);
-    @debug("##################### - "$key,$value);
-    @include do-get-data-2('progress',$key,$value);
+    //@debug("##################### - "$key,$value);
+    @include do-get-data('progress',$key,$value);
 
     @each $class-name, $props in $do-clamp {
         @include do-fluide-class(
@@ -931,6 +1003,7 @@ Core de la créature
 @include do-positions('.p', '');
 @include do-center('.center');
 @include do-trans('trans');
+@include do-animation('anim');
 @include do-dir('.');
 @include do-align('.do');
 @include do-border-type();
@@ -981,39 +1054,7 @@ Core de la créature
 
 @each $fs, $value in $do-fs {
     #{$fs} {
-        $tempSize: map.get($do-matrix, $value);
-        
-        font-size: $tempSize * 1rem;
-        $tempSize2: $tempSize * 1rem;
-        $minSizePx: math.round(10 +( $tempSize * 3 )) * 1px;
-        @debug($fs,$tempSize,$minSizePx);
-        $tempSize3: math.div($tempSize * 1rem, $do);
-        font-size: max(#{$tempSize2}, #{$minSizePx});
-
-        &.big {
-            font-size: $tempSize * 1rem * $do !important;
-        }
-        &.small {
-            font-size: max(#{$tempSize3}, 14px);
-        }
-        &.medium {
-            font-size: math.div($tempSize * 1rem, 1.2) !important;
-        }
-        &.reset-x {
-            transform: translateX(-0.075em);
-        }
-
-        @if ($tempSize < 1) {
-            @media screen and (max-width: $md) {
-                font-size: 16px;
-            }
-        }
-
-        &.uppercase {
-            text-transform: uppercase;
-        }
-        &.press {
-            line-height: 1.1;
-        }
+        @extend %#{$value};
+        //@debug($fs," --> ",#{$value});
     }
 }

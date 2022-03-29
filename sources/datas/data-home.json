@@ -1,27 +1,27 @@
 {
     "pageHome" : {
       "title":"$do : 1.61803398875;",
-      "text":"lorem ipsum dolor update 9 !",
+      "text":"lorem ipsum dolor update 10 !",
       "colors":[
         {
           "name":"main",
-          "title":"main title"
+          "title":"var(--main-color)"
         },
         {
           "name":"extra",
-          "title":"extra title"
+          "title":"var(--extra-color)"
         },
         {
           "name":"second",
-          "title":"second title"
+          "title":"var(--second-color)"
         },
         {
           "name":"contraste",
-          "title":"contraste title"
+          "title":"var(--contraste-color)"
         },
         {
           "name":"fade",
-          "title":"fade title"
+          "title":"var(--fade-color)"
         }
       ],
       "variantes":[

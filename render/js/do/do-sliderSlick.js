@@ -1,1 +1,55 @@
-$(document).ready(function(){var e=$("#slider-slick"),i={slidesToShow:1.25,lazyLoad:"ondemand",slidesToScroll:1,accessibility:!1,infinite:!1,autoplay:!1,centerMode:!0,variableWidth:!0,adaptiveHeight:!1,arrows:!0,dots:!1,prevArrow:$(".prev"),nextArrow:$(".next")};e.slick(i),e.on("breakpoint",function(i){e.slick("setPosition"),console.log(i.currentTarget.slick),i.currentTarget.slick.slideCount<=i.currentTarget.slick.options.slidesToShow&&e.slick("unslick")}),e.on("destroy",function(){e.slick(i)}),$("[aria-hidden]").click(function(i){"true"==$(this).attr("aria-hidden")&&(i.preventDefault(),console.log(parseInt($(this).attr("data-slick-index"))),1<=parseInt($(this).attr("data-slick-index"))?$("#slider-slick").slick("slickNext"):$("#slider-slick").slick("slickPrev"))})});
+$(document).ready(function() {
+
+  var carousels = $('#slider-slick');
+  var config = {
+    slidesToShow: 1.25,
+    lazyLoad: 'ondemand',
+    slidesToScroll: 1,
+    accessibility: false,
+    infinite:false,
+    autoplay:false,
+    centerMode: true,
+    variableWidth: true,
+    adaptiveHeight:false,
+    arrows:true,
+    dots: false,
+    prevArrow: $('.prev'),
+    nextArrow: $('.next')
+  }
+
+carousels.slick(config);
+
+carousels.on('breakpoint', function(slick) {
+  carousels.slick('setPosition');
+  console.log(slick.currentTarget.slick);
+  var count = slick.currentTarget.slick.slideCount;
+  var show = slick.currentTarget.slick.options.slidesToShow;
+
+  if (show >= count) {
+    carousels.slick('unslick');
+  }
+
+});
+
+
+carousels.on('destroy', function() {
+  carousels.slick(config);
+});
+
+ 
+  $('[aria-hidden]').click(function(event) {
+  
+  	
+      if($(this).attr('aria-hidden') == 'true'){
+         event.preventDefault();
+        console.log(parseInt($(this).attr('data-slick-index')));
+        if(parseInt($(this).attr('data-slick-index')) >= 1){
+          $('#slider-slick').slick('slickNext');
+        }else{
+          $('#slider-slick').slick('slickPrev');
+        }
+        //$('#slider-container').slick('slickGoTo', parseInt($(this).attr('data-slick-index')));
+      }
+    });
+
+});
