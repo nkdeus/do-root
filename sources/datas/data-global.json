@@ -24,7 +24,7 @@
     "copyright" : "© Ulysse-2029",
     "fonts" :[
       {
-        "name": "roboto",
+        "name": "Roboto",
         "className" : "main",
         "weight": "200;400;700"
       },
@@ -37,7 +37,7 @@
     ,
     "typos" :{
       "body" : {
-        "name": "roboto",
+        "name": "Roboto",
         "weight": "400"
       },
       "heading" : {

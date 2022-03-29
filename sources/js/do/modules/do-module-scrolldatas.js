@@ -8,6 +8,8 @@ if(moduleManager == undefined){
     moduleManager = {};
 }
 
+gsap.registerPlugin(ScrollTrigger);
+
 moduleManager["doscrolldatas"] = function () {
 
     var $scope = this;

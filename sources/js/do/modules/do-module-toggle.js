@@ -20,7 +20,7 @@ moduleManager["dotoggle"] = function () {
     const actionToggleAdd = $($scope).attr('data-bt-toggle-add');
     const actionToggleRemove = $($scope).attr('data-bt-toggle-remove');
     const actionToggleType = $($scope).attr('data-bt-type') || 'click';
-    var datas = null;
+    var datas = ['active'];
     var toggleSens = true;
     if (actionToggleAdd != undefined) {
 
@@ -34,7 +34,10 @@ moduleManager["dotoggle"] = function () {
         toggleSens = false;
 
     }
+
+
     const active = datas[0];
+   
     const targetName = datas[1] || 'do'
     const target = $(datas[1], $parent) || $scope;
     const classToggle = datas[2] || active;
@@ -87,7 +90,7 @@ moduleManager["dotoggle"] = function () {
     });
     $scope.toggle = function () {
 
-        //console.log("TOGGLE pour ",$scope.toggleKey," dans "+$scope.grp+" avec en master "+groupMasterToggle);
+        console.log("TOGGLE pour ",$scope.toggleKey," dans "+$scope.grp+" avec en master "+groupMasterToggle);
         //if(groupMasterToggle){
             $.each(window.togglesKey[$scope.grp], function (index, value) {
 
@@ -99,7 +102,8 @@ moduleManager["dotoggle"] = function () {
         //}
       
        
-        //console.log('TEST KEY ',window.togglesKey[$scope.toggleKey].bool);
+        console.log('TEST KEY ',window.togglesKey[$scope.toggleKey].bool);
+        
         if ($scope.toggles[active] == undefined) {
             $scope.toggles[active] = window.togglesKey[$scope.toggleKey].bool;
         }

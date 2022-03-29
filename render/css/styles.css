@@ -60,6 +60,10 @@ Core de la créature
   margin-bottom: 0.34rem;
 }
 
+.do-h-xxxs {
+  height: 0.34rem;
+}
+
 .do-w-xxxs {
   width: 0.34rem;
 }
@@ -1147,6 +1151,10 @@ section {
   opacity: 1;
 }
 
+.do-rotate-10 {
+  transform: rotate(180deg);
+}
+
 .do-h-10 {
   height: 100%;
 }
@@ -1596,6 +1604,12 @@ section {
 
 .do-col, .do-y {
   flex-direction: column;
+}
+
+.do-start-start {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .do-start-center {

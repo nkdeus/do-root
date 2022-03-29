@@ -33,6 +33,14 @@
         <span class="do-txt-second-color uppercase do-fs-xxs">Colors</span>
       </div>
 
+      <div id="local-storage-add" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="true" data-do-group="theme" data-bt-toggle-add="active,#themes-nav,open">   
+        <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
+            <div class="do-w-sm do-h-xxxs poa center do-bg-main-color tween-trans"> </div> 
+            <div class="do-h-sm do-w-xxxs do-rotate-10 do-bg-main-color tween-trans"> </div>  
+        </div>
+        <span class="do-txt-second-color uppercase do-fs-xxs">Add</span>
+      </div>
+
       <div id="theme-change" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="true" data-do-group="theme" data-bt-toggle-add="active,#themes-nav,open">   
         <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-grid-2 active:do-rotate-20">
           {{#themes.gallerie}}
@@ -81,6 +89,14 @@
           <span class="do-txt-second-color uppercase do-fs-xxs">Dark & light</span>
       </div>
 
+      
+      <div id="local-storage-reset" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle">   
+        <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
+            <div class="do-wh-sm do-bg-main-color tween-trans deep-active:anim-scale-in "> </div>  
+        </div>
+        <span class="do-txt-second-color uppercase do-fs-xxs">Reset</span>
+      </div>
+
       <nav id="color-edit" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-y do-grid-5 do-start-center tween-all open:trans-x-before do-o-0 open:do-o-10">
       
         
@@ -97,7 +113,7 @@
 
       </nav>
 
-      <nav id="themes-nav" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-y do-grid-2 do-start-center tween-all open:trans-x-before do-o-0 open:do-o-10">
+      <nav id="themes-nav" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-grid-2 do-start-start tween-all open:trans-x-before do-o-0 open:do-o-10">
       
 
         {{#themes.gallerie}}
@@ -151,6 +167,33 @@
           </div>
   
           {{/themes.gallerie}}  
+
+          <div class="do-w-10 square theme-item current-theme-item do-hide">
+  
+            <div class="content">
+  
+                <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">Current</h5>
+  
+                <div class="do-full poa">
+  
+                  <div class="do-gold-xxxl poa do-bg-main-color">
+                  </div>
+                  <div class="do-gold-xxl poa bottom right do-bg-extra-color">
+                  </div>
+                  <div class="do-gold-xl poa bottom right do-bg-fade-color">
+                  </div>
+                  <div class="do-gold-lg poa bottom right do-bg-second-color">
+                  </div>
+                  <div class="do-gold-md poa bottom right do-bg-contraste-color">
+                  </div>
+                  <div class="do-gold-sm poa bottom right do-bg-main-color-extra-grad-linear-7"> 
+                  </div>
+  
+                </div>
+  
+            </div>
+          </div>
+ 
   
       </nav>
 

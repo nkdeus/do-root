@@ -1,7 +1,12 @@
+
 window.togglesKey = {};
 window.doautotheme = null;
 
+
+
 $(document).ready(function() {
+
+
 
     $('[data-module]').each((i, el) => {
         
@@ -47,7 +52,9 @@ $(document).ready(function() {
 
     futurAction();
 
+    /* DARKMODE START */
     $(document).on("darkMode", darkModeChange);
+
     function darkModeChange(e) {
       if(e.class == "darkmodetrigger"){   
           $('#color-switcher').click(); 
@@ -55,46 +62,162 @@ $(document).ready(function() {
     }
 
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches; 
-
-
     var itemMode = "toggleMode12"
     var toggleMode = getParamSingle(itemMode) == "true";
 
     if(prefersDarkMode){
-      //$('body').addClass('toggleColor');
       $('#color-switcher').addClass('active');
-
     }
-    console.log("MODE SAVE", getParamSingle(itemMode));
-    console.log("MODE ON/OFF ",toggleMode);
-
 
     if(toggleMode != null){
- 
       if(toggleMode){
-
-         console.log("CHANGE AUTO ",toggleMode);
           $('#color-switcher').click(); 
-
       }
-
     }
 
     $('#color-switcher').on('click',function(e) {    
        toggleFilter();
        toggleMode = !toggleMode;
-       console.log("toggleMode save ",toggleMode);
        saveParamSingle(itemMode,toggleMode);
-
     });
 
     function toggleFilter(){
-
       $(".trigger-filter-invert").each(function(){
         $(this).toggleClass('filter-invert');
       });
-
     }
+
+    /* DARKMODE END */
+
+    /* JSON SAVE THEME START */
+
+    var themeManager = new (function() {   
+
+      let storageId = "all-themes-01";
+      let itemCloneClass = "current-theme-item";
+      let containerItemsId = "#themes-nav";
+      let collection = null;
+    
+      this.init = () => {
+        console.log("themeManager.init");
+        getThemes();
+        cloneItems(itemCloneClass,containerItemsId);
+      }
+
+      this.getStorageId = () => {
+        return storageId;
+      }
+
+      this.randomId = () => {
+          let s4 = () => {
+              return Math.floor((1 + Math.random()) * 0x10000)
+                  .toString(16)
+                  .substring(1);
+          }
+          //return id of format 'aaaaaaaa'-'aaaa'-'aaaa'-'aaaa'-'aaaaaaaaaaaa'
+          return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+      }
+
+      let getLocalThemes = () => {    
+        console.log("themeManager.getLocalThemes : ",storageId)
+        return(localStorage.getItem(storageId));
+      }
+
+      let saveTheme = () => {    
+        console.log("themeManager.saveTheme");
+        localStorage.setItem(storageId,JSON.stringify(collection));
+      }
+
+      this.addItem = (pId,pItem) => {    
+        console.log("themeManager.addItem START ",collection);
+        collection[pId] = pItem;
+        console.log("themeManager.addItem END ",collection);
+        saveTheme();
+        creatDomItem(itemCloneClass,containerItemsId,pItem);
+      }
+
+      let creatDomItem = (pTarget,pContainer,pData) => {
+
+        let clone = $("."+pTarget).clone();
+        clone.removeClass(pTarget);
+        clone.removeClass("do-hide");
+
+        $(pContainer).append(clone);
+        clone.addClass('cloned');
+
+        $.each(pData.colors, function (i, valueColor) {
+          setColor(valueColor.hsl,valueColor.name+"-color",valueColor.splited,clone);
+        });
+     
+
+      }
+
+      let getThemes = () => {    
+
+        console.log("themeManager.getThemes")
+        if(collection == null && getLocalThemes() == null){
+          collection = {}
+        }else{
+          collection = JSON.parse(getLocalThemes());
+        }
+        console.log("themeManager.getThemes : ",collection);
+        return collection;
+
+      }
+
+      let cloneItems = (pTarget, pContainer) => {
+
+        console.log("themeManager.cloneItems");    
+        let clone = $("."+pTarget).clone();
+        clone.removeClass(pTarget);
+        clone.removeClass("do-hide");
+
+        $.each(collection, function (index, value) {
+          console.log(">> ",index,value);
+          clone = clone.clone();
+          $(pContainer).append(clone);
+          clone.addClass('cloned');
+
+          $.each(value.colors, function (i, valueColor) {
+            setColor(valueColor.hsl,valueColor.name+"-color",valueColor.splited,clone);
+          });
+          
+        });
+
+      }
+
+    })();
+
+    themeManager.init();
+
+    $('#local-storage-add').on('click',function(e) {
+
+        if($('body')[0].style.cssText == ""){
+          return;
+        }
+        var themeId = themeManager.randomId();
+        var themeData = {
+          "name":"do-"+themeId.substring(0,5),
+          "id":themeId,
+          "colors": convertStyleToJson($('body')[0].style.cssText)
+        }
+        
+        themeManager.addItem(themeId,themeData);
+      
+    });
+
+    $('#local-storage-reset').on('click',function(e) {
+
+      console.log("RESET ",themeManager.getStorageId());
+      localStorage.removeItem(themeManager.getStorageId());
+      localStorage.clear();
+      $('.cloned').remove();
+
+    });
+
+    /* JSON SAVE THEME END */
+
+    /* THEME START */
 
     function generateHslaColor (pHue, pSaturation, pLightness) { 
         var h = gsap.utils.random(pHue[0], pHue[1], 1);
@@ -102,8 +225,6 @@ $(document).ready(function() {
         var l = gsap.utils.random(pLightness[0], pLightness[1], 1);
         return h+","+s+"%,"+l+"%";   
     }
-
-
 
     var savedTheme = getParams('theme');
    
@@ -126,34 +247,29 @@ $(document).ready(function() {
 
     function setColors(pColors){
 
+      console.log("setColor ",pColors)
       $.each(pColors, function (index, value) {
-
         setColor(value.hsl,value.name,value.splited);
-
       });
-
       saveParams("theme",pColors);
 
     }
 
     function setColor(pColor,pName,pSplit,pTarget = 'body'){
-
         $(pTarget).css('--'+pName+'',pColor);
         $(pTarget).css('--'+pName+'-H',pSplit[0]);
         $(pTarget).css('--'+pName+'-S',pSplit[1]);
         $(pTarget).css('--'+pName+'-L',pSplit[2]);
-
         if(currentColor){
           saveColors[pName] = currentColor;
         }
-    
     }
 
-    function convertStyleToJson(pStyle,pSetColors = false){
-
+    function convertStyleToJson(pStyle){
        var result =  [];
        var arrayRaw = pStyle.split('; ');
         for (const key in arrayRaw) {
+
             
             if (key % 4 == 0)
             {
@@ -173,12 +289,7 @@ $(document).ready(function() {
         }
         console.dir("...................................");
         console.dir(result);
-        if(pSetColors){
-          setColors(result);
-        }
-
         return result;
-        
 
     }
 
@@ -216,79 +327,62 @@ $(document).ready(function() {
           "splited":newFade.split(',')
         }
       ]
-
       return colors;
     }
 
     $('#color-random').on('click',function(e) {
-
-      var c = randomColors();
-      setColors(c);
-     
+      setColors(randomColors());
     });
-
     
     $('.theme-item').on('click',function(e) {
 
-      convertStyleToJson($(this)[0].style.cssText);
+      setColors(convertStyleToJson($(this)[0].style.cssText));
      
     });
 
-
+    /* THEME END */
+    /* COLORS START */
 
     var moving = false;
-  
     var currentMode = "";
-
     var startY = 0;
     var mY = 0;
     var currentColor = null;
     var currentColorVar = null;
     var currentTarget = null;
     var saveColors = {};
-
-                
+               
     $(document).mousemove(function(e){
-
       if (!moving) return;
-
       mY = startY - e.clientY;
       colorSetter[currentMode](mY);
-
       injectColors(true);
-
     });
 
     const getDelta = (pY) => {
-
       if(mY<1){
         return -1;
       }
       return 1;
-
     };
 
     const colorSetter = {
 
       "h" : function(pY){
-
-        currentColor[0] = currentColor[0]+getDelta(pY);
+        currentColor[0] = currentColor[0]+(getDelta(pY)*3.6);
         if(currentColor[0] >= 360){
           currentColor[0] = 0;
         }else if(currentColor[0] <= 0){
           currentColor[0] = 360;
         }
-
       },
       "s" : function(pY){
-
         currentColor[1] = currentColor[1]+getDelta(pY);
         if(currentColor[1] >= 99){
           currentColor[1] = 99;
         }else if(currentColor[1] <= 1){
           currentColor[1] = 1;
         }
-
       },
       "l" : function(pY){
         currentColor[2] = currentColor[2]+getDelta(pY);
@@ -298,38 +392,26 @@ $(document).ready(function() {
           currentColor[2] = 1;
         }
       }
-
     }
-
-
 
     function joinHSL(pColor){
         return pColor[0]+","+pColor[1]+"%,"+pColor[2]+"%";
     }
 
     $(document).on("mouseup", function(e) {
-
       if(currentTarget == null){
           return;
       }
-    
       moving = false;
-
       injectColors();
-
       currentTarget = null;
       currentMode = null;
-
       saveNewColors();
-
-
     });
 
     const saveNewColors = () => {
-
       console.log("save new color")
-      saveParams("theme", convertStyleToJson($('body')[0].style.cssText, false));
-
+      saveParams("theme", convertStyleToJson($('body')[0].style.cssText));
     }
 
     const injectColors = (pLocal = false) => {
@@ -340,20 +422,16 @@ $(document).ready(function() {
       }else{
         setColor(hslNew,currentColorVar,hslSplit);
       }
-      
     }
-
 
     const cssVar = ( name, value ) => {
 
       if(name.substr(0, 2) !== "--") {
           name = "--" + name;
       }
-  
       if(value) {
           document.documentElement.style.setProperty(name, value)
       }
-  
       return getComputedStyle(document.documentElement).getPropertyValue(name);
   
    }
@@ -384,6 +462,8 @@ $(document).ready(function() {
       }
 
     });
+
+    /* COLORS END */
  
 
 });
