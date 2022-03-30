@@ -49,7 +49,7 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
     }
 
     .active {
-        .active\:#{$class} {
+        .all-active\:#{$class} {
             @content;
         }
         .deep-active\:#{$class} {

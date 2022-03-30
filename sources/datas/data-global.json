@@ -6,6 +6,10 @@
       "background":"hide",
       "header":[
         {
+          "bt":"stage",
+          "url":"./stage.html"
+        },
+        {
           "bt":"about",
           "url":"./about.html"
         }

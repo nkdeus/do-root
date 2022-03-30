@@ -417,10 +417,13 @@ Core de la créature
         @content;
     }
     .active {
-        > .active\:#{$class} {
+        > .all-active\:#{$class} {
             @content;
         }
-        .deep-active\:#{$class} {
+        > .deep-active\:#{$class} {
+            @content;
+        }
+        > * > .deep-active\:#{$class} {
             @content;
         }
         &.active\:#{$class} {

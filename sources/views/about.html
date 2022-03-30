@@ -1,6 +1,6 @@
 {{> partials/head}}
 {{> partials/nav}}
-<section class="por do-px-smart-xxxl do-py-xxl por do-z-1">
+<section class="por do-px-smart-xxxl h-auto do-py-xxl por do-z-1">
     <h1>{{pageAbout.title}}</h1>
     <h2>{{pageAbout.title}}</h2>
     <h3>{{pageAbout.title}}</h3>
@@ -8,6 +8,60 @@
     <h5>{{pageAbout.title}}</h5>
     <h6>{{pageAbout.title}}</h6>
     <p>{{pageAbout.text}}</p>
+
+    <div data-module="dotoggler" data-do-target="#targetA" data-do-group="G1" class="do-p-sm active:do-bg-extra-color">
+        OPEN A DIRECT
+    </div>
+    <div data-module="dotoggler" data-do-target="#masterNav" data-do-group="G1" data-do-is-master="true" class="do-p-sm active:do-bg-extra-color">
+        OPEN NAV
+    </div>
+    <div id="masterNav" class="do-flex do-y do-gap-sm do-o-0 active:do-o-10">
+        <div class="do-flex do-x">
+            <div data-module="dotoggler" data-do-target="#targetA" data-do-group="G1" class="do-p-sm active:do-bg-extra-color">
+                BT A
+            </div>
+            <div data-module="dotoggler" data-do-target="#targetB" data-do-group="G1" class="do-p-sm active:do-bg-extra-color">
+                BT B
+            </div>
+            <div data-module="dotoggler" data-do-target="#targetC" data-do-group="G1" class="do-p-sm active:do-bg-extra-color">
+                BT C
+            </div>
+
+        </div>
+      
+        <div class="do-flex do-y do-w-10">
+            <div id="targetA" class="do-bg-main-color active:do-bg-extra-color do-hide active:do-block do-p-sm">
+                target A   
+                <div class="do-flex do-x">
+         
+                    <div data-module="dotoggler" data-do-target="#targetD" data-do-group="G2" class="do-p-sm active:do-bg-main-color">
+                        BT D
+                    </div>
+                    <div data-module="dotoggler" data-do-target="#targetE" data-do-group="G2" class="do-p-sm active:do-bg-main-color">
+                        BT E
+                    </div>
+        
+                </div>
+
+                <div id="targetD" class="active:do-bg-contraste-color active:do-txt-second-color do-p-sm">
+                    target D
+                </div>
+                <div id="targetE" class="active:do-bg-contraste-color active:do-txt-second-color do-p-sm">
+                    target E
+                </div>
+
+            </div>
+            <div id="targetB" class="do-bg-main-color active:do-bg-extra-color do-hide active:do-block do-p-sm">
+                target B
+            </div>
+            <div id="targetC" class="do-bg-main-color active:do-bg-extra-color do-hide active:do-block do-p-sm">
+                target C
+            </div>
+        </div>
+    </div>
+
+
+
 </section>
 {{> partials/footer}}
 {{> partials/foot}}

@@ -258,7 +258,7 @@
       <div class="do-full poa do-z-2 do-bg-main-color-extra-grad-linear-7 tween-trans hover:do-scale-x-12"></div>
   
       <div id="tools-toggle" class="cursor-pointer poa do-z-3 center do-flex do-y do-align-items-center do-z-2 do-py-xs"
-      data-module="dotoggler" data-do-debug="master" data-do-target="#tools-nav" data-do-group="theme" data-do-is-master="true">       
+      data-module="dotoggler" data-do-target="#tools-nav" data-do-group="theme" data-do-is-master="true">       
         <div class="do-wh-md do-bg-main-color-1-auto do-br-md por do-flex do-y do-center-center tween-trans hover:do-trans-x-n-3">
           
             <div class="do-wh-sm do-br-md tween-trans deep-active:do-rotate-20">
@@ -299,7 +299,7 @@
   
   
         <div id="theme-edit" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
-        data-module="dotoggler" data-do-debug="colors" data-do-target="#color-edit" data-do-group="theme">
+        data-module="dotoggler" data-do-target="#color-edit" data-do-group="theme">
      
           <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
               <div class="do-h-md do-w-10 do-bg-main-color tween-trans deep-active:anim-scale-in "> </div>
@@ -312,7 +312,7 @@
         </div>
   
         <div id="local-storage-add" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
-        data-module="dotoggler" data-do-debug="add" data-do-target="#themes-nav" data-do-force="true">
+        data-module="dotoggler" data-do-target="#themes-nav" >
    
           <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
               <div class="do-w-sm do-h-xxxs poa center do-bg-main-color tween-trans"> </div> 
@@ -322,7 +322,7 @@
         </div>
   
         <div id="theme-change" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
-        data-module="dotoggler" data-do-debug="themes" data-do-target="#themes-nav" data-do-group="theme">
+        data-module="dotoggler" data-do-target="#themes-nav" data-do-group="theme">
    
           <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-grid-2 active:do-rotate-20">
               <div class="do-full do-bg-main-color tween-trans deep-active:anim-scale-in" style="
@@ -381,7 +381,8 @@
         </div>
   
         <div id="color-switcher" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
-        data-module="dotoggler" data-do-target="body" data-do-custom-target-class="toggleColor">    
+        data-module="dotoggler" data-do-target="body" data-do-custom-target-class="toggleColor"
+        data-module="dotoggle" data-global="true" data-bt-toggle-add="active,body,toggleColor">    
             <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-h-sm por do-mb-xxs">
               <div class="do-wh-sm tween-trans poa left deep-active:do-trans-x-6">
                 <div class="por do-full do-br-md do-scale-xs do-bg-second-color"></div>
@@ -702,7 +703,6 @@
 
     <nav id="main-nav" class="nav-container do-hide lg-do-block do-flex-center top-lg-rem do-z-9">
       <div class="do-flex-center do-flex do-col lg-do-row do-gap-md">
-            <a class="main-link reset do-block" href="./stage.html">stage</a>
             <a class="main-link reset do-block" href="./about.html">about</a>
       </div>
     </nav>

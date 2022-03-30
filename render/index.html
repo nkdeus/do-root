@@ -24,16 +24,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js" integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-
+  <script type="text/javascript" src="js/do/modules/do-mod-toggle.js"></script>
   <script type="text/javascript" src="js/do/modules/do-module-toggle.js"></script>
   <script type="text/javascript" src="js/do/modules/do-module-trigger.js"></script>
   <script type="text/javascript" src="js/do/do-scrollEvents.js"></script>
   <script type="text/javascript" src="js/do/modules/do-module-scrolldatas.js"></script>
   <script type="text/javascript" src="js/do/modules/do-module-mousedatas.js"></script>
   <script type="text/javascript" src="js/do/modules/do-module-tweens.js"></script>
-
-
-
 
 
   <script type="text/javascript" src="js/index.js"></script>
@@ -260,7 +257,8 @@
   
       <div class="do-full poa do-z-2 do-bg-main-color-extra-grad-linear-7 tween-trans hover:do-scale-x-12"></div>
   
-      <div id="tools-toggle" class="cursor-pointer poa do-z-3 center do-flex do-y do-align-items-center do-z-2 do-py-xs " data-module="dotoggle" data-global="false" data-do-group="theme" data-do-master-grp="theme" data-bt-toggle-add="active,#tools-nav,open">       
+      <div id="tools-toggle" class="cursor-pointer poa do-z-3 center do-flex do-y do-align-items-center do-z-2 do-py-xs"
+      data-module="dotoggler" data-do-debug="master" data-do-target="#tools-nav" data-do-group="theme" data-do-is-master="true">       
         <div class="do-wh-md do-bg-main-color-1-auto do-br-md por do-flex do-y do-center-center tween-trans hover:do-trans-x-n-3">
           
             <div class="do-wh-sm do-br-md tween-trans deep-active:do-rotate-20">
@@ -295,12 +293,14 @@
   
   
   
-      <nav id="tools-nav" class="do-flex do-z-1 do-w-xxl do-h-10 do-bg-contraste-color do-y do-center-center tween-all open:trans-x-before do-o-5 open:do-o-10">
+      <nav id="tools-nav" class="do-flex do-z-1 do-w-xxl do-h-10 do-bg-contraste-color do-y do-center-center tween-all active:trans-x-before do-o-5 active:do-o-10">
         
-        <div class="do-w-xs do-h-10 do-bg-extra-color-main-grad-linear-3 poa top left-n-xs-rem tween-trans deep-open:do-scale-x-0"></div>
+        <div class="do-w-xs do-h-10 do-bg-extra-color-main-grad-linear-3 poa top left-n-xs-rem tween-trans deep-active:do-scale-x-0"></div>
   
   
-        <div id="theme-edit" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="true" data-do-group="theme" data-bt-toggle-add="active,#color-edit,open">   
+        <div id="theme-edit" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
+        data-module="dotoggler" data-do-debug="colors" data-do-target="#color-edit" data-do-group="theme">
+     
           <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
               <div class="do-h-md do-w-10 do-bg-main-color tween-trans deep-active:anim-scale-in "> </div>
               <div class="do-h-md do-w-10 do-bg-extra-color tween-trans deep-active:anim-scale-in "> </div>
@@ -311,7 +311,9 @@
           <span class="do-txt-second-color uppercase do-fs-xxs">Colors</span>
         </div>
   
-        <div id="local-storage-add" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="true" data-do-group="theme" data-bt-toggle-add="active,#themes-nav,open">   
+        <div id="local-storage-add" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
+        data-module="dotoggler" data-do-debug="add" data-do-target="#themes-nav" data-do-force="true">
+   
           <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
               <div class="do-w-sm do-h-xxxs poa center do-bg-main-color tween-trans"> </div> 
               <div class="do-h-sm do-w-xxxs do-rotate-10 do-bg-main-color tween-trans"> </div>  
@@ -319,7 +321,9 @@
           <span class="do-txt-second-color uppercase do-fs-xxs">Add</span>
         </div>
   
-        <div id="theme-change" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="true" data-do-group="theme" data-bt-toggle-add="active,#themes-nav,open">   
+        <div id="theme-change" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
+        data-module="dotoggler" data-do-debug="themes" data-do-target="#themes-nav" data-do-group="theme">
+   
           <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-grid-2 active:do-rotate-20">
               <div class="do-full do-bg-main-color tween-trans deep-active:anim-scale-in" style="
     
@@ -364,7 +368,8 @@
           <span class="do-txt-second-color uppercase do-fs-xxs">Themes</span>
         </div>
   
-        <div id="color-random" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="false" data-bt-toggle-add="colorRandom,#color-random,active">     
+        <div id="color-random" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
+        data-module="dotoggler">     
             <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-grid-2 active:do-rotate-20">
                 <div class="do-full do-bg-extra-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
                 <div class="do-full do-bg-second-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
@@ -375,7 +380,8 @@
             <span class="do-txt-second-color uppercase do-fs-xxs">Random</span>
         </div>
   
-        <div id="color-switcher" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle" data-global="true" data-bt-toggle-add="active,body,toggleColor">    
+        <div id="color-switcher" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
+        data-module="dotoggler" data-do-target="body" data-do-custom-target-class="toggleColor">    
             <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-h-sm por do-mb-xxs">
               <div class="do-wh-sm tween-trans poa left deep-active:do-trans-x-6">
                 <div class="por do-full do-br-md do-scale-xs do-bg-second-color"></div>
@@ -385,14 +391,14 @@
         </div>
   
         
-        <div id="local-storage-reset" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggle">   
+        <div id="local-storage-reset" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggler">   
           <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
               <div class="do-wh-sm do-bg-main-color tween-trans deep-active:anim-scale-in "> </div>  
           </div>
           <span class="do-txt-second-color uppercase do-fs-xxs">Reset</span>
         </div>
   
-        <nav id="color-edit" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-y do-grid-5 do-start-center tween-all open:trans-x-before do-o-0 open:do-o-10">
+        <nav id="color-edit" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-y do-grid-5 do-start-center tween-all active:trans-x-before do-o-0 active:do-o-10">
         
           
           <div class="do-full do-grid-2 por">
@@ -438,7 +444,7 @@
   
         </nav>
   
-        <nav id="themes-nav" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-grid-2 do-start-start tween-all open:trans-x-before do-o-0 open:do-o-10">
+        <nav id="themes-nav" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-grid-2 do-start-start tween-all active:trans-x-before do-o-0 active:do-o-10">
         
   
             
@@ -696,6 +702,7 @@
 
     <nav id="main-nav" class="nav-container do-hide lg-do-block do-flex-center top-lg-rem do-z-9">
       <div class="do-flex-center do-flex do-col lg-do-row do-gap-md">
+            <a class="main-link reset do-block" href="./stage.html">stage</a>
             <a class="main-link reset do-block" href="./about.html">about</a>
       </div>
     </nav>
