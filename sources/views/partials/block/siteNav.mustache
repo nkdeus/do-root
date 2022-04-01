@@ -1,0 +1,31 @@
+<nav id="site-nav"
+  class="do-flex do-z-1 do-w-xxl do-h-10 do-bg-contraste-color poa top left do-y do-start-start do-p-sm tween-all active:trans-x-before do-o-0 active:do-o-10">
+
+  <div
+    class="do-w-xs do-h-10 do-bg-extra-color-main-grad-linear-3 poa top left-n-xs-rem tween-trans deep-active:do-scale-x-0">
+  </div>
+
+
+  <div class="do-flex do-w-10 do-y do-start do-gap-md por do-z-2">
+      {{#nav.header}}
+      <div class="do-flex do-w-10 por">
+        <a class="main-link reset do-block do-txt-second-color" href="{{{url}}}">{{bt}}</a>
+        <div class="poa top right do-wh-sm do-bg-extra-color do-br-10" data-module="dotoggler" data-do-target="#{{bt}}" data-do-group="theme"></div>
+      </div>
+     
+      {{/nav.header}}
+  </div>
+
+  {{#nav.header}}
+
+  <nav id="{{bt}}"
+  class="do-flex do-z-0 do-w-10-vw do-max-w-md do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm  do-y do-start-start tween-all active:trans-x-before do-o-0 active:do-o-10">
+      {{#nav}}
+        <a class="main-link reset do-block do-txt-second-color" href="{{{_url}}}">{{_bt}}</a>
+      {{/nav}}
+  </nav>
+
+  {{/nav.header}}
+
+
+</nav>

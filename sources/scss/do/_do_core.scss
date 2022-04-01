@@ -306,6 +306,8 @@ Core de la créature
             $class-full-name : get-#{$var-name}\:#{$data-class};
         }
 
+        @debug($class-full-name);
+
         .#{$class-full-name}{
 
             $u:1;
@@ -582,6 +584,22 @@ Core de la créature
         }
         &-end{
             justify-content: flex-end;
+            align-items: flex-end;
+        }
+    }
+
+    .#{$class}-space{
+        justify-content: space-between;
+         &-start{
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        &-center{
+            justify-content: space-between;
+            align-items: center;
+        }
+        &-end{
+            justify-content: space-between;
             align-items: flex-end;
         }
     }

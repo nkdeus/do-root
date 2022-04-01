@@ -428,6 +428,18 @@ Core de la créature
   transform:  translateY(calc(calc(1 - var(--progress))* 3.4%));
 }
 
+.get-progress\:trans-x-xxxs {
+  transform:  translateX(calc(var(--progress)* 3.4%));
+}
+
+.get-progress\:trans-x-xxxs-n {
+  transform:  translateX(calc(var(--progress)* -3.4%));
+}
+
+.get-progress\:trans-x-xxxs-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 3.4%));
+}
+
 .get-progress\:trans-mouse-xxxs {
   transform:  translateX(calc(var(--progress)* 3.4%)) translateY(calc(var(--progress)* -3.4%));
 }
@@ -526,6 +538,30 @@ Core de la créature
 
 .get-progress\:bg-reverse {
   background-color: calc(calc(1 - var(--progress))* 360);
+}
+
+.get-progress\:trans-y-simple {
+  transform:  translateY(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-y-simple-n {
+  transform:  translateY(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-y-simple-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 100%));
+}
+
+.get-progress\:trans-x-simple {
+  transform:  translateX(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-x-simple-n {
+  transform:  translateX(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-x-simple-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 100%));
 }
 
 .get-progress\:o {
@@ -961,6 +997,18 @@ Core de la créature
   transform:  translateY(calc(calc(1 - var(--progress))* 5.5%));
 }
 
+.get-progress\:trans-x-xxs {
+  transform:  translateX(calc(var(--progress)* 5.5%));
+}
+
+.get-progress\:trans-x-xxs-n {
+  transform:  translateX(calc(var(--progress)* -5.5%));
+}
+
+.get-progress\:trans-x-xxs-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 5.5%));
+}
+
 .get-progress\:trans-mouse-xxs {
   transform:  translateX(calc(var(--progress)* 5.5%)) translateY(calc(var(--progress)* -5.5%));
 }
@@ -1059,6 +1107,30 @@ Core de la créature
 
 .get-progress\:bg-reverse {
   background-color: calc(calc(1 - var(--progress))* 360);
+}
+
+.get-progress\:trans-y-simple {
+  transform:  translateY(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-y-simple-n {
+  transform:  translateY(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-y-simple-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 100%));
+}
+
+.get-progress\:trans-x-simple {
+  transform:  translateX(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-x-simple-n {
+  transform:  translateX(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-x-simple-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 100%));
 }
 
 .get-progress\:o {
@@ -1512,6 +1584,18 @@ h6.medium {
   transform:  translateY(calc(calc(1 - var(--progress))* 8.9%));
 }
 
+.get-progress\:trans-x-xs {
+  transform:  translateX(calc(var(--progress)* 8.9%));
+}
+
+.get-progress\:trans-x-xs-n {
+  transform:  translateX(calc(var(--progress)* -8.9%));
+}
+
+.get-progress\:trans-x-xs-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 8.9%));
+}
+
 .get-progress\:trans-mouse-xs {
   transform:  translateX(calc(var(--progress)* 8.9%)) translateY(calc(var(--progress)* -8.9%));
 }
@@ -1610,6 +1694,30 @@ h6.medium {
 
 .get-progress\:bg-reverse {
   background-color: calc(calc(1 - var(--progress))* 360);
+}
+
+.get-progress\:trans-y-simple {
+  transform:  translateY(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-y-simple-n {
+  transform:  translateY(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-y-simple-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 100%));
+}
+
+.get-progress\:trans-x-simple {
+  transform:  translateX(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-x-simple-n {
+  transform:  translateX(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-x-simple-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 100%));
 }
 
 .get-progress\:o {
@@ -2052,6 +2160,18 @@ h5.medium {
   transform:  translateY(calc(calc(1 - var(--progress))* 14.4%));
 }
 
+.get-progress\:trans-x-sm {
+  transform:  translateX(calc(var(--progress)* 14.4%));
+}
+
+.get-progress\:trans-x-sm-n {
+  transform:  translateX(calc(var(--progress)* -14.4%));
+}
+
+.get-progress\:trans-x-sm-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 14.4%));
+}
+
 .get-progress\:trans-mouse-sm {
   transform:  translateX(calc(var(--progress)* 14.4%)) translateY(calc(var(--progress)* -14.4%));
 }
@@ -2150,6 +2270,30 @@ h5.medium {
 
 .get-progress\:bg-reverse {
   background-color: calc(calc(1 - var(--progress))* 360);
+}
+
+.get-progress\:trans-y-simple {
+  transform:  translateY(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-y-simple-n {
+  transform:  translateY(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-y-simple-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 100%));
+}
+
+.get-progress\:trans-x-simple {
+  transform:  translateX(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-x-simple-n {
+  transform:  translateX(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-x-simple-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 100%));
 }
 
 .get-progress\:o {
@@ -2628,6 +2772,18 @@ h4.medium {
   transform:  translateY(calc(calc(1 - var(--progress))* 23.3%));
 }
 
+.get-progress\:trans-x-md {
+  transform:  translateX(calc(var(--progress)* 23.3%));
+}
+
+.get-progress\:trans-x-md-n {
+  transform:  translateX(calc(var(--progress)* -23.3%));
+}
+
+.get-progress\:trans-x-md-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 23.3%));
+}
+
 .get-progress\:trans-mouse-md {
   transform:  translateX(calc(var(--progress)* 23.3%)) translateY(calc(var(--progress)* -23.3%));
 }
@@ -2726,6 +2882,30 @@ h4.medium {
 
 .get-progress\:bg-reverse {
   background-color: calc(calc(1 - var(--progress))* 360);
+}
+
+.get-progress\:trans-y-simple {
+  transform:  translateY(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-y-simple-n {
+  transform:  translateY(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-y-simple-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 100%));
+}
+
+.get-progress\:trans-x-simple {
+  transform:  translateX(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-x-simple-n {
+  transform:  translateX(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-x-simple-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 100%));
 }
 
 .get-progress\:o {
@@ -3237,6 +3417,18 @@ h4.medium {
   transform:  translateY(calc(calc(1 - var(--progress))* 37.7%));
 }
 
+.get-progress\:trans-x-lg {
+  transform:  translateX(calc(var(--progress)* 37.7%));
+}
+
+.get-progress\:trans-x-lg-n {
+  transform:  translateX(calc(var(--progress)* -37.7%));
+}
+
+.get-progress\:trans-x-lg-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 37.7%));
+}
+
 .get-progress\:trans-mouse-lg {
   transform:  translateX(calc(var(--progress)* 37.7%)) translateY(calc(var(--progress)* -37.7%));
 }
@@ -3335,6 +3527,30 @@ h4.medium {
 
 .get-progress\:bg-reverse {
   background-color: calc(calc(1 - var(--progress))* 360);
+}
+
+.get-progress\:trans-y-simple {
+  transform:  translateY(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-y-simple-n {
+  transform:  translateY(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-y-simple-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 100%));
+}
+
+.get-progress\:trans-x-simple {
+  transform:  translateX(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-x-simple-n {
+  transform:  translateX(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-x-simple-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 100%));
 }
 
 .get-progress\:o {
@@ -3885,6 +4101,18 @@ h3 {
   transform:  translateY(calc(calc(1 - var(--progress))* 61%));
 }
 
+.get-progress\:trans-x-xl {
+  transform:  translateX(calc(var(--progress)* 61%));
+}
+
+.get-progress\:trans-x-xl-n {
+  transform:  translateX(calc(var(--progress)* -61%));
+}
+
+.get-progress\:trans-x-xl-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 61%));
+}
+
 .get-progress\:trans-mouse-xl {
   transform:  translateX(calc(var(--progress)* 61%)) translateY(calc(var(--progress)* -61%));
 }
@@ -3983,6 +4211,30 @@ h3 {
 
 .get-progress\:bg-reverse {
   background-color: calc(calc(1 - var(--progress))* 360);
+}
+
+.get-progress\:trans-y-simple {
+  transform:  translateY(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-y-simple-n {
+  transform:  translateY(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-y-simple-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 100%));
+}
+
+.get-progress\:trans-x-simple {
+  transform:  translateX(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-x-simple-n {
+  transform:  translateX(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-x-simple-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 100%));
 }
 
 .get-progress\:o {
@@ -4571,6 +4823,18 @@ h2 {
   transform:  translateY(calc(calc(1 - var(--progress))* 98.7%));
 }
 
+.get-progress\:trans-x-xxl {
+  transform:  translateX(calc(var(--progress)* 98.7%));
+}
+
+.get-progress\:trans-x-xxl-n {
+  transform:  translateX(calc(var(--progress)* -98.7%));
+}
+
+.get-progress\:trans-x-xxl-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 98.7%));
+}
+
 .get-progress\:trans-mouse-xxl {
   transform:  translateX(calc(var(--progress)* 98.7%)) translateY(calc(var(--progress)* -98.7%));
 }
@@ -4669,6 +4933,30 @@ h2 {
 
 .get-progress\:bg-reverse {
   background-color: calc(calc(1 - var(--progress))* 360);
+}
+
+.get-progress\:trans-y-simple {
+  transform:  translateY(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-y-simple-n {
+  transform:  translateY(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-y-simple-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 100%));
+}
+
+.get-progress\:trans-x-simple {
+  transform:  translateX(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-x-simple-n {
+  transform:  translateX(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-x-simple-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 100%));
 }
 
 .get-progress\:o {
@@ -5301,6 +5589,18 @@ section {
   transform:  translateY(calc(calc(1 - var(--progress))* 159.7%));
 }
 
+.get-progress\:trans-x-xxxl {
+  transform:  translateX(calc(var(--progress)* 159.7%));
+}
+
+.get-progress\:trans-x-xxxl-n {
+  transform:  translateX(calc(var(--progress)* -159.7%));
+}
+
+.get-progress\:trans-x-xxxl-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 159.7%));
+}
+
 .get-progress\:trans-mouse-xxxl {
   transform:  translateX(calc(var(--progress)* 159.7%)) translateY(calc(var(--progress)* -159.7%));
 }
@@ -5399,6 +5699,30 @@ section {
 
 .get-progress\:bg-reverse {
   background-color: calc(calc(1 - var(--progress))* 360);
+}
+
+.get-progress\:trans-y-simple {
+  transform:  translateY(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-y-simple-n {
+  transform:  translateY(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-y-simple-reverse {
+  transform:  translateY(calc(calc(1 - var(--progress))* 100%));
+}
+
+.get-progress\:trans-x-simple {
+  transform:  translateX(calc(var(--progress)* 100%));
+}
+
+.get-progress\:trans-x-simple-n {
+  transform:  translateX(calc(var(--progress)* -100%));
+}
+
+.get-progress\:trans-x-simple-reverse {
+  transform:  translateX(calc(calc(1 - var(--progress))* 100%));
 }
 
 .get-progress\:o {
@@ -32659,6 +32983,25 @@ section {
   align-items: flex-end;
 }
 
+.do-space {
+  justify-content: space-between;
+}
+
+.do-space-start {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.do-space-center {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.do-space-end {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .do-wrap {
   flex-wrap: wrap;
 }
@@ -45840,6 +46183,25 @@ section {
 
   .xs-do-end-end {
     justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .xs-do-space {
+    justify-content: space-between;
+  }
+
+  .xs-do-space-start {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .xs-do-space-center {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .xs-do-space-end {
+    justify-content: space-between;
     align-items: flex-end;
   }
 
@@ -61790,6 +62152,25 @@ section {
     align-items: flex-end;
   }
 
+  .sm-do-space {
+    justify-content: space-between;
+  }
+
+  .sm-do-space-start {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .sm-do-space-center {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sm-do-space-end {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
   .sm-do-wrap {
     flex-wrap: wrap;
   }
@@ -77734,6 +78115,25 @@ section {
 
   .md-do-end-end {
     justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .md-do-space {
+    justify-content: space-between;
+  }
+
+  .md-do-space-start {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .md-do-space-center {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .md-do-space-end {
+    justify-content: space-between;
     align-items: flex-end;
   }
 
@@ -93684,6 +94084,25 @@ section {
     align-items: flex-end;
   }
 
+  .lg-do-space {
+    justify-content: space-between;
+  }
+
+  .lg-do-space-start {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .lg-do-space-center {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .lg-do-space-end {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
   .lg-do-wrap {
     flex-wrap: wrap;
   }
@@ -109628,6 +110047,25 @@ section {
 
   .xl-do-end-end {
     justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .xl-do-space {
+    justify-content: space-between;
+  }
+
+  .xl-do-space-start {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .xl-do-space-center {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .xl-do-space-end {
+    justify-content: space-between;
     align-items: flex-end;
   }
 
@@ -125578,6 +126016,25 @@ section {
     align-items: flex-end;
   }
 
+  .xxl-do-space {
+    justify-content: space-between;
+  }
+
+  .xxl-do-space-start {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .xxl-do-space-center {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .xxl-do-space-end {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
   .xxl-do-wrap {
     flex-wrap: wrap;
   }
@@ -141525,6 +141982,25 @@ section {
     align-items: flex-end;
   }
 
+  .xxxl-do-space {
+    justify-content: space-between;
+  }
+
+  .xxxl-do-space-start {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .xxxl-do-space-center {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .xxxl-do-space-end {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
   .xxxl-do-wrap {
     flex-wrap: wrap;
   }
@@ -144379,6 +144855,10 @@ FRAMEWORK DO
 Easy design !
 -
 */
+.do-br-10 {
+  border-radius: 100%;
+}
+
 .square {
   position: relative;
 }

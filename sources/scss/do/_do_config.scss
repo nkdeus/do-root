@@ -152,6 +152,11 @@ $do-custom-data : (
     params :("translateY"),
     unit   : (10%) 
   ),
+  trans-x  : (
+    prop   : "transform",
+    params :("translateX"),
+    unit   : (10%) 
+  ),
   trans-mouse  : (
     prop   : transform,
     params :(translateX,translateY),
@@ -176,6 +181,18 @@ $do-custom-data : (
     prop   : background-color,
     params :(""),
     unit   : (360),
+    responsive: false
+  ),
+  trans-y-simple  : (
+    prop   : "transform",
+    params :("translateY"),
+    unit   : (100%),
+    responsive: false
+  ),
+  trans-x-simple  : (
+    prop   : "transform",
+    params :("translateX"),
+    unit   : (100%),
     responsive: false
   ),
   o  : (

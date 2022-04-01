@@ -37,6 +37,10 @@ Easy design !
   }
 }
 
+.do-br-10{
+  border-radius: 100%;
+}
+
 .square{
     @include aspect-ratio(1,1);
     &.circle{

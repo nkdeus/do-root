@@ -166,7 +166,7 @@ class ToggleItem {
 
         this.targetItem = $(this.itemTrigger.attr('data-do-target')) || this.itemTrigger;
 
-        this._name = this.itemTrigger.attr('data-do-debug');
+        this._name = this.itemTrigger.attr('data-do-debug') || "new auto";
 
         this.isActive = false;
 
@@ -174,12 +174,31 @@ class ToggleItem {
         this._isChildren = this.idMasterGroup != undefined;
         this._forceToggle = this.itemTrigger.attr('data-do-force') == "true" || false;
 
+        this._actionType = [];
+       
+        if(this.itemTrigger.attr('data-do-on') == undefined){
+            this._actionType = ['click'];
+        }else{
+            this._actionType = this.itemTrigger.attr('data-do-on').split(',');
+        }
 
-        this.itemTrigger.on("click", function (e) {
+        
+              
 
-            scope.managerInstance.onActionOnItem(scope);
-    
-        });
+        this._actionType.forEach(function(pAction){
+       
+           this.on(pAction, function (e) {
+
+                scope.managerInstance.onActionOnItem(scope);
+        
+            });
+          
+
+        },this.itemTrigger);
+
+
+
+  
 
         this.managerInstance.addItem(scope);
 

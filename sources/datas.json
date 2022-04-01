@@ -11,7 +11,17 @@
 		"header": [
 			{
 				"bt": "stage",
-				"url": "./stage.html"
+				"url": "./stage.html",
+				"nav": [
+					{
+						"_bt": "stage 1",
+						"_url": "./stage.html"
+					},
+					{
+						"_bt": "stage 2",
+						"_url": "./stage.html"
+					}
+				]
 			},
 			{
 				"bt": "about",
