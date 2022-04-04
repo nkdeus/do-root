@@ -1,0 +1,242 @@
+{{> ../partials/head}}
+{{> ../partials/nav}}
+
+<section class="por h-auto do-px-smart-xxxl do-py-xxl por do-z-1 do-h-10-vh">
+    <div class="do-flex do-x do-start-center por">
+        <a class="do-p-sm poa left-n-xs-rem do-br-xl do-bg-extra-color-main-grad-linear-3 trans-y-middle-x-before " href="../do.html">
+            <div class="do-wh-xs poa top-middle left trans-y-middle-x-before do-z-2">
+                {{> ../partials/assets/icones/prev}}
+            </div>
+
+            <span class="do-z-2 do-fs-sm por do-txt-main-contraste-auto do-fw-light">do</span>
+            <div class="do-z-1 do-full do-br-xl do-bg-second-color poa top-n-xl left-n-xl"></div>  
+        </a>
+        <h1>5 colors</h1>
+    </div>
+    <p class="do-max-w-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique saepe ducimus ex cupiditate suscipit esse nostrum mollitia repellendus minima. Quia nemo ipsum fugiat est? Sunt quas repudiandae pariatur quos tenetur.</p>
+
+</section>
+
+
+<section id="colors" class="por do-px-smart-xxxl h-auto do-py-xxl por do-z-1">
+
+    <h2 class="do-mb-md do-fs-fluid-lg">colors</h2>
+  
+    <div class="do-gap-md do-grid-2 xl-do-grid-5 ">
+        {{#pageDo.colors}}
+        <div class="set-main-{{name}}">
+            {{> partials/block/heading/h3}}
+
+            <div class="square do-bg-main-color do-mb-xxxs">
+                
+                <div class="content do-flex do-wrap do-justify-content-end do-align-content-end">
+                    {{#pageDo.variantes}}
+                        <div class="do-h-5 do-w-5 do-bg-main-color{{variante}}">
+
+                        </div>
+                    {{/pageDo.variantes}}
+                </div>
+                
+            </div>
+            <div class="do-grid-3 do-gap-xxxs do-mb-xxxs">
+                {{#pageDo.variantes}}
+                <div class="square">
+                    <div class="content">
+                        <div class="do-grid-3 do-gap-xxxs">
+                            {{#pageDo.looper}}
+                                <div class="square">
+                                    <div class="content do-bg-main-color-{{i}}{{variante}}"></div>
+                                </div>
+                            {{/pageDo.looper}}
+                        </div>
+                    </div> 
+                </div>
+                {{/pageDo.variantes}}
+            </div>
+    
+            <div class="do-grid-14 do-gap-xxxs">
+
+                {{#pageDo.looper}}
+                    <div class="square">
+                        <div class="content do-bg-main-color-grad-linear-gold-{{i}}"></div>
+                    </div>
+                    <div class="square">
+                        <div class="content do-bg-main-color-grad-linear-{{i}}"></div>
+                    </div>
+                {{/pageDo.looper}}
+
+            </div>
+        </div>
+        {{/pageDo.colors}}
+    </div>
+
+</section>
+
+
+
+<div 
+  data-module="doscrolldatas"
+  data-do-target="#colors-progress"
+  data-do-trigger-calcul="body"
+  data-do-calcul="full"
+  data-do-update="true"
+  data-do-start="top-=0% center"
+  data-do-end="bottom-=0% bottom"
+  data-do-force="1"
+  >
+</div>
+<section id="colors-progress" class="por h-auto do-px-smart-xxxl do-grid-1 do-col do-py-xxl por do-z-1">
+
+
+    <h2 class="do-mb-md do-fs-fluid-lg">Motions</h2>
+  
+    <div class="poa do-full do-bg-second-color-1-lighten"></div>
+    <div class="do-grid-5 por do-z-1 do-gap-md">
+ 
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-main-S"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-extra-S"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-fade-S"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-second-S"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-contraste-S"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-main-L"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-extra-L"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-fade-L"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-second-L"></div>
+            </div>
+        </div>
+        <div>
+            <div class="square por">
+                <div class="content get-progress:bg-contraste-L"></div>
+            </div>
+        </div>
+       
+    </div>
+
+  
+  
+</section>
+
+
+<section id="colors" class="por do-px-smart-xxxl h-auto do-py-xxl por do-z-1">
+
+    <h2 class="do-mb-md do-fs-fluid-lg">Gradients</h2>
+    <h3 class="do-mb-md do-fs-fluid-md">Linear</h3>
+    <div class="do-w-10 do-mb-lg">
+        <div class="do-grid-5 do-gap-md do-h-20-vh do-center-end">
+            {{#pageDo.looper8}}
+
+                <div class="do-w-10 do-h-10 do-grid-col-2 do-bg-main-color-grad-linear-{{i}}"></div>
+
+                <div class="do-w-10 do-h-10 do-grid-col-1 do-bg-main-color-grad-linear-{{i}}-lighten"></div>
+                <div class="do-w-10 do-h-10 do-grid-col-2 do-bg-main-color-grad-linear-{{i}}-darken"></div>
+                {{#pageDo.colors}}
+
+                    <div class="do-w-10 do-h-10 do-grid-row-2 do-bg-main-color-{{name}}-grad-linear-{{i}}"></div>
+                             
+                {{/pageDo.colors}}
+                           
+
+            {{/pageDo.looper8}}
+        </div>
+    </div>
+
+
+    <h3 class="do-mb-md do-fs-fluid-md">Radial</h3>
+    <div class="do-w-10 do-mb-lg">
+        <div class="do-flex do-wrap do-gap-md do-x do-start-center">
+           
+            <div class="do-grid-5 do-gap-md do-w-10">
+               
+                {{#pageDo.colors}}
+    
+                <div class="do-h-xl do-w-10 do-bg-main-color-{{name}}-grad-radial"></div>
+                         
+                {{/pageDo.colors}}
+
+            </div>
+
+            <div class="do-grid-8 do-gap-md do-w-10">
+
+                {{#pageDo.looper8}}
+
+                    <div class="do-h-xl do-w-10 do-bg-main-color-grad-radial-{{i}}"></div>
+       
+                {{/pageDo.looper8}}
+
+            </div>
+            
+        </div>
+    </div>
+
+
+    <h3 class="do-mb-md do-fs-fluid-md">Gold</h3>
+    <div class="do-w-10 do-mb-lg">
+        <div class="do-flex do-wrap do-gap-md do-x do-start-center">
+
+            <div class="do-grid-5 do-gap-md do-w-10">
+                         
+                {{#pageDo.colors}}
+
+                    <div class="do-h-xl do-w-10 do-bg-main-color-{{name}}-grad-gold"></div>
+                            
+                {{/pageDo.colors}}
+
+        
+            </div>
+           
+            <div class="do-grid-8 do-gap-md do-w-10">
+
+                {{#pageDo.looper8}}
+
+                    <div class="do-h-xl do-w-10 do-bg-main-color-grad-linear-gold-{{i}}"></div>
+
+                {{/pageDo.looper8}}                           
+          
+        
+            </div>
+
+
+            
+        </div>
+    </div>
+
+</section>
+
+
+
+{{> ../partials/footer}}
+{{> ../partials/foot}}

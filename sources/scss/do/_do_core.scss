@@ -165,7 +165,7 @@ Core de la créature
 
             font-size: getFontSize($value * $unit,getMinPx($value));
             line-height: 1.2;
-            margin-block-end:0.5rem;
+            margin-block-end:0rem;
 
             &.reset{
                 margin-block-start:0;
@@ -306,7 +306,7 @@ Core de la créature
             $class-full-name : get-#{$var-name}\:#{$data-class};
         }
 
-        @debug($class-full-name);
+        //@debug($class-full-name);
 
         .#{$class-full-name}{
 
@@ -615,8 +615,15 @@ Core de la créature
         transform: none;
     }
 
+    @include do-events-extend(#{$class}-hide) {
+        display: none;
+    }
+
     .#{$class}-bg-transparent {
         background-color: transparent !important;
+    }
+    .#{$class}-txt-transparent {
+        color: transparent !important;
     }
     .#{$class}-object-fit {
         &\:cover {
@@ -754,7 +761,7 @@ Core de la créature
 
         .#{$class}-blur {
             &-#{$i} {
-                filter: blur($i * 1rem);
+                filter: blur($i * 0.5rem);
             }
         }
 

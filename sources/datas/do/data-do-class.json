@@ -1,0 +1,84 @@
+{
+  "classDo" : [
+    {
+      "name":"paddings",
+      "group":[
+        {
+          "name" : "p",
+          "props": ["padding"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "px",
+          "props": ["padding-left","padding-right"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "py",
+          "props": ["padding-top","padding-bottom"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "pt",
+          "props": ["padding-top"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "pb",
+          "props": ["padding-bottom"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "pl",
+          "props": ["padding-left"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "pr",
+          "props": ["padding-right"],
+          "unit" : "1rem"
+        }
+      ]
+    },
+    {
+      "name":"margins",
+      "group":[
+        {
+          "name" : "m",
+          "props": ["margin"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "mx",
+          "props": ["margin-left","margin-right"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "my",
+          "props": ["margin-top","margin-bottom"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "mt",
+          "props": ["margin-top"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "mb",
+          "props": ["margin-bottom"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "ml",
+          "props": ["margin-left"],
+          "unit" : "1rem"
+        },
+        {
+          "name" : "mr",
+          "props": ["margin-right"],
+          "unit" : "1rem"
+        }
+      ]
+    }
+  ]
+}

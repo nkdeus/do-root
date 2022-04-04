@@ -1,0 +1,216 @@
+
+<style type="text/css">
+
+  :root{
+
+      /* color : main */
+      --main:15,100%,79%;
+      --main-H:15;
+      --main-S:100%;
+      --main-L:79%;
+
+      /* color : extra */
+      --extra:176,96%,52%;
+      --extra-H:176;
+      --extra-S:96%;
+      --extra-L:52%;
+
+      /* color : contraste */
+      --contraste:36,3.3%,28%;
+      --contraste-H:36;
+      --contraste-S:3.3%;
+      --contraste-L:28%;
+
+      /* color : second */
+      --second:0,0%,100%;
+      --second-H:0;
+      --second-S:0%;
+      --second-L:100%;
+
+      /* color : fade */
+      --fade:37,20%,84%;
+      --fade-H:37;
+      --fade-S:20%;
+      --fade-L:84%;
+
+
+      --fw-light:100;
+      --fw-regular:400;
+      --fw-medium:400;
+      --fw-bold:700;
+
+  }
+
+
+  body{
+
+      /* init body : main */
+      --main-color:var(--main);
+      --main-color-H:var(--main-H);
+      --main-color-S:var(--main-S);
+      --main-color-L:var(--main-L);
+
+      /* init body : extra */
+      --extra-color:var(--extra);
+      --extra-color-H:var(--extra-H);
+      --extra-color-S:var(--extra-S);
+      --extra-color-L:var(--extra-L);
+
+      /* init body : contraste */
+      --contraste-color:var(--contraste);
+      --contraste-color-H:var(--contraste-H);
+      --contraste-color-S:var(--contraste-S);
+      --contraste-color-L:var(--contraste-L);
+
+      /* init body : second */
+      --second-color:var(--second);
+      --second-color-H:var(--second-H);
+      --second-color-S:var(--second-S);
+      --second-color-L:var(--second-L);
+
+      /* init body : fade */
+      --fade-color:var(--fade);
+      --fade-color-H:var(--fade-H);
+      --fade-color-S:var(--fade-S);
+      --fade-color-L:var(--fade-L);
+
+
+  }
+
+  .toggleColor{
+
+
+      /* init toggleColor : main */
+      --main-color:var(--extra);
+      --main-color-H:var(--extra-H);
+      --main-color-S:var(--extra-S);
+      --main-color-L:var(--extra-L);
+
+      /* init toggleColor : extra */
+      --extra-color:var(--main);
+      --extra-color-H:var(--main-H);
+      --extra-color-S:var(--main-S);
+      --extra-color-L:var(--main-L);
+
+      /* init toggleColor : contraste */
+      --contraste-color:var(--second);
+      --contraste-color-H:var(--second-H);
+      --contraste-color-S:var(--second-S);
+      --contraste-color-L:var(--second-L);
+
+      /* init toggleColor : second */
+      --second-color:var(--contraste);
+      --second-color-H:var(--contraste-H);
+      --second-color-S:var(--contraste-S);
+      --second-color-L:var(--contraste-L);
+
+      /* init toggleColor : fade */
+      --fade-color:var(--fade);
+      --fade-color-H:var(--fade-H);
+      --fade-color-S:var(--fade-S);
+      --fade-color-L:var(--fade-L);
+
+
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+
+      .toggleColor{
+
+          /* init reverse toggleColor : main */
+          --main-color:var(--main);
+          --main-color-H:var(--main-H);
+          --main-color-S:var(--main-S);
+          --main-color-L:var(--main-L);
+
+          /* init reverse toggleColor : extra */
+          --extra-color:var(--extra);
+          --extra-color-H:var(--extra-H);
+          --extra-color-S:var(--extra-S);
+          --extra-color-L:var(--extra-L);
+
+          /* init reverse toggleColor : contraste */
+          --contraste-color:var(--contraste);
+          --contraste-color-H:var(--contraste-H);
+          --contraste-color-S:var(--contraste-S);
+          --contraste-color-L:var(--contraste-L);
+
+          /* init reverse toggleColor : second */
+          --second-color:var(--second);
+          --second-color-H:var(--second-H);
+          --second-color-S:var(--second-S);
+          --second-color-L:var(--second-L);
+
+          /* init reverse toggleColor : fade */
+          --fade-color:var(--fade);
+          --fade-color-H:var(--fade-H);
+          --fade-color-S:var(--fade-S);
+          --fade-color-L:var(--fade-L);
+
+
+      }
+
+      body{
+
+        /* init reverse body: main */
+        --main-color:var(--extra);
+        --main-color-H:var(--extra-H);
+        --main-color-S:var(--extra-S);
+        --main-color-L:var(--extra-L);
+
+        /* init reverse body: extra */
+        --extra-color:var(--main);
+        --extra-color-H:var(--main-H);
+        --extra-color-S:var(--main-S);
+        --extra-color-L:var(--main-L);
+
+        /* init reverse body: contraste */
+        --contraste-color:var(--second);
+        --contraste-color-H:var(--second-H);
+        --contraste-color-S:var(--second-S);
+        --contraste-color-L:var(--second-L);
+
+        /* init reverse body: second */
+        --second-color:var(--contraste);
+        --second-color-H:var(--contraste-H);
+        --second-color-S:var(--contraste-S);
+        --second-color-L:var(--contraste-L);
+
+        /* init reverse body: fade */
+        --fade-color:var(--fade);
+        --fade-color-H:var(--fade-H);
+        --fade-color-S:var(--fade-S);
+        --fade-color-L:var(--fade-L);
+
+
+      }
+
+
+
+  }
+
+  body{
+    font-family: Roboto, sans-serif;
+    font-weight: var(--fw-regular);
+  }
+
+    .do-ff-main {
+      font-family: Roboto, sans-serif;
+    }
+    .do-ff-extra {
+      font-family: Economica, sans-serif;
+    }
+
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Economica, sans-serif;
+    font-weight: regular;
+  }
+
+</style>

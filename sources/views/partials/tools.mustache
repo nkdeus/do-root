@@ -1,42 +1,11 @@
 
-  <div id="tools" class="do-w-lg do-h-10 do-py-xs pof do-z-10 top right do-z-10 do-flex do-y do-space-center hover">
+  <div id="tools" class="do-h-10 pof do-z-10 top right do-z-10 do-flex do-y do-space-center hover">
 
     <div class="do-full poa top do-z-2 do-bg-main-color-extra-grad-linear-7 tween-trans hover:do-scale-x-11"></div>
 
-
-    
-    <div id="site-nav-toggle" class="cursor-pointer por do-z-3 do-flex do-y do-align-items-center do-z-2"
-    data-module="dotoggler" data-do-debug="master" data-do-target="#site-nav" data-do-group="theme" data-do-on="mousedown" data-do-is-master="true">       
-      <div class="do-wh-md do-bg-main-color-1-auto do-br-md por do-flex do-y do-center-center">
-        
-          <div class="do-wh-sm do-br-md pointer-events-none tween-all deep-active:do-rotate-20 do-o-10 deep-active:do-o-0">
-
-            <svg xmlns="http://www.w3.org/2000/svg" class="do-w-10 tween-trans" height="100%" viewBox="0 0 24 24" width="100%" fill="#3e3d40">
-              <path d="M0 0h24v24H0V0z" fill="none" />
-              <path class="do-fill-extra-color-auto" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-            </svg>
-
-          </div>
-
-          <div class="do-wh-xs do-br-md poa center do-bg-extra-color-auto pointer-events-none tween-all do-o-0 deep-active:do-o-10"></div>
-  
-      </div>
-    </div>
-
-
-    <div id="tools-toggle" class="cursor-pointer por do-z-3 do-flex do-y do-align-items-center do-z-2"
-    data-module="dotoggler" data-do-debug="master" data-do-target="#tools-nav" data-do-group="theme" data-do-is-master="true">       
-      <div class="do-wh-md do-bg-main-color-1-auto do-br-md por do-flex do-y do-center-center">
-        
-          <div class="do-wh-sm do-br-md tween-trans deep-active:do-rotate-20">
-
-            {{> icones}}
-
-          </div>
-  
-      </div>
-    </div>
-
+    {{> block/bt/siteNavToggle}}
+    {{> block/bt/colorSwitcherVertical}}
+    {{> block/bt/toolsNavToggle}}
     {{> block/toolsNav}}
     {{> block/siteNav}}
  

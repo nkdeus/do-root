@@ -27,8 +27,7 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
 
 @function do-hsl-auto($colorHsl,$opacity:1){
 
-
-    @return hsla(var(--#{$colorHsl}-color-H),0% ,calc( ( var(--#{$colorHsl}-color-L) - 65% ) * -100 ),$opacity);
+    @return hsla(var(--#{$colorHsl}-color-H),0% ,calc( ( var(--#{$colorHsl}-color-L) - 60% ) * -100 ),$opacity);
 
 }
 
@@ -60,6 +59,7 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
         }
     }
     @if $extendHover == true {
+        //@debug('hover', #{$class});
         @include do-extend-color-hover('hover', #{$class}) {
             @content;
         }
@@ -99,15 +99,20 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
 
         @if($responsiveLoop == false){
 
-            .#{$class}-#{$color-type}-#{$color}-color {
 
-                
-                    &-darken{
-                        #{$color-type-class}: do-hsl($color,1,true,-10%) !important;       
-                    }
-                    &-lighten{
-                        #{$color-type-class}: do-hsl($color,1,true,10%) !important;
-                    }
+            @include do-events-color-extend(#{$class}-#{$color-type}-#{$color}-color-darken,true) {
+
+                #{$color-type-class}: do-hsl($color,1,true,-6%) !important;       
+  
+            }
+
+            @include do-events-color-extend(#{$class}-#{$color-type}-#{$color}-color-lighten,true) {
+
+                #{$color-type-class}: do-hsl($color,1,true,6%) !important;
+
+            }
+
+            .#{$class}-#{$color-type}-#{$color}-color {
 
                     &-hue{
                         #{$color-type-class}: hsla(var(--#{$color}-color-H), 100%, 50%,1);
@@ -135,9 +140,12 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                         }
                     }
 
+                    @if($color-type == "stroke"){
+                        &-auto{
+                            stroke: do-hsl-auto($color) !important;      
+                        }
+                    }
 
-                   
-                
 
                 @for $i from 0 through $do-max {
                     &-#{$i}{
@@ -164,6 +172,22 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                 }
                 @if($color-type-class == "background-color"){
 
+                    @each $colorName in $colorsVar {
+
+                 
+                        &-#{$colorName}-grad-radial{
+    
+                            background: radial-gradient(do-hsl($color,1) 0%, do-hsl($colorName,1) 100%);
+    
+                        }
+                        &-#{$colorName}-grad-gold{
+                            background: radial-gradient(do-hsl($colorName,0.2), do-hsl($color,0.5)),
+                                        radial-gradient(ellipse at top, do-hsl($color,0.6), do-hsl($colorName,0.2)),
+                                        radial-gradient(ellipse at bottom, do-hsl($colorName,0.5), do-hsl($color,0.2));
+                        }
+
+                    }
+
                     @for $i from 0 through $do-num-angle - 1 {
 
                         $angle : #{math.div(360,$do-num-angle)*$i}deg;
@@ -175,22 +199,23 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                                 background: linear-gradient($angle, do-hsl($color,1) 0%, do-hsl($colorName,1) 100%);
         
                             }
-                            &-#{$colorName}-grad-radial{
-        
-                                background: radial-gradient(do-hsl($color,1) 0%, do-hsl($colorName,1) 100%);
-        
-                            }
-                            &-#{$colorName}-grad-gold{
-                                background: radial-gradient(do-hsl($colorName,0.2), do-hsl($color,0.5)),
-                                            radial-gradient(ellipse at top, do-hsl($color,0.6), do-hsl($colorName,0.2)),
-                                            radial-gradient(ellipse at bottom, do-hsl($colorName,0.5), do-hsl($color,0.2));
-                            }
     
                         }
 
                         &-grad-linear-#{$i}{
     
                             background: linear-gradient($angle, do-hsl($color,0) 0%, do-hsl($color,1) 100%);
+
+                            &-darken{
+    
+                                background: linear-gradient($angle, do-hsl($color,0,true,-6%) 0%, do-hsl($color,1,true,-6%) 100%);
+        
+                            }
+                            &-lighten{
+    
+                                background: linear-gradient($angle, do-hsl($color,0,true,6%) 0%, do-hsl($color,1,true,6%) 100%);
+        
+                            }
     
                         }
                         &-grad-linear-gold-#{$i}{
@@ -208,24 +233,15 @@ ajouter : https://blog.jim-nielsen.com/2021/css-relative-colors/
                             #{'background'}: linear-gradient($angle, #{$grad-gold});
                             
                         }
-                        &-grad-radial{
-    
-                            background: radial-gradient(do-hsl($color,0) 0%, do-hsl($color,1) 100%);
+                        &-grad-radial-#{$i}{
+                            
+                            background: radial-gradient(do-hsl($color,0) #{$i*math.round(math.div($do-ratio-to-100,$do))}, do-hsl($color,1) 100%);
     
                         }
-
-                      
-    
                     }
-                }
-                
-
-              
-
+                }    
             }
         }
-
-
     }
     %bg-#{$color}-color {
         background-color: do-hsl($color);

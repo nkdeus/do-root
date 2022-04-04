@@ -20,6 +20,8 @@ moduleManager["dofilters"] = function () {
     $scope.defaultClass = $($scope).attr("data-do-class-default") || "do-block";
     $scope.customData = $($scope).attr("data-do-custom-data") || "data-do-tag";
     $scope.inputArea = $($scope).attr("data-do-target-input") || "rechercheArea";
+    $scope.attrName = $($scope).attr("data-do-attr") || "href";
+    $scope.btAttrName = $($scope).attr("data-do-bt-attr") || "href";
     $scope.sep = $($scope).attr("data-do-sep") || "/";
     $scope.tagIndex = parseInt($($scope).attr("data-do-tag-index")) || 1;
 
@@ -39,10 +41,13 @@ moduleManager["dofilters"] = function () {
     $($scope.nav).find('a').each(function() {  
         var bt = $(this);
         bts.push(bt);
-        var tag = bt.attr("href").split($scope.sep)[$scope.tagIndex];
+        var tag = bt.attr($scope.btAttrName).split($scope.sep)[$scope.tagIndex];
+        if(tag == undefined){
+            tag = bt.attr($scope.btAttrName);
+        }
         bt.attr($scope.customData,tag);
         autoCompleteList.push(tag);
-        console.log("push ",tag);
+        console.log(">>>>>>>>>>>>>>>>>>>> push ",tag);
         tags[tag] = [];
     
         bt.click(function (event) {
@@ -56,9 +61,9 @@ moduleManager["dofilters"] = function () {
         
         instance.addClass($scope.defaultClass);
         instance.addClass($scope.toggleClass);     
-        var tagsToSplit = instance.attr("href");
+        var tagsToSplit = instance.attr($scope.attrName);
         if($scope.subTarget != undefined){
-            tagsToSplit = instance.find($scope.subTarget).attr("href");
+            tagsToSplit = instance.find($scope.subTarget).attr($scope.attrName);
         }
         var tempsTags = tagsToSplit.split($scope.sep);
         tempsTags = $.grep(tempsTags,function(n){ return n != '' || n });
@@ -74,6 +79,7 @@ moduleManager["dofilters"] = function () {
         datas.push(item);
         $.each(item.tags, function (key, value) {
            
+
             if(tags[value]){
                 tags[value].push(item);
             }
@@ -90,6 +96,7 @@ moduleManager["dofilters"] = function () {
     }
 
     $scope.activeItems = function(pItems){
+        console.log("??? ",pItems);
         $.each(pItems, function (key, value) {
             value.instance.removeClass($scope.toggleClass);
             gsap.fromTo(value.instance, { duration: 0.5, opacity:0 }, { opacity: 1 });
@@ -143,6 +150,7 @@ moduleManager["dofilters"] = function () {
 
     $scope.updateTag = function(pTag,pBt=undefined){
         var tag = pTag;
+        console.log("[updateTag] ",pTag);
         if($scope.type == "solo"){
             $scope.resetNav();
         }

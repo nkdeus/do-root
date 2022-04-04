@@ -82,19 +82,19 @@ input{
   transition-property: background-color, color;
   transition-duration: math.div($duration, 2);
   transition-timing-function: $easing;
+  
 
   &.reset{
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
-    background-color: transparent !important;
     border: none;
   }
   &.app{
     appearance: none;
   }
-  opacity: 0.8;
+
   &:focus{
     opacity: 1;
   }
@@ -135,6 +135,11 @@ input{
  background-position: 50% -10rem;
  background-repeat: no-repeat;
  background-size: 100%;
+}
+
+.do-bg-clip-text{
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 

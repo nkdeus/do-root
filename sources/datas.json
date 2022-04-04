@@ -5,27 +5,34 @@
 	},
 	"titre": "Ulysse 2029",
 	"logo": "imgs/logo.svg",
-	"rootPath": "./",
+	"rootPath": "https://do-root.netlify.app/",
 	"nav": {
 		"background": "hide",
 		"header": [
 			{
-				"bt": "stage",
-				"url": "./stage.html",
+				"bt": "Do v1",
+				"id": "do",
+				"url": "do.html",
 				"nav": [
 					{
-						"_bt": "stage 1",
-						"_url": "./stage.html"
+						"_bt": "colors",
+						"_url": "do/colors.html"
 					},
 					{
-						"_bt": "stage 2",
-						"_url": "./stage.html"
+						"_bt": "sizes",
+						"_url": "do/sizes.html"
+					},
+					{
+						"_bt": "class",
+						"_url": "do/class.html"
 					}
 				]
 			},
 			{
 				"bt": "about",
-				"url": "./about.html"
+				"id": "",
+				"url": "about.html",
+				"nav": []
 			}
 		],
 		"footer": [
@@ -44,7 +51,7 @@
 		{
 			"name": "Roboto",
 			"className": "main",
-			"weight": "200;400;700"
+			"weight": "100;400;700"
 		},
 		{
 			"name": "Economica",
@@ -52,14 +59,32 @@
 			"weight": "400"
 		}
 	],
+	"fontweight": [
+		{
+			"name": "light",
+			"weight": 100
+		},
+		{
+			"name": "regular",
+			"weight": 400
+		},
+		{
+			"name": "medium",
+			"weight": 400
+		},
+		{
+			"name": "bold",
+			"weight": 700
+		}
+	],
 	"typos": {
 		"body": {
 			"name": "Roboto",
-			"weight": "400"
+			"weight": "regular"
 		},
 		"heading": {
 			"name": "Economica",
-			"weight": "400"
+			"weight": "regular"
 		}
 	},
 	"colors": [
@@ -212,27 +237,145 @@
 	},
 	"pageHome": {
 		"title": "$do : 1.61803398875;",
-		"text": "lorem ipsum dolor update 10 !",
+		"text": "lorem ipsum dolor update 11 !"
+	},
+	"classDo": [
+		{
+			"name": "paddings",
+			"group": [
+				{
+					"name": "p",
+					"props": [
+						"padding"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "px",
+					"props": [
+						"padding-left",
+						"padding-right"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "py",
+					"props": [
+						"padding-top",
+						"padding-bottom"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "pt",
+					"props": [
+						"padding-top"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "pb",
+					"props": [
+						"padding-bottom"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "pl",
+					"props": [
+						"padding-left"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "pr",
+					"props": [
+						"padding-right"
+					],
+					"unit": "1rem"
+				}
+			]
+		},
+		{
+			"name": "margins",
+			"group": [
+				{
+					"name": "m",
+					"props": [
+						"margin"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "mx",
+					"props": [
+						"margin-left",
+						"margin-right"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "my",
+					"props": [
+						"margin-top",
+						"margin-bottom"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "mt",
+					"props": [
+						"margin-top"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "mb",
+					"props": [
+						"margin-bottom"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "ml",
+					"props": [
+						"margin-left"
+					],
+					"unit": "1rem"
+				},
+				{
+					"name": "mr",
+					"props": [
+						"margin-right"
+					],
+					"unit": "1rem"
+				}
+			]
+		}
+	],
+	"pageDo": {
+		"title": "$do : 1.61803398875;",
+		"text": "texte page do",
 		"colors": [
 			{
 				"name": "main",
-				"title": "var(--main-color)"
+				"title": "main"
 			},
 			{
 				"name": "extra",
-				"title": "var(--extra-color)"
+				"title": "extra"
 			},
 			{
 				"name": "second",
-				"title": "var(--second-color)"
+				"title": "second"
 			},
 			{
 				"name": "contraste",
-				"title": "var(--contraste-color)"
+				"title": "contraste"
 			},
 			{
 				"name": "fade",
-				"title": "var(--fade-color)"
+				"title": "fade"
 			}
 		],
 		"variantes": [
@@ -273,6 +416,61 @@
 			},
 			{
 				"i": 9
+			}
+		],
+		"looper8": [
+			{
+				"i": 0
+			},
+			{
+				"i": 1
+			},
+			{
+				"i": 2
+			},
+			{
+				"i": 3
+			},
+			{
+				"i": 4
+			},
+			{
+				"i": 5
+			},
+			{
+				"i": 6
+			},
+			{
+				"i": 7
+			}
+		],
+		"sizes": [
+			{
+				"size": "xxxs"
+			},
+			{
+				"size": "xxs"
+			},
+			{
+				"size": "xs"
+			},
+			{
+				"size": "sm"
+			},
+			{
+				"size": "md"
+			},
+			{
+				"size": "lg"
+			},
+			{
+				"size": "xl"
+			},
+			{
+				"size": "xxl"
+			},
+			{
+				"size": "xxxl"
 			}
 		]
 	}

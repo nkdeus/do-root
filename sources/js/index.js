@@ -66,7 +66,7 @@ $(document).ready(function() {
     var toggleMode = getParamSingle(itemMode) == "true";
 
     if(prefersDarkMode){
-      $('#color-switcher').addClass('active');
+      //$('#color-switcher').addClass('active');
     }
 
     if(toggleMode != null){

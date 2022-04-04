@@ -1,42 +1,6 @@
 {
     "pageHome" : {
       "title":"$do : 1.61803398875;",
-      "text":"lorem ipsum dolor update 10 !",
-      "colors":[
-        {
-          "name":"main",
-          "title":"var(--main-color)"
-        },
-        {
-          "name":"extra",
-          "title":"var(--extra-color)"
-        },
-        {
-          "name":"second",
-          "title":"var(--second-color)"
-        },
-        {
-          "name":"contraste",
-          "title":"var(--contraste-color)"
-        },
-        {
-          "name":"fade",
-          "title":"var(--fade-color)"
-        }
-      ],
-      "variantes":[
-        {
-          "variante":""
-        },
-        {
-          "variante":"-darken"
-        },
-        {
-          "variante":"-lighten"
-        }
-      ],
-      "looper":[
-        {"i":1}, {"i":2}, {"i":3}, {"i":4}, {"i":5}, {"i":6}, {"i":7}, {"i":8}, {"i":9}
-      ]
+      "text":"lorem ipsum dolor update 11 !"  
     }
 }

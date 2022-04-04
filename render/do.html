@@ -9,14 +9,14 @@
   <title>Ulysse 2029</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Economica:wght@400&display=swap" rel="stylesheet" />
 
 
-  <link type="text/css" rel="stylesheet" href="css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="https://do-root.netlify.app/css/styles.css" />
 
 
-  <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://do-root.netlify.app/js/jquery-3.6.0.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
   
@@ -24,16 +24,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js" integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-  <script type="text/javascript" src="js/do/modules/do-mod-toggle.js"></script>
-  <script type="text/javascript" src="js/do/modules/do-module-toggle.js"></script>
-  <script type="text/javascript" src="js/do/modules/do-module-trigger.js"></script>
-  <script type="text/javascript" src="js/do/do-scrollEvents.js"></script>
-  <script type="text/javascript" src="js/do/modules/do-module-scrolldatas.js"></script>
-  <script type="text/javascript" src="js/do/modules/do-module-mousedatas.js"></script>
-  <script type="text/javascript" src="js/do/modules/do-module-tweens.js"></script>
+  <script type="text/javascript" src="https://do-root.netlify.app/js/do/modules/do-mod-toggle.js"></script>
+  <script type="text/javascript" src="https://do-root.netlify.app/js/do/modules/do-module-toggle.js"></script>
+  <script type="text/javascript" src="https://do-root.netlify.app/js/do/modules/do-module-trigger.js"></script>
+  <script type="text/javascript" src="https://do-root.netlify.app/js/do/do-scrollEvents.js"></script>
+  <script type="text/javascript" src="https://do-root.netlify.app/js/do/modules/do-module-scrolldatas.js"></script>
+  <script type="text/javascript" src="https://do-root.netlify.app/js/do/modules/do-module-mousedatas.js"></script>
+  <script type="text/javascript" src="https://do-root.netlify.app/js/do/modules/do-module-tweens.js"></script>
 
 
-  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="https://do-root.netlify.app/js/index.js"></script>
 
   
   <style type="text/css">
@@ -70,6 +70,11 @@
         --fade-S:20%;
         --fade-L:84%;
   
+  
+        --fw-light:100;
+        --fw-regular:400;
+        --fw-medium:400;
+        --fw-bold:700;
   
     }
   
@@ -224,7 +229,7 @@
   
     body{
       font-family: Roboto, sans-serif;
-      font-weight: 400;
+      font-weight: var(--fw-regular);
     }
   
       .do-ff-main {
@@ -242,7 +247,7 @@
     h5,
     h6 {
       font-family: Economica, sans-serif;
-      font-weight: 400;
+      font-weight: regular;
     }
   
   </style>
@@ -253,17 +258,64 @@
 
 <body class="do-bg-second-color">
   
-    <div id="tools" class="do-w-lg do-h-10  pof do-z-10 top right do-z-10 do-flex do-y do-center hover">
+    <div id="tools" class="do-h-10 pof do-z-10 top right do-z-10 do-flex do-y do-space-center hover">
   
-      <div class="do-full poa do-z-2 do-bg-main-color-extra-grad-linear-7 tween-trans hover:do-scale-x-12"></div>
+      <div class="do-full poa top do-z-2 do-bg-main-color-extra-grad-linear-7 tween-trans hover:do-scale-x-11"></div>
   
-      <div id="tools-toggle" class="cursor-pointer poa do-z-3 center do-flex do-y do-align-items-center do-z-2 do-py-xs"
-      data-module="dotoggler" data-do-target="#tools-nav" data-do-group="theme" data-do-is-master="true">       
-        <div class="do-wh-md do-bg-main-color-1-auto do-br-md por do-flex do-y do-center-center tween-trans hover:do-trans-x-n-3">
+      <div id="site-nav-toggle" class="cursor-pointer por do-z-3 do-flex do-y do-align-items-center do-z-2 do-p-sm"
+      data-module="dotoggler" data-do-debug="master" data-do-target="#site-nav" data-do-group="theme" data-do-on="mousedown" data-do-is-master="true">       
+        <div class="do-wh-md do-bg-main-color-1-auto do-overflow-hidden do-br-md por do-flex do-y do-center-center">
           
-            <div class="do-wh-sm do-br-md tween-trans deep-active:do-rotate-20">
-  
+            <div class="do-wh-sm do-br-md pointer-events-none tween-all deep-active:do-trans-x-n-2 do-o-10 deep-active:do-o-0">
+      
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 40 40">
+              	<g id="burger" transform="translate(-575 -366)">
+              	  <rect id="bg" width="40" height="40" transform="translate(575 366)" opacity="0"/>
+              	  <g id="lines" transform="translate(0 74)">
+              		<line class="do-stroke-extra-color-auto" id="Ligne_1" data-name="Ligne 1" x2="28.505" transform="translate(581.247 312.5)" fill="none" stroke-width="1"/>
+              		<line class="do-stroke-extra-color-auto" id="Ligne_3" data-name="Ligne 3" x2="28.505" transform="translate(581.247 302.5)" fill="none" stroke-width="1"/>
+              		<line class="do-stroke-extra-color-auto" id="Ligne_4" data-name="Ligne 4" x2="28.505" transform="translate(581.247 322.5)" fill="none" stroke-width="1"/>
+              	  </g>
+              	</g>
+                </svg>      
+            </div>
+      
+            <div class="do-wh-sm poa center tween-all do-o-0 deep-active:do-o-10">
+              <div class="por do-full do-br-md do-scale-xs do-border-second-color do-border-solid do-bw-sm tween-trans">
+                
+              </div>
+            </div>
+      
+        </div>
+      </div>      <div 
+        id="color-switcher"
+        class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-p-sm"
+        data-module="dotoggler"
+        data-do-target="body"
+        data-do-custom-target-class="toggleColor">
+        <div class="do-wh-md do-bg-main-color-1-auto do-flex do-center-center do-overflow-hidden do-br-md por do-mb-xxs">
+          <div class="do-wh-md tween-trans poa left do-trans-x-n-3 deep-active:do-trans-x-3">
+            <div class="por do-full do-br-md do-scale-xs do-bg-contraste-color">
               
+            </div>
+          </div>
+          <div class="do-wh-sm poa center">
+            <div class="por do-full do-br-md do-scale-xs do-border-second-color do-border-solid do-bw-sm tween-trans">
+              
+            </div>
+          </div>
+        </div>
+      </div>      <div id="tools-toggle"
+      class="cursor-pointer por do-z-3 do-flex do-y do-align-items-center do-z-2 do-p-sm"
+      data-module="dotoggler"
+      data-do-debug="master"
+      data-do-target="#tools-nav"
+      data-do-group="theme"
+      data-do-is-master="true">       
+        <div class="do-wh-md do-bg-main-color-1-auto do-br-md por do-flex do-y do-center-center">
+          
+            <div class="do-wh-sm do-br-md tween-trans deep-active:do-rotate-5">
+      
               <svg class="do-fill-main-color-auto" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
               
                 <path class="st0" d="M450.3,287.2l-47.1,7.3c-3.5,13.4-8.8,26.2-15.8,38.2l28.7,37.6c2,2.6,1.8,6.4-0.6,8.7l-35.5,35.8
@@ -284,394 +336,438 @@
               	c-1.7-2.2-1.8-5.2-0.4-7.6c8.3-13.2,14.2-27.5,17.6-42.5c0.6-2.7,2.8-4.7,5.5-5.1l45.8-7.1L442.5,236.1z M255.2,335.8
               	c-44.1,0-80-35.9-80-80s35.9-80,80-80c44.1,0,80,35.9,80,80S299.3,335.8,255.2,335.8z M255.2,189.1c-36.8,0-66.7,29.9-66.7,66.7
               	s29.9,66.7,66.7,66.7c36.8,0,66.7-29.9,66.7-66.7S291.9,189.1,255.2,189.1z"/>
-              </svg>
-  
+              </svg>      
             </div>
-    
+      
         </div>
-      </div>
-  
-  
-  
-      <nav id="tools-nav" class="do-flex do-z-1 do-w-xxl do-h-10 do-bg-contraste-color do-y do-center-center tween-all active:trans-x-before do-o-5 active:do-o-10">
-        
-        <div class="do-w-xs do-h-10 do-bg-extra-color-main-grad-linear-3 poa top left-n-xs-rem tween-trans deep-active:do-scale-x-0"></div>
-  
-  
-        <div id="theme-edit" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
-        data-module="dotoggler" data-do-target="#color-edit" data-do-group="theme">
-     
-          <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
-              <div class="do-h-md do-w-10 do-bg-main-color tween-trans deep-active:anim-scale-in "> </div>
-              <div class="do-h-md do-w-10 do-bg-extra-color tween-trans deep-active:anim-scale-in "> </div>
-              <div class="do-h-md do-w-10 do-bg-second-color tween-trans deep-active:anim-scale-in "> </div>
-              <div class="do-h-md do-w-10 do-bg-contraste-color tween-trans deep-active:anim-scale-in "> </div>  
-              <div class="do-h-md do-w-10 do-bg-fade-color tween-trans deep-active:anim-scale-in "> </div>  
+      </div>      <nav id="tools-nav"
+        class="do-flex do-z-1 do-w-xxl do-h-10 do-bg-second-color poa top left do-y do-center-center tween-all active:trans-x-before do-o-0 active:do-o-10">
+      
+        <div
+          class="do-w-xs do-h-10 do-bg-extra-color-main-grad-linear-3 poa top left-n-xs-rem tween-trans deep-active:do-scale-x-0">
+        </div>
+      
+      
+        <div id="theme-edit" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggler"
+          data-do-debug="colors" data-do-target="#color-edit" data-do-group="theme">
+      
+          <div
+            class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">
+            <div class="do-h-md do-w-10 do-bg-main-color tween-trans deep-active:anim-scale-in "> </div>
+            <div class="do-h-md do-w-10 do-bg-extra-color tween-trans deep-active:anim-scale-in "> </div>
+            <div class="do-h-md do-w-10 do-bg-second-color tween-trans deep-active:anim-scale-in "> </div>
+            <div class="do-h-md do-w-10 do-bg-contraste-color tween-trans deep-active:anim-scale-in "> </div>
+            <div class="do-h-md do-w-10 do-bg-fade-color tween-trans deep-active:anim-scale-in "> </div>
           </div>
-          <span class="do-txt-second-color uppercase do-fs-xxs">Colors</span>
+          <span class="do-txt-contraste-color uppercase do-fs-xxs">Colors</span>
         </div>
-  
+      
         <div id="local-storage-add" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
-        data-module="dotoggler" data-do-target="#themes-nav" >
-   
-          <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
-              <div class="do-w-sm do-h-xxxs poa center do-bg-main-color tween-trans"> </div> 
-              <div class="do-h-sm do-w-xxxs do-rotate-10 do-bg-main-color tween-trans"> </div>  
+          data-module="dotoggler" data-do-debug="add" data-do-target="#themes-nav" data-do-force="true">
+      
+          <div
+            class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">
+            <div class="do-w-sm do-h-xxxs poa center do-bg-main-color tween-trans"> </div>
+            <div class="do-h-sm do-w-xxxs do-rotate-10 do-bg-main-color tween-trans"> </div>
           </div>
-          <span class="do-txt-second-color uppercase do-fs-xxs">Add</span>
+          <span class="do-txt-contraste-color uppercase do-fs-xxs">Add</span>
         </div>
-  
+      
         <div id="theme-change" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
-        data-module="dotoggler" data-do-target="#themes-nav" data-do-group="theme">
-   
-          <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-grid-2 active:do-rotate-20">
-              <div class="do-full do-bg-main-color tween-trans deep-active:anim-scale-in" style="
-    
-                --main-color:15,100%,79%;
-                --main-color-H:15;
-                --main-color-S:;
-                --main-color-L:79%;
-  
-              "></div>
-  
-              <div class="do-full do-bg-extra-color tween-trans deep-active:anim-scale-in" style="
-                
-              --extra-color:176,96%,52%;
-              --extra-color-H:176;
-              --extra-color-S:;
-              --extra-color-L:52%;
-  
-              "></div>
-  
-              
-              <div class="do-full do-bg-main-color tween-trans deep-active:anim-scale-in" style="
-    
-                --main-color:62,100%,79%;
-                --main-color-H:62;
-                --main-color-S:;
-                --main-color-L:79%;
-  
-              "></div>
-  
-              <div class="do-full do-bg-extra-color tween-trans deep-active:anim-scale-in" style="
-                
-              --extra-color:120,96%,52%;
-              --extra-color-H:120;
-              --extra-color-S:;
-              --extra-color-L:52%;
-  
-              "></div>
-  
-              
-       
-          </div>
-          <span class="do-txt-second-color uppercase do-fs-xxs">Themes</span>
-        </div>
-  
-        <div id="color-random" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
-        data-module="dotoggler">     
-            <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-grid-2 active:do-rotate-20">
-                <div class="do-full do-bg-extra-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
-                <div class="do-full do-bg-second-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
-                <div class="do-full do-bg-fade-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
-                <div class="do-full do-bg-contraste-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
-                <div class="do-wh-xs poa center do-bg-main-color do-br-md tween-trans"> </div>
-            </div>
-            <span class="do-txt-second-color uppercase do-fs-xxs">Random</span>
-        </div>
-  
-        <div id="color-switcher" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
-        data-module="dotoggler" data-do-target="body" data-do-custom-target-class="toggleColor"
-        data-module="dotoggle" data-global="true" data-bt-toggle-add="active,body,toggleColor">    
-            <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-h-sm por do-mb-xxs">
-              <div class="do-wh-sm tween-trans poa left deep-active:do-trans-x-6">
-                <div class="por do-full do-br-md do-scale-xs do-bg-second-color"></div>
-              </div>
-            </div>
-            <span class="do-txt-second-color uppercase do-fs-xxs">Dark & light</span>
-        </div>
-  
+          data-module="dotoggler" data-do-debug="themes" data-do-target="#themes-nav" data-do-group="theme">
+      
+          <div
+            class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-grid-2 active:do-rotate-20">
+            <div class="do-full do-bg-main-color tween-trans deep-active:anim-scale-in" style="
         
-        <div id="local-storage-reset" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs" data-module="dotoggler">   
-          <div class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">    
-              <div class="do-wh-sm do-bg-main-color tween-trans deep-active:anim-scale-in "> </div>  
+                    --main-color:15,100%,79%;
+                    --main-color-H:15;
+                    --main-color-S:100%;
+                    --main-color-L:79%;
+      
+                  "></div>
+      
+            <div class="do-full do-bg-extra-color tween-trans deep-active:anim-scale-in" style="
+                    
+                  --extra-color:176,96%,52%;
+                  --extra-color-H:176;
+                  --extra-color-S:96%;
+                  --extra-color-L:52%;
+      
+                  "></div>
+      
+      
+            <div class="do-full do-bg-main-color tween-trans deep-active:anim-scale-in" style="
+        
+                    --main-color:62,100%,79%;
+                    --main-color-H:62;
+                    --main-color-S:100%;
+                    --main-color-L:79%;
+      
+                  "></div>
+      
+            <div class="do-full do-bg-extra-color tween-trans deep-active:anim-scale-in" style="
+                    
+                  --extra-color:120,96%,52%;
+                  --extra-color-H:120;
+                  --extra-color-S:96%;
+                  --extra-color-L:52%;
+      
+                  "></div>
+      
+      
+      
+          </div>
+          <span class="do-txt-contraste-color uppercase do-fs-xxs">Themes</span>
+        </div>
+      
+        <div id="color-random" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
+          data-module="dotoggler">
+          <div
+            class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-grid-2 active:do-rotate-20">
+            <div class="do-full do-bg-extra-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
+            <div class="do-full do-bg-second-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
+            <div class="do-full do-bg-fade-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
+            <div class="do-full do-bg-contraste-color do-br-md tween-trans deep-active:anim-scale-in "> </div>
+            <div class="do-wh-xs poa center do-bg-main-color do-br-md tween-trans"> </div>
+          </div>
+          <span class="do-txt-contraste-color uppercase do-fs-xxs">Random</span>
+        </div>
+      
+      
+      
+      
+        <div id="local-storage-reset" class="cursor-pointer do-flex do-y do-align-items-center do-z-2 do-py-xs"
+          data-module="dotoggler">
+          <div
+            class="do-w-md do-bg-contraste-color-8-darken do-br-md do-overflow-hidden do-h-md por do-mb-xxs tween-trans do-flex do-x do-center-center active:do-rotate-20">
+            <div class="do-wh-sm do-bg-main-color tween-trans deep-active:anim-scale-in "> </div>
           </div>
           <span class="do-txt-second-color uppercase do-fs-xxs">Reset</span>
         </div>
-  
-        <nav id="color-edit" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-y do-grid-5 do-start-center tween-all active:trans-x-before do-o-0 active:do-o-10">
-        
-          
+      
+        <nav id="color-edit"
+          class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-y do-grid-5 do-start-center tween-all active:trans-x-before do-o-0 active:do-o-10">
+      
+      
           <div class="do-full do-grid-2 por">
-               
-              <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">main</h5>
-              <div data-do-color="main" data-do-mode-color="h" class="do-full do-bg-main-color tween-none do-grid-col-full"></div>
-              <div data-do-color="main" data-do-mode-color="s" class="do-full do-bg-main-color-hue tween-none"></div>
-              <div data-do-color="main" data-do-mode-color="l" class="do-full do-bg-main-color-gray tween-none"></div>
-             
+      
+            <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">main</h5>
+            <div data-do-color="main" data-do-mode-color="h" class="do-full do-bg-main-color tween-none do-grid-col-full">
+            </div>
+            <div data-do-color="main" data-do-mode-color="s" class="do-full do-bg-main-color-hue tween-none"></div>
+            <div data-do-color="main" data-do-mode-color="l" class="do-full do-bg-main-color-gray tween-none"></div>
+      
           </div>
           <div class="do-full do-grid-2 por">
-               
-              <h5 class="poa do-z-2 uppercase reset top left do-txt-extra-color do-bg-extra-color-auto">extra</h5>
-              <div data-do-color="extra" data-do-mode-color="h" class="do-full do-bg-extra-color tween-none do-grid-col-full"></div>
-              <div data-do-color="extra" data-do-mode-color="s" class="do-full do-bg-extra-color-hue tween-none"></div>
-              <div data-do-color="extra" data-do-mode-color="l" class="do-full do-bg-extra-color-gray tween-none"></div>
-             
+      
+            <h5 class="poa do-z-2 uppercase reset top left do-txt-extra-color do-bg-extra-color-auto">extra</h5>
+            <div data-do-color="extra" data-do-mode-color="h" class="do-full do-bg-extra-color tween-none do-grid-col-full">
+            </div>
+            <div data-do-color="extra" data-do-mode-color="s" class="do-full do-bg-extra-color-hue tween-none"></div>
+            <div data-do-color="extra" data-do-mode-color="l" class="do-full do-bg-extra-color-gray tween-none"></div>
+      
           </div>
           <div class="do-full do-grid-2 por">
-               
-              <h5 class="poa do-z-2 uppercase reset top left do-txt-second-color do-bg-second-color-auto">second</h5>
-              <div data-do-color="second" data-do-mode-color="h" class="do-full do-bg-second-color tween-none do-grid-col-full"></div>
-              <div data-do-color="second" data-do-mode-color="s" class="do-full do-bg-second-color-hue tween-none"></div>
-              <div data-do-color="second" data-do-mode-color="l" class="do-full do-bg-second-color-gray tween-none"></div>
-             
+      
+            <h5 class="poa do-z-2 uppercase reset top left do-txt-second-color do-bg-second-color-auto">second</h5>
+            <div data-do-color="second" data-do-mode-color="h" class="do-full do-bg-second-color tween-none do-grid-col-full">
+            </div>
+            <div data-do-color="second" data-do-mode-color="s" class="do-full do-bg-second-color-hue tween-none"></div>
+            <div data-do-color="second" data-do-mode-color="l" class="do-full do-bg-second-color-gray tween-none"></div>
+      
           </div>
           <div class="do-full do-grid-2 por">
-               
-              <h5 class="poa do-z-2 uppercase reset top left do-txt-contraste-color do-bg-contraste-color-auto">contraste</h5>
-              <div data-do-color="contraste" data-do-mode-color="h" class="do-full do-bg-contraste-color tween-none do-grid-col-full"></div>
-              <div data-do-color="contraste" data-do-mode-color="s" class="do-full do-bg-contraste-color-hue tween-none"></div>
-              <div data-do-color="contraste" data-do-mode-color="l" class="do-full do-bg-contraste-color-gray tween-none"></div>
-             
+      
+            <h5 class="poa do-z-2 uppercase reset top left do-txt-contraste-color do-bg-contraste-color-auto">contraste</h5>
+            <div data-do-color="contraste" data-do-mode-color="h" class="do-full do-bg-contraste-color tween-none do-grid-col-full">
+            </div>
+            <div data-do-color="contraste" data-do-mode-color="s" class="do-full do-bg-contraste-color-hue tween-none"></div>
+            <div data-do-color="contraste" data-do-mode-color="l" class="do-full do-bg-contraste-color-gray tween-none"></div>
+      
           </div>
           <div class="do-full do-grid-2 por">
-               
-              <h5 class="poa do-z-2 uppercase reset top left do-txt-fade-color do-bg-fade-color-auto">fade</h5>
-              <div data-do-color="fade" data-do-mode-color="h" class="do-full do-bg-fade-color tween-none do-grid-col-full"></div>
-              <div data-do-color="fade" data-do-mode-color="s" class="do-full do-bg-fade-color-hue tween-none"></div>
-              <div data-do-color="fade" data-do-mode-color="l" class="do-full do-bg-fade-color-gray tween-none"></div>
-             
+      
+            <h5 class="poa do-z-2 uppercase reset top left do-txt-fade-color do-bg-fade-color-auto">fade</h5>
+            <div data-do-color="fade" data-do-mode-color="h" class="do-full do-bg-fade-color tween-none do-grid-col-full">
+            </div>
+            <div data-do-color="fade" data-do-mode-color="s" class="do-full do-bg-fade-color-hue tween-none"></div>
+            <div data-do-color="fade" data-do-mode-color="l" class="do-full do-bg-fade-color-gray tween-none"></div>
+      
           </div>
-  
+      
         </nav>
-  
-        <nav id="themes-nav" class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-grid-2 do-start-start tween-all active:trans-x-before do-o-0 active:do-o-10">
+      
+        <nav id="themes-nav"
+          class="do-flex do-z-0 do-w-10-vw do-max-w-lg do-h-10-vh poa top left do-bg-contraste-color-9 do-p-sm do-overflow-auto do-gap-sm do-grid-2 do-start-start tween-all active:trans-x-before do-o-0 active:do-o-10">
+      
+      
+      
+          <div class="do-w-10 square theme-item" style="
         
-  
-            
-            <div class="do-w-10 square theme-item" style="
-    
-    
-                --main:15,100%,79%;
-                --main-H:15;
-                --main-S:100%;
-                --main-L:79%;
-    
-    
-                --extra:176,96%,52%;
-                --extra-H:176;
-                --extra-S:96%;
-                --extra-L:52%;
-    
-    
-                --contraste:36,3.3%,28%;
-                --contraste-H:36;
-                --contraste-S:3.3%;
-                --contraste-L:28%;
-    
-    
-                --second:0,0%,100%;
-                --second-H:0;
-                --second-S:0%;
-                --second-L:100%;
-    
-    
-                --fade:37,20%,84%;
-                --fade-H:37;
-                --fade-S:20%;
-                --fade-L:84%;
-    
-            
-            ">
-    
-              <div class="content" style="
-    
-    
-                --main-color:15,100%,79%;
-                --main-color-H:15;
-                --main-color-S:100%;
-                --main-color-L:79%;
-    
-    
-                --extra-color:176,96%,52%;
-                --extra-color-H:176;
-                --extra-color-S:96%;
-                --extra-color-L:52%;
-    
-    
-                --contraste-color:36,3.3%,28%;
-                --contraste-color-H:36;
-                --contraste-color-S:3.3%;
-                --contraste-color-L:28%;
-    
-    
-                --second-color:0,0%,100%;
-                --second-color-H:0;
-                --second-color-S:0%;
-                --second-color-L:100%;
-    
-    
-                --fade-color:37,20%,84%;
-                --fade-color-H:37;
-                --fade-color-S:20%;
-                --fade-color-L:84%;
-    
-            
-            ">
-    
-                  <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">test test</h5>
-    
-                  <div class="do-full poa">
-    
-                    <div class="do-gold-xxxl poa do-bg-main-color">
-                    </div>
-                    <div class="do-gold-xxl poa bottom right do-bg-extra-color">
-                    </div>
-                    <div class="do-gold-xl poa bottom right do-bg-fade-color">
-                    </div>
-                    <div class="do-gold-lg poa bottom right do-bg-second-color">
-                    </div>
-                    <div class="do-gold-md poa bottom right do-bg-contraste-color">
-                    </div>
-                    <div class="do-gold-sm poa bottom right do-bg-main-color-extra-grad-linear-7"> 
-                    </div>
-    
-                  </div>
-    
+        
+                    --main:15,100%,79%;
+                    --main-H:15;
+                    --main-S:100%;
+                    --main-L:79%;
+        
+        
+                    --extra:176,96%,52%;
+                    --extra-H:176;
+                    --extra-S:96%;
+                    --extra-L:52%;
+        
+        
+                    --contraste:36,3.3%,28%;
+                    --contraste-H:36;
+                    --contraste-S:3.3%;
+                    --contraste-L:28%;
+        
+        
+                    --second:0,0%,100%;
+                    --second-H:0;
+                    --second-S:0%;
+                    --second-L:100%;
+        
+        
+                    --fade:37,20%,84%;
+                    --fade-H:37;
+                    --fade-S:20%;
+                    --fade-L:84%;
+        
+                
+                ">
+      
+            <div class="content" style="
+        
+        
+                    --main-color:15,100%,79%;
+                    --main-color-H:15;
+                    --main-color-S:100%;
+                    --main-color-L:79%;
+        
+        
+                    --extra-color:176,96%,52%;
+                    --extra-color-H:176;
+                    --extra-color-S:96%;
+                    --extra-color-L:52%;
+        
+        
+                    --contraste-color:36,3.3%,28%;
+                    --contraste-color-H:36;
+                    --contraste-color-S:3.3%;
+                    --contraste-color-L:28%;
+        
+        
+                    --second-color:0,0%,100%;
+                    --second-color-H:0;
+                    --second-color-S:0%;
+                    --second-color-L:100%;
+        
+        
+                    --fade-color:37,20%,84%;
+                    --fade-color-H:37;
+                    --fade-color-S:20%;
+                    --fade-color-L:84%;
+        
+                
+                ">
+      
+              <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">test test</h5>
+      
+              <div class="do-full poa">
+      
+                <div class="do-gold-xxxl poa do-bg-main-color">
+                </div>
+                <div class="do-gold-xxl poa bottom right do-bg-extra-color">
+                </div>
+                <div class="do-gold-xl poa bottom right do-bg-fade-color">
+                </div>
+                <div class="do-gold-lg poa bottom right do-bg-second-color">
+                </div>
+                <div class="do-gold-md poa bottom right do-bg-contraste-color">
+                </div>
+                <div class="do-gold-sm poa bottom right do-bg-main-color-extra-grad-linear-7">
+                </div>
+      
               </div>
+      
             </div>
-    
-            
-            <div class="do-w-10 square theme-item" style="
-    
-    
-                --main:62,100%,79%;
-                --main-H:62;
-                --main-S:100%;
-                --main-L:79%;
-    
-    
-                --extra:120,96%,52%;
-                --extra-H:120;
-                --extra-S:96%;
-                --extra-L:52%;
-    
-    
-                --contraste:36,3.3%,28%;
-                --contraste-H:36;
-                --contraste-S:3.3%;
-                --contraste-L:28%;
-    
-    
-                --second:0,0%,100%;
-                --second-H:0;
-                --second-S:0%;
-                --second-L:100%;
-    
-    
-                --fade:37,20%,84%;
-                --fade-H:37;
-                --fade-S:20%;
-                --fade-L:84%;
-    
-            
-            ">
-    
-              <div class="content" style="
-    
-    
-                --main-color:62,100%,79%;
-                --main-color-H:62;
-                --main-color-S:100%;
-                --main-color-L:79%;
-    
-    
-                --extra-color:120,96%,52%;
-                --extra-color-H:120;
-                --extra-color-S:96%;
-                --extra-color-L:52%;
-    
-    
-                --contraste-color:36,3.3%,28%;
-                --contraste-color-H:36;
-                --contraste-color-S:3.3%;
-                --contraste-color-L:28%;
-    
-    
-                --second-color:0,0%,100%;
-                --second-color-H:0;
-                --second-color-S:0%;
-                --second-color-L:100%;
-    
-    
-                --fade-color:37,20%,84%;
-                --fade-color-H:37;
-                --fade-color-S:20%;
-                --fade-color-L:84%;
-    
-            
-            ">
-    
-                  <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">test test 2</h5>
-    
-                  <div class="do-full poa">
-    
-                    <div class="do-gold-xxxl poa do-bg-main-color">
-                    </div>
-                    <div class="do-gold-xxl poa bottom right do-bg-extra-color">
-                    </div>
-                    <div class="do-gold-xl poa bottom right do-bg-fade-color">
-                    </div>
-                    <div class="do-gold-lg poa bottom right do-bg-second-color">
-                    </div>
-                    <div class="do-gold-md poa bottom right do-bg-contraste-color">
-                    </div>
-                    <div class="do-gold-sm poa bottom right do-bg-main-color-extra-grad-linear-7"> 
-                    </div>
-    
-                  </div>
-    
+          </div>
+      
+      
+          <div class="do-w-10 square theme-item" style="
+        
+        
+                    --main:62,100%,79%;
+                    --main-H:62;
+                    --main-S:100%;
+                    --main-L:79%;
+        
+        
+                    --extra:120,96%,52%;
+                    --extra-H:120;
+                    --extra-S:96%;
+                    --extra-L:52%;
+        
+        
+                    --contraste:36,3.3%,28%;
+                    --contraste-H:36;
+                    --contraste-S:3.3%;
+                    --contraste-L:28%;
+        
+        
+                    --second:0,0%,100%;
+                    --second-H:0;
+                    --second-S:0%;
+                    --second-L:100%;
+        
+        
+                    --fade:37,20%,84%;
+                    --fade-H:37;
+                    --fade-S:20%;
+                    --fade-L:84%;
+        
+                
+                ">
+      
+            <div class="content" style="
+        
+        
+                    --main-color:62,100%,79%;
+                    --main-color-H:62;
+                    --main-color-S:100%;
+                    --main-color-L:79%;
+        
+        
+                    --extra-color:120,96%,52%;
+                    --extra-color-H:120;
+                    --extra-color-S:96%;
+                    --extra-color-L:52%;
+        
+        
+                    --contraste-color:36,3.3%,28%;
+                    --contraste-color-H:36;
+                    --contraste-color-S:3.3%;
+                    --contraste-color-L:28%;
+        
+        
+                    --second-color:0,0%,100%;
+                    --second-color-H:0;
+                    --second-color-S:0%;
+                    --second-color-L:100%;
+        
+        
+                    --fade-color:37,20%,84%;
+                    --fade-color-H:37;
+                    --fade-color-S:20%;
+                    --fade-color-L:84%;
+        
+                
+                ">
+      
+              <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">test test 2</h5>
+      
+              <div class="do-full poa">
+      
+                <div class="do-gold-xxxl poa do-bg-main-color">
+                </div>
+                <div class="do-gold-xxl poa bottom right do-bg-extra-color">
+                </div>
+                <div class="do-gold-xl poa bottom right do-bg-fade-color">
+                </div>
+                <div class="do-gold-lg poa bottom right do-bg-second-color">
+                </div>
+                <div class="do-gold-md poa bottom right do-bg-contraste-color">
+                </div>
+                <div class="do-gold-sm poa bottom right do-bg-main-color-extra-grad-linear-7">
+                </div>
+      
               </div>
+      
             </div>
-    
-  
-            <div class="do-w-10 square theme-item current-theme-item do-hide">
-    
-              <div class="content">
-    
-                  <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">Current</h5>
-    
-                  <div class="do-full poa">
-    
-                    <div class="do-gold-xxxl poa do-bg-main-color">
-                    </div>
-                    <div class="do-gold-xxl poa bottom right do-bg-extra-color">
-                    </div>
-                    <div class="do-gold-xl poa bottom right do-bg-fade-color">
-                    </div>
-                    <div class="do-gold-lg poa bottom right do-bg-second-color">
-                    </div>
-                    <div class="do-gold-md poa bottom right do-bg-contraste-color">
-                    </div>
-                    <div class="do-gold-sm poa bottom right do-bg-main-color-extra-grad-linear-7"> 
-                    </div>
-    
-                  </div>
-    
+          </div>
+      
+      
+          <div class="do-w-10 square theme-item current-theme-item do-hide">
+      
+            <div class="content">
+      
+              <h5 class="poa do-z-2 uppercase reset top left do-txt-main-color do-bg-main-color-auto">Current</h5>
+      
+              <div class="do-full poa">
+      
+                <div class="do-gold-xxxl poa do-bg-main-color">
+                </div>
+                <div class="do-gold-xxl poa bottom right do-bg-extra-color">
+                </div>
+                <div class="do-gold-xl poa bottom right do-bg-fade-color">
+                </div>
+                <div class="do-gold-lg poa bottom right do-bg-second-color">
+                </div>
+                <div class="do-gold-md poa bottom right do-bg-contraste-color">
+                </div>
+                <div class="do-gold-sm poa bottom right do-bg-main-color-extra-grad-linear-7">
+                </div>
+      
               </div>
+      
             </div>
-   
-    
+          </div>
+      
+      
         </nav>
-  
-      </nav>    
+      
+      </nav>      <nav id="site-nav"
+        class="do-flex do-z-1 do-h-10 do-bg-second-color poa top left do-y do-start-start do-py-sm do-pr-lg tween-all active:trans-x-before do-o-0 active:do-o-10">
+      
+        <div
+          class="do-w-xs do-h-10 do-bg-extra-color-main-grad-linear-3 poa top left-n-xs-rem tween-trans deep-active:do-scale-x-0">
+        </div>
+      
+      
+        <div class="do-flex do-y do-start do-gap-sm por do-z-2">
+            <div class="do-flex do-x do-start-center por">
+              <div class="do-wh-md cursor-pointer do-p-xxs do-br-md tween-all do-bg-second-color:hover active:do-bg-second-color-darken active:do-trans-x-n-5" data-module="dotoggler" data-do-target="#do" data-do-group="theme">
+                <div class="do-full tween-trans deep-active:do-rotate-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 40 40">
+                  	<g id="prev" transform="translate(-959 -292)">
+                  	  <path id="lines" class="do-stroke-contraste-color" d="M694.858,304.929l14.154,14.154,14.154-14.154" transform="translate(1290.66 -397.435) rotate(90)" fill="none"  stroke-width="1"/>
+                  	</g>
+                  </svg>
+                                    </div>
+              </div>
+              <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="https://do-root.netlify.app/do.html">Do v1</a>
+            </div>
+           
+            <div class="do-flex do-x do-start-center por">
+              <div class="do-wh-md">
+      
+              </div>
+              <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="https://do-root.netlify.app/about.html">about</a>
+            </div>
+           
+        </div>
+      
+        <nav id="do"
+        class="do-flex do-z-0 do-h-10-vh poa top left do-bg-second-color-darken do-p-sm do-overflow-auto do-gap-sm  do-y do-start-start tween-all active:trans-x-before do-o-0 active:do-o-10">
+         
+              <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="https://do-root.netlify.app/do/colors.html">colors</a>
+              <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="https://do-root.netlify.app/do/sizes.html">sizes</a>
+              <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="https://do-root.netlify.app/do/class.html">class</a>
+      
+        </nav>
+      
+      
+      
+      </nav>   
   
     </div>
   
   
 
   <div id="nav" class="do-w-10 pof do-px-smart-lg do-z-9 do-flex do-justify-content-space-between do-align-items-center tween-trans scroll-down:trans-y-before">
-    <a id="logo" href="./" class="do-py-xxs por do-z-2 tween-trans scroll-down:trans-y-after">
+    <a id="logo" href="https://do-root.netlify.app/" class="do-py-xxs por do-z-2 tween-trans scroll-down:trans-y-after">
       <div class="por do-h-md tween-trans scroll-down:do-scale-5 transform-origin-left">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 143.559 60.524">
           <g id="logo" transform="translate(-582.695 -405.926)" class="do-fill-contraste-color">
@@ -700,89 +796,27 @@
           </g>
         </svg>      </div>
     </a>
-
-    <nav id="main-nav" class="nav-container do-hide lg-do-block do-flex-center top-lg-rem do-z-9">
-      <div class="do-flex-center do-flex do-col lg-do-row do-gap-md">
-            <a class="main-link reset do-block" href="./about.html">about</a>
-      </div>
-    </nav>
-    <div data-module="dotoggle" data-global="true" data-bt-toggle-add="active,.nav-container,open" id="burger" class="do-h-md do-w-md do-flex do-justify-content-center do-align-items-center poa do-z-2 right-sm-rem do-flex lg-do-hide">
-      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#3e3d40">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path class="do-fill-contraste-color" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-      </svg>
-    </div>
+ 
     <div data-do-mu="hide" class="poa do-full do-bg-second-color top left pointer-events-none do-z-1"></div>
     <div data-do-mu="hide" class="poa do-w-10 do-h-px-lg do-blur-1 do-bg-contraste-color bottom left pointer-events-none do-z-0 scroll-down:do-o-0"></div>
   </div>
 
 
 <section class="por do-px-smart-xxxl h-auto do-py-xxl por do-z-1">
-    <h1>About</h1>
-    <h2>About</h2>
-    <h3>About</h3>
-    <h4>About</h4>
-    <h5>About</h5>
-    <h6>About</h6>
-    <p>lorem ipsum dolor about</p>
 
-    <div data-module="dotoggler" data-do-target="#targetA" data-do-group="G1" class="do-p-sm active:do-bg-extra-color">
-        OPEN A DIRECT
-    </div>
-    <div data-module="dotoggler" data-do-target="#masterNav" data-do-group="G1" data-do-is-master="true" class="do-p-sm active:do-bg-extra-color">
-        OPEN NAV
-    </div>
-    <div id="masterNav" class="do-flex do-y do-gap-sm do-o-0 active:do-o-10">
-        <div class="do-flex do-x">
-            <div data-module="dotoggler" data-do-target="#targetA" data-do-group="G1" class="do-p-sm active:do-bg-extra-color">
-                BT A
-            </div>
-            <div data-module="dotoggler" data-do-target="#targetB" data-do-group="G1" class="do-p-sm active:do-bg-extra-color">
-                BT B
-            </div>
-            <div data-module="dotoggler" data-do-target="#targetC" data-do-group="G1" class="do-p-sm active:do-bg-extra-color">
-                BT C
-            </div>
-
-        </div>
-      
-        <div class="do-flex do-y do-w-10">
-            <div id="targetA" class="do-bg-main-color active:do-bg-extra-color do-hide active:do-block do-p-sm">
-                target A   
-                <div class="do-flex do-x">
-         
-                    <div data-module="dotoggler" data-do-target="#targetD" data-do-group="G2" class="do-p-sm active:do-bg-main-color">
-                        BT D
-                    </div>
-                    <div data-module="dotoggler" data-do-target="#targetE" data-do-group="G2" class="do-p-sm active:do-bg-main-color">
-                        BT E
-                    </div>
-        
-                </div>
-
-                <div id="targetD" class="active:do-bg-contraste-color active:do-txt-second-color do-p-sm">
-                    target D
-                </div>
-                <div id="targetE" class="active:do-bg-contraste-color active:do-txt-second-color do-p-sm">
-                    target E
-                </div>
-
-            </div>
-            <div id="targetB" class="do-bg-main-color active:do-bg-extra-color do-hide active:do-block do-p-sm">
-                target B
-            </div>
-            <div id="targetC" class="do-bg-main-color active:do-bg-extra-color do-hide active:do-block do-p-sm">
-                target C
-            </div>
-        </div>
-    </div>
-
+    
+    <h1>$do : 1.61803398875;</h1>
+    <p>texte page do</p>
+    
 
 
 </section>
 <div 
   data-module="doscrolldatas"
-  data-do-target="html"
+  data-do-target="#stageBg"
+  data-do-trigger-calcul="body"
+  data-do-ease="power1.out"
+  data-do-ease-duration="2"
   data-do-calcul="full"
   data-do-update="true"
   data-do-start="top+=0% top"
@@ -793,17 +827,21 @@
 
 <div id="stageBg" class="bg-grid do-px-smart-xxxl pof top left do-full do-z-0 do-flex do-justify-content-space-between">
 
+  
+    <img src="imgs/planete/1x/fast.png" class="do-w-5 do-o-1 poa top right get-progress:trans-y-lg-n" alt="">
+ 
+
     <div class="do-w-xl por do-overflow-hidden">
         <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa left do-bg-contraste-color-3"></div>
         <div class="do-o-4 do-h-10-vh do-w-px-xxs poa right trans-x-before do-bg-contraste-color-3"></div>
-        <div class="do-h-px-xxxl do-w-xxl do-bg-main-color poa do-z-2 get-progress:do-xxl get-progress:top-xxl"></div>
-        <div class="do-h-px-xxl do-w-xl do-bg-second-color-3 poa do-z-2 get-progress:do-xl get-progress:top-xl"></div>
-        <div class="do-h-px-xl do-w-lg do-bg-second-color-3 poa do-z-2 get-progress:do-lg get-progress:top-lg"></div>
-        <div class="do-h-px-lg do-w-md do-bg-extra-color poa do-z-2 get-progress:do-md get-progress:top-md"></div>
-        <div class="do-h-px-md do-w-sm do-bg-second-color-3 poa do-z-2 get-progress:do-sm get-progress:top-sm"></div>
-        <div class="do-h-px-sm do-w-xs do-bg-second-color-3 poa do-z-2 get-progress:do-xs get-progress:top-xs"></div>
-        <div class="do-h-px-xs do-w-xxs do-bg-second-color-3 poa do-z-2 get-progress:do-xxs get-progress:top-xxs"></div>
-        <div class="do-h-px-xxs do-w-xxxs do-bg-second-color-3 poa do-z-2 get-progress:do-xxxs get-progress:top-xxxs"></div>
+        <div class="do-h-px-xxs do-w-xxl do-bg-main-color poa do-z-2 get-progress:do-xxl get-progress:top-xxl"></div>
+        <div class="do-h-px-xxs do-w-xl do-bg-contraste-color-3 poa do-z-2 get-progress:do-xl get-progress:top-xl"></div>
+        <div class="do-h-px-xxs do-w-lg do-bg-contraste-color-3 poa do-z-2 get-progress:do-lg get-progress:top-lg"></div>
+        <div class="do-h-px-xxs do-w-md do-bg-extra-color poa do-z-2 get-progress:do-md get-progress:top-md"></div>
+        <div class="do-h-px-xxs do-w-sm do-bg-contraste-color-3 poa do-z-2 get-progress:do-sm get-progress:top-sm"></div>
+        <div class="do-h-px-xxs do-w-xs do-bg-contraste-color-3 poa do-z-2 get-progress:do-xs get-progress:top-xs"></div>
+        <div class="do-h-px-xxs do-w-xxs do-bg-contraste-color-3 poa do-z-2 get-progress:do-xxs get-progress:top-xxs"></div>
+        <div class="do-h-px-xxs do-w-xxxs do-bg-contraste-color-3 poa do-z-2 get-progress:do-xxxs get-progress:top-xxxs"></div>
     </div>
 
     <div class="do-o-4 do-h-10-vh do-w-px-xxxs poa right-md-rem do-bg-contraste-color-3"></div>
@@ -818,14 +856,14 @@
 </div>
 
 
-<footer class="do-overflow-hidden do-px-smart-lg do-py-smart-xl por do-z-1 do-flex do-col do-justify-content-end do-align-items-center">
+<footer class="do-overflow-hidden do-px-smart-lg do-pt-smart-xl do-pb-xs por do-z-1 do-flex do-col do-justify-content-end do-align-items-center">
     
 
 
     <div class="por do-z-2 do-w-10 do-flex do-gap-md do-justify-content-space-between do-align-items-center">
 
-        <a class="do-bt-line" href="./">© Ulysse-2029</a>
-        <div class="poa center do-w-md do-z-2">
+        <a class="do-bt-line" href="https://do-root.netlify.app/">© Ulysse-2029</a>
+        <div class="poa center do-w-md do-z-2 do-hide">
            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 143.559 60.524">
              <g id="logo" transform="translate(-582.695 -405.926)" class="do-fill-contraste-color">
                <path id="Tracé_1" data-name="Tracé 1" d="M627.974,461.339c.1-.044.211-.089.319-.138l.011-.056-.067.039Q628.094,461.271,627.974,461.339Z" transform="translate(-36.849 -44.939)"/>
@@ -852,7 +890,7 @@
                <path id="Tracé_22" data-name="Tracé 22" d="M1318.509,603.515c.028.1.058.2.088.306l-.175-.609C1318.45,603.312,1318.479,603.413,1318.509,603.515Z" transform="translate(-598.745 -160.554)"/>
              </g>
            </svg>        </div>
-        <div class="do-flex do-gap-md do-justify-content-end do-align-items-center">
+        <div class="do-flex do-gap-md do-justify-content-end do-align-items-center do-hide">
             <a class="do-bt-line" href="">&lt;3</a>
             <a class="do-bt-line" href="">^*^</a>
         </div>

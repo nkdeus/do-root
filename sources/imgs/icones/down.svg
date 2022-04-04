@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="down" transform="translate(-689 -292)">
+    <rect id="bg" width="40" height="40" transform="translate(689 292)" opacity="0"/>
+    <path id="lines" d="M694.858,304.929l14.154,14.154,14.154-14.154" transform="translate(-0.358 -0.429)" fill="none" stroke="#000" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,27 +1,34 @@
 {
     "titre" : "Ulysse 2029",
     "logo" : "imgs/logo.svg",
-    "rootPath" : "./",
+    "rootPath" : "https://do-root.netlify.app/",
     "nav" :{
       "background":"hide",
       "header":[
         {
-          "bt":"stage",
-          "url":"./stage.html",
+          "bt":"Do v1",
+          "id":"do",
+          "url":"do.html",
           "nav":[
             {
-              "_bt":"stage 1",
-              "_url":"./stage.html"
+              "_bt":"colors",
+              "_url":"do/colors.html"
             },
             {
-              "_bt":"stage 2",
-              "_url":"./stage.html"
+              "_bt":"sizes",
+              "_url":"do/sizes.html"
+            },
+            {
+              "_bt":"class",
+              "_url":"do/class.html"
             }
           ]
         },
         {
           "bt":"about",
-          "url":"./about.html"
+          "id":"",
+          "url":"about.html",
+          "nav":[]
         }
       ],
       "footer" : [
@@ -40,7 +47,7 @@
       {
         "name": "Roboto",
         "className" : "main",
-        "weight": "200;400;700"
+        "weight": "100;400;700"
       },
       {
         "name": "Economica",
@@ -49,14 +56,32 @@
       }
     ]
     ,
+    "fontweight":[
+        {
+          "name":"light",
+          "weight":100
+        },
+        {
+          "name":"regular",
+          "weight":400
+        },
+        {
+          "name":"medium",
+          "weight":400
+        },
+        {
+          "name":"bold",
+          "weight":700
+        }
+    ],
     "typos" :{
       "body" : {
         "name": "Roboto",
-        "weight": "400"
+        "weight": "regular"
       },
       "heading" : {
         "name": "Economica",
-        "weight": "400"
+        "weight": "regular"
       }
     },
     "colors":[

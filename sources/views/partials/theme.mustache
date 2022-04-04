@@ -12,6 +12,10 @@
 
     {{/themes.current}}
 
+    {{#fontweight}}
+      --fw-{{name}}:{{weight}};
+    {{/fontweight}}
+
   }
 
 
@@ -77,7 +81,7 @@
 
   body{
     font-family: {{typos.body.name}}, sans-serif;
-    font-weight: {{typos.body.weight}};
+    font-weight: var(--fw-{{typos.body.weight}});
   }
 
   {{#fonts}}
