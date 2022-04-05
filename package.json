@@ -23,6 +23,7 @@
     "css:watch": "sass --watch src/scss:src/css",
     "css:compil": "sass src/scss/do.scss src/css/do.css",
     "css:purge": "purgecss --config purgecss.config.js",
+    "css:refresh": "npm run css:compil && gulp css",
     "dev": "gulp watch",
     "build": "gulp build",
     "render": "npm run css:compil && gulp build && gulp css && npm run css:purge",
