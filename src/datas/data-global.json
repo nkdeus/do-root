@@ -1,0 +1,141 @@
+{
+    "titre" : "Ulysse 2029",
+    "logo" : "imgs/logo.svg",
+    "rootPath" : "",
+    "nav" :{
+      "background":"hide",
+      "header":[
+        {
+          "bt":"Do v1",
+          "idTarget":"do",
+          "url":"do.html",
+          "navIn":[
+            {
+              "_bt":"colors",
+              "_url":"do/colors.html"
+            },
+            {
+              "_bt":"sizes",
+              "_url":"do/sizes.html"
+            },
+            {
+              "_bt":"class",
+              "_url":"do/class.html"
+            }
+          ]
+        },
+        {
+          "bt":"about",
+          "idTarget":"",
+          "url":"about.html",
+          "navIn":[]
+        }
+      ],
+      "footer" : [
+        {
+          "bt":"<3",
+          "url":""
+        },
+        {
+          "bt":"^*^",
+          "url":""
+        }
+      ]
+    },
+    "copyright" : "© Ulysse-2029",
+    "fonts" :[
+      {
+        "name": "Roboto",
+        "className" : "main",
+        "weight": "100;400;700"
+      },
+      {
+        "name": "Economica",
+        "className" : "extra",
+        "weight": "400"
+      }
+    ]
+    ,
+    "fontweight":[
+        {
+          "name":"light",
+          "weight":100
+        },
+        {
+          "name":"regular",
+          "weight":400
+        },
+        {
+          "name":"medium",
+          "weight":400
+        },
+        {
+          "name":"bold",
+          "weight":700
+        }
+    ],
+    "typos" :{
+      "body" : {
+        "name": "Roboto",
+        "weight": "regular"
+      },
+      "heading" : {
+        "name": "Economica",
+        "weight": "regular"
+      }
+    },
+    "colors":[
+      "main","extra","second","contraste","fade"
+    ],
+    "themes" :{
+      "current":[
+          {
+            "name" : "main",
+            "toggleColor" : "extra",
+            "hsl" : [15, "100%", "79%"]
+          },
+          {
+            "name" : "extra",
+            "toggleColor" : "main",
+            "hsl" : [176, "96%", "52%"]
+          },
+          {
+            "name" : "contraste",
+            "toggleColor" : "second",
+            "hsl" : [36, "3.3%", "28%"]
+          },
+          {
+            "name" : "second",
+            "toggleColor" : "contraste",
+            "hsl" : [0, "0%", "100%"]
+          },
+          {
+            "name" : "fade",
+            "toggleColor" : "fade",
+            "hsl" : [37, "20%", "84%"]
+          }
+        ],
+      "gallerie":[
+          {
+            "name": "test test",
+            "colors": [
+              {"name" : "main","hsl" : [15, "100%", "79%"]},
+              {"name" : "extra","hsl" : [176, "96%", "52%"]},
+              {"name" : "contraste","hsl" : [36, "3.3%", "28%"]},
+              {"name" : "second","hsl" : [0, "0%", "100%"]},
+              {"name" : "fade","hsl" : [37, "20%", "84%"]}
+            ]
+          },
+          {
+            "name": "test test 2",
+            "colors": [
+              {"name" : "main","hsl" : [62, "100%", "79%"]},
+              {"name" : "extra","hsl" : [120, "96%", "52%"]},
+              {"name" : "contraste","hsl" : [36, "3.3%", "28%"]},
+              {"name" : "second","hsl" : [0, "0%", "100%"]},
+              {"name" : "fade","hsl" : [37, "20%", "84%"]}
+            ]
+          }
+        ]
+    }
+}

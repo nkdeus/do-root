@@ -2,10 +2,10 @@
 
 
 module.exports = {
-    content: ['render/*.html'],
-    css: ['sources/css/styles.css'],
+    content: ['dist/**/*.html'],
+    css: ['src/css/styles.css'],
     keyframe: true,
-    output: 'render/css/styles.css',
+    output: 'dist/css/styles.css',
     rejected: true,
     variables:true,
     safelist: {

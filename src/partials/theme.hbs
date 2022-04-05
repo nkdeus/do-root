@@ -1,0 +1,104 @@
+
+<style type="text/css">
+
+  :root{
+
+    {{#themes.current}}
+      /* color : {{name}} */
+      --{{name}}:{{hsl.[0]}},{{hsl.[1]}},{{hsl.[2]}};
+      --{{name}}-H:{{hsl.[0]}};
+      --{{name}}-S:{{hsl.[1]}};
+      --{{name}}-L:{{hsl.[2]}};
+
+    {{/themes.current}}
+
+    {{#fontweight}}
+      --fw-{{name}}:{{weight}};
+    {{/fontweight}}
+
+  }
+
+
+  body{
+
+    {{#themes.current}}
+      /* init body : {{name}} */
+      --{{name}}-color:var(--{{name}});
+      --{{name}}-color-H:var(--{{name}}-H);
+      --{{name}}-color-S:var(--{{name}}-S);
+      --{{name}}-color-L:var(--{{name}}-L);
+
+    {{/themes.current}}
+
+  }
+
+  .toggleColor{
+
+
+    {{#themes.current}}
+      /* init toggleColor : {{name}} */
+      --{{name}}-color:var(--{{toggleColor}});
+      --{{name}}-color-H:var(--{{toggleColor}}-H);
+      --{{name}}-color-S:var(--{{toggleColor}}-S);
+      --{{name}}-color-L:var(--{{toggleColor}}-L);
+
+    {{/themes.current}}
+
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+
+      .toggleColor{
+
+        {{#themes.current}}
+          /* init reverse toggleColor : {{name}} */
+          --{{name}}-color:var(--{{name}});
+          --{{name}}-color-H:var(--{{name}}-H);
+          --{{name}}-color-S:var(--{{name}}-S);
+          --{{name}}-color-L:var(--{{name}}-L);
+
+        {{/themes.current}}
+
+      }
+
+      body{
+
+        {{#themes.current}}
+        /* init reverse body: {{name}} */
+        --{{name}}-color:var(--{{toggleColor}});
+        --{{name}}-color-H:var(--{{toggleColor}}-H);
+        --{{name}}-color-S:var(--{{toggleColor}}-S);
+        --{{name}}-color-L:var(--{{toggleColor}}-L);
+
+      {{/themes.current}}
+
+      }
+
+
+
+  }
+
+  body{
+    font-family: {{typos.body.name}}, sans-serif;
+    font-weight: var(--fw-{{typos.body.weight}});
+  }
+
+  {{#fonts}}
+    .do-ff-{{className}} {
+      font-family: {{name}}, sans-serif;
+    }
+  {{/fonts}}
+
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: {{typos.heading.name}}, sans-serif;
+    font-weight: {{typos.heading.weight}};
+  }
+
+</style>

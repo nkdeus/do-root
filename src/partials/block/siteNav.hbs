@@ -1,0 +1,44 @@
+<nav id="site-nav"
+  class="do-flex do-z-1 do-h-10 do-bg-second-color poa top left do-y do-start-start do-py-sm do-pr-lg tween-all active:trans-x-before do-o-0 active:do-o-10">
+
+  <div
+    class="do-w-xs do-h-10 do-bg-extra-color-main-grad-linear-3 poa top left-n-xs-rem tween-trans deep-active:do-scale-x-0">
+  </div>
+
+
+  <div class="do-flex do-y do-start do-gap-sm por do-z-2">
+      {{#each nav.header}}
+      <div class="do-flex do-x do-start-center por">
+        {{#if navIn.length}}
+        <div class="do-wh-md cursor-pointer do-p-xxs do-br-md tween-all do-bg-second-color:hover active:do-bg-second-color-darken active:do-trans-x-n-5" data-module="dotoggler" data-do-debug="{{idTarget}}" data-do-target="#{{idTarget}}" data-do-group="theme">
+          <div class="do-full tween-trans deep-active:do-rotate-10">
+            {{> assets/icones/prev}}
+          </div>
+        </div>
+        {{else}}
+        <div class="do-wh-md">
+
+        </div>
+        {{/if}}
+        <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="{{asset url}}">{{bt}}</a>
+      </div>
+     
+      {{/each}}
+  </div>
+
+  {{#each nav.header}}
+    {{#if navIn.length}}
+    <nav id="{{idTarget}}"
+    class="do-flex do-z-0 do-h-10-vh poa top left do-bg-second-color-darken do-p-sm do-overflow-auto do-gap-sm  do-y do-start-start tween-all active:trans-x-before do-o-0 active:do-o-10">
+    
+          {{#navIn}}
+          <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="{{asset _url}}">{{_bt}}</a>
+          {{/navIn}}
+
+    </nav>
+    {{/if}}
+  {{/each}}
+
+
+
+</nav>
