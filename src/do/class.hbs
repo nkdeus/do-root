@@ -1,4 +1,4 @@
-{{> head}}
+{{> head pageName=pageDo.pages.class.title}}
 {{> nav}}
 
 <script type="text/javascript" src="{{{rootPath}}}js/do/modules/do-module-tags.js"></script>
@@ -13,18 +13,23 @@
             <span class="do-z-2 do-fs-sm por do-txt-main-contraste-auto do-fw-light">do</span>
             <div class="do-z-1 do-full do-br-xl do-bg-second-color poa top-n-xl left-n-xl"></div>  
         </a>
-        <h1>1001 Class</h1>
+        <h1>{{pageDo.pages.class.title}}</h1>
     </div>
-    <p class="do-max-w-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique saepe ducimus ex cupiditate suscipit esse nostrum mollitia repellendus minima. Quia nemo ipsum fugiat est? Sunt quas repudiandae pariatur quos tenetur.</p>
+    <p class="do-w-max-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique saepe ducimus ex cupiditate suscipit esse nostrum mollitia repellendus minima. Quia nemo ipsum fugiat est? Sunt quas repudiandae pariatur quos tenetur.</p>
 
 </section>
 
-<div class="do-flex do-x do-gap-xs do-px-smart-xxxl do-w-9 pos top do-z-10 do-start-center">
+<div class="do-flex do-x do-gap-xs do-px-smart-xxxl do-w-9 pos top do-z-9 do-start-center">
     <input id="rechercheArea" class="do-p-xs reset no-focus do-txt-main-color-auto do-bg-main-color-darken do-fs-xs" type="text" name="class" placeholder="Recherche">
     <nav id="inside-page-nav" class="do-flex do-x do-gap-xs">
         {{#classDo}}
         <a class="cursor-pointer do-bg-second-color do-txt-contraste-color active:do-txt-second-color do-p-xs active:do-bg-contraste-color do-bg-second-color-lighten:hover" data-do-id-section-page="{{name}}">{{name}}</a>
         {{/classDo}}
+    </nav>
+    <nav class="do-hide md:do-flex do-x do-x-start-center do-gap-xs poa top right">
+        <a data-module="dotoggler" class="cursor-pointer do-txt-contraste-color do-p-xs do-bg-second-color-darken active:do-bg-main-color" data-do-multi="true" data-do-debug="alpha" data-do-custom-target-class="alpha:do-block" data-do-target="#class">infos</a>
+        <a data-module="dotoggler" class="cursor-pointer do-txt-contraste-color do-p-xs active:do-bg-second-color-darken do-bg-main-color" data-do-multi="true" data-do-debug="gamma" data-do-custom-target-class="gamma:do-hide" data-do-target="#class">responsive</a>  
+        <a data-module="dotoggler" class="cursor-pointer do-txt-contraste-color do-p-xs active:do-bg-second-color-darken do-bg-main-color" data-do-multi="true" data-do-debug="delta" data-do-custom-target-class="delta:do-hide" data-do-target="#class">variantes</a>
     </nav>
 </div>
 
@@ -56,38 +61,56 @@
   >
 </div>
 
-<section id="class" class="por do-px-smart-xxxl h-auto do-py-xxl por do-z-1 do-flex do-y do-gap-xl">
+<section id="class" class="por do-w-10 do-px-smart-xxxl h-auto do-py-xxl por do-z-1 do-flex do-y do-start-start do-gap-xl">
 
-    {{#classDo}}
 
-        <div id="{{name}}" class="page-section">
+    {{#each classDo}}
+
+        <div id="{{name}}" class="page-section do-pr-xl xl:do-pr-xxxs do-w-10">
             <h2 class="do-mb-md do-fs-fluid-lg">{{name}}</h2>
-  
-            <div class="do-grid-3 do-gap-md">
-                {{#group}}
-                    <div class="do-bg-second-color-lighten">
-                        <div class="do-p-xs  por">
-                            <h3 class="do-block do-fw-light"><span class="do-o-5">.do</span>-<span class="do-bg-main-color do-txt-main-color-auto do-fw-regular">{{name}}</span>-<span class="do-bg-extra-color-darken">size</span></h3> 
-                            {{#props}}
-                                <span class="do-inline-block do-fw-bold  do-fs-xxs uppercase">{{.}}</span>  
-                            {{/props}}
-                            
-                            <span class="do-inline-block do-fw-bold uppercase do-fs-xxs do-bg-extra-color-darken">{{unit}}</span>  
-                            
+            
+            <div class="do-grid-1 md:do-grid-2 lg:do-grid-3 do-gap-md">
+                {{#each group}}
+                    <div class="do-bg-second-color-lighten  {{#if (isNotFalse responsive)}}do-block gamma:do-hide{{/if}}">
+                       
+                        
+                        <div class="do-p-xs por">
+                            {{> block/classTitle}}
+                            <div class="do-w-10 do-hide alpha:do-block">
+                                {{> block/classInfos}}
+                                {{#if (isNotFalse doloop)}}
+                                {{> block/classSizes sizes=../../pageDo.sizes}}
+                                {{/if}}
+                                
+                                {{#if maxo}}
+                                {{> block/classSizesMaxo}}
+                                {{/if}}
+                                {{#if variations}}
+                                {{> block/classVariantes}}
+                                {{/if}}
+                                {{#if (isNotFalse responsive)}}
+                                {{> block/classResponsive bps=../../pageDo.breakPoints }}
+                                {{/if}}
+                            </div>
                         </div>
-                        <div class="do-gap-xxs do-grid-3 do-fs-xs do-p-xs">
-                            {{#pageDo.sizes}}
-                            <span class="do-block do-fw-light"><span class="do-o-5">.do</span>-<span class="do-bg-main-color do-txt-main-color-auto do-fw-regular">{{name}}</span>-<span class="do-bg-extra-color-darken">{{size}}</span></span>   
-                            {{/pageDo.sizes}}
+
+                  
+                        {{#if extend}}
+                        <div class="do-p-xs do-bg-second-color-darken do-w-10 do-flex do-y do-w-10 delta:do-hide">
+                            {{#each extend}}
+                                {{> block/classLine class=../name}}
+                            {{/each}}
                         </div>
+                        {{/if}}
+                        
                     </div>
-                {{/group}}
+                {{/each}}
             </div>
 
    
         </div>
 
-    {{/classDo}}
+    {{/each}}
 
 </section>
 

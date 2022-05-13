@@ -69,6 +69,47 @@
         {
           "size":"xxxl"
         }
-      ]
+      ],
+      "breakPoints":[
+        {
+          "name":"xs",
+          "bp":"320px"
+        },
+        {
+          "name":"sm",
+          "bp":"576px"
+        },
+        {
+          "name":"md",
+          "bp":"768px"
+        },
+        {
+          "name":"lg",
+          "bp":"992px"
+        },
+        {
+          "name":"xl",
+          "bp":"1200px"
+        },
+        {
+          "name":"xxl",
+          "bp":"1400px"
+        },
+        {
+          "name":"xxxl",
+          "bp":"1600px"
+        }
+      ],
+      "pages":{
+        "class":{
+          "slug":"class",
+          "title":"1001 class"
+        },
+        "experiences":{
+          "slug":"experiences",
+          "title":"experiences",
+          "intro":"modules JS: jQuery, ScrollTrigger, Tweenmax"
+        }
+      }
     }
 }

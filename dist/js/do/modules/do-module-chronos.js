@@ -12,6 +12,8 @@ moduleManager["dochronos"] = function () {
     var $type = $target.attr('data-do-chronos');
     var $notrigger = $target.attr('data-do-notrigger') == "true";
     var $dateStart = $target.attr('data-do-date');
+    var $start = $target.attr('data-do-start') || "bottom bottom";
+    var $end = $target.attr('data-do-end') || "top top+=50%";
     // console.log("$dateStart ",$dateStart);
     var cible = ".do-date";
     var $container = $(cible, $target);
@@ -60,8 +62,8 @@ moduleManager["dochronos"] = function () {
             }, scrollTrigger: {
                 trigger: $container,
                 scrub: 1,
-                start: 'bottom bottom',
-                end: 'top top+=50%',
+                start: $start,
+                end: $end,
                 ease: 'expo.in'
             }
         });

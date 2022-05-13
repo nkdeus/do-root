@@ -1,0 +1,119 @@
+{{> head pageName=pageDo.pages.experiences.title}}
+{{> nav}}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css" integrity="sha512-xIf9AdJauwKIVtrVRZ0i4nHP61Ogx9fSRAkCLecmE2dL/U8ioWpDvFCAy4dcfecN72HHB9+7FfQj3aiO68aaaw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js" integrity="sha512-i9pd5Q6ntCp6LwSgAZDzsrsOlE8SN+H5E0T5oumSXWQz5l1Oc4Kb5ZrXASfyjjqtc6Mg6xWbu+ePbbmiEPJlDg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/xml/xml.min.js" integrity="sha512-XPih7uxiYsO+igRn/NA2A56REKF3igCp5t0W1yYhddwHsk70rN1bbbMzYkxrvjQ6uk+W3m+qExHIJlFzE6m5eg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js" integrity="sha512-9mEZ3vO6zMj0ub2Wypnt8owrHeoJCH22MkzeJ9eD3hca8/Wlqo5pEopI6HloA0F53f/RkRkHs8TyZMxbwVmnFw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script type="text/javascript" src="{{{rootPath}}}js/do/modules/do-module-tags.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+            mode: "javascript",
+            lineNumbers: true,
+        });
+        editor.save()
+
+    });
+
+</script>
+
+
+<section class="por h-auto do-px-smart-xxxl do-pt-xxl do-pb-md por do-z-1 do-h-10-vh">
+    <div class="do-flex do-x do-start-center por">
+        <a class="do-p-sm poa left-n-xs-rem do-br-xl do-bg-extra-color-main-grad-linear-3 trans-y-middle-x-before " href="../do.html">
+            <div class="do-wh-xs poa top-middle left trans-y-middle-x-before do-z-2">
+                {{> assets/icones/prev}}
+            </div>
+
+            <span class="do-z-2 do-fs-sm por do-txt-main-contraste-auto do-fw-light">do</span>
+            <div class="do-z-1 do-full do-br-xl do-bg-second-color poa top-n-xl left-n-xl"></div>  
+        </a>
+        <h1>{{pageDo.pages.experiences.title}}</h1>
+    </div>
+    <p class="do-w-max-md">{{pageDo.pages.experiences.intro}}</p>
+
+</section>
+
+<div class="do-flex do-x do-gap-xs do-px-smart-xxxl do-w-9 pos top do-z-9 do-start-center">
+    <input id="rechercheArea" class="do-p-xs reset no-focus do-txt-main-color-auto do-bg-main-color-darken do-fs-xs" type="text" name="class" placeholder="Recherche">
+    <nav id="inside-page-nav" class="do-flex do-x do-gap-xs">
+        {{#experiencesDo}}
+        <a class="cursor-pointer do-bg-second-color do-txt-contraste-color active:do-txt-second-color do-p-xs active:do-bg-contraste-color do-bg-second-color-lighten:hover" data-do-id-section-page="{{name}}">{{name}}</a>
+        {{/experiencesDo}}
+    </nav>
+</div>
+
+<div
+  data-module="dofilters"
+  data-do-stage="#class"
+  data-do-target=".page-section"
+  data-do-nav="#inside-page-nav"
+  data-do-bt-attr="data-do-id-section-page"
+  data-do-custom-data="data-do-id-section-page"
+  data-do-attr="id"
+  data-do-sep=""
+  data-do-type="solo"
+  data-do-tag-index="0"
+  data-do-class-toggle="all-active:do-hide"
+>
+</div>
+
+
+<div 
+  data-module="doscrolldatas"
+  data-do-target="#class"
+  data-do-trigger-calcul="body"
+  data-do-calcul="full"
+  data-do-update="true"
+  data-do-start="top-=0% center"
+  data-do-end="bottom-=0% bottom"
+  data-do-force="1"
+  >
+</div>
+
+<section id="class" class="por do-w-10 do-px-smart-xxxl h-auto do-py-xxl por do-z-1 do-flex do-y do-start-start do-gap-xl">
+
+    
+    {{#each experiencesDo}}
+
+        <a href="./experiences/{{name}}.html" id="{{name}}" class="page-section do-pr-xl xl:do-pr-xxxs do-w-10">
+
+            <h2 class="do-mb-md do-fs-fluid-lg">{{name}}</h2>
+            
+        </a>
+
+    {{/each}}
+
+</section>
+<section id="setup" class="por do-z-1 do-px-smart-xxxl do-pb-xxl">
+    <h2>script to run modules</h2>
+    <p class="CodeMirror cm-s-dracula CodeMirror-wrap">
+        <textarea id='editor' style="resize: none;" class="do-full do-p-sm do-border-solid do-bw-md do-border-extra-color ">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollTrigger.min.js"></script>
+
+$(document).ready(function() {
+    $('[data-module]').each((i, el) => {            
+        if(window.WFmodules[el.dataset.module] != undefined){
+            console.log('#module', el.dataset.module);
+            window.WFmodules[el.dataset.module].call(el);
+        }else{
+            console.log('#ERROR', el.dataset.module);
+        }  
+    });
+});
+        </textarea>
+        
+    </p>
+</section>
+
+
+
+
+{{> footer}}
+{{> foot}}

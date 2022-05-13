@@ -1,11 +1,11 @@
 {
     "titre" : "Ulysse 2029",
     "logo" : "imgs/logo.svg",
-    "rootPath" : "",
+    "rootPath" : "http://127.0.0.1:5500/dist/",
     "nav" :{
       "background":"hide",
       "header":[
-        {
+          {
           "bt":"Do v1",
           "idTarget":"do",
           "url":"do.html",
@@ -21,6 +21,10 @@
             {
               "_bt":"class",
               "_url":"do/class.html"
+            },
+            {
+              "_bt":"experiences",
+              "_url":"do/experiences.html"
             }
           ]
         },

@@ -1,42 +1,203 @@
 {
   "classDo" : [
     {
+      "name":"width & height",
+      "group":[
+        {
+          "name" : "h",
+          "props": ["height"],
+          "unit" : "rem",
+          "maxo" : 20,
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "gold",
+              "name" : "gold",
+              "unit" : "%"
+            },
+            {
+              "type" : "calc",
+              "name" : "100",
+              "unit" : "100% + rem"
+            },
+            {
+              "type" : "calc negatif",
+              "name" : "100-n",
+              "unit" : "100% - rem"
+            },
+            {
+              "type" : "px",
+              "name" : "px",
+              "unit" : "px"
+            },
+            {
+              "type" : "max-height",
+              "name" : "max",
+              "unit" : "rem*10",
+              "maxo" : 20
+            },
+            {
+              "type" : "min-height",
+              "name" : "min",
+              "unit" : "rem*10"
+            },
+            {
+              "type" : "vh",
+              "name" : "vh",
+              "unit" : "vh*6 || vh",
+              "maxo" : 20
+            }
+          ]
+        },
+        {
+          "name" : "w",
+          "props": ["width"],
+          "unit" : "rem",
+          "maxo" : 20,
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "gold",
+              "name" : "gold",
+              "unit" : "%"
+            },
+            {
+              "type" : "calc",
+              "name" : "100",
+              "unit" : "100% + rem"
+            },
+            {
+              "type" : "calc negatif",
+              "name" : "100-n",
+              "unit" : "100% - rem"
+            },
+            {
+              "type" : "px",
+              "name" : "px",
+              "unit" : "px"
+            },
+            {
+              "type" : "max-width",
+              "name" : "max",
+              "unit" : "rem*10",
+              "maxo" : 20
+            },
+            {
+              "type" : "min-width",
+              "name" : "min",
+              "unit" : "rem*10"
+            },
+            {
+              "type" : "vw",
+              "name" : "vw",
+              "unit" : "vw*6 || vh",
+              "maxo" : 20
+            }
+          ]
+        },
+        {
+          "name" : "wh",
+          "props": ["width","height"],
+          "unit" : "rem",
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "gold",
+              "name" : "gold",
+              "unit" : "%"
+            },
+            {
+              "type" : "vw",
+              "name" : "vw",
+              "unit" : "vw*6"
+            }
+          ]
+        }
+     
+      ]
+    },
+    {
       "name":"paddings",
       "group":[
         {
           "name" : "p",
           "props": ["padding"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true
         },
         {
           "name" : "px",
           "props": ["padding-left","padding-right"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "smart",
+              "name" : "smart",
+              "unit" : "rem"
+            },
+            {
+              "type" : "fluid",
+              "name" : "fluid",
+              "unit" : "rem"
+            }
+          ]
         },
         {
           "name" : "py",
           "props": ["padding-top","padding-bottom"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "smart",
+              "name" : "smart",
+              "unit" : "rem"
+            },
+            {
+              "type" : "fluid",
+              "name" : "fluid",
+              "unit" : "rem"
+            }
+          ]
         },
         {
           "name" : "pt",
           "props": ["padding-top"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true
         },
         {
           "name" : "pb",
           "props": ["padding-bottom"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true
         },
         {
           "name" : "pl",
           "props": ["padding-left"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true,
+            "extend":[
+             {
+              "type" : "smart",
+              "name" : "smart",
+              "unit" : "rem"
+            }
+          ]
         },
         {
           "name" : "pr",
           "props": ["padding-right"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true,
+            "extend":[
+             {
+              "type" : "smart",
+              "name" : "smart",
+              "unit" : "rem"
+            }
+          ]
         }
       ]
     },
@@ -46,37 +207,190 @@
         {
           "name" : "m",
           "props": ["margin"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true
         },
         {
           "name" : "mx",
           "props": ["margin-left","margin-right"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "fluid",
+              "name" : "fluid",
+              "unit" : "rem"
+            },
+             {
+              "type" : "smart",
+              "name" : "smart",
+              "unit" : "rem"
+            }
+          ]
         },
         {
           "name" : "my",
           "props": ["margin-top","margin-bottom"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "fluid",
+              "name" : "fluid",
+              "unit" : "rem"
+            },
+             {
+              "type" : "smart",
+              "name" : "smart",
+              "unit" : "rem"
+            }
+          ]
         },
         {
           "name" : "mt",
           "props": ["margin-top"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "negatif",
+              "name" : "n",
+              "unit" : "rem*-1"
+            }
+          ]
         },
         {
           "name" : "mb",
           "props": ["margin-bottom"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "negatif",
+              "name" : "n",
+              "unit" : "rem*-1"
+            }
+          ]
         },
         {
           "name" : "ml",
           "props": ["margin-left"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "negatif",
+              "name" : "n",
+              "unit" : "rem*-1"
+            }
+          ]
         },
         {
           "name" : "mr",
           "props": ["margin-right"],
-          "unit" : "1rem"
+          "unit" : "rem",
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "negatif",
+              "name" : "n",
+              "unit" : "*-1em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name":"font",
+      "group":[
+        {
+          "name" : "fs",
+          "props": ["font-size"],
+          "unit" : "rem",
+          "responsive" : true
+        },
+        {
+          "name" : "fw",
+          "props": ["font-weight"],
+          "unit" : "",
+          "suffix": "type",
+          "variations":["light","regular","bold"],
+          "responsive" : false,
+          "doloop" : false
+        }
+      ]
+    },
+    {
+      "name":"border",
+      "group":[
+        {
+          "name" : "br",
+          "props": ["border-radius"],
+          "unit" : "rem",
+          "responsive" : true
+        },
+        {
+          "name" : "bw",
+          "props": ["border-width"],
+          "unit" : "px",
+          "responsive" : true,
+          "extend":[
+            {
+              "type" : "rem",
+              "name" : "rem",
+              "unit" : "rem"
+            }
+          ]
+        },
+        {
+          "name" : "bs",
+          "props": ["border-style"],
+          "unit" : false,
+          "suffix": "style",
+          "variations":["solid","dotted"],
+          "doloop" : false,
+          "responsive" : false
+        }
+      ]
+    },
+    {
+      "name":"transform",
+      "group":[
+        {
+          "name" : "scale",
+          "props": ["scale"],
+          "unit" : "rem",
+          "responsive" : true,
+          "events" :true,
+          "maxo" : 20,
+          "progress" : true
+        },
+        {
+          "name" : "rotation",
+          "props": ["rotate"],
+          "unit" : "deg",
+          "responsive" : true,
+          "events" :true,
+          "maxo" : 20,
+          "progress" : true
+        }
+      ]
+    },
+    {
+      "name":"lorem",
+      "group":[
+        {
+          "name" : "name",
+          "props": ["props"],
+          "unit" : "unit",
+          "responsive" : "true ou false",
+          "extend":[
+            {
+              "type" : "type",
+              "name" : "name",
+              "unit" : "unit"
+            }
+          ]
         }
       ]
     }

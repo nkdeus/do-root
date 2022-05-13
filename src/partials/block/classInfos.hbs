@@ -1,0 +1,20 @@
+<div class="do-bg-second-color-2-darken do-p-xxs do-y">
+    <div class="">
+        {{#if props.[1]}}
+            <span class="do-fw-bold">propriétés :</span>
+        {{else}}
+            <span class="do-fw-bold">propriété :</span>
+        {{/if}}
+
+        {{#each props}}
+        <span class="do-fw-regular do-mr-xxs">{{.}}</span>
+        {{/each}}
+    </div>
+    {{#if (isNotFalse unit)}}
+    <div class="">
+        <span class="do-fw-bold">base unit :</span>
+        <span class="">{{unit}}</span>
+    </div>
+    {{/if}}
+    
+</div>

@@ -7,7 +7,6 @@ window.doautotheme = null;
 $(document).ready(function() {
 
 
-
     $('[data-module]').each((i, el) => {
         
 

@@ -1,0 +1,15 @@
+{
+  "experiencesDo" : [
+    {
+      "name":"do-change"
+    },
+    {
+      "name":"do-chronos"
+    }
+  ],
+  "setup" :[
+    {
+      "step-name":"script to run modules"
+    }
+  ]
+}

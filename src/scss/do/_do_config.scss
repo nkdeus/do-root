@@ -76,23 +76,22 @@ $do-width-height : (
   "h"           : ("props" : "height" , "unit": 1rem),
   "h-gold"      : ("props" :"height" , "unit": 1%),
   "h-100"       : ("props" : "height" , "unit": 1rem),
-  "h-n-100"     : ("props" : "height" , "unit": 1rem),
+  "h-100-n"     : ("props" : "height" , "unit": 1rem),
   "h-px"        : ("props" : "height" , "unit": 1px),
-  "max-h"       : ("props" :"max-height" , "unit": 10rem),
-  "min-h"       : ("props" :"min-height" , "unit": 10rem),
+  "h-max"       : ("props" :"max-height" , "unit": 10rem),
+  "h-min"       : ("props" :"min-height" , "unit": 10rem),
   "h-vh"        : ("props" : "height" , "unit": 6vh),
   "w"           : ("props" :"width" , "unit": 1rem),
   "w-gold"      : ("props" :"width" , "unit": 1%),
   "w-gold-vw"   : ("props" :"width" , "unit": 1vw),
-  "max-w"       : ("props" :"max-width" , "unit": 10rem),
-  "min-w"       : ("props" :"min-width" , "unit": 10rem),
+  "w-max"       : ("props" :"max-width" , "unit": 10rem),
+  "w-min"       : ("props" :"min-width" , "unit": 10rem),
   "w-100"       : ("props" :"width" , "unit": 1rem),
-  "w-n-100"     : ("props" :"width" , "unit": 1rem),
+  "w-100-n"     : ("props" :"width" , "unit": 1rem),
   "w-px"        : ("props" :"width" , "unit": 1px),
   "w-vw"        : ("props" : "width" , "unit": 6vw),
   "wh"          : ("props" :("width","height"), "unit": 1rem),
   "wh-vw"       : ("props" :("width","height"), "unit": 6vw),
-  "hw"          : ("props" :("height","width"), "unit": 1rem),
   "gold"        : ("props" :("height","width"), "unit": 1%)
 );
 
@@ -111,6 +110,7 @@ $do-clamp : (
   "px-fluid": ("props" :("padding-left","padding-right"), "unit": 1rem),
   "py-fluid": ("props" :("padding-top","padding-bottom"), "unit": 1rem),
   "my-fluid": ("props" :("margin-top","margin-bottom"), "unit": 1rem),
+  "mx-fluid": ("props" :("margin-top","margin-bottom"), "unit": 1rem),
   "fs-fluid": ("props" :"font-size", "unit": 1rem)
 );
 
@@ -129,7 +129,6 @@ $temp-class: ".do";
 $count: $do-u;
 $do-directions: "left", "right", "top", "bottom";
 $do-aligns: "start", "center", "end", "flex-start","flex-end", "stretch", "space-between", "space-around";
-$do-custom-data: "background-color", "right", "top", "bottom";
 $do-base : 5; 
 $do-max : 20; 
 $do-num-angle : 8; 
@@ -142,7 +141,7 @@ $do-custom-data : (
       params :(rotate,scaleX),
       unit   : (-16.28deg, 1) 
   ),
-  rotate  : (
+  rotation  : (
     prop   : transform,
     params :(rotate),
     unit   : (-4.2deg)
@@ -295,6 +294,17 @@ $do-childs-selector : (
   "last"  : "*:last-child",
   "odd" : "*:nth-child(odd)"
 );
+
+$do-toggles-list : "alpha","beta","gamma","delta","epsilon","stigma","dzeta","eta","theta";
+
+
+
+
+
+
+
+
+
 
 $do-gogogo: ($do-paddings,$do-margins,$do-width-height,$do-others);
 $do-matrix: ();

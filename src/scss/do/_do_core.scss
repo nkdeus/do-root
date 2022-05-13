@@ -433,6 +433,21 @@ Core de la créature
         }
     }
 
+    @if $class == "do-block" or $class == "do-flex" $class == "do-grid" or $class == "do-hide"{
+
+        @each $do-toggle in $do-toggles-list {
+           // @debug("$do-toggle :",#{$do-toggle}\:#{$class});
+            .#{$do-toggle}\:#{$class}  {
+
+                .#{$do-toggle}\:#{$class}{
+                    @content;
+                }
+
+            }
+        }
+
+    }
+
     .open{
         &.open\:#{$class} {
             @content;
@@ -705,7 +720,7 @@ Core de la créature
         @include do-events-extend(#{$class}-scale-y-#{$i}) {
             transform: scaleY(math.div($i, $do-base-double));
         }
-        @include do-events-extend(#{$class}-rotate-#{$i}) {
+        @include do-events-extend(#{$class}-rotation-#{$i}) {
             transform: rotate($i * $do-angle * 1deg);
         }
 
@@ -770,7 +785,7 @@ Core de la créature
                 transform: rotate($i * $do-angle * 1deg);
             }
             &-n-#{$i} {
-                transform: rotate($i * $do-angle * 11deg);
+                transform: rotate($i * $do-angle * -1deg);
             }
         }
 
@@ -1046,17 +1061,17 @@ Core de la créature
 
 @each $break-class, $break-point in $do-screen {
     @media screen and (min-width: $break-point) {
-        $temp-class: '.#{$break-class}-do';
+        $temp-class: '.#{$break-class}\\:do';
 
-        @include do-positions('.#{$break-class}-p', '!important');
-        @include do-center('.#{$break-class}-center');
-        @include do-trans('#{$break-class}-trans');
-        @include do-dir('.#{$break-class}-');
-        @include do-align('.#{$break-class}-do');
-        @include do-maxo('#{$break-class}-do', false);
-        @include do-colors('#{$break-class}-', true);
-        @include do-display('#{$break-class}-do');
-        @include do-util('#{$break-class}-do');
+        @include do-positions('.#{$break-class}\\:p', '!important');
+        @include do-center('.#{$break-class}\\:center');
+        @include do-trans('#{$break-class}\\:trans');
+        @include do-dir('.#{$break-class}\\:');
+        @include do-align('.#{$break-class}\\:do');
+        @include do-maxo('#{$break-class}\\:do', false);
+        @include do-colors('#{$break-class}\\:', true);
+        @include do-display('#{$break-class}\\:do');
+        @include do-util('#{$break-class}\\:do');
 
 
         @each $key, $value in $do-matrix {
@@ -1074,9 +1089,10 @@ Core de la créature
                 }
             }
 
-            @include do-full-dir($key, '.#{$break-class}-', $value);
+            @include do-full-dir($key, '.#{$break-class}\\:', $value);
         }
     }
+    
 }
 
 // Taille de la police
