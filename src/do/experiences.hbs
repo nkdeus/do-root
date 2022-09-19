@@ -93,20 +93,20 @@
     <h2>script to run modules</h2>
     <p class="CodeMirror cm-s-dracula CodeMirror-wrap">
         <textarea id='editor' style="resize: none;" class="do-full do-p-sm do-border-solid do-bw-md do-border-extra-color ">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollTrigger.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollTrigger.min.js"></script>
 
-$(document).ready(function() {
-    $('[data-module]').each((i, el) => {            
-        if(window.WFmodules[el.dataset.module] != undefined){
-            console.log('#module', el.dataset.module);
-            window.WFmodules[el.dataset.module].call(el);
-        }else{
-            console.log('#ERROR', el.dataset.module);
-        }  
-    });
-});
+            $(document).ready(function() {
+                $('[data-module]').each((i, el) => {            
+                    if(window.WFmodules[el.dataset.module] != undefined){
+                        console.log('#module', el.dataset.module);
+                        window.WFmodules[el.dataset.module].call(el);
+                    }else{
+                        console.log('#ERROR', el.dataset.module);
+                    }  
+                });
+            });
         </textarea>
         
     </p>

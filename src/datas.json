@@ -706,6 +706,9 @@
 		},
 		{
 			"name": "do-chronos"
+		},
+		{
+			"name": "do-three"
 		}
 	],
 	"setup": [
