@@ -24,12 +24,18 @@ class ThreeManager {
             return ThreeManager.instance;
         }
 
+        let images = ["i1.png","i2.png","i3.png","i4.png","i5.png"];
+        let mats = [];
+        let indexSlide = 0;
+        let maxSlide = images.length-1;
+
         let container;
         let camera;
         let controls;
         let renderer;
         let scene;
         let mesh;
+        let meshBack;
 
         function init() {
 
@@ -39,7 +45,7 @@ class ThreeManager {
             scene = new THREE.Scene();
            
             // Set the background color
-            scene.background = new THREE.Color('blue');
+            scene.background = new THREE.Color('black');
            
             createCamera();
             createControls();
@@ -47,14 +53,36 @@ class ThreeManager {
             createMeshes();
             createRenderer();
            
-            // start the animation loop
-            renderer.setAnimationLoop(() => {
-           
-            update();
-            render();
-           
-               });
-           }
+                // start the animation loop
+                renderer.setAnimationLoop(() => {
+            
+                    update();
+                    render();
+            
+                });
+
+               //gsap.ticker.add(render);
+
+
+               /*
+
+                gsap.to(camera, {
+                zoom: 0.5,
+                duration: 10,
+                scrollTrigger: {
+                    trigger: "body",
+                    start: 0,
+                    end: "bottom bottom",
+                    scrub: 2
+                },
+                ease: 'none',
+                onUpdate: function () {
+                    camera.updateProjectionMatrix();
+                }
+                });*/
+                mesh.material.transparent = true
+            
+        }
 
 
         function createCamera() {
@@ -67,7 +95,7 @@ class ThreeManager {
             100, // far clipping plane
                );
            
-            camera.position.set(0, 0, 30);
+            camera.position.set(0, 0, 100);
            
            
            }
@@ -89,21 +117,54 @@ class ThreeManager {
             scene.add(ambientLight);
            
            }
+
+           function nextSlide(){
+
+                TweenMax.to(mesh.material, 3, { opacity: 0 ,onComplete:function(){
+                    nextSlide();
+                } });
+
+                console.log(mesh.material.map);
+                indexSlide++;
+                //alert(indexSlide);
+
+           }
+
            
            function createMeshes() {
 
-            var groundTexture = new THREE.TextureLoader().load( '../../imgs/photos/surf.png' );
+
+ 
+
+            function creatMat(img, index, array) {
+                console.log("a[" + index + "] = " + img);
+                var imgurl = '../../imgs/three/'+img;
+                var groundTexture = new THREE.TextureLoader().load( imgurl );
+                mats.push(groundTexture);
+            }
+            images.forEach(creatMat);
+
+            
          
            // groundTexture.anisotropy = 0;
             //groundTexture.encoding = THREE.sRGBEncoding;
 
-            var groundMaterial = new THREE.MeshStandardMaterial( { map: groundTexture } );
+            
 
-			mesh = new THREE.Mesh(  new THREE.PlaneGeometry( 30, 30 ), groundMaterial );
+            var groundMaterialBack = new THREE.MeshStandardMaterial( { map: mats[indexSlide] } );
+            var groundMaterial = new THREE.MeshStandardMaterial( { map: mats[indexSlide+1] } );
+
+			mesh = new THREE.Mesh(  new THREE.PlaneGeometry( 160, 90 ), groundMaterial );
+            meshBack = new THREE.Mesh(  new THREE.PlaneGeometry( 160, 90 ), groundMaterial );
+            mesh.position.z = 0;
+            meshBack.position.z = 1;
+
 			//mesh.position.y = 0.0;
 			//mesh.rotation.x = - Math.PI / 2;
 			//mesh.receiveShadow = true;
 			scene.add( mesh );
+
+            nextSlide();
            
       
            
@@ -126,7 +187,7 @@ class ThreeManager {
             renderer.physicallyCorrectLights = true;
            
            
-           container.appendChild(renderer.domElement);
+            container.appendChild(renderer.domElement);
            
            }
            
@@ -135,16 +196,16 @@ class ThreeManager {
            function update() {
            
             // increase the mesh's rotation each frame
-            mesh.rotation.z += 0.0001;
-            mesh.position.z += 0.01;
-            //mesh.rotation.x += 0.01;
+            //mesh.rotation.z += 0.0001;
+            //mesh.position.z += 0.01;
+            //mesh.rotation.y += 0.001;
             //mesh.rotation.y += 0.01;
            
            }
            // render, or 'draw a still image', of the scene
            function render() {
            
-            renderer.render(scene, camera);
+             renderer.render(scene, camera);
            
            }
            
