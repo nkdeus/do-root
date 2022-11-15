@@ -1,10 +1,14 @@
 var refs = [
   {
-    "title":"fruit-1",
-    "src":"fruit-1.jpg"
+    "title":"fruit-4",
+    "src":"fruit-4.jpg"
   },
   {
-    "title":"fruit-2",
-    "src":"fruit-2.jpg"
+    "title":"fruit-5",
+    "src":"fruit-5.jpg"
+  },
+  {
+    "title":"fruit-8",
+    "src":"fruit-8.jpg"
   }
 ];
