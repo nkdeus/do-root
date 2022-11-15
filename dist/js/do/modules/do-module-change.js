@@ -62,7 +62,7 @@ moduleManager["dochange"] = function () {
                 }, 200);
 
                 gsap.fromTo($container, { duration: duration * 50, y: 5 }, {
-                    opacity: 1, y: 0, color: $baseColor, onComplete: function () {
+                    opacity: 1, y: 0, onComplete: function () {
 
                         stateAnim = false;
                         if (stateActive == true) {
