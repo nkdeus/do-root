@@ -51,7 +51,7 @@ moduleManager["dochange"] = function () {
 
         stateAnim = true;
         gsap.to($container, {
-            duration: duration / 2, delay: $scope.randomDelay, color: $mainColor, opacity: 0, y: -5, onComplete: function () {
+            duration: duration / 2, delay: $scope.randomDelay, opacity: 0, y: -5, onComplete: function () {
 
                 var newMot = $mots[index];
                 $container.text(newMot);
@@ -61,7 +61,7 @@ moduleManager["dochange"] = function () {
                     $container.attr("data-do-fx", "none");
                 }, 200);
 
-                gsap.fromTo($container, { duration: duration * 50, y: 5, color: $mainColor }, {
+                gsap.fromTo($container, { duration: duration * 50, y: 5 }, {
                     opacity: 1, y: 0, color: $baseColor, onComplete: function () {
 
                         stateAnim = false;
