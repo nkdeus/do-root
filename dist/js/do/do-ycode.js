@@ -4,11 +4,12 @@ window.addEventListener("load", function (event) {
 
 $(document).ready(function () {
 
-  console.log("REFS ", refs);
+  var cons = [$("#refs-con-1"),$("#refs-con-2"),$("#refs-con-3")];
 
   $.each(refs, function (key, value) {
     console.log(key + ": " + value.title);
-    $("#refs-con-1").prepend('<img class="w-[100%]" src=https://do-root.netlify.app/imgs/fruits/' + value.src + ' />')
+    console.log(key + ": " + key % 3);
+    cons[0].prepend('<img class="w-[100%]" src=https://do-root.netlify.app/imgs/fruits/' + value.src + ' />')
   });
 
 
