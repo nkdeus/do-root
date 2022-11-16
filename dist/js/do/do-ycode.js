@@ -5,11 +5,12 @@ window.addEventListener("load", function (event) {
 $(document).ready(function () {
 
   var cons = [$("#refs-con-1"),$("#refs-con-2"),$("#refs-con-3")];
+  var columns = cons.length-1;
 
   $.each(refs, function (key, value) {
     console.log(key + ": " + value.title);
-    console.log(key + ": " + key % 3);
-    cons[0].prepend('<img class="w-[100%]" src=https://do-root.netlify.app/imgs/fruits/' + value.src + ' />')
+    console.log(key + ": " + key % columns);
+    cons[key % columns].prepend('<img class="w-[100%]" src=https://do-root.netlify.app/imgs/fruits/' + value.src + ' />')
   });
 
 
