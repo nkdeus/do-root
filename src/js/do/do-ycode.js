@@ -5,7 +5,7 @@ window.addEventListener("load", function (event) {
 $(document).ready(function () {
 
   var cons = [$("#refs-con-1"),$("#refs-con-2"),$("#refs-con-3")];
-  var columns = cons.length-1;
+  var columns = cons.length;
 
   $.each(refs, function (key, value) {
     console.log(key + ": " + value.title);
