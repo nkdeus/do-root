@@ -4,16 +4,28 @@ window.addEventListener("load", function (event) {
 
 $(document).ready(function () {
 
-  var cons = [$("#refs-con-1"),$("#refs-con-2"),$("#refs-con-3")];
+  var containers = [$("#refs-con-1"),$("#refs-con-2"),$("#refs-con-3")];
   var columns = cons.length;
 
   $.each(refs, function (key, value) {
+
     console.log(key + ": " + value.title);
-    console.log(key + ": " + key % columns);
+
     var card = $('<div class="overflow-hidden w-[100%] relative"><div/>');
-    card.prepend('<img class="w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
-    card.prepend('<img loading="lazy" class="w-[100%] absolute top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '.webp />')
-    cons[key % columns].prepend(card);
+    var targetContainer = card;
+    var columsContainer = key % columns;
+
+    if(value.love == "true"){
+      var link = $('<a class="scale-75 overflow-hidden w-[100%] relative"><div/>');
+      targetContainer = link;
+      columsContainer = 0;
+    }
+
+    targetContainer.prepend('<img class="w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
+    targetContainer.prepend('<img loading="lazy" class="w-[100%] absolute top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '.webp />')
+
+    containers[columsContainer].prepend(targetContainer);
+    
   });
 
 
