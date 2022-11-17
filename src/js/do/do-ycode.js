@@ -36,9 +36,6 @@ $(document).ready(function () {
     $("#span-3").removeClass("hidden");
   });
 
-
-  $("#refs").addClass("sticky");
-
   var timerLazyLoad;
 
   function endAndStartTimer() {
@@ -47,6 +44,8 @@ $(document).ready(function () {
       ScrollTrigger.refresh();
     }, 1000);
   }
+
+  endAndStartTimer();
 
   $(".trigger-reverseHSL").each(function (index) {
 
