@@ -10,7 +10,7 @@ $(document).ready(function () {
   $.each(refs, function (key, value) {
     console.log(key + ": " + value.title);
     console.log(key + ": " + key % columns);
-    cons[key % columns].prepend('<img class="w-[100%]" src=https://do-root.netlify.app/imgs/fruits/' + value.src + ' />')
+    cons[key % columns].prepend('<img class="w-[100%]" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
   });
 
 
