@@ -154,7 +154,3 @@ var refs = [
     "year":"2022"
   }
 ];
-
-module.exports = {
-  scripts: refs
-};
