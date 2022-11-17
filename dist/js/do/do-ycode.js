@@ -11,8 +11,9 @@ $(document).ready(function () {
     console.log(key + ": " + value.title);
     console.log(key + ": " + key % columns);
     var card = $("<div/>");
-    card.prepend('<img class="w-[100%]" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
-    card.prepend('<img loading="lazy" class="w-[100%]" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-hd.webp />')
+    card.addClass('overflow-hidden');
+    card.prepend('<img class="w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
+    card.prepend('<img loading="lazy" class="w-[100%] absolute top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-hd.webp />')
     cons[key % columns].prepend(card);
   });
 
