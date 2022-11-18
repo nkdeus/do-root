@@ -10,7 +10,7 @@ $(document).ready(function () {
   function compare(a) {
 
     console.log(a.love);
-    if(a.love != "true"){
+    if(a.love == "true"){
       return -1;
     }
     return 1
