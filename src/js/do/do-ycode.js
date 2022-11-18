@@ -7,6 +7,22 @@ $(document).ready(function () {
   var containers = [$("#refs-con-1"),$("#refs-con-2"),$("#refs-con-3")];
   var columns = containers.length;
 
+  function compare(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const loveA = a.love;
+    const loveB = b.love;
+  
+    let comparison = 0;
+    if (loveA > loveB) {
+      comparison = 1;
+    } else if (loveA < loveB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
+
+  refs.sort(compare);
+
   $.each(refs, function (key, value) {
 
     console.log(key + ": " + value.title+" "+value.love);
