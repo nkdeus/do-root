@@ -28,7 +28,7 @@ $(document).ready(function () {
     if(columsContainer == 0){
       scale = scale-0.05;
     }
-    var card = $('<div style="scale='+scale+'" class="overflow-hidden w-[100%] relative"><div/>');
+    var card = $('<div style="scale:'+scale+'" class="overflow-hidden w-[100%] relative"><div/>');
     var targetContainer = card;
     
 
