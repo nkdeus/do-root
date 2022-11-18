@@ -6,10 +6,11 @@ $(document).ready(function () {
 
   var containers = [$("#refs-con-1"),$("#refs-con-2"),$("#refs-con-3")];
   var columns = containers.length;
+  var maxRefs = refs.length;
 
   function compare(a) {
 
-    console.log(a.love);
+    
     if(a.love == "true"){
       return -1;
     }
@@ -18,7 +19,9 @@ $(document).ready(function () {
   }
 
   refs.sort(compare);
-  var scale = 1.05;
+  var scale = 1.3;
+  var offsetScale = Math.round(1/(maxRefs/columns));
+  console.log(maxRefs,offsetScale);
   
   $.each(refs, function (key, value) {
 
@@ -27,7 +30,7 @@ $(document).ready(function () {
     var decal = gsap.utils.random(-3, 3, 1, true)();
     decal= (1+columsContainer)*-1;
     if(columsContainer == 0){
-      scale = scale - 0.15;
+      scale = scale - offsetScale;
     }
     var card = $('<div style="scale:'+scale+'; margin-left:'+decal+'rem" class="overflow-hidden w-[100%] relative"><div/>');
     var targetContainer = card;
