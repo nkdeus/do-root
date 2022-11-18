@@ -37,7 +37,7 @@ $(document).ready(function () {
     if(columsContainer == 2){
       origin = "left";
     }
-    var card = $('<div style="transform-origin:"'+origin+'"; scale:'+scale+'; margin-left:'+decal+'rem" class="overflow-hidden w-[100%] relative"><div/>');
+    var card = $('<div style="transform-origin:'+origin+'; scale:'+scale+'; margin-left:'+decal+'rem" class="overflow-hidden w-[100%] relative"><div/>');
     var targetContainer = card;
     
 
