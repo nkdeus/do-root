@@ -16,9 +16,9 @@ $(document).ready(function () {
     return 1
    
   }
-  console.log(refs)
+
   refs.sort(compare);
-  console.log(refs)
+  
   $.each(refs, function (key, value) {
 
     //console.log(key + ": " + value.title+" "+value.love);
@@ -26,7 +26,9 @@ $(document).ready(function () {
     var card = $('<div class="overflow-hidden w-[100%] relative"><div/>');
     var targetContainer = card;
     var columsContainer = key % columns;
-    targetContainer.css("scale",1-(key/100));
+    var scale = 1-(key/100);
+    targetContainer.css("scale",scale);
+    console.log(scale);
 
     if(value.love == "true"){
       var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" class="block group overflow-hidden w-[100%] relative"><div/>');
