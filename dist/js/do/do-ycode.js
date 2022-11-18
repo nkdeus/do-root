@@ -9,7 +9,7 @@ $(document).ready(function () {
 
   $.each(refs, function (key, value) {
 
-    console.log(key + ": " + value.title);
+    console.log(key + ": " + value.title+" "+value.love);
 
     var card = $('<div class="overflow-hidden w-[100%] relative"><div/>');
     var targetContainer = card;
@@ -24,7 +24,7 @@ $(document).ready(function () {
     targetContainer.prepend('<img class="w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
     targetContainer.prepend('<img loading="lazy" class="w-[100%] absolute top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '.webp />')
 
-    containers[columsContainer].prepend(targetContainer);
+    containers[columsContainer].append(targetContainer);
 
   });
 
