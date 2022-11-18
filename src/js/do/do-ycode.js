@@ -25,8 +25,9 @@ $(document).ready(function () {
     //console.log(key + ": " + value.title+" "+value.love);
     var columsContainer = key % columns;
     var decal = gsap.utils.random(-3, 3, 1, true)();
+    decal= 0;
     if(columsContainer == 0){
-      scale = scale - 0.05;
+      scale = scale - 0.15;
     }
     var card = $('<div style="scale:'+scale+'; margin-left:'+decal+'rem" class="overflow-hidden w-[100%] relative"><div/>');
     var targetContainer = card;
