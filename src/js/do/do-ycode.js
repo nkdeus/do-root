@@ -40,15 +40,15 @@ $(document).ready(function () {
     }
     console.log(scaleR);
    
-    var card = $('<div style='+styleCss+' class="overflow-hidden relative"><div/>');
+    var card = $('<div style='+styleCss+' class="card overflow-hidden relative"><div/>');
     var targetContainer = card;
     
     if(value.love == "true"){
-      var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" style='+styleCss+' data-do-fx="ref-hover" class="block group overflow-hidden relative"><div/>');
+      var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" style='+styleCss+' data-do-fx="ref-hover" class="card block group overflow-hidden relative"><div/>');
       targetContainer = link;
     }
 
-    targetContainer.prepend('<img class="w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
+    targetContainer.prepend('<img class="min-img w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
     targetContainer.prepend('<img loading="lazy" class="w-[100%] absolute transition-all group-hover:opacity-[50%] top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '.webp />')
 
     containers[columsContainer].append(targetContainer);
