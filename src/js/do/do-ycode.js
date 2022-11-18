@@ -5,7 +5,7 @@ window.addEventListener("load", function (event) {
 $(document).ready(function () {
 
   var containers = [$("#refs-con-1"),$("#refs-con-2"),$("#refs-con-3")];
-  var columns = cons.length;
+  var columns = containers.length;
 
   $.each(refs, function (key, value) {
 
@@ -25,7 +25,7 @@ $(document).ready(function () {
     targetContainer.prepend('<img loading="lazy" class="w-[100%] absolute top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '.webp />')
 
     containers[columsContainer].prepend(targetContainer);
-    
+
   });
 
 
