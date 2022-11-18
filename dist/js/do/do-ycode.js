@@ -24,11 +24,11 @@ $(document).ready(function () {
 
     //console.log(key + ": " + value.title+" "+value.love);
     var columsContainer = key % columns;
-    
+    var decal = gsap.utils.random(-4, 4, 1, true);
     if(columsContainer == 0){
       scale = scale-0.05;
     }
-    var card = $('<div style="scale:'+scale+'" class="overflow-hidden w-[100%] relative"><div/>');
+    var card = $('<div style="scale:'+scale+'; translateX:'+decal+'rem" class="overflow-hidden w-[100%] relative"><div/>');
     var targetContainer = card;
     
 
