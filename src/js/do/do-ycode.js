@@ -28,15 +28,15 @@ $(document).ready(function () {
     //console.log(key + ": " + value.title+" "+value.love);
     var columsContainer = key % columns;
     var decal = gsap.utils.random(-3, 3, 1, true)();
-    var styleCss = "";
+    var styleCss = "width:100%;";
     decal= 0;
     if(columsContainer == 0){
       scale = scale - offsetScale
       scaleR = Math.round(scale*100);
-      styleCss = "width:"+scaleR+"%";
+      styleCss = "width:"+scaleR+"%;";
     }
     if(columsContainer == 2 ){
-      styleCss = "width:"+scaleR+"%";
+      styleCss = "width:"+scaleR+"%;";
     }
     console.log(scaleR);
    
