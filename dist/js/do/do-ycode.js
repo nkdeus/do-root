@@ -23,11 +23,8 @@ $(document).ready(function () {
     targetContainer.prepend('<img class="w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
     targetContainer.prepend('<img loading="lazy" class="w-[100%] absolute transition-all group-hover:opacity-[50%] top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '.webp />')
 
-    if(value.love == "true"){
-      containers[columsContainer].append(targetContainer);
-    }else{
-      containers[columsContainer].prepend(targetContainer);
-    }
+    containers[columsContainer].append(targetContainer);
+    
 
   });
 
