@@ -49,7 +49,7 @@ $(document).ready(function () {
     }
 
     targetContainer.prepend('<img class="min-img w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
-    targetContainer.prepend('<img loading="lazy" class="w-[100%] absolute transition-all group-hover:opacity-[50%] top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '.webp />')
+    targetContainer.prepend('<img loading="lazy" class="ref-img w-[100%] absolute transition-all group-hover:opacity-[50%] top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '.webp />')
 
     containers[columsContainer].append(targetContainer);
     
