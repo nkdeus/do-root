@@ -28,11 +28,16 @@ $(document).ready(function () {
     //console.log(key + ": " + value.title+" "+value.love);
     var columsContainer = key % columns;
     var decal = gsap.utils.random(-3, 3, 1, true)();
+    var origin = "center";
     decal= 0;
     if(columsContainer == 0){
       scale = scale - offsetScale;
+      origin = "right";
     }
-    var card = $('<div style="scale:'+scale+'; margin-left:'+decal+'rem" class="overflow-hidden w-[100%] relative"><div/>');
+    if(columsContainer == 2){
+      origin = "left";
+    }
+    var card = $('<div style="transform-origin:"'+origin+'"; scale:'+scale+'; margin-left:'+decal+'rem" class="overflow-hidden w-[100%] relative"><div/>');
     var targetContainer = card;
     
 
