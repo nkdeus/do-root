@@ -16,7 +16,7 @@ $(document).ready(function () {
     var columsContainer = key % columns;
 
     if(value.love == "true"){
-      var link = $('<a class="scale-75 overflow-hidden w-[100%] relative"><div/>');
+      var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" class="block overflow-hidden w-[100%] relative"><div/>');
       targetContainer = link;
       columsContainer = 0;
     }
