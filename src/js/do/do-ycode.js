@@ -19,7 +19,7 @@ $(document).ready(function () {
   }
 
   refs.sort(compare);
-  var scale = 1.3;
+  var scale = 1;
   var offsetScale = 1/(maxRefs/columns);
   console.log(maxRefs,offsetScale);
   
