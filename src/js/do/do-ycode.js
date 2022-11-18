@@ -16,15 +16,18 @@ $(document).ready(function () {
     var columsContainer = key % columns;
 
     if(value.love == "true"){
-      var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" class="block overflow-hidden w-[100%] relative"><div/>');
+      var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" class="block group overflow-hidden w-[100%] relative"><div/>');
       targetContainer = link;
-      columsContainer = 0;
     }
 
     targetContainer.prepend('<img class="w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '-min.webp />')
-    targetContainer.prepend('<img loading="lazy" class="w-[100%] absolute top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '.webp />')
+    targetContainer.prepend('<img loading="lazy" class="w-[100%] absolute transition-all group-hover:opacity-[50%] top-0 left-0" src=https://do-root.netlify.app/imgs/fruits/' + value.src + '.webp />')
 
-    containers[columsContainer].append(targetContainer);
+    if(value.love == "true"){
+      containers[columsContainer].append(targetContainer);
+    }else{
+      containers[columsContainer].prepend(targetContainer);
+    }
 
   });
 
