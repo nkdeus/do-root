@@ -28,18 +28,21 @@ $(document).ready(function () {
     //console.log(key + ": " + value.title+" "+value.love);
     var columsContainer = key % columns;
     var decal = gsap.utils.random(-3, 3, 1, true)();
-
+    var styleCss = "";
     decal= 0;
     if(columsContainer == 0){
       scale = scale - offsetScale
       scaleR = Math.round(scale*100);
+      styleCss = "width:"+scaleR+"%";
+    }
+    if(columsContainer == 2 ){
+      styleCss = "width:"+scaleR+"%";
     }
     console.log(scaleR);
-    var styleCss = "width:"+scaleR+"%; margin-left:"+decal+"rem";
+   
     var card = $('<div style='+styleCss+' class="overflow-hidden relative"><div/>');
     var targetContainer = card;
     
-
     if(value.love == "true"){
       var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" style='+styleCss+' class="block group overflow-hidden relative"><div/>');
       targetContainer = link;
@@ -50,7 +53,6 @@ $(document).ready(function () {
 
     containers[columsContainer].append(targetContainer);
     
-
   });
 
 
