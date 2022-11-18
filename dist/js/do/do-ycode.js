@@ -18,17 +18,19 @@ $(document).ready(function () {
   }
 
   refs.sort(compare);
+  var scale = 1.05;
   
   $.each(refs, function (key, value) {
 
     //console.log(key + ": " + value.title+" "+value.love);
-
-    var card = $('<div class="overflow-hidden w-[100%] relative"><div/>');
-    var targetContainer = card;
     var columsContainer = key % columns;
-    var scale = 1-(key/100);
-    targetContainer.css("scale",scale);
-    console.log(scale);
+    
+    if(columsContainer == 0){
+      scale = scale-0.05;
+    }
+    var card = $('<div style="scale='+scale+'" class="overflow-hidden w-[100%] relative"><div/>');
+    var targetContainer = card;
+    
 
     if(value.love == "true"){
       var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" class="block group overflow-hidden w-[100%] relative"><div/>');
