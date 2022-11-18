@@ -20,7 +20,7 @@ $(document).ready(function () {
 
   refs.sort(compare);
   var scale = 1;
-  var offsetScale = 1/(maxRefs/columns);
+  var offsetScale = 0.61/(maxRefs/columns);
   console.log(maxRefs,offsetScale);
   
   $.each(refs, function (key, value) {
@@ -28,7 +28,7 @@ $(document).ready(function () {
     //console.log(key + ": " + value.title+" "+value.love);
     var columsContainer = key % columns;
     var decal = gsap.utils.random(-3, 3, 1, true)();
-    decal= (1+columsContainer)*-1;
+    decal= 0;
     if(columsContainer == 0){
       scale = scale - offsetScale;
     }
