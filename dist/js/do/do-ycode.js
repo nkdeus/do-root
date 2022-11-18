@@ -25,7 +25,7 @@ $(document).ready(function () {
     //console.log(key + ": " + value.title+" "+value.love);
     var columsContainer = key % columns;
     var decal = gsap.utils.random(-3, 3, 1, true)();
-    decal= 0;
+    decal= (1+columsContainer)*-1;
     if(columsContainer == 0){
       scale = scale - 0.15;
     }
