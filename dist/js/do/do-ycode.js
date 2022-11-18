@@ -44,7 +44,7 @@ $(document).ready(function () {
     var targetContainer = card;
     
     if(value.love == "true"){
-      var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" style='+styleCss+' data-do-fx="wtf-hover" class="block group overflow-hidden relative"><div/>');
+      var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" style='+styleCss+' data-do-fx="ref-hover" class="block group overflow-hidden relative"><div/>');
       targetContainer = link;
     }
 
