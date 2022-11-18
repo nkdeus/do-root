@@ -28,21 +28,19 @@ $(document).ready(function () {
     //console.log(key + ": " + value.title+" "+value.love);
     var columsContainer = key % columns;
     var decal = gsap.utils.random(-3, 3, 1, true)();
-    var origin = "center";
+
     decal= 0;
     if(columsContainer == 0){
-      scale = scale - offsetScale;
-      origin = "right";
+      scale = Math.round((scale - offsetScale)*100);
     }
-    if(columsContainer == 2){
-      origin = "left";
-    }
-    var card = $('<div style="transform-origin:'+origin+'; scale:'+scale+'; margin-left:'+decal+'rem" class="overflow-hidden w-[100%] relative"><div/>');
+    console.log(scale);
+    var styleCss = "width:'+scale+'%; margin-left:'+decal+'rem";
+    var card = $('<div style='+styleCss+' class="overflow-hidden relative"><div/>');
     var targetContainer = card;
     
 
     if(value.love == "true"){
-      var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" class="block group overflow-hidden w-[100%] relative"><div/>');
+      var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" style='+styleCss+' class="block group overflow-hidden relative"><div/>');
       targetContainer = link;
     }
 
