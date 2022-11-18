@@ -20,12 +20,12 @@ $(document).ready(function () {
     }
     return comparison;
   }
-
+  console.log(refs)
   refs.sort(compare);
-
+  console.log(refs)
   $.each(refs, function (key, value) {
 
-    console.log(key + ": " + value.title+" "+value.love);
+    //console.log(key + ": " + value.title+" "+value.love);
 
     var card = $('<div class="overflow-hidden w-[100%] relative"><div/>');
     var targetContainer = card;
