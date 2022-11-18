@@ -31,10 +31,11 @@ $(document).ready(function () {
 
     decal= 0;
     if(columsContainer == 0){
-      scale = Math.round((scale - offsetScale)*100);
+      scale = scale - offsetScale
+      scaleR = Math.round(scale*100);
     }
-    console.log(scale);
-    var styleCss = "width:'+scale+'%; margin-left:'+decal+'rem";
+    console.log(scaleR);
+    var styleCss = "width:"+scaleR+"%; margin-left:"+decal+"rem";
     var card = $('<div style='+styleCss+' class="overflow-hidden relative"><div/>');
     var targetContainer = card;
     
