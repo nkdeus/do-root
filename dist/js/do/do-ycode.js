@@ -20,7 +20,7 @@ $(document).ready(function () {
 
   refs.sort(compare);
   var scale = 1.3;
-  var offsetScale = Math.round(1/(maxRefs/columns));
+  var offsetScale = 1/(maxRefs/columns);
   console.log(maxRefs,offsetScale);
   
   $.each(refs, function (key, value) {
