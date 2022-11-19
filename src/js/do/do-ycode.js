@@ -20,6 +20,7 @@ $(document).ready(function () {
 
   refs.sort(compare);
   var scale = 1;
+  var scaleMiddle = 1;
   var offsetScale = 0.80/(maxRefs/columns);
   console.log(maxRefs,offsetScale);
   
@@ -31,14 +32,16 @@ $(document).ready(function () {
     var styleCss = "width:100%; background-color:var(--black)";
     decal= 0;
     if(columsContainer == 0){
-      scale = scale - offsetScale
+      scale = scale - offsetScale;
       scaleR = Math.round(scale*100);
       styleCss = "width:"+scaleR+"%;";
     }
     if(columsContainer == 2 ){
       styleCss = "width:"+scaleR+"%;";
     }
-    if(key > (maxRefs/2)){
+    if(key > (maxRefs/2) && columsContainer == 1){
+      scaleMiddle = scaleMiddle - offsetScale;
+      scaleR = Math.round(scaleMiddle*100);
       styleCss = "width:"+scaleR+"%;";
     }
     console.log(scaleR);
