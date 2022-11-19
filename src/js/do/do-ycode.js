@@ -28,7 +28,6 @@ $(document).ready(function () {
 
     //console.log(key + ": " + value.title+" "+value.love);
     var columsContainer = key % columns;
-    var decal = gsap.utils.random(-3, 3, 1, true)();
     var styleCss = "width:100%; background-color:var(--black)";
     var sizeImg = "md";
     decal= 0;
@@ -114,11 +113,11 @@ $(document).ready(function () {
     ScrollTrigger.create({
       trigger: $(this),
       start: "top center",
-      end: "bottom center",
+      end: "bottom center"/*,
       markers: {
         startColor: "white",
         endColor: "white"
-      },
+      }*/,
       onEnter: self => {
         $('body').addClass("reverseHSL");
 
