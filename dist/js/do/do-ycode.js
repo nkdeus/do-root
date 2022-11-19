@@ -21,8 +21,8 @@ $(document).ready(function () {
   refs.sort(compare);
   var scale = 1;
   var scaleMiddle = 1;
-  var offsetScale = 0.8/(maxRefs/columns);
-  var offsetScaleMiddle = 0.8/((maxRefs/2)/columns);
+  var offsetScale = 0.95/(maxRefs/columns);
+  var offsetScaleMiddle = 0.95/((maxRefs/3)/columns);
   console.log(maxRefs,offsetScale);
   
   $.each(refs, function (key, value) {
@@ -41,7 +41,7 @@ $(document).ready(function () {
       styleCss = "width:"+scaleR+"%;";
       console.log("0 et 2 --> ",scaleR);
     }
-    
+
     if(key > (maxRefs/2) && columsContainer == 1){
       scaleMiddle = scaleMiddle - offsetScaleMiddle;
       var scaleRMiddle = Math.round(scaleMiddle*100);
