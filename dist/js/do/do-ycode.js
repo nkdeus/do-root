@@ -22,6 +22,7 @@ $(document).ready(function () {
   var scale = 1;
   var scaleMiddle = 1;
   var offsetScale = 0.80/(maxRefs/columns);
+  var offsetScaleMiddle = 1/(maxRefs/columns);
   console.log(maxRefs,offsetScale);
   
   $.each(refs, function (key, value) {
@@ -40,7 +41,7 @@ $(document).ready(function () {
       styleCss = "width:"+scaleR+"%;";
     }
     if(key > (maxRefs/2) && columsContainer == 1){
-      scaleMiddle = scaleMiddle - offsetScale;
+      scaleMiddle = scaleMiddle - offsetScaleMiddle;
       scaleR = Math.round(scaleMiddle*100);
       styleCss = "width:"+scaleR+"%;";
     }
