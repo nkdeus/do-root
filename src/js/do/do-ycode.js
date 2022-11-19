@@ -8,17 +8,16 @@ $(document).ready(function () {
   var columns = containers.length;
   var maxRefs = refs.length;
 
-  function compare(a) {
-
-    
+  function compare(a) { 
     if(a.love == "true"){
       return -1;
     }
     return 1
    
   }
-
   refs.sort(compare);
+
+
   var scale = 1;
   var scaleMiddle = 1;
   var offsetScale = 0.95/(maxRefs/columns);
@@ -56,7 +55,14 @@ $(document).ready(function () {
     }
     
     
-   
+    /*
+      <picture>
+          <source media="(max-width: 600px)" srcset="image-480w.jpg">
+          <img src="image-800w.jpg">
+      </picture>
+
+    */
+    var picture = $('<picture><source media="(max-width: 600px)" srcset="https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '-sm.webp"></picture><img loading="lazy" class="ref-img w-[100%] absolute transition-all top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp />');
     var card = $('<div style='+styleCss+' class="card overflow-hidden relative"><div/>');
     var targetContainer = card;
     
@@ -66,8 +72,8 @@ $(document).ready(function () {
     }
 
     targetContainer.prepend('<img class="min-img w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp />')
-    targetContainer.prepend('<img loading="lazy" class="ref-img w-[100%] absolute transition-all group-hover:opacity-[50%] top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp />')
-
+    //targetContainer.prepend('<img loading="lazy" class="ref-img w-[100%] absolute transition-all top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp />')
+    targetContainer.prepend(picture);
     containers[columsContainer].append(targetContainer);
     
   });
