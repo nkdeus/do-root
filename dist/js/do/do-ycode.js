@@ -45,7 +45,7 @@ $(document).ready(function () {
       scaleR = Math.round(scaleMiddle*100);
       styleCss = "width:"+scaleR+"%;";
     }
-    console.log(scaleR);
+    console.log("OK",scaleR);
    
     var card = $('<div style='+styleCss+' class="card overflow-hidden relative"><div/>');
     var targetContainer = card;
