@@ -38,6 +38,9 @@ $(document).ready(function () {
     if(columsContainer == 2 ){
       styleCss = "width:"+scaleR+"%;";
     }
+    if(key > (maxRefs/2)){
+      styleCss = "width:"+scaleR+"%;";
+    }
     console.log(scaleR);
    
     var card = $('<div style='+styleCss+' class="card overflow-hidden relative"><div/>');
