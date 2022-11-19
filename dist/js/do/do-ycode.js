@@ -61,7 +61,7 @@ $(document).ready(function () {
       </picture>
 
     */
-    var picture = $('<picture><source media="(max-width: 600px)" srcset="https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '-sm.webp"></picture><img loading="lazy" class="ref-img w-[100%] absolute transition-all top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp />');
+    var picture = $('<picture><source media="(max-width: 640px)" srcset="https://do-root.netlify.app/imgs/refs/' + value.src + '-sm.webp"><img loading="lazy" class="ref-img w-[100%] absolute transition-all top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp /></picture>');
     var card = $('<div style='+styleCss+' class="card overflow-hidden relative"><div/>');
     var targetContainer = card;
     
