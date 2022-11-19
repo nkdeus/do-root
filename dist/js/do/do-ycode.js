@@ -36,6 +36,7 @@ $(document).ready(function () {
       scale = scale - offsetScale;
       var scaleR = Math.round(scale*100);
       styleCss = "width:"+scaleR+"%;";
+      console.log("OK",scaleR);
     }
     if(columsContainer == 2 ){
       styleCss = "width:"+scaleR+"%;";
@@ -44,9 +45,10 @@ $(document).ready(function () {
       scaleMiddle = scaleMiddle - offsetScaleMiddle;
       var scaleRMiddle = Math.round(scaleMiddle*100);
       styleCss = "width:"+scaleRMiddle+"%;";
+      console.log("OKMiddle",scaleRMiddle);
     }
-    console.log("OK",scaleR);
-    console.log("OKMiddle",scaleRMiddle);
+    
+    
    
     var card = $('<div style='+styleCss+' class="card overflow-hidden relative"><div/>');
     var targetContainer = card;
