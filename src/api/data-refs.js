@@ -269,11 +269,6 @@ var refs = [
     "year":"2019"
   },
   {
-    "title":"e-Biscus",
-    "src":"e-biscus",
-    "year":"2019"
-  },
-  {
     "title":"envy",
     "src":"envy",
     "year":"2019"
