@@ -22,7 +22,7 @@ $(document).ready(function () {
   var scale = 1;
   var scaleMiddle = 1;
   var offsetScale = 0.95/(maxRefs/columns);
-  var offsetScaleMiddle = 0.95/((maxRefs/3)/columns);
+  var offsetScaleMiddle = 0.95/((maxRefs/2)/columns);
   console.log(maxRefs,offsetScale);
   
   $.each(refs, function (key, value) {
