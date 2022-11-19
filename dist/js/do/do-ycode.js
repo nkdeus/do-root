@@ -48,7 +48,7 @@ $(document).ready(function () {
       console.log("0 et 2 --> ",scaleR);
     }
 
-    if(key > (maxRefs/2.2) && columsContainer == 1){
+    if(key > (maxRefs/2) && columsContainer == 1){
       scaleMiddle = scaleMiddle - offsetScaleMiddle;
       var scaleRMiddle = Math.round(scaleMiddle*100);
       styleCss = "width:"+scaleRMiddle+"%;";
