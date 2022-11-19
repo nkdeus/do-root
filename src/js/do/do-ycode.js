@@ -34,7 +34,7 @@ $(document).ready(function () {
     decal= 0;
     if(columsContainer == 0){
       scale = scale - offsetScale;
-      scaleR = Math.round(scale*100);
+      var scaleR = Math.round(scale*100);
       styleCss = "width:"+scaleR+"%;";
     }
     if(columsContainer == 2 ){
@@ -42,10 +42,11 @@ $(document).ready(function () {
     }
     if(key > (maxRefs/2) && columsContainer == 1){
       scaleMiddle = scaleMiddle - offsetScaleMiddle;
-      scaleR = Math.round(scaleMiddle*100);
-      styleCss = "width:"+scaleR+"%;";
+      var scaleRMiddle = Math.round(scaleMiddle*100);
+      styleCss = "width:"+scaleRMiddle+"%;";
     }
     console.log("OK",scaleR);
+    console.log("OKMiddle",scaleRMiddle);
    
     var card = $('<div style='+styleCss+' class="card overflow-hidden relative"><div/>');
     var targetContainer = card;
