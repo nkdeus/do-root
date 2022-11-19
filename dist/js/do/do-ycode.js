@@ -31,10 +31,16 @@ $(document).ready(function () {
     var columsContainer = key % columns;
     var decal = gsap.utils.random(-3, 3, 1, true)();
     var styleCss = "width:100%; background-color:var(--black)";
+    var sizeImg = "md";
     decal= 0;
     if(columsContainer == 0){
       scale = scale - offsetScale;     
     }
+
+    if(columsContainer > 0){
+      sizeImg = "sm";
+    }
+
 
     if(columsContainer == 0 || columsContainer == 2 ){
       var scaleR = Math.round(scale*100);
@@ -59,8 +65,8 @@ $(document).ready(function () {
       targetContainer = link;
     }
 
-    targetContainer.prepend('<img class="min-img w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-min.webp />')
-    targetContainer.prepend('<img loading="lazy" class="ref-img w-[100%] absolute transition-all group-hover:opacity-[50%] top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' + value.src + '.webp />')
+    targetContainer.prepend('<img class="min-img w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp />')
+    targetContainer.prepend('<img loading="lazy" class="ref-img w-[100%] absolute transition-all group-hover:opacity-[50%] top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp />')
 
     containers[columsContainer].append(targetContainer);
     
