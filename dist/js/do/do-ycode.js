@@ -21,8 +21,8 @@ $(document).ready(function () {
   refs.sort(compare);
   var scale = 1;
   var scaleMiddle = 1;
-  var offsetScale = 0.80/(maxRefs/columns);
-  var offsetScaleMiddle = 1/(maxRefs/columns);
+  var offsetScale = 0.8/(maxRefs/columns);
+  var offsetScaleMiddle = 0.8/((maxRefs/2)/columns);
   console.log(maxRefs,offsetScale);
   
   $.each(refs, function (key, value) {
@@ -33,19 +33,20 @@ $(document).ready(function () {
     var styleCss = "width:100%; background-color:var(--black)";
     decal= 0;
     if(columsContainer == 0){
-      scale = scale - offsetScale;
+      scale = scale - offsetScale;     
+    }
+
+    if(columsContainer == 0 || columsContainer == 2 ){
       var scaleR = Math.round(scale*100);
       styleCss = "width:"+scaleR+"%;";
-      console.log("OK",scaleR);
+      console.log("0 et 2 --> ",scaleR);
     }
-    if(columsContainer == 2 ){
-      styleCss = "width:"+scaleR+"%;";
-    }
+    
     if(key > (maxRefs/2) && columsContainer == 1){
       scaleMiddle = scaleMiddle - offsetScaleMiddle;
       var scaleRMiddle = Math.round(scaleMiddle*100);
       styleCss = "width:"+scaleRMiddle+"%;";
-      console.log("OKMiddle",scaleRMiddle);
+      console.log("1 -->",scaleRMiddle);
     }
     
     
