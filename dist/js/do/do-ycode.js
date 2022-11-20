@@ -9,7 +9,7 @@ $(document).ready(function () {
     console.log("REF ICI -->",clug);
   }
 
-  if ($(".js-hode")[0]){
+  if ($(".js-home")[0]){
     // Do something if class exists
 
 
