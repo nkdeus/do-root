@@ -4,6 +4,15 @@ window.addEventListener("load", function (event) {
 
 $(document).ready(function () {
 
+  if ($(".js-ref")[0]){
+    var clug = $(".set-clug").text();
+    console.log("REF ICI -->",clug);
+  }
+
+  if ($(".js-hode")[0]){
+    // Do something if class exists
+
+
   var containers = [$("#refs-con-1"),$("#refs-con-2"),$("#refs-con-3")];
   var columns = containers.length;
   var maxRefs = refs.length;
@@ -76,6 +85,8 @@ $(document).ready(function () {
     containers[columsContainer].append(targetContainer);
     
   });
+
+  } 
 
 
   $('[data-module]').each((i, el) => {
