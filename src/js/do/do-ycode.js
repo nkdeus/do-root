@@ -28,6 +28,7 @@ $(document).ready(function () {
 
 
   var scale = 1;
+  var alpha = 1;
   var scaleMiddle = 1;
   var offsetScale = 0.95/(maxRefs/columns);
   var offsetScaleMiddle = 0.95/((maxRefs/2)/columns);
@@ -52,14 +53,19 @@ $(document).ready(function () {
     if(columsContainer == 0 || columsContainer == 2 ){
       var scaleR = Math.round(scale*100);
       styleCss = "width:"+scaleR+"%;";
-      console.log("0 et 2 --> ",scaleR);
+
     }
 
     if(key > (maxRefs/2) && columsContainer == 1){
       scaleMiddle = scaleMiddle - offsetScaleMiddle;
       var scaleRMiddle = Math.round(scaleMiddle*100);
       styleCss = "width:"+scaleRMiddle+"%;";
-      console.log("1 -->",scaleRMiddle);
+
+    }
+    if(key > (maxRefs/2)){
+      alpha = alpha - offsetScaleMiddle;
+      styleCss += " opacity:"+alpha+";";
+  
     }
     
     
@@ -80,7 +86,6 @@ $(document).ready(function () {
     }
 
     targetContainer.prepend('<img class="min-img w-[100%] blur-sm" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp />')
-    //targetContainer.prepend('<img loading="lazy" class="ref-img w-[100%] absolute transition-all top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp />')
     targetContainer.prepend(picture);
     containers[columsContainer].append(targetContainer);
     
