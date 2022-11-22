@@ -62,11 +62,7 @@ $(document).ready(function () {
       styleCss = "width:"+scaleRMiddle+"%";
 
     }
-    if(key > (maxRefs/2)){
-      alpha = alpha - 0.05;
-      styleCss = "width:"+scaleRMiddle+"%; opacity:"+alpha+";";
-  
-    }
+
     
     
     /*
@@ -79,6 +75,12 @@ $(document).ready(function () {
     var picture = $('<picture><source media="(max-width: 640px)" srcset="https://do-root.netlify.app/imgs/refs/' + value.src + '-sm.webp"><img loading="lazy" class="ref-img w-[100%] absolute transition-all top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' + value.src + '-' + sizeImg + '.webp /></picture>');
     var card = $('<div style='+styleCss+' class="card overflow-hidden relative"><div/>');
     var targetContainer = card;
+    if(key > (maxRefs/2)){
+      alpha = alpha - 0.05;
+      card.css("opacity",alpha);
+  
+    }
+
     
     if(value.love == "true"){
       var link = $('<a href="https://ulysse-2029.com/projets/' + value.src + '" style='+styleCss+' class="card block group overflow-hidden relative"><div/>');
