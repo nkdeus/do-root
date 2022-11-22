@@ -64,7 +64,7 @@ $(document).ready(function () {
     }
     if(key > (maxRefs/2)){
       alpha = alpha - 0.05;
-      styleCss = styleCss+" opacity:"+alpha+";";
+      styleCss = "width:"+scaleRMiddle+"%; opacity:"+alpha+";";
   
     }
     
