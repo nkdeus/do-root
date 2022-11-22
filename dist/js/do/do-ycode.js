@@ -59,12 +59,12 @@ $(document).ready(function () {
     if(key > (maxRefs/2) && columsContainer == 1){
       scaleMiddle = scaleMiddle - offsetScaleMiddle;
       var scaleRMiddle = Math.round(scaleMiddle*100);
-      styleCss = "width:"+scaleRMiddle+"%;";
+      styleCss = "width:"+scaleRMiddle+"%";
 
     }
     if(key > (maxRefs/2)){
-      alpha = alpha - offsetScaleMiddle;
-      styleCss += " opacity:"+alpha+";";
+      alpha = alpha - 0.05;
+      styleCss = styleCss+" opacity:"+alpha+";";
   
     }
     
