@@ -18,7 +18,7 @@ $(document).ready(function () {
   var maxRefs = refs.length;
 
   function compare(a,b) { 
-    if(a.love < b.love){
+    if(a.love > b.love){
       return -1;
     }
     return 1
