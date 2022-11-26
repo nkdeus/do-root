@@ -3,335 +3,402 @@ var refs = [
     "title":"! Maître vignerons de la presqu'île de saint tropez",
     "src":"vignerons",
     "year":"2022",
-    "love":"true",
+    "love":500,
     "futur":"true"
   },
   {
     "title":"Studio Fremont",
     "src":"studio-fremont",
-    "year":"2021"
+    "year":"2021",
+    "love":300
   },
   {
     "title":"Sogequip",
     "src":"sogequip",
-    "year":"20212"
+    "year":"20212",
+    "love":200
+    
   },
   {
     "title":"Pépé",
     "src":"pepe",
-    "year":"2021"
+    "year":"2021",
+    "love":600
   },
   {
     "title":"MVBD",
     "src":"mvbd",
     "year":"2021",
-    "love":"true"
+    "love":"true",
+    "love":450
   },
   {
     "title":"Hôtel du Parc",
     "src":"hotel-du-parc",
-    "year":"2022"
+    "year":"2022",
+    "love":700
   },
   {
     "title":"Happy Kits",
     "src":"happy-kits",
     "year":"2020",
-    "love":"true"
+    "love":"true",
+    "love":750
   },
   {
     "title":"dimension",
     "src":"dimension",
-    "year":"2020"
+    "year":"2020",
+    "love":300
   },
   {
     "title":"cobiscol",
     "src":"Cobiscol",
     "year":"2021",
-    "love":"true"
+    "love":"true",
+    "love":550
   },
   {
     "title":"Clair d'alu",
     "src":"clair-d-alu",
-    "year":"2020"
+    "year":"2020",
+    "love":100
   },
   {
     "title":"Chez Bob",
     "src":"chez-bob",
-    "year":"2022"
+    "year":"2022",
+    "love":800
   },
   {
     "title":"les vitrines de valerie",
     "src":"les-vitrines-de-valerie",
-    "year":"2022"
+    "year":"2022",
+    "love":150
   },
   {
     "title":"Le centre d'art",
     "src":"le-centre-d-art",
-    "year":"2021"
+    "year":"2021",
+    "love":300
   },
   {
     "title":"Cloisons Partena",
     "src":"cloisons-partena",
-    "year":"2022"
+    "year":"2022",
+    "love":150
   },
   {
     "title":"Markadas",
     "src":"markadas",
-    "year":"2019"
+    "year":"2019",
+    "love":50
   },
   {
     "title":"Eatomoro",
     "src":"eatomoro",
-    "year":"2019"
+    "year":"2019",
+    "love":200
   },
   {
     "title":"Salomon Golden trail series",
     "src":"salomon-golden-trail-series",
-    "year":"2021"
+    "year":"2021",
+    "love":900
   },
   {
     "title":"Ned",
     "src":"ned",
-    "year":"2020"
+    "year":"2020",
+    "love":600
   },
   {
     "title":"Respire",
     "src":"respire",
-    "year":"2019"
+    "year":"2019",
+    "love":300
   },
   {
     "title":"Projob",
     "src":"projob",
-    "year":"2019"
+    "year":"2019",
+    "love":50
   },
   {
     "title":"Pen Haiti",
     "src":"pen-haiti",
-    "year":"2019"
+    "year":"2019",
+    "love":500
   },
   {
     "title":"Mandomangi",
     "src":"mandomangi",
-    "year":"2019"
+    "year":"2019",
+    "love":200
   },
   {
     "title":"Lou",
     "src":"lou",
-    "year":"2019"
+    "year":"2019",
+    "love":200
   },
   {
     "title":"LOTV",
     "src":"lotv",
-    "year":"2019"
+    "year":"2019",
+    "love":420
   },
   {
     "title":"Bertaud Belieu",
     "src":"bertaud-belieu",
-    "year":"2019"
+    "year":"2019",
+    "love":340
   },
   {
     "title":"Atelier C",
     "src":"atelier-c",
-    "year":"2019"
+    "year":"2019",
+    "love":300
   },
   {
     "title":"Cummins",
     "src":"cummins",
-    "year":"2018"
+    "year":"2018",
+    "love":200
   },
   {
     "title":"Baumert",
     "src":"baumert",
-    "year":"2018"
+    "year":"2018",
+    "love":100
   },
   {
     "title":"Mont blanc",
     "src":"mont-blanc",
-    "year":"2018"
+    "year":"2018",
+    "love":100
   },
   {
     "title":"Paris Shopping Tour",
     "src":"paris-shopping-tour",
-    "year":"2018"
+    "year":"2018",
+    "love":300
+    
   },
   {
     "title":"Palp",
     "src":"palp",
-    "year":"2018"
+    "year":"2018",
+    "love":50
   },
   {
     "title":"Kom Abou Billou",
     "src":"kom-abou-billou",
-    "year":"2018"
+    "year":"2018",
+    "love":70
   },
   {
     "title":"Domino",
     "src":"domino",
-    "year":"2018"
+    "year":"2018",
+    "love":90
   },
   {
     "title":"Bulle Media",
     "src":"bulle-media",
-    "year":"2018"
+    "year":"2018",
+    "love":30
   },
   {
     "title":"Zanzen",
     "src":"zanzen",
-    "year":"2017"
+    "year":"2017",
+    "love":200
   },
   {
     "title":"Violon Suzuki",
     "src":"violon-suzuki",
-    "year":"2017"
+    "year":"2017",
+    "love":50
   },
   {
     "title":"vp",
     "src":"vp",
-    "year":"2017"
+    "year":"2017",
+    "love":50
   },
   {
     "title":"universal",
     "src":"universal",
-    "year":"2017"
+    "year":"2017",
+    "love":30
   },
   {
     "title":"Studio Dardoni",
     "src":"studio-dardoni",
-    "year":"2017"
+    "year":"2017",
+    "love":300
   },
   {
     "title":"Sanotech",
     "src":"sanotech",
-    "year":"2017"
+    "year":"2017",
+    "love":60
   },
   {
     "title":"Olivier Couverture",
     "src":"olivier-couverture",
-    "year":"2017"
+    "year":"2017",
+    "love":60
   },
   {
     "title":"JPA",
     "src":"jpa",
-    "year":"2017"
+    "year":"2017",
+    "love":30
   },
   {
     "title":"Bernard",
     "src":"bernard",
-    "year":"2017"
+    "year":"2017",
+    "love":60
   },
   {
     "title":"Bagalu",
     "src":"bagalu",
-    "year":"2017"
+    "year":"2017",
+    "love":30
   },
   {
     "title":"Artee",
     "src":"artee",
-    "year":"2017"
+    "year":"2017",
+    "love":500
   },
   {
     "title":"Almanach",
     "src":"almanach",
-    "year":"2017"
+    "year":"2017",
+    "love":10
   },
   {
     "title":"Maison Verte",
     "src":"maison-verte",
-    "year":"2017"
+    "year":"2017",
+    "love":300
   },
   {
     "title":"Fabrice Bonnot",
     "src":"fabrice-bonnot",
-    "year":"2017"
+    "year":"2017",
+    "love":400
   },
   {
     "title":"compact",
     "src":"compact",
-    "year":"2017"
+    "year":"2017",
+    "love":100
   },
   {
     "title":"Ambroise",
     "src":"ambroise",
-    "year":"2019"
+    "year":"2019",
+    "love":600
   },
   {
     "title":"Challenger",
     "src":"challenger",
-    "year":"2017"
+    "year":"2017",
+    "love":100
   },
   {
     "title":"La Coorniche",
     "src":"la-coorniche",
-    "year":"2017"
+    "year":"2017",
+    "love":450
   },
   {
     "title":"Sasyskill",
     "src":"easyskill",
-    "year":"2019"
+    "year":"2019",
+    "love":200
   },
   {
     "title":"envy",
     "src":"envy",
-    "year":"2019"
+    "year":"2019",
+    "love":300
   },
   {
     "title":"gustave",
     "src":"gustave",
-    "year":"2019"
+    "year":"2019",
+    "love":50
   },
   {
     "title":"kbo",
     "src":"kbo",
-    "year":"2019"
+    "year":"2019",
+    "love":30
   },
   {
     "title":"lisa",
     "src":"lisa",
-    "year":"2019"
+    "year":"2019",
+    "love":600
   },
   {
     "title":"histoires",
     "src":"histoires",
-    "year":"2019"
+    "year":"2019",
+    "love":60
   },
   {
     "title":"remote-up",
     "src":"remote-up",
-    "year":"2019"
+    "year":"2019",
+    "love":30
   },
   {
     "title":"Riondet",
     "src":"riondet",
-    "year":"2019"
+    "year":"2019",
+    "love":400
   },
   {
     "title":"Salomon Nordic",
     "src":"salomon-nordic",
-    "year":"2019"
+    "year":"2019",
+    "love":700
   },
   {
     "title":"Salomon",
     "src":"salomon",
-    "year":"2019"
+    "year":"2019",
+    "love":650
   },
   {
     "title":"Sophie Seguela",
     "src":"sophie",
-    "year":"2019"
+    "year":"2019",
+    "love":300
   },
   {
     "title":"Tie Up",
     "src":"tie-up",
-    "year":"2019"
+    "year":"2019",
+    "love":300
   },
   {
     "title":"tog",
     "src":"tog",
-    "year":"2019"
+    "year":"2019",
+    "love":450
   },
   {
     "title":"webcup",
     "src":"webcup",
-    "year":"2017"
+    "year":"2017",
+    "love":300
   }
 ];

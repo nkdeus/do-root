@@ -17,8 +17,8 @@ $(document).ready(function () {
   var columns = containers.length;
   var maxRefs = refs.length;
 
-  function compare(a) { 
-    if(a.love == "true"){
+  function compare(a,b) { 
+    if(a.love < b.love){
       return -1;
     }
     return 1
