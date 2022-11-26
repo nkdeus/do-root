@@ -37,6 +37,9 @@ $(document).ready(function () {
   $.each(refs, function (key, value) {
 
     //console.log(key + ": " + value.title+" "+value.love);
+    if(value.futur == "true"){
+      return true;
+    }
     var columsContainer = key % columns;
     var styleCss = "width:100%; background-color:var(--black)";
     var sizeImg = "md";
