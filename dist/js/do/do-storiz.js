@@ -13,6 +13,8 @@ function init(){
     const maxItems = list.length;
 
     let updateTxt = document.getElementById("js-update");
+    let updateAge = document.getElementById("js-age-update");
+    let updateSub = document.getElementById("js-sub-update");
     let currentId = undefined;
     let currentItem = undefined;
     let startId = 0;
@@ -22,17 +24,23 @@ function init(){
     for (const item of list) {
       
       let title = item.getElementsByTagName('h2')[0];
+      let age = item.getElementsByTagName('h3')[0];
+      let sub = item.getElementsByTagName('h4')[0];
       let id = startId;
       let data = {
         "id": id,
-        "title": title.outerText
+        "age": age.outerText,
+        "title": title.outerText,
+        "sub":sud.outerText
       }
-      item.setAttribute('id',startId);
-      console.log(data,'and' ,data.id);
+      item.setAttribute('id',data.id);
+      console.log(data.id, data.age, data.sub);
 
       startId = startId+1;
       titles.push(data);
       item.removeChild(title);
+      item.removeChild(age);
+      item.removeChild(sub);
 
     }
 
@@ -84,8 +92,15 @@ function init(){
       currentId = id;
       console.log("UPDATE ID : ",currentId);
       if(titles[currentId] != undefined){
-        console.log("UPDATE ",titles[currentId]);
-        updateTxt.innerText = titles[currentId].title;
+      
+        let tempData = titles[currentId];
+        updateTxt.innerText = tempData.title;
+        if(updateAge){
+          updateAge.innerText = tempData.age;
+        }
+        if(updateSub){
+          updateSub.innerText = tempData.sub;
+        }
       }
   
       
