@@ -3,6 +3,47 @@
 		"title": "About",
 		"text": "lorem ipsum dolor about"
 	},
+	"pageFake": {
+		"title": "Fake",
+		"text": "lorem ipsum dolor fake",
+		"items": [
+			{
+				"title": "item 0",
+				"id": "0",
+				"text": "lorem ipsum dolor"
+			},
+			{
+				"title": "item 1",
+				"id": "1",
+				"text": "lorem ipsum dolor"
+			},
+			{
+				"title": "item 2",
+				"id": "2",
+				"text": "lorem ipsum dolor"
+			},
+			{
+				"title": "item 3",
+				"id": "3",
+				"text": "lorem ipsum dolor"
+			},
+			{
+				"title": "item 4",
+				"id": "4",
+				"text": "lorem ipsum dolor"
+			},
+			{
+				"title": "item 5",
+				"id": "5",
+				"text": "lorem ipsum dolor"
+			},
+			{
+				"title": "item 6",
+				"id": "6",
+				"text": "lorem ipsum dolor"
+			}
+		]
+	},
 	"titre": "Ulysse 2029",
 	"logo": "imgs/logo.svg",
 	"rootPath": "http://127.0.0.1:5500/dist/",
@@ -706,6 +747,15 @@
 		},
 		{
 			"name": "do-chronos"
+		},
+		{
+			"name": "do-storiz"
+		},
+		{
+			"name": "do-three"
+		},
+		{
+			"name": "do-branch"
 		}
 	],
 	"setup": [

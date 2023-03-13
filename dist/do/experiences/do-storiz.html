@@ -6,35 +6,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Ulysse 2029 / do-change</title>
+  <title>Ulysse 2029 / do-storiz</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Economica:wght@400&display=swap" rel="stylesheet" />
 
 
-  <link type="text/css" rel="stylesheet" href="/dist/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/css/styles.css" />
 
 
-  <script type="text/javascript" src="/dist/js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
-  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollTrigger.min.js"></script>
+  <script src="/js/three.min.js"></script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js" integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script type="text/javascript" src="/dist/js/do/modules/do-module-change.js"></script>
-    <script type="text/javascript" src="/dist/js/do/modules/do-module-change.js"></script>
 
-  <script type="text/javascript" src="/dist/js/do/modules/do-mod-toggle.js"></script>
-  <script type="text/javascript" src="/dist/js/do/modules/do-module-toggle.js"></script>
-  <script type="text/javascript" src="/dist/js/do/modules/do-module-trigger.js"></script>
-  <script type="text/javascript" src="/dist/js/do/modules/do-module-tags.js"></script>
-  <script type="text/javascript" src="/dist/js/do/do-scrollEvents.js"></script>
-  <script type="text/javascript" src="/dist/js/do/modules/do-module-scrolldatas.js"></script>
-  <script type="text/javascript" src="/dist/js/do/modules/do-module-mousedatas.js"></script>
-  <script type="text/javascript" src="/dist/js/do/modules/do-module-tweens.js"></script>
-  <script type="text/javascript" src="/dist/js/index.js"></script>
+  <script type="text/javascript" src="/js/do/modules/do-mod-toggle.js"></script>
+  <script type="text/javascript" src="/js/do/modules/do-module-toggle.js"></script>
+  <script type="text/javascript" src="/js/do/modules/do-module-trigger.js"></script>
+  <script type="text/javascript" src="/js/do/modules/do-module-tags.js"></script>
+  <script type="text/javascript" src="/js/do/do-scrollEvents.js"></script>
+  <script type="text/javascript" src="/js/do/modules/do-module-scrolldatas.js"></script>
+  <script type="text/javascript" src="/js/do/modules/do-module-mousedatas.js"></script>
+  <script type="text/javascript" src="/js/do/modules/do-module-tweens.js"></script>
+  <script type="text/javascript" src="/js/index.js"></script>
 
   
   <style type="text/css">
@@ -739,14 +738,14 @@
                   </svg>
                               </div>
               </div>
-              <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/dist/do.html">Do v1</a>
+              <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/do.html">Do v1</a>
             </div>
            
             <div class="do-flex do-x do-start-center por">
               <div class="do-wh-md">
       
               </div>
-              <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/dist/about.html">about</a>
+              <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/about.html">about</a>
             </div>
            
         </div>
@@ -754,10 +753,10 @@
           <nav id="do"
           class="do-flex do-z-0 do-h-10-vh poa top left do-bg-second-color-darken do-p-sm do-overflow-auto do-gap-sm  do-y do-start-start tween-all active:trans-x-before do-o-0 active:do-o-10">
           
-                <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/dist/do/colors.html">colors</a>
-                <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/dist/do/sizes.html">sizes</a>
-                <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/dist/do/class.html">class</a>
-                <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/dist/do/experiences.html">experiences</a>
+                <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/do/colors.html">colors</a>
+                <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/do/sizes.html">sizes</a>
+                <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/do/class.html">class</a>
+                <a class="do-bt-line do-py-xxs do-txt-contraste-color do-px-xxs" href="/do/experiences.html">experiences</a>
       
           </nav>
       
@@ -770,7 +769,7 @@
   
 
   <div id="nav" class="do-w-10 pof do-px-smart-lg do-z-9 do-flex do-justify-content-space-between do-align-items-center tween-trans scroll-down:trans-y-before">
-    <a id="logo" href="/dist/" class="do-py-xxs por do-z-2 tween-trans scroll-down:trans-y-after">
+    <a id="logo" href="/" class="do-py-xxs por do-z-2 tween-trans scroll-down:trans-y-after">
       <div class="por do-h-md tween-trans scroll-down:do-scale-5 transform-origin-left">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 143.559 60.524">
           <g id="logo" transform="translate(-582.695 -405.926)" class="do-fill-contraste-color">
@@ -806,11 +805,26 @@
 
 
 
-<script type="text/javascript" src="js/do/modules/do-module-tags.js"></script>
+<script type="text/javascript" src="/js/do/do-storiz.js"></script>
+
+<div 
+  data-module="doscrolldatas"
+  data-do-target="#js-storiz-con"
+  data-do-trigger-calcul="body"
+  data-do-ease="power1.out"
+  data-do-ease-duration="2"
+  data-do-calcul="full"
+  data-do-update="true"
+  data-do-start="top+=0% top"
+  data-do-end="bottom-=0% bottom"
+  data-do-force="1"
+  >
+</div>
+
 
 <section class="por h-auto do-px-smart-xxxl do-pt-xxl do-pb-md por do-z-1 do-h-10-vh">
     <div class="do-flex do-x do-start-center por">
-        <a class="do-p-sm poa left-n-xs-rem do-br-xl do-bg-extra-color-main-grad-linear-3 trans-y-middle-x-before " href="../do/experiences.html">
+        <a class="do-p-sm poa left-n-xs-rem do-br-xl do-bg-extra-color-main-grad-linear-3 trans-y-middle-x-before " href="../experiences.html">
             <div class="do-wh-xs poa top-middle left trans-y-middle-x-before do-z-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 40 40">
                 	<g id="prev" transform="translate(-959 -292)">
@@ -822,44 +836,93 @@
             <span class="do-z-2 do-fs-sm por do-txt-main-contraste-auto do-fw-light">do</span>
             <div class="do-z-1 do-full do-br-xl do-bg-second-color poa top-n-xl left-n-xl"></div>  
         </a>
-        <h1>do-change</h1>
+        <h1>do-storiz</h1>
     </div>
-    <p class="do-w-max-md">texte</p>
+    <p class="do-w-max-lg">
+        <a target="_blank" href="/js/do/modules/do-storiz.js">/js/do/modules/do-storiz.js</a> 
+    </p>
 
 </section>
 
 
-<div 
-  data-module="doscrolldatas"
-  data-do-target="#class"
-  data-do-trigger-calcul="body"
-  data-do-calcul="full"
-  data-do-update="true"
-  data-do-start="top-=0% center"
-  data-do-end="bottom-=0% bottom"
-  data-do-force="1"
-  >
-</div>
 
-<section id="class" class="por do-w-10 do-px-smart-xxxl h-auto do-py-xxl por do-z-1 do-flex do-y do-start-start do-gap-xl">
-
-
-    
-
-    <div class="page-section do-pr-xl xl:do-pr-xxxs do-w-10">
-
-        <h2 class="do-mb-md do-fs-fluid-lg">exemple</h2>
-        <span data-module="dochange" data-do-random="true" data-do-change="B,C,D">
-        random <span class="do-span">A</span>
-        </span><br>
-        <span data-module="dochange" data-do-random="false" data-do-change="B,C,D">
-        linear <span class="do-span">A</span>
-        </span>
-            
+<section id="js-storiz-con" class="por do-flex do-w-10 do-px-xxxl do-h-auto do-py-xxl do-z-1">
+    <div class="do-w-5">
+        
+            <div class="js-item por do-my-lg do-h-5-vh do-bg-fade-color-3 do-w-100-lg" id="0">
+                <h2>item 0</h2>
+                <p>lorem ipsum dolor</p>
+                <div class="trans-x-after right-xl poa do-z-0 do-h-5 do-w-5 ">
+                    <div class="do-bg-extra-color-8 por do-full do-blur-5 get-progress:top-xxl"></div>
+                </div>
+               
+            </div>
+        
+        
+            <div class="js-item por do-my-lg do-h-5-vh do-bg-fade-color-3 do-w-100-lg" id="1">
+                <h2>item 1</h2>
+                <p>lorem ipsum dolor</p>
+                <div class="trans-x-after right-xl poa do-z-0 do-h-5 do-w-5 ">
+                    <div class="do-bg-extra-color-8 por do-full do-blur-5 get-progress:top-xxl"></div>
+                </div>
+               
+            </div>
+        
+        
+            <div class="js-item por do-my-lg do-h-5-vh do-bg-fade-color-3 do-w-100-lg" id="2">
+                <h2>item 2</h2>
+                <p>lorem ipsum dolor</p>
+                <div class="trans-x-after right-xl poa do-z-0 do-h-5 do-w-5 ">
+                    <div class="do-bg-extra-color-8 por do-full do-blur-5 get-progress:top-xxl"></div>
+                </div>
+               
+            </div>
+        
+        
+            <div class="js-item por do-my-lg do-h-5-vh do-bg-fade-color-3 do-w-100-lg" id="3">
+                <h2>item 3</h2>
+                <p>lorem ipsum dolor</p>
+                <div class="trans-x-after right-xl poa do-z-0 do-h-5 do-w-5 ">
+                    <div class="do-bg-extra-color-8 por do-full do-blur-5 get-progress:top-xxl"></div>
+                </div>
+               
+            </div>
+        
+        
+            <div class="js-item por do-my-lg do-h-5-vh do-bg-fade-color-3 do-w-100-lg" id="4">
+                <h2>item 4</h2>
+                <p>lorem ipsum dolor</p>
+                <div class="trans-x-after right-xl poa do-z-0 do-h-5 do-w-5 ">
+                    <div class="do-bg-extra-color-8 por do-full do-blur-5 get-progress:top-xxl"></div>
+                </div>
+               
+            </div>
+        
+        
+            <div class="js-item por do-my-lg do-h-5-vh do-bg-fade-color-3 do-w-100-lg" id="5">
+                <h2>item 5</h2>
+                <p>lorem ipsum dolor</p>
+                <div class="trans-x-after right-xl poa do-z-0 do-h-5 do-w-5 ">
+                    <div class="do-bg-extra-color-8 por do-full do-blur-5 get-progress:top-xxl"></div>
+                </div>
+               
+            </div>
+        
+        
+            <div class="js-item por do-my-lg do-h-5-vh do-bg-fade-color-3 do-w-100-lg" id="6">
+                <h2>item 6</h2>
+                <p>lorem ipsum dolor</p>
+                <div class="trans-x-after right-xl poa do-z-0 do-h-5 do-w-5 ">
+                    <div class="do-bg-extra-color-8 por do-full do-blur-5 get-progress:top-xxl"></div>
+                </div>
+               
+            </div>
+        
     </div>
 
-    
-
+    <div class="pos top do-h-xxl">
+        <h3 id="js-update" class="do-fs-lg">...</h3>
+    </div>
 </section>
 
 
@@ -916,7 +979,7 @@
 
     <div class="por do-z-2 do-w-10 do-flex do-gap-md do-justify-content-space-between do-align-items-center">
 
-        <a class="do-bt-line" href="">© Ulysse-2029</a>
+        <a class="do-bt-line" href="/">© Ulysse-2029</a>
         <div class="poa center do-w-md do-z-2 do-hide">
            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 143.559 60.524">
              <g id="logo" transform="translate(-582.695 -405.926)" class="do-fill-contraste-color">

@@ -1,0 +1,43 @@
+{
+    "pageFake" : {
+      "title":"Fake",
+      "text":"lorem ipsum dolor fake",
+      "items":[
+        {
+          "title":"item 0",
+          "id":"0",
+          "text":"lorem ipsum dolor"
+        },
+        {
+          "title":"item 1",
+          "id":"1",
+          "text":"lorem ipsum dolor"
+        },
+        {
+          "title":"item 2",
+          "id":"2",
+          "text":"lorem ipsum dolor"
+        },
+        {
+          "title":"item 3",
+          "id":"3",
+          "text":"lorem ipsum dolor"
+        },
+        {
+          "title":"item 4",
+          "id":"4",
+          "text":"lorem ipsum dolor"
+        },
+        {
+          "title":"item 5",
+          "id":"5",
+          "text":"lorem ipsum dolor"
+        },
+        {
+          "title":"item 6",
+          "id":"6",
+          "text":"lorem ipsum dolor"
+        }
+      ]
+    }
+}

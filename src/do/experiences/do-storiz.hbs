@@ -1,0 +1,66 @@
+{{> head pageName='do-storiz'}}
+{{> nav}}
+
+<script type="text/javascript" src="{{asset 'js/do/do-storiz.js'}}"></script>
+
+<div 
+  data-module="doscrolldatas"
+  data-do-target="#js-storiz-con"
+  data-do-trigger-calcul="body"
+  data-do-ease="power1.out"
+  data-do-ease-duration="2"
+  data-do-calcul="full"
+  data-do-update="true"
+  data-do-start="top+=0% top"
+  data-do-end="bottom-=0% bottom"
+  data-do-force="1"
+  >
+</div>
+
+
+<section class="por h-auto do-px-smart-xxxl do-pt-xxl do-pb-md por do-z-1 do-h-10-vh">
+    <div class="do-flex do-x do-start-center por">
+        <a class="do-p-sm poa left-n-xs-rem do-br-xl do-bg-extra-color-main-grad-linear-3 trans-y-middle-x-before " href="../experiences.html">
+            <div class="do-wh-xs poa top-middle left trans-y-middle-x-before do-z-2">
+                {{> assets/icones/prev}}
+            </div>
+
+            <span class="do-z-2 do-fs-sm por do-txt-main-contraste-auto do-fw-light">do</span>
+            <div class="do-z-1 do-full do-br-xl do-bg-second-color poa top-n-xl left-n-xl"></div>  
+        </a>
+        <h1>do-storiz</h1>
+    </div>
+    <p class="do-w-max-lg">
+        <a target="_blank" href="{{asset 'js/do/modules/do-storiz.js'}}">{{asset 'js/do/modules/do-storiz.js'}}</a> 
+    </p>
+
+</section>
+
+
+
+<section id="js-storiz-con" class="por do-flex do-w-10 do-px-xxxl do-h-auto do-py-xxl do-z-1">
+    <div class="do-w-5">
+        {{#each pageFake.items}}
+        
+            <div class="js-item por do-my-lg do-h-5-vh do-bg-fade-color-3 do-w-100-lg" id="{{id}}">
+                <h2>{{title}}</h2>
+                <p>{{text}}</p>
+                <div class="trans-x-after right-xl poa do-z-0 do-h-5 do-w-5 ">
+                    <div class="do-bg-extra-color-8 por do-full do-blur-5 get-progress:top-xxl"></div>
+                </div>
+               
+            </div>
+        
+        {{/each}}
+    </div>
+
+    <div class="pos top do-h-xxl">
+        <h3 id="js-update" class="do-fs-lg">...</h3>
+    </div>
+</section>
+
+
+
+
+{{> footer}}
+{{> foot}}

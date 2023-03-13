@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "@squoosh/lib": "^0.4.0",
-    "image-size": "^1.0.2"
+    "image-size": "^1.0.2",
+    "undici": "^5.20.0"
   },
   "scripts": {
     "css:watch": "sass --watch src/scss:src/css",
@@ -32,7 +33,7 @@
     "minImages": "gulp min",
     "build": "gulp build",
     "render": "npm run css:compil && gulp build && gulp css && npm run css:purge",
-    "git": "git add . && git commit -m",
+    "git": "git add . && git commit -m 'up'",
     "postgit": "git push --all",
     "lunch": "npm run git -- lunch"
   }

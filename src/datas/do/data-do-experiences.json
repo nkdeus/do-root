@@ -5,6 +5,15 @@
     },
     {
       "name":"do-chronos"
+    },
+    {
+      "name":"do-storiz"
+    },
+    {
+      "name":"do-three"
+    },
+    {
+      "name":"do-branch"
     }
   ],
   "setup" :[
