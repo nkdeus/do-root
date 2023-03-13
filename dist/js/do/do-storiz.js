@@ -77,8 +77,12 @@ function init(){
 
       gsap.to(currentItem,{scale:1.2,duration:0.4});
       currentId = id;
-      console.log("UPDATE ",titles[currentId]);
-      updateTxt.innerText = titles[currentId].title;
+      console.log("UPDATE ID : ",currentId);
+      if(titles[currentId] != undefined){
+        console.log("UPDATE ",titles[currentId]);
+        updateTxt.innerText = titles[currentId].title;
+      }
+  
       
 
     }
