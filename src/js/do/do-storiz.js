@@ -23,14 +23,16 @@ function init(){
       
       let title = item.getElementsByTagName('h2')[0];
       let id = startId;
-      startId = startId+1Z;
       let data = {
         "id": id,
         "title": title.outerText
       }
+      item.setAttribute('id',startId);
       console.log(data,'and' ,data.id);
+
+      startId = startId+1;
       titles.push(data);
-      item.removeChild(title);aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasssssssssssssssssssssssssssssssssssssssssas
+      item.removeChild(title);
 
     }
 
