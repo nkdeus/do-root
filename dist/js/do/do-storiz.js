@@ -15,18 +15,20 @@ function init(){
     let updateTxt = document.getElementById("js-update");
     let currentId = undefined;
     let currentItem = undefined;
+    let startId = 0;
 
     console.log(maxItems);
 
     for (const item of list) {
       
       let title = item.getElementsByTagName('h2')[0];
-      let id = item.id;
+      let id = startId;
+      startId++;
       let data = {
         "id": id,
         "title": title.outerText
       }
-      console.log(data);
+      console.log(data,'and' ,id);
       titles.push(data);
       item.removeChild(title);
 
