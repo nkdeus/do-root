@@ -23,17 +23,18 @@ function init(){
       
       let title = item.getElementsByTagName('h2')[0];
       let id = startId;
-      startId++;
+      startId = startId+1Z;
       let data = {
         "id": id,
         "title": title.outerText
       }
-      console.log(data,'and' ,id);
+      console.log(data,'and' ,data.id);
       titles.push(data);
       item.removeChild(title);
 
     }
 
+    
     updateData(list[0]);
 
     ScrollTrigger.batch(".js-item", {
