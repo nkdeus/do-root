@@ -35,6 +35,6 @@
     "render": "npm run css:compil && gulp build && gulp css && npm run css:purge",
     "git": "git add . && git commit -m 'up'",
     "postgit": "git push --all",
-    "lunch": "npm run git -- lunch"
+    "lunch": "npm run git --lunch"
   }
 }
