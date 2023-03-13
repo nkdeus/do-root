@@ -29,18 +29,25 @@ function init(){
       let id = startId;
       let data = {
         "id": id,
-        "age": age.outerText,
-        "title": title.outerText,
-        "sub":sud.outerText
+        "title": title.outerText
       }
+      if(age){
+        data.age = age.outerText;
+        item.removeChild(age);
+      }
+      if(sub){
+        data.sub = sub.outerText;
+        item.removeChild(sub);
+      }
+
       item.setAttribute('id',data.id);
       console.log(data.id, data.age, data.sub);
 
       startId = startId+1;
       titles.push(data);
       item.removeChild(title);
-      item.removeChild(age);
-      item.removeChild(sub);
+      
+     
 
     }
 
