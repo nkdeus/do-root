@@ -66,7 +66,7 @@ function init(){
 
         let result = ScrollTrigger.isInViewport(item);
         let poz = ScrollTrigger.positionInViewport(item, "center").toFixed(2);
-        if(poz > 0.2 && poz < 0.6){        
+        if(poz > 0 && poz < 0.5){        
           updateData(item);
           reset = false;
         }     
@@ -96,7 +96,7 @@ function init(){
       gsap.to(currentItem,{scale:1.2,duration:0.4,opacity:1});
       currentId = id;
       console.log("UPDATE ID : ",currentId);
-      
+
       if(titles[currentId] != undefined){
       
         let tempData = titles[currentId];
