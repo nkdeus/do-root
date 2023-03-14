@@ -41,6 +41,7 @@ function init(){
       }
 
       item.setAttribute('id',data.id);
+      gsap.set(item,{opacity:0});
       console.log(data.id, data.age, data.sub);
 
       startId = startId+1;
@@ -66,7 +67,8 @@ function init(){
 
         let result = ScrollTrigger.isInViewport(item);
         let poz = ScrollTrigger.positionInViewport(item, "center").toFixed(2);
-        if(poz > 0 && poz < 0.5){        
+        
+        if(poz > 0.6 && poz < 1){        
           updateData(item);
           reset = false;
         }     
@@ -74,7 +76,6 @@ function init(){
 
       if(reset){
         currentId = undefined;
-        console.log("RESET ");
       }
     }
 
@@ -87,15 +88,11 @@ function init(){
       }
 
       if(currentItem != undefined){
-
         gsap.to(currentItem,{scale:1,duration:0.4, opacity:0.5});    
-        
-
       }
       currentItem = pItem
       gsap.to(currentItem,{scale:1.2,duration:0.4,opacity:1});
       currentId = id;
-      console.log("UPDATE ID : ",currentId);
 
       if(titles[currentId] != undefined){
       
