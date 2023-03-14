@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function init(){
     
     const list = document.querySelectorAll('.js-item');
+    const doMin = list[0].getAttribute('data-do-min') || 0.6;
+    const doMax = list[0].getAttribute('data-do-max') || 1;
+    const doOrigin = list[0].getAttribute('data-do-origin') || "top"; 
     const titles = [];
     const maxItems = list.length;
 
@@ -62,16 +65,18 @@ function init(){
     function updateValues() {
 
       let reset = true;
+      let test = 0;
       
       for (const item of list) {
 
         let result = ScrollTrigger.isInViewport(item);
-        let poz = ScrollTrigger.positionInViewport(item, "center").toFixed(2);
-        
-        if(poz > 0.6 && poz < 1){        
+        let poz = ScrollTrigger.positionInViewport(item, doOrigin).toFixed(2);
+    
+        if(poz > doMin && poz < doMax){        
           updateData(item);
           reset = false;
-        }     
+        }    
+        test++ 
       }
 
       if(reset){

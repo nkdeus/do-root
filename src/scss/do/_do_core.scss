@@ -21,7 +21,7 @@ Core de la créature
 }
 
 @function getMinPx($pValue){
-    @return math.round(10 +( $pValue * 3 )) * 1px;
+    @return math.round(10 + ( $pValue * 3 )) * 1px;
 }
 
 @function getFontSize($pValue, $pValueMin){
