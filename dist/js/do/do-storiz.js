@@ -9,9 +9,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function init(){
     
     const list = document.querySelectorAll('.js-item');
-    const doMin = list[0].getAttribute('data-do-min') || 0.6;
-    const doMax = list[0].getAttribute('data-do-max') || 1;
+    const doMin = list[0].getAttribute('data-do-min') || 0.15;
+    const doMax = list[0].getAttribute('data-do-max') || 0.8;
     const doOrigin = list[0].getAttribute('data-do-origin') || "top"; 
+
+    let _doReset = list[0].getAttribute('data-do-reset') || "opacity,0.2";
+    let _doSet = list[0].getAttribute('data-do-set') || "duration,0.4,opacity,0.2";
+    let _doInView = list[0].getAttribute('data-do-inview') || "duration,0.4,opacity,1";
+    const doReset = getObj(_doReset);
+    const doSet = getObj(_doSet);
+    const doInView = getObj(_doInView);
+  
+
     const titles = [];
     const maxItems = list.length;
 
@@ -30,6 +39,7 @@ function init(){
       let age = item.getElementsByTagName('h3')[0];
       let sub = item.getElementsByTagName('h4')[0];
       let id = startId;
+
       let data = {
         "id": id,
         "title": title.outerText
@@ -44,7 +54,7 @@ function init(){
       }
 
       item.setAttribute('id',data.id);
-      gsap.set(item,{opacity:0});
+      gsap.set(item,doReset);
       console.log(data.id, data.age, data.sub);
 
       startId = startId+1;
@@ -52,6 +62,17 @@ function init(){
       item.removeChild(title);
       
      
+
+    }
+
+    function getObj(pParam){
+   
+      let temp = pParam.split(","), theobj = {};
+      for (let i=0; i<temp.length; i+=2) {
+        theobj[temp[i]] = temp[(i+1)];
+      }
+      console.log(theobj);
+      return theobj;
 
     }
 
@@ -93,10 +114,10 @@ function init(){
       }
 
       if(currentItem != undefined){
-        gsap.to(currentItem,{scale:1,duration:0.4, opacity:0.5});    
+        gsap.to(currentItem,doSet);    
       }
       currentItem = pItem
-      gsap.to(currentItem,{scale:1.2,duration:0.4,opacity:1});
+      gsap.to(currentItem,doInView);
       currentId = id;
 
       if(titles[currentId] != undefined){
