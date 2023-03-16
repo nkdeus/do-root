@@ -1,15 +1,19 @@
+ref = {};
+
 window.addEventListener("load", function (event) {
   ScrollTrigger.refresh();
 });
 
-document.addEventListener("load", function(event) {
-  init();
+window.addEventListener("load", function(event) {
+  ref.init();
 });
 
-function init(){
+
+
+ref.init = function(){
     
     const list = document.querySelectorAll('.js-item');
-    const clone = list[0];
+    let clone = list[0];
     const doMin = clone.getAttribute('data-do-min') || 0.15;
     const doMax = clone.getAttribute('data-do-max') || 0.8;
     const doOrigin = clone.getAttribute('data-do-origin') || "top"; 
