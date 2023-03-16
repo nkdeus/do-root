@@ -29,7 +29,7 @@ var refs = [
     "title":"MVBD",
     "src":"mvbd",
     "year":"2021",
-    "love":"true",
+    "page":"true",
     "love":450
   },
   {
@@ -42,7 +42,7 @@ var refs = [
     "title":"Happy Kits",
     "src":"happy-kits",
     "year":"2020",
-    "love":"true",
+    "page":"true",
     "love":750
   },
   {
@@ -55,7 +55,7 @@ var refs = [
     "title":"cobiscol",
     "src":"Cobiscol",
     "year":"2021",
-    "love":"true",
+    "page":"true",
     "love":550
   },
   {

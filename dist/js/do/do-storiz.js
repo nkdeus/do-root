@@ -2,23 +2,26 @@ window.addEventListener("load", function (event) {
   ScrollTrigger.refresh();
 });
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("load", function(event) {
   init();
 });
 
 function init(){
     
     const list = document.querySelectorAll('.js-item');
-    const doMin = list[0].getAttribute('data-do-min') || 0.15;
-    const doMax = list[0].getAttribute('data-do-max') || 0.8;
-    const doOrigin = list[0].getAttribute('data-do-origin') || "top"; 
+    const clone = list[0];
+    const doMin = clone.getAttribute('data-do-min') || 0.15;
+    const doMax = clone.getAttribute('data-do-max') || 0.8;
+    const doOrigin = clone.getAttribute('data-do-origin') || "top"; 
 
-    let _doReset = list[0].getAttribute('data-do-reset') || "opacity,0.2";
-    let _doSet = list[0].getAttribute('data-do-set') || "duration,0.4,opacity,0.2";
-    let _doInView = list[0].getAttribute('data-do-inview') || "duration,0.4,opacity,1";
+    let _doReset = clone.getAttribute('data-do-reset') || "opacity,0.2";
+    let _doSet = clone.getAttribute('data-do-set') || "duration,0.4,opacity,0.2";
+    let _doInView = clone.getAttribute('data-do-inview') || "duration,0.4,opacity,1";
     const doReset = getObj(_doReset);
     const doSet = getObj(_doSet);
     const doInView = getObj(_doInView);
+
+    clone = null;
   
 
     const titles = [];

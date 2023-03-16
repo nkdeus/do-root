@@ -10,8 +10,6 @@ $(document).ready(function () {
   }
 
   if ($(".js-home")[0]){
-    // Do something if class exists
-
 
   var containers = [$("#refs-con-1"),$("#refs-con-2"),$("#refs-con-3")];
   var columns = containers.length;
@@ -21,8 +19,7 @@ $(document).ready(function () {
     if(a.love > b.love){
       return -1;
     }
-    return 1
-   
+    return 1  
   }
   refs.sort(compare);
 
