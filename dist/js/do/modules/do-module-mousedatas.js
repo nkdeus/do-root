@@ -16,10 +16,6 @@ moduleManager["domousedatas"] = function () {
     $scope.rayon = parseInt($scope.attr("data-do-rayon")) || 1;
     $scope.offsetVal = Number($scope.attr("data-do-offset")) || 0;
     $scope.calcul = $scope.attr("data-do-calcul") || "go-in";
-    $scope.force = Number($scope.attr("data-do-force")) || 1;
-    $scope.start = $scope.attr("data-do-start") || "top center+=10%";
-    $scope.end = $scope.attr("data-do-end") || "bottom center+=10%";
-    
     
     var targetItem = $('#'+$scope.target);
     var distanceMax = parseInt(targetItem.width()/2*$scope.rayon);

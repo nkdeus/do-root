@@ -4,12 +4,16 @@ window.addEventListener("load", function (event) {
 });
 
 document.addEventListener("DOMContentLoaded", function(event) {
-  initStroriz();
+  if ($(".js-a-propos")[0]){
+    initStroriz();
+  }
 });
 
 
 
 initStroriz = function(){
+
+    console.log("INIT STORIZ")
     
     const list = document.querySelectorAll('.js-item');
     let clone = list[0];
