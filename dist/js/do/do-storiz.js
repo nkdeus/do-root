@@ -17,7 +17,7 @@ windows.addEventListener("load", function(event) {
 
 
 
-initStroriz = function(){
+function initStroriz(){
 
     console.log("INIT STORIZ")
     
