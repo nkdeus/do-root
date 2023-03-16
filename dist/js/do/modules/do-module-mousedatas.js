@@ -15,7 +15,7 @@ moduleManager["domousedatas"] = function () {
     $scope.target = $scope.attr("data-do-target");
     $scope.rayon = parseInt($scope.attr("data-do-rayon")) || 321;
     $scope.reverse = parseInt($scope.attr("data-do-reverse")) || 1;
-    $scope.axe = parseInt($scope.attr("data-do-axe")) || "y";
+    $scope.axe = $scope.attr("data-do-axe") || "y";
     $scope.calcul = $scope.attr("data-do-calcul") || "distance";
     $scope.elem = $('#'+$scope.target);
  
