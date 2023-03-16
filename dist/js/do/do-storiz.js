@@ -4,9 +4,15 @@ window.addEventListener("load", function (event) {
 });
 
 document.addEventListener("DOMContentLoaded", function(event) {
+  console.log("DOMContentLoaded STORIZ")
   if ($(".js-a-propos")[0]){
     initStroriz();
   }
+});
+
+windows.addEventListener("load", function(event) {
+  console.log("load STORIZ")
+  
 });
 
 
