@@ -1,7 +1,5 @@
 
-window.addEventListener("load", function (event) {
-  ScrollTrigger.refresh();
-});
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
   console.log("DOMContentLoaded STORIZ")
@@ -18,6 +16,10 @@ windows.addEventListener("load", function(event) {
 
 
 function initStroriz(){
+
+  window.addEventListener("load", function (event) {
+    ScrollTrigger.refresh();
+  });
 
     console.log("INIT STORIZ")
     

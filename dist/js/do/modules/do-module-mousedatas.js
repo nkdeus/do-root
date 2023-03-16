@@ -20,7 +20,7 @@ moduleManager["domousedatas"] = function () {
     var targetItem = $('#'+$scope.target);
     var distanceMax = parseInt(targetItem.width()/2*$scope.rayon);
     var calculType = {};   
-    calculType["go-in"] = function(pEvent){
+    calculType["go-in"] = function(e){
 
         var screenX = e.clientX;
         var screenY = e.clientY;
@@ -65,13 +65,7 @@ moduleManager["domousedatas"] = function () {
 
     $(document).mousemove(function(e){
 
-
-        calculType[$scope.calcul](e)
-
-       
-        //
-     
-
+        calculType[$scope.calcul](e);
 
     });
 
