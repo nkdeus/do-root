@@ -1,16 +1,15 @@
-ref = {};
 
 window.addEventListener("load", function (event) {
   ScrollTrigger.refresh();
 });
 
-window.addEventListener("load", function(event) {
-  ref.init();
+document.addEventListener("DOMContentLoaded", function(event) {
+  initStroriz();
 });
 
 
 
-ref.init = function(){
+initStroriz = function(){
     
     const list = document.querySelectorAll('.js-item');
     let clone = list[0];
@@ -24,9 +23,6 @@ ref.init = function(){
     const doReset = getObj(_doReset);
     const doSet = getObj(_doSet);
     const doInView = getObj(_doInView);
-
-    clone = null;
-  
 
     const titles = [];
     const maxItems = list.length;
