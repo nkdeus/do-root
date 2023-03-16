@@ -12,56 +12,57 @@ if(moduleManager == undefined){
 moduleManager["domousedatas"] = function () {
 
     var $scope = $(this);
-    $scope.target = $scope.attr("data-do-target-id");
-    $scope.rayon = parseInt($scope.attr("data-do-rayon")) || 1;
-    $scope.offsetVal = Number($scope.attr("data-do-offset")) || 0;
-    $scope.calcul = $scope.attr("data-do-calcul") || "go-in";
+    $scope.target = $scope.attr("data-do-target");
+    $scope.rayon = parseInt($scope.attr("data-do-rayon")) || 321;
+    $scope.reverse = parseInt($scope.attr("data-do-reverse")) || 1;
+    $scope.axe = parseInt($scope.attr("data-do-axe")) || "y";
+    $scope.calcul = $scope.attr("data-do-calcul") || "distance";
+    $scope.elem = $('#'+$scope.target);
+ 
     
-    var targetItem = $('#'+$scope.target);
-    var distanceMax = parseInt(targetItem.width()/2*$scope.rayon);
-    var calculType = {};   
-    calculType["go-in"] = function(e){
-
-        var screenX = e.clientX;
-        var screenY = e.clientY;
-        var pageX = e.pageX;
-        var pageY = e.pageY;
-        var mouseData = {
-            x:screenX,
-            y:screenY
-        }
-
-
-        var distance = getDistanceBetweenElements(
-            getPositionAtCenter(document.getElementById($scope.target)),
-            mouseData
-        );
+    var distanceMax = $scope.rayon;
+    var calculType = {};  
+    var slowerX = 0; 
+    var slowerY = 0;
+    var senssi = 10; 
+    calculType["distance"] = function(e){
         
-        distance = Number((distanceMax-distance)/distanceMax).toFixed(4);
-        if(distance >= 0){
-            targetItem.css("--progress",Number(distance)+$scope.offsetVal);
-        }else{
-            targetItem.css("--progress",$scope.offsetVal);
+        var screenX = e.pageX;
+        var screenY = e.pageY;
+ 
+        if(slowerX == Math.round(screenX/senssi) && slowerY == Math.round(screenY/senssi)){           
+            return;
         }
+        slowerX = Math.round(screenX/senssi);
+        slowerY = Math.round(screenY/senssi);
+
+        if($scope.axe == false){
+            distance = calculateDistance($scope.elem,screenX,screenY);  
+        }else if($scope.axe == "x"){
+            distance = calculateDistanceX($scope.elem,screenX);
+        }else{
+            distance = calculateDistanceY($scope.elem,screenY);
+        }
+        
+        if(distance >= distanceMax){
+            distance = 1;
+        }else{
+            distance = (distance/distanceMax);
+        }
+        distance = Math.abs($scope.reverse - distance);
+        $scope.elem.css("--progress",distance);
     }
 
-    var getPositionAtCenter = function(element) {
-        const {top, left, width, height} = element.getBoundingClientRect();
-        return {
-          x: left + width / 2,
-          y: top + height / 2
-        };
-      }
+    function calculateDistance(elem, mouseX, mouseY) {
+        return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
+    }
+    function calculateDistanceX(elem, mouseX) {
+        return mouseX - (elem.offset().left+(elem.width()/2));
+    }
+    function calculateDistanceY(elem, mouseY) {
+        return mouseY - (elem.offset().top+(elem.height()/2));
+    }
      
-      var getDistanceBetweenElements = function(a, b) {
-       const aPosition = a;
-       const bPosition = b;
-     
-       return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);  
-     }
-     
-
-
 
     $(document).mousemove(function(e){
 

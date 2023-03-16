@@ -8,11 +8,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 });
 
-windows.addEventListener("load", function(event) {
-  console.log("load STORIZ")
-  
-});
-
 
 
 function initStroriz(){
