@@ -13,6 +13,12 @@ var refs = [
     "love":300
   },
   {
+    "title":"Starck",
+    "src":"starck",
+    "year":"2019",
+    "love":500
+  },
+  {
     "title":"Sogequip",
     "src":"sogequip",
     "year":"20212",
