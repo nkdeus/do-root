@@ -33,7 +33,8 @@ $(document).ready(function () {
     console.log("_____test 1", refs);
 
     function compare2(a) {
-      if (a.page == "true") {
+      
+      if (projetsLinks.includes(a.title)) {
         return -1;
       }
       return 1;
