@@ -4,7 +4,7 @@ var refs = [
     "src":"vignerons",
     "year":"2022",
     "love":500,
-    "futur":"true"
+    "futur":"false"
   },
   {
     "title":"Studio Fremont",
