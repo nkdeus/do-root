@@ -10,7 +10,7 @@ $(document).ready(function () {
   if ($(".js-home-new")[0]) {
 
     /* ref list */
-    const elem = document.getElementById("refs-list");
+    const elem = document.getElementById("refs-list-4-28");
     let projetsLinks = [];
     children = elem.querySelectorAll('span');
     children.forEach(function(item){
