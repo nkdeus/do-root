@@ -1,6 +1,6 @@
 var refs = [
   {
-    "title":"! Maître vignerons de la presqu'île de saint tropez",
+    "title":"Maître vignerons de la presqu'île de saint tropez",
     "src":"vignerons",
     "year":"2022",
     "love":500,
@@ -29,7 +29,6 @@ var refs = [
     "title":"MVBD",
     "src":"mvbd",
     "year":"2021",
-    "page":"true",
     "love":450
   },
   {
@@ -42,7 +41,6 @@ var refs = [
     "title":"Happy Kits",
     "src":"happy-kits",
     "year":"2020",
-    "page":"true",
     "love":750
   },
   {
@@ -55,7 +53,6 @@ var refs = [
     "title":"cobiscol",
     "src":"Cobiscol",
     "year":"2021",
-    "page":"true",
     "love":550
   },
   {

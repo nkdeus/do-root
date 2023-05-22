@@ -8,8 +8,16 @@ $(document).ready(function () {
 
   // START HOME
   if ($(".js-home-new")[0]) {
+
     /* ref list */
-    var refsList = $("#refs-list");
+    const elem = document.getElementById("refs-list");
+    let projetsLinks = [];
+    children = elem.querySelectorAll('span');
+    children.forEach(function(item){
+      projetsLinks.push(item.textContent);
+    });
+    console.log("projet Links",projetsLinks);
+    elem.remove();
 
     var containers = [$("#refs-con-1"), $("#refs-con-2"), $("#refs-con-3")];
     var columns = containers.length;
@@ -111,6 +119,11 @@ $(document).ready(function () {
             ' class="card block group overflow-hidden relative"><div/>'
         );
         targetContainer = link;
+      }
+
+      if(projetsLinks.includes(value.title)){
+          console.log("OK link-to ",value.title);
+          projetsLinks.addClass('outline-projet');
       }
 
       targetContainer.prepend(
