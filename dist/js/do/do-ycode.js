@@ -54,10 +54,14 @@ $(document).ready(function () {
       if (value.futur == "true") {
         return true;
       }
+
+      var isComplete = false;
       var columsContainer = key % columns;
       var styleCss = "width:100%; background-color:var(--black)";
       var sizeImg = "md";
       decal = 0;
+
+      isComplete = projetsLinks.includes(value.title);
 
       if (columsContainer == 2 && value.love >= 400) {
         columsContainer = key % (columns - 1);
@@ -110,7 +114,9 @@ $(document).ready(function () {
         card.css("opacity", alpha);
       }
 
-      if (value.page == "true") {
+      
+      if(isComplete){
+
         var link = $(
           '<a href="https://ulysse-2029.com/projets/' +
             value.src +
@@ -119,11 +125,9 @@ $(document).ready(function () {
             ' class="card block group overflow-hidden relative"><div/>'
         );
         targetContainer = link;
-      }
+        console.log("OK link-to ",value.title);
+        targetContainer.addClass('outline-projet');
 
-      if(projetsLinks.includes(value.title)){
-          console.log("OK link-to ",value.title);
-          targetContainer.addClass('outline-projet');
       }
 
       targetContainer.prepend(
