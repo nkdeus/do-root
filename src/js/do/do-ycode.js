@@ -123,7 +123,7 @@ $(document).ready(function () {
 
       if(projetsLinks.includes(value.title)){
           console.log("OK link-to ",value.title);
-          projetsLinks.addClass('outline-projet');
+          targetContainer.addClass('outline-projet');
       }
 
       targetContainer.prepend(
