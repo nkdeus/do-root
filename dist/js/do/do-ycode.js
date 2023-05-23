@@ -23,15 +23,6 @@ $(document).ready(function () {
     var columns = containers.length;
     var maxRefs = refs.length;
 
-    function compare(a, b) {
-      if (a.love > b.love) {
-        return -1;
-      }
-      return 1;
-    }
-    refs.sort(compare);
-    console.log("_____test 1", refs);
-
     function compare2(a) {
       
       if (projetsLinks.includes(a.title)) {
@@ -41,7 +32,18 @@ $(document).ready(function () {
     }
     refs.sort(compare2);
 
-    console.log("_____test 2", refs);
+
+    function compare(a, b) {
+      if (a.love > b.love) {
+        return -1;
+      }
+      return 1;
+    }
+    refs.sort(compare);
+
+
+
+ 
 
     var scale = 1;
     var alpha = 1;
