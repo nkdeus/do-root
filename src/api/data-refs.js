@@ -16,7 +16,7 @@ var refs = [
     "title":"Starck",
     "src":"starck",
     "year":"2019",
-    "love":500
+    "love":800
   },
   {
     "title":"Hemen",
