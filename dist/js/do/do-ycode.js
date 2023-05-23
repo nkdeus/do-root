@@ -325,8 +325,8 @@ $(document).ready(function () {
     console.log("SOME REFS !!");
     var clug = $(".set-clug").text();
     var numImgs = parseInt($(".set-num-imgs").text());
-    var container = $("#container-images");
-    var styleCss = "width:33%; background-color:var(--black)";
+    var container = $("#container-images-more");
+    var styleCss = "width:100%; background-color:var(--black)";
 
     console.log("REF clug-->", clug);
     console.log("REF maxImgs-->", numImgs);
