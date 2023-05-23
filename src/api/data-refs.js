@@ -375,16 +375,10 @@ var refs = [
     "love":400
   },
   {
-    "title":"Salomon Nordic",
-    "src":"salomon-nordic",
-    "year":"2019",
-    "love":700
-  },
-  {
     "title":"Salomon",
     "src":"salomon",
     "year":"2019",
-    "love":650
+    "love":700
   },
   {
     "title":"Sophie Seguela",
