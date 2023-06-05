@@ -65,8 +65,8 @@ moduleManager["dofilters"] = function () {
 
         if($scope.attrName == "inside"){
     
-            tagsToSplit = instance.find(".data-filter").prop("innerText");
-
+            tagsToSplit = instance.find(".data-filter").text();
+            console.log("tagsToSplit ",tagsToSplit);
         }else{
             tagsToSplit = instance.attr($scope.attrName);
             if($scope.subTarget != undefined){
