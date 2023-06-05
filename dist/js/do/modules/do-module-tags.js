@@ -237,7 +237,9 @@ moduleManager["dofilters"] = function () {
         }
     };
 
-    $scope.autocomplete(document.getElementById($scope.inputArea),autoCompleteList, $scope.resultRecherche);
+    if($scope.autoCompletMode != "false"){
+        $scope.autocomplete(document.getElementById($scope.inputArea),autoCompleteList, $scope.resultRecherche);
+   }  
 
 }
 
