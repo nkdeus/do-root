@@ -24,7 +24,7 @@ moduleManager["dofilters"] = function () {
     $scope.btAttrName = $($scope).attr("data-do-bt-attr") || "href";
     $scope.sep = $($scope).attr("data-do-sep") || "/";
     $scope.tagIndex = parseInt($($scope).attr("data-do-tag-index")) || 1;
-    $scope.tagIndex = $($scope).attr("autoCompletMode") || "false";
+    $scope.autoCompletMode= $($scope).attr("data-do-auto") || "false";
     
 
     var datas = [];
