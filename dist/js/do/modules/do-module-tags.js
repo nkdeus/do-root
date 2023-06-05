@@ -60,11 +60,21 @@ moduleManager["dofilters"] = function () {
         var instance = $(value);
         
         instance.addClass($scope.defaultClass);
-        instance.addClass($scope.toggleClass);     
-        var tagsToSplit = instance.attr($scope.attrName);
-        if($scope.subTarget != undefined){
-            tagsToSplit = instance.find($scope.subTarget).attr($scope.attrName);
+        instance.addClass($scope.toggleClass);
+        var tagsToSplit;
+        
+        if($scope.attrName == "inside"){
+            tagsToSplit = instance.attr($scope.attrName);
+            tagsToSplit = instance.find(".data-filter").prop("innerText");
+
+        }else{
+            tagsToSplit = instance.attr($scope.attrName);
+            if($scope.subTarget != undefined){
+                tagsToSplit = instance.find($scope.subTarget).attr($scope.attrName);
+            }
+        
         }
+        
         var tempsTags = tagsToSplit.split($scope.sep);
         tempsTags = $.grep(tempsTags,function(n){ return n != '' || n });
 
