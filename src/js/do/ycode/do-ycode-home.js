@@ -87,7 +87,7 @@ $(document).ready(function () {
     var picture = $(
       '<picture><source media="(max-width: 640px)" srcset="https://do-root.netlify.app/imgs/refs/' +
       value.src +
-      '-sm.webp"><img loading="lazy" alt="design du projet '+value+'" class="ref-img w-[100%] absolute transition-all top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' +
+      '-sm.webp"><img loading="lazy" alt="design du projet '+value.src+'" class="ref-img w-[100%] absolute transition-all top-0 left-0" src=https://do-root.netlify.app/imgs/refs/' +
       value.src +
       "-" +
       sizeImg +
