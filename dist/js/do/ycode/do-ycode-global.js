@@ -16,6 +16,31 @@ $(document).ready(function () {
     }
   });
 
+  // MENU
+
+  $('body').addClass($("#stageSetter-3-14").text());
+
+
+  var burger  = $( "#burger" );
+  var closer = $( "#closer" );
+  var menu = $( "#menu-mobile" );
+  burger.on( "click", function(e) {
+    menu.addClass('menu-open'); 
+  });
+  
+  closer.on( "click", function(e) {
+    menu.removeClass('menu-open'); 
+  });
+
+
+  // SETTTER COLOR
+
+  var mainColor = $(".set-main-color").text() || "#000000";
+  $('body').css("--main-color", mainColor);
+
+  var secondColor = $(".set-second-color").text() || "#ffffff";
+  $('body').css("--second-color", secondColor );
+
   // FAKE CONTACT
   $("#bonjour").click(function () {
     mailto();
