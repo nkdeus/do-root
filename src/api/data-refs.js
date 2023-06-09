@@ -62,8 +62,8 @@ var refs = [
     "love":300
   },
   {
-    "title":"cobiscol",
-    "src":"Cobiscol",
+    "title":"Cobiscol",
+    "src":"cobiscol",
     "year":"2021",
     "love":550
   },
