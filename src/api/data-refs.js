@@ -77,7 +77,7 @@ var refs = [
     "title":"Chez Bob",
     "src":"chez-bob",
     "year":"2022",
-    "love":800
+    "love":850
   },
   {
     "title":"les vitrines de valerie",

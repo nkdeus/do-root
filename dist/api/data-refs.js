@@ -62,8 +62,8 @@ var refs = [
     "love":300
   },
   {
-    "title":"cobiscol",
-    "src":"Cobiscol",
+    "title":"Cobiscol",
+    "src":"cobiscol",
     "year":"2021",
     "love":550
   },
@@ -77,7 +77,7 @@ var refs = [
     "title":"Chez Bob",
     "src":"chez-bob",
     "year":"2022",
-    "love":800
+    "love":850
   },
   {
     "title":"les vitrines de valerie",
