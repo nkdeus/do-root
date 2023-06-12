@@ -51,7 +51,9 @@ moduleManager["dofilters"] = function () {
         console.log(">>>>>>>>>>>>>>>>>>>> push ",tag);
         tags[tag] = [];
     
-        bt.click(function (event) {
+      
+        bt.on( "click", function(event) {
+            console.log("CLICK BT");
             event.preventDefault();
             $scope.updateTag($(this).attr($scope.customData),$(this));
         });     
@@ -249,7 +251,6 @@ moduleManager["dofilters"] = function () {
         $scope.autocomplete(document.getElementById($scope.inputArea),autoCompleteList, $scope.resultRecherche);
    }  
 
-   return $scope;
 
 }
 
