@@ -165,6 +165,13 @@ moduleManager["dofilters"] = function () {
         if($scope.type == "solo"){
             $scope.resetNav();
         }
+
+        if(pBt == undefined){
+            pBt = $( "a[data-do-id-section-page='"+pTag+"']" );
+            console.log("tag, get BT ",pBt,pTag);
+        }
+
+
         if(currentTag == undefined){
             console.log("[pas de filtre activé encore]");
             $scope.stage.addClass('active');

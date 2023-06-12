@@ -165,6 +165,13 @@ moduleManager["dofilters"] = function () {
         if($scope.type == "solo"){
             $scope.resetNav();
         }
+
+        if(pBt == undefined){
+            pBt = $( "a[data-do-id-section-page='"+pTag+"']" );
+            console.log("tag, get BT ",pBt,pTag);
+        }
+
+
         if(currentTag == undefined){
             console.log("[pas de filtre activé encore]");
             $scope.stage.addClass('active');
@@ -241,6 +248,8 @@ moduleManager["dofilters"] = function () {
     if($scope.autoCompletMode != "false"){
         $scope.autocomplete(document.getElementById($scope.inputArea),autoCompleteList, $scope.resultRecherche);
    }  
+
+   return $scope;
 
 }
 
