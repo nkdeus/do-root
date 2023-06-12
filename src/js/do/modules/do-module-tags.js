@@ -242,6 +242,8 @@ moduleManager["dofilters"] = function () {
         $scope.autocomplete(document.getElementById($scope.inputArea),autoCompleteList, $scope.resultRecherche);
    }  
 
+   return $scope;
+
 }
 
 window.WFmodules = moduleManager;
