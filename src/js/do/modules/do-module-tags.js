@@ -14,6 +14,7 @@ moduleManager["dofilters"] = function () {
     $scope.target = $($scope).attr("data-do-target");
     $scope.subTarget = $($scope).attr("data-do-sub-target");
     $scope.nav = $($scope).attr("data-do-nav") || "#nav-filters";
+    $scope.selector = $($scope).attr("data-do-selector") || "a";
     $scope.type = $($scope).attr("data-do-type") || "solo"; // solo || multi
     $scope.toggleClass = $($scope).attr("data-do-class-toggle") || "active:do-hide";
     $scope.btToggleClass = $($scope).attr("data-do-class-toggle-bt") || "active";
@@ -39,7 +40,7 @@ moduleManager["dofilters"] = function () {
         tags:""
     }
 
-    $($scope.nav).find('a').each(function() {  
+    $($scope.nav).find($scope.selector).each(function() {  
         var bt = $(this);
         bts.push(bt);
         var tag = bt.attr($scope.btAttrName).split($scope.sep)[$scope.tagIndex];
